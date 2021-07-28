@@ -7,7 +7,6 @@ import Swiper from 'react-native-swiper';
 import ActressView from '@components/common/actressview';
 import GenerView from '@components/common/generview';
 import { NavigationContext } from "@react-navigation/native";
-
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -25,11 +24,11 @@ class Index extends Component {
                     <View style={{ height: pxToDp(160) }}>
                         <Swiper style={styles.wrapper}
                             removeClippedSubviews={false}
-                            showsButtons={false}         //显示控制按钮
-                            loop={true}                    //如果设置为false，那么滑动到最后一张时，再次滑动将不会滑到第一张图片。
-                            autoplay={true}              //自动轮播
-                            showsPagination={false}   //是否显示小圆点
-                            autoplayTimeout={3}          //每隔3秒切换
+                            showsButtons={false}         //显示控制按钮
+                            loop={true}                    //如果设置为false，那么滑动到最后一张时，再次滑动将不会滑到第一张图片。
+                            autoplay={true}              //自动轮播
+                            showsPagination={false}   //是否显示小圆点
+                            autoplayTimeout={3}          //每隔3秒切换
                         >
                             <View style={styles.slide1}>
                                 <Image style={styles.image1} source={require('../../../res/22.jpg')} />

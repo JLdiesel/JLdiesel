@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="Tabbar">
+      <Stack.Navigator headerMode='none' initialRouteName="Model">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -65,10 +65,8 @@ function Nav() {
         {/*个人首页 */}
 
 
-
-
         <Stack.Screen name="Article" component={Screens.Article} />
-
+        <Stack.Screen name="Drama" component={Screens.Drama} />
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
