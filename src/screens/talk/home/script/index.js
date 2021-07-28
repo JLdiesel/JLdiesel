@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView,TouchableOpacity } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
-import ActionButton from 'react-native-action-button';
 import { NavigationContext } from "@react-navigation/native";
-import Icon from 'react-native-vector-icons/Ionicons';
+import { FAB } from 'react-native-elements';
 
 class Index extends Component {
     constructor(props) {
@@ -66,15 +65,7 @@ class Index extends Component {
                         </View>
                     </View>
                 </ScrollView>
-                {/* Rest of the app comes ABOVE the action button component !*/}
-                <ActionButton buttonColor="#FA8072">
-                    <ActionButton.Item buttonColor='#87CEFA' title="发起直播" onPress={() => this.context.navigate("Apply")}>
-                        <Icon name="videocam-outline" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                    <ActionButton.Item buttonColor='#FFB6C1' title="创作剧本" onPress={() => this.context.navigate("Create")}>
-                        <Icon name="book-outline" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                </ActionButton>
+                    <FAB title="创作剧本" size="small" placement="right" color="#B0C4DE" onPress={() => this.context.navigate("Create")}/>
             </View>
         );
     }
@@ -109,6 +100,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         height: 22,
         color: 'white',
-      },
+    },
 })
 export default Index;

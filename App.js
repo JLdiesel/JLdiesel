@@ -1,17 +1,16 @@
-import React, { Component,Provider } from "react";
+import React, { Component } from "react";
 import { View } from "react-native";
 import Nav from "./src/nav";
 import store from './src/store'
+import {Provider} from 'react-redux'
 export default class App extends Component {
   render() {
     return (
-    
-      <View style={{ flex: 1 }}  store={store}>
-       
+    <Provider store={store}>
+      <View style={{ flex: 1 }}  >
           <Nav></Nav>
-        
         </View>
-    
+    </Provider>
     );
   }
 }

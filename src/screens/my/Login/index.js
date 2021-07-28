@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image, ImageBackground, TouchableOpacity, Animated, StyleSheet, LayoutAnimation, UIManager, } from 'react-native'
+import { View, Text, Image, ImageBackground, TouchableOpacity, Animated, StyleSheet, LayoutAnimation, UIManager,ToastAndroid } from 'react-native'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
@@ -29,19 +29,23 @@ static contextType = NavigationContext;
     LayoutAnimation.easeInEaseOut();
     Animated.timing(this.state.opcitytext1, {
       toValue: 1,
-      duration: 2000
+      duration: 2000,
+        useNativeDriver: true, // Add this
     }).start();
     Animated.timing(this.state.opcitytext2, {
       toValue: 1,
-      duration: 3000
+      duration: 3000,
+        useNativeDriver: true, // Add this
     }).start();
     Animated.timing(this.state.opcitytext3, {
       toValue: 0,
-      duration: 2000
+      duration: 2000,
+        useNativeDriver: true, // Add this
     }).start();
     Animated.timing(this.state.opcitytext4, {
       toValue: 0,
-      duration: 3000
+      duration: 3000,
+        useNativeDriver: true, // Add this
     }).start();
     this.setState({ loginbox: 350 })
     this.setState({ regbox: 0 })
@@ -54,19 +58,23 @@ static contextType = NavigationContext;
     LayoutAnimation.easeInEaseOut()
     Animated.timing(this.state.opcitytext1, {
       toValue: 0,
-      duration: 2000
+      duration: 2000,
+        useNativeDriver: true, // Add this
     }).start();
     Animated.timing(this.state.opcitytext2, {
       toValue: 0,
-      duration: 3000
+      duration: 3000,
+        useNativeDriver: true, // Add this
     }).start();
     Animated.timing(this.state.opcitytext3, {
       toValue: 1,
-      duration: 2000
+      duration: 2000,
+        useNativeDriver: true, // Add this
     }).start();
     Animated.timing(this.state.opcitytext4, {
       toValue: 1,
-      duration: 3000
+      duration: 3000,
+        useNativeDriver: true, // Add this
     }).start();
     this.setState({ loginbox: 0 })
     this.setState({ regbox: 300 })
@@ -114,15 +122,18 @@ static contextType = NavigationContext;
         'content-type': 'application/json'
       }
     }).then(res => {
-      console.log(res)
       return res.json()
     })
       .then(ress => {
-     
-        this.props.changeToken(ress.token)
-        
-        console.log(ress);
-   this.context.navigate('Tabbar')
+        console.log(ress.errCode);
+        if (ress.errCode===400) {
+          ToastAndroid.show(ress.errMessage, ToastAndroid.SHORT);
+        } else {
+          console.log(ress);
+          this.props.changeToken(ress.token)
+             this.context.navigate('Tabbar')
+        }
+    
       })
       .catch(err => {
         console.log(123);
@@ -277,6 +288,6 @@ const styles = StyleSheet.create({
   , register: { position: 'absolute', top: 650, right: 60, backgroundColor: '#00A4A6', width: 120, height: 50, alignItems: 'center', justifyContent: 'center' }
 })
 
-export default connect(() => { }, {
+export default connect(state => ({token:state.getIn(['LoginReducer','token'])}), {
   changeToken
 })(Login)

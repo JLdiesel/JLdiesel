@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Dimensions, LayoutAnimation, ScrollView, TouchableOpacity, FlatList ,UIManager,Animated,Easing} from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions, LayoutAnimation, ScrollView, TouchableOpacity, FlatList ,UIManager,Animated,Easing,} from 'react-native';
 import Swiper from 'react-native-swiper';
 import ListItem from '../components/listItem';
 import { Badge } from 'react-native-elements'
 import SvgUri from 'react-native-svg-uri';
+import {pxToDp} from '@utils/styleKits'
+
 
 const ScreenWidth = Dimensions.get('window').width
 const ScreenHeight = Dimensions.get('window').height
@@ -51,12 +53,14 @@ export default class Shop extends Component {
     widthValue: new Animated.Value(0),
     //   fontValue: new Animated.Value(0),
     springValue: new Animated.Value(0),
-    shopCarNum:0
+    shopCarNum: 0,
+    jtTop:true
 
   }
  componentDidMount(){
   if (Platform.OS === 'android') {
     UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
+    
 }
 
 }
@@ -69,26 +73,29 @@ export default class Shop extends Component {
         type: LayoutAnimation.Types.linear,
       // opacity,scaleXY 透明度，位移
         property: LayoutAnimation.Properties.opacity,
+        
+        
       },
       update: {
       // 更新时显示的动画
         type: LayoutAnimation.Types.easeInEaseOut,
-      }
+      },
+      
       
   })
     if (!this.state.isshowall) {
    
-      this.setState({ Commentheight: this.state.commentList.length * 100 })
+      this.setState({ Commentheight: this.state.commentList.length * pxToDp(100) })
       this.setState({ isshowall: true })
     }
     else {
-      this.setState({ Commentheight: 100 })
+      this.setState({ Commentheight: pxToDp(100)})
       this.setState({ isshowall: false })
     }
   }
   ChangeBoxheight = () => {
   
-
+    this.setState({jtTop:!this.state.jtTop})
     LayoutAnimation.configureNext({
        
       duration: 400, // 动画时间
@@ -97,15 +104,17 @@ export default class Shop extends Component {
         type: LayoutAnimation.Types.linear,
       // opacity,scaleXY 透明度，位移
         property: LayoutAnimation.Properties.opacity,
+        
       },
       update: {
       // 更新时显示的动画
         type: LayoutAnimation.Types.easeInEaseOut,
-      }
+      },
+      
       
   })
     if (!this.state.isshowall) {
-      this.setState({ imagHeight: this.state.commentList.length * 100  })
+      this.setState({ imagHeight: this.state.commentList.length * pxToDp(100)  })
       this.setState({ angle: '180deg' })
       this.setState({ isshowall: true })
     }
@@ -150,16 +159,16 @@ export default class Shop extends Component {
 
       <View style={{backgroundColor:'transparent',position:'relative'}}>
         <View style={{ backgroundColor:'rgba(52,52,52,alpha)',position:'absolute'}}>
-          <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: 350}} />
+          <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: pxToDp(350)}} />
 
         </View>
       
 
 
-        <ScrollView style={{ marginBottom: 49 }}>
-          <View style={{ height: 300}}>
+        <ScrollView style={{ marginBottom:pxToDp(49) }}>
+          <View style={{ height: pxToDp(300)}}>
 
-    
+      
             <Swiper 
               showsButtons={false}
               index={0}
@@ -168,25 +177,25 @@ export default class Shop extends Component {
             >
               {
                 this.state.items.map((item, index) => {
-                  return (<Image style={{ height: '100%', width: ScreenWidth}} key={index} source={{ uri: item }} />)
+                  return (<Image style={{ height: '100%', width: ScreenWidth,borderRadius:40}} key={index} source={{ uri: item }} />)
                 })
 
               }
             </Swiper>
           </View>
-          <View style={{ marginLeft: 20, marginTop: 30, borderBottomWidth: 0.8, width: 350, borderBottomColor: 'gray' }}>
+          <View style={{ marginLeft: pxToDp(20), marginTop: pxToDp(30), borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
             <Text style={{ fontSize: 20, fontWeight: 'bold' }}>敦煌文化沙漏小夜灯</Text>
             <Text style={{ fontSize: 15, marginTop: 10, color: '#A0522D', fontWeight: 'bold' }}>￥128.00</Text>
-            <Text style={{ fontSize: 12, marginTop: 10, marginBottom: 20, color: '#DAA520', fontWeight: 'bold' }}>正品保证·品牌授权·七日退换·商品包邮</Text>
+            <Text style={{ fontSize: 12, marginTop: 10, marginBottom:pxToDp(20), color: '#DAA520', fontWeight: 'bold' }}>正品保证·品牌授权·七日退换·商品包邮</Text>
           </View>
           <View>
-            <View style={{ marginLeft: 20, marginTop: 30, width: 350, flexDirection: 'row', marginBottom: 25 }}>
-              <Text style={{ fontSize: 20, fontWeight: 'bold' }}>设计细节</Text>
+            <View style={{ marginLeft: pxToDp(20), marginTop: pxToDp(30), width: pxToDp(350), flexDirection: 'row', marginBottom: pxToDp(25) }}>
+              <Text style={{ fontSize: pxToDp(20) , fontWeight: 'bold' }}>设计细节</Text>
               <TouchableOpacity onPress={this.ChangeBoxheight} style={{ transform: ([{ rotateX: this.state.angle }]) }}>
-                <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: 250, top: 8 }} />
+                <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: pxToDp(250), top: this.state.jtTop?pxToDp(8):pxToDp(0) }} />
               </TouchableOpacity>
             </View>
-            <View style={{ marginLeft: 20, marginTop: 20, borderBottomWidth: 0.8, width: 350, borderBottomColor: 'gray' }}>
+            <View style={{ marginLeft: pxToDp(20) , marginTop:pxToDp(20) , borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
                 
               {
                 this.state.items2.map((item, index) => {
@@ -198,14 +207,14 @@ export default class Shop extends Component {
               }
             </View>
 
-            <View style={{ marginLeft: 20, marginTop: 0, borderBottomWidth:.8, width: 350, borderBottomColor: 'gray' }}>
-              <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 20, marginTop: 20 }}>商品规格</Text>
+            <View style={{ marginLeft: pxToDp(20) , borderBottomWidth:.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
+              <Text style={{ fontSize: pxToDp(20) , fontWeight: 'bold', marginBottom: pxToDp(20) , marginTop: pxToDp(20) }}>商品规格</Text>
             </View>
-            <View style={{ marginLeft: 20, marginTop: 0, borderBottomWidth: 0.8, width: 350, borderBottomColor: 'gray' }}>
+            <View style={{ marginLeft: 20, marginTop: 0, borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
               <View style={{ flexDirection: 'row' }}>
                 
                 <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 20, marginTop: 20 }}>用户评价</Text>
-                <TouchableOpacity style={{ position: 'absolute', right: 10, top: 20 }} onPress={this.showall}>
+                <TouchableOpacity style={{ position: 'absolute', right: pxToDp(10), top: pxToDp(20)}} onPress={this.showall}>
                   <Text>{this.state.isshowall ? '收回 ＜' : '展开全部 ＞'} </Text>
                 </TouchableOpacity >
 
@@ -221,40 +230,40 @@ export default class Shop extends Component {
           </View>
         </ScrollView>
         <Animated.Image
-                    source={require('../../../../res/7.jpg')}
-                    style={{width: 20, height: 20, position: 'absolute', bottom: aheight, right: awidth}}/>
+                    source={require('../../../../res/6.jpg')}
+                    style={{width: pxToDp(20), height: pxToDp(20), position: 'absolute', bottom: aheight, right: awidth}}/>
 
-        <View style={{ width: ScreenWidth, height: 50, backgroundColor: '#fff', position: 'absolute', top: ScreenHeight - 50, borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
+        <View style={{ width: ScreenWidth, height: pxToDp(50), backgroundColor: '#fff', position: 'absolute', top: ScreenHeight - pxToDp(50), borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
           <View style={{ flexDirection: 'row' }}>
             
-            <View style={{ flexDirection: 'column', marginLeft: 20 }}>
+            <View style={{ flexDirection: 'column', marginLeft: pxToDp(20)}}>
               <TouchableOpacity>
                 <SvgUri svgXmlData={expandIcon} width="20" height="20" />
                 <Text>商城</Text>
               </TouchableOpacity>
             </View>
 
-            <View style={{ flexDirection: 'column', marginLeft: 20 }}>
+            <View style={{ flexDirection: 'column', marginLeft: pxToDp(20) }}>
               <TouchableOpacity>
                 <SvgUri svgXmlData={expandIcon} width="20" height="20" />
                 <Text>收藏</Text>
               </TouchableOpacity>
             </View>
 
-            <View style={{ flexDirection: 'column', marginLeft: 20 }}>
+            <View style={{ flexDirection: 'column', marginLeft: pxToDp(20) }}>
               <TouchableOpacity>
                 <SvgUri svgXmlData={expandIcon} width="20" height="20" />
                 <Badge value={this.BadgeValue()} status="error"     containerStyle={{ position: 'absolute', top: -4, right:-9 }}/>
                 <Text>购物车</Text>
               </TouchableOpacity>
             </View>
-            <View style={{ flexDirection: 'row', left: 60 }}>
+            <View style={{ flexDirection: 'row', left: pxToDp(60)}}>
               <TouchableOpacity onPress={() => {
                         this.startAnimated();
-                    }}style={{ width: 80, height: 40, backgroundColor: '#2e2e2e', justifyContent: 'center', alignItems: 'center', borderBottomLeftRadius: 20, borderTopLeftRadius: 20 }}>
+                    }}style={{ width: pxToDp(80), height: pxToDp(40), backgroundColor: '#2e2e2e', justifyContent: 'center', alignItems: 'center', borderBottomLeftRadius: 20, borderTopLeftRadius: 20 }}>
                 <Text style={{ color: "#fff" }}>加入购物车</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={{ width: 80, height: 40, backgroundColor: '#23a4c4', justifyContent: 'center', alignItems: 'center', borderBottomRightRadius: 20, borderTopRightRadius: 20 }}>
+              <TouchableOpacity style={{ width: pxToDp(80), height: pxToDp(40), backgroundColor: '#23a4c4', justifyContent: 'center', alignItems: 'center', borderBottomRightRadius: 20, borderTopRightRadius: 20 }}>
                 <Text style={{ color: "#fff" }}>立即购买</Text>
               </TouchableOpacity>
             </View>

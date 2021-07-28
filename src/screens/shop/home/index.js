@@ -52,9 +52,9 @@ class Index extends Component {
                     </View>
                     {/*戏服租赁 */}
                     <View style={{ margin: pxToDp(20) }}>
-                        <Image style={styles.image3} source={require('../../../res/14.jpg')} />
+                        <Image style={styles.image3} source={require('../../../res/30.jpg')} />
                         {/*越剧周边 */}
-                        <Image style={styles.image4} source={require('../../../res/8.jpg')} />
+                        <Image style={styles.image4} source={require('../../../res/29.jpg')} />
                     </View>
                     {/*推荐模块 */}
                     <Text style={styles.title}>你可能喜欢</Text>
