@@ -3,10 +3,12 @@ import { View, Text, Image, ImageBackground, TouchableOpacity, Animated, StyleSh
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
-
+import {connect} from 'react-redux'
 import { ACCOUNT_LOGIN, ACCOUNT_REGISTER } from './pathMap'
-export default class login extends Component {
-
+import { NavigationContext } from "@react-navigation/native";
+import {changeToken} from '../store/actions'
+ class Login extends Component {
+static contextType = NavigationContext;
 
   state = {
     opcitytext1: new Animated.Value(0),
@@ -116,9 +118,11 @@ export default class login extends Component {
       return res.json()
     })
       .then(ress => {
-        alert('登陆成功')
+     
+        this.props.changeToken(ress.token)
+        
         console.log(ress);
-
+   this.context.navigate('Tabbar')
       })
       .catch(err => {
         console.log(123);
@@ -272,3 +276,7 @@ const styles = StyleSheet.create({
   loginbtn: { width: 100, height: 40, justifyContent: 'center', alignItems: 'center', backgroundColor: 'skyblue', left: 75, borderRadius: 20 }
   , register: { position: 'absolute', top: 650, right: 60, backgroundColor: '#00A4A6', width: 120, height: 50, alignItems: 'center', justifyContent: 'center' }
 })
+
+export default connect(() => { }, {
+  changeToken
+})(Login)

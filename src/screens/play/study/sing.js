@@ -10,10 +10,54 @@ class Index extends Component {
     
     state={
         status:{},
-        recording:null
-    
+        recording: '',
+        isrecoding: false,
+        playingsong:'',
+        sound:[],
+      isplay:false,
+      URI:[]
+    }
+
+   playSound=async()=>{
+       if (this.state.sound.length){
+        console.log('Loading Sound');
+        console.log('Playing Sound');
+           for (const sound of this.state.sound) {
+              this.setState({playingsong:sound})
+               await sound.playAsync();
+           }
+        this.setState({isplay:true})
+ 
+           console.log(this.state.sound);
+           
+       } else {
+           for (const uri of this.state.URI) {
+                const { sound } = await Audio.Sound.createAsync(
+                     {uri}
+               );
+                this.setState({sound:[...this.state.sound,sound]});
+           }
+       
+     
+      console.log('Loading Sound');
+           console.log('Playing Sound');
+           for (const sound of this.state.sound) {
+                 this.setState({playingsong:sound})
+               await sound.playAsync(); 
+           }
+        
+        this.setState({isplay:true})
     }
     
+}
+
+    pauseSound=async()=>{
+        console.log('Stopping Sound')
+        // this.setState({sound:undefined})
+        await this.state.playingsong.pauseAsync()
+        this.setState({isplay:false})
+    }
+
      startRecording=async()=>{
     try {
       console.log('Requesting permissions..');
@@ -27,6 +71,7 @@ class Index extends Component {
          Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY
       );
       this.setState({recording});
+      this.setState({isrecoding:true});
       console.log('Recording started');
     } catch (err) {
       console.error('Failed to start recording', err);
@@ -34,10 +79,14 @@ class Index extends Component {
   }
  stopRecording=async()=>{
     console.log('Stopping recording..');
-    this.setState({recording:undefined});
+   // this.setState({recording:undefined});
     await this.state.recording.stopAndUnloadAsync();
     const uri = this.state.recording.getURI(); 
     console.log('Recording stopped and stored at', uri);
+     this.setState({ URI: [...this.state.URI, uri] })
+      this.setState({isrecoding:false});
+     
+
   }
     render() {
         const video=createRef()
@@ -46,7 +95,7 @@ class Index extends Component {
             <View>
                 <Top icon1='arrow-back' title="穆桂英挂帅" icon2='star-outline' />
                 <View style={styles.box}>
-                    <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                    <Image style={styles.image} source={require('../../../res/4.jpg')}></Image>
                     <View>
                         <Text style={styles.text1}>穆桂英挂帅 - 猛听得金鼓响画角声震</Text>
                         <Text style={styles.text3}>1959人唱过</Text>
@@ -72,7 +121,7 @@ class Index extends Component {
                         <View style={{alignItems:'center',justifyContent:'center'}}>
                         <Video
                 ref={video}
-                source={require('../../../../src/assets/越剧追鱼.mp3')}
+                source={require('./越剧追鱼.mp3')}
                 resizeMode="contain"
                 onPlaybackStatusUpdate={status => this.setState({status})}
             />
@@ -97,8 +146,8 @@ class Index extends Component {
                         </TouchableOpacity>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={this.state.recording ?this.startRecording :this.stopRecording }>
-                            <Ionicons name={this.state.recording?'mic-circle':""} size={55} color="white" />
+                        <TouchableOpacity onPress={this.state.isrecoding ?this.stopRecording:this.startRecording  }>
+                            <Ionicons name='mic-circle' size={55} color="white" />
                         </TouchableOpacity>
                     </View>
                     <View>
@@ -108,7 +157,7 @@ class Index extends Component {
                         </TouchableOpacity>
                     </View>
                     <View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={this. state.isplay?this.pauseSound:this.playSound}>
                             <Ionicons name="checkmark" size={25} color="white" />
                             <Text>结束</Text>
                         </TouchableOpacity>

@@ -1,46 +1,76 @@
 import React from 'react';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-import {
-  Home, Shop, Sing, Study, Talk, Play, Mine,
-  Login, GoodsList, Details, Zhoubian, Zulin
-} from './screens'
-import Tabbar from './tabbar'
+import Tabbar from "./tabbar";
+import * as Screens from './screens'
+import Video from './component/Video'
+import Water from './component/water'
 const Stack = createStackNavigator();
 
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="login">
-        <Stack.Screen name='tabbar' component={Tabbar} />
-    
-        {/* <Stack.Screen name="Demo" component={Demo} /> */}
-        {/* 首页 */}
-        <Stack.Screen name="home" component={Home} />
-        {/* 我的 */}
-        <Stack.Screen name="mine" component={Mine} />
-        {/* 游玩 */}
-        <Stack.Screen name="play" component={Play} />
-        {/* 商城 */}
-        <Stack.Screen name="shop" component={Shop} />
-        {/* 论坛 */}
-        <Stack.Screen name="talk" component={Talk} />
-        {/* 登录 */}
-        <Stack.Screen name="login" component={Login} />
-        {/* 注册 */}
-        {/* <Stack.Screen name="WaterFall" component={WaterFall} /> */}
-        {/* 商品详情 */}
-        <Stack.Screen name="good" component={GoodsList} />
-        {/* 练唱 */}
-        <Stack.Screen name="study" component={Study} />
-        <Stack.Screen name="details" component={Details} />
-        <Stack.Screen name="sing" component={Sing} />
-        {/* 商城租赁 */}
-        <Stack.Screen name="zulin" component={Zulin} />
-        {/* 周边 */}
-        <Stack.Screen name="zhoubian" component={Zhoubian} />
+      <Stack.Navigator headerMode='none' initialRouteName="Login">
+        <Stack.Screen name="Tabbar" component={Tabbar} />
+        {/*首页 */}
+        <Stack.Screen name="Home" component={Screens.Home} />
+        <Stack.Screen name="water" component={Water} />
+        <Stack.Screen name="video" component={Video} />
+        {/*我的 */}
+        <Stack.Screen name="My" component={Screens.Mine} />
+        {/*游玩 */}
+        <Stack.Screen name="Play" component={Screens.Play} />
+        {/*商城 */}
+        <Stack.Screen name="Shop" component={Screens.Shop} />
+        {/*论坛 */}
+        <Stack.Screen name="Talk" component={Screens.Talk} />
+        {/*登录 */}
+        <Stack.Screen name="Login" component={Screens.Login} />
+        {/*注册 */}
+        {/*商品 */}
+        <Stack.Screen name="Good" component={Screens.GoodsList} />
+        {/*练唱 */}
+        <Stack.Screen name="Study" component={Screens.Study} />
+        {/*练唱专辑详情 */}
+        <Stack.Screen name="Details" component={Screens.Details} />
+        {/*练唱页面*/}
+        <Stack.Screen name="Sing" component={Screens.Sing} />
+        {/*租赁商城页 */}
+        <Stack.Screen name="Zulin" component={Screens.Zulin} />
+        {/*周边商城页 */}
+        <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
+        {/*设置 */}
+        <Stack.Screen name="Setting" component={Screens.Setting} />
+        {/*具体的设置内容。。。 */}
+        <Stack.Screen name="Women" component={Screens.Women} />
+        <Stack.Screen name="Tuisong" component={Screens.Tuisong} />
+        <Stack.Screen name="Yijian" component={Screens.Yijian} />
+        <Stack.Screen name="Yinsi" component={Screens.Yinsi} />
+        <Stack.Screen name="Zhanghao" component={Screens.Zhanghao} />
+        <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
+        {/*双人剧本 */}
+        <Stack.Screen name="Act" component={Screens.Act} />
+        {/*AI换衣  */}
+        <Stack.Screen name="Change" component={Screens.Change} />
+        {/*申请直播*/}
+        <Stack.Screen name="Apply" component={Screens.Apply} />
+        {/*创作剧本 */}
+        <Stack.Screen name="Create" component={Screens.Create} />
+
+        <Stack.Screen name="PageOne" component={Screens.PageOne} />
+        <Stack.Screen name="PageTwo" component={Screens.PageTwo} />
+        <Stack.Screen name="PageThree" component={Screens.PageThree} />
+        <Stack.Screen name="PageFour" component={Screens.PageFour} />
+        {/* <Stack.Screen name="Myroute" component={Screens.Myroute} /> */}
+        {/*个人首页 */}
+
+
+
+
+
+
+        {/*DEMO */}
+        {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

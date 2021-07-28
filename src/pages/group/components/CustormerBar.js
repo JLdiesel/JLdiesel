@@ -13,7 +13,7 @@ class Index extends Component{
        style={{height:pxToDp(60),flexDirection:"row",paddingLeft:pxToDp(16),
        justifyContent:"flex-start"
     }}
-       source={require("../../../assets/2.png")}
+       source={require("../../../res/2.png")}
        >
            {tabs.map((v,i)=><TouchableOpacity
            key={i}

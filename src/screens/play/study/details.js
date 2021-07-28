@@ -18,7 +18,7 @@ class Index extends Component {
                 <ScrollView>
                     <Top icon1='arrow-back' title="详情" />
                     <View style={styles.top}>
-                        <Image style={styles.image} source={require('../../../assets/6.jpg')}></Image>
+                        <Image style={styles.image} source={require('../../../res/6.jpg')}></Image>
                         <Text style={styles.text1}>穆桂英挂帅</Text>
                         <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
                         <Text style={styles.text3}>1959人唱过</Text>
@@ -33,7 +33,7 @@ class Index extends Component {
                     </View>
                 </ScrollView>
                 <View>
-                    <TouchableOpacity onPress={() => this.context.navigate("sing")}>
+                    <TouchableOpacity onPress={() => this.context.navigate("Sing")}>
                         <View style={styles.bottom}>
                             <Text style={{ fontSize: pxToDp(30), color: 'white' }}>开始练唱</Text>
                         </View>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-import { play, selectedPlay, talk, selectedTalk, first, selectedFirst, shop, selectedShop, my, selectedMy } from "./assets/fonts/iconSvg";
+import { play, selectedPlay, talk, selectedTalk, first, selectedFirst, shop, selectedShop, my, selectedMy } from "./res/fonts/iconSvg";
 import Svg from 'react-native-svg-uri';
 import First from "./screens/first/home";
 import Play from "./screens/play/home";
@@ -16,7 +16,7 @@ class Index extends Component {
       {
         selected: "play",
         title: "越吟",
-        renderIcon: () => <Svg width="20" height="20" svgXmlData={play} color='#FFFFCC' />,
+        renderIcon: () => <Svg width="20" height="20" svgXmlData={play} color='#FFFFCC'/>,
         renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedPlay} />,
         onPress: () => this.setState({ selectedTab: 'play' }),
         component: <Play />
@@ -24,7 +24,7 @@ class Index extends Component {
       {
         selected: "talk",
         title: "戏缘",
-        renderIcon: () => <Svg width="20" height="20" svgXmlData={talk} color="#FFFFCC" />,
+        renderIcon: () => <Svg width="20" height="20" svgXmlData={talk} color="#FFFFCC"/>,
         renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedTalk} />,
         onPress: () => this.setState({ selectedTab: 'talk' }),
         component: <Talk />
@@ -58,24 +58,25 @@ class Index extends Component {
   render() {
     const { selectedTab, pages } = this.state;
     return (
-      <View style={{ flex: 1, backgroundColor: "#DEE4DF" }}>
-        <TabNavigator >
-          {pages.map((v, i) => <TabNavigator.Item key={v.selected}
-            selected={selectedTab === v.selected}
+
+        <TabNavigator  style={{ backgroundColor:"white"}} >
+          {pages.map((v, i) => <TabNavigator.Item key={i}
+            selected={selectedTab===v.selected}
             title={v.title}
             renderIcon={v.renderIcon}
             renderSelectedIcon={v.renderSelectedIcon}
             onPress={v.onPress}
-            selectedTitleStyle={{ color: "#FFFFCC" }}
+            selectedTitleStyle={{color:"#FFFFCC"}}
             tabStyle={{
-              backgroundColor: "#003C66",
-              justifyContent: 'center'
+
+              backgroundColor:"#003C66",
+              justifyContent:'center'
             }}
           >
             {v.component}
           </TabNavigator.Item>)}
         </TabNavigator>
-      </View>
+  
     );
   }
 }

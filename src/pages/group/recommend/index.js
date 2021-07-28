@@ -27,7 +27,7 @@ export default class IndexScreen extends React.Component {
                     style:{marginVertical:5}
                 }} >
                     <TouchableHighlight style={{position: 'relative',height: pxToDp(180), width: pxToDp(120), backgroundColor: '#fff',borderRadius: 3,overflow: 'hidden',}}>
-                    <Image source={require('../../../assets/3.jpg')}></Image>
+                    <Image source={require('../../../res/3.jpg')}></Image>
                     </TouchableHighlight>
                 </BoxShadow>
             </View>

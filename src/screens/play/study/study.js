@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, ScrollView, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Image, ScrollView, TextInput, Text, TouchableOpacity,StyleSheet } from 'react-native';
 import Top from '../../../component/common/top';
 import { pxToDp } from '../../../utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
@@ -15,15 +15,15 @@ class Index extends Component {
     render() {
         return (
             <View>
-                <Top icon1='arrow-back' title="练唱学堂" />
+                <Top icon1='arrow-back' title="单人练唱" />
                 <View>
                     <TextInput style={styles.textinput}
                         placeholder="搜索" />
                 </View>
                 <ScrollView >
-                    <TouchableOpacity onPress={() => this.context.navigate("details")}>
+                    <TouchableOpacity onPress={() => this.context.navigate("Details")}>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
@@ -33,7 +33,7 @@ class Index extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
@@ -43,7 +43,7 @@ class Index extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
@@ -53,7 +53,7 @@ class Index extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
@@ -63,7 +63,7 @@ class Index extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
@@ -73,7 +73,7 @@ class Index extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
@@ -83,7 +83,7 @@ class Index extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
@@ -93,7 +93,7 @@ class Index extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../assets/5.jpg')}></Image>
+                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
                             <View>
                                 <Text style={styles.text1}>穆桂英挂帅</Text>
                                 <Text style={styles.text2}>猛听得金鼓响画角声震</Text>

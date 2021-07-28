@@ -10,6 +10,21 @@ export { default as Details } from './play/study/details';//商品详情页
 export { default as Sing } from './play/study/sing';//商品详情页
 export { default as Zhoubian } from './shop/home/zhoubian';//周边页
 export { default as Zulin } from './shop/home/zulin';//服装租赁页
-
+export { default as Setting } from './my/seetings/setting';//服装租赁页
+export { default as Tuisong } from './my/seetings/tuisong';//服装租赁页
+export { default as Women } from './my/seetings/women';//服装租赁页
+export { default as Yijian } from './my/seetings/yijian';//服装租赁页
+export { default as Yinsi } from './my/seetings/yinsi';//服装租赁页
+export { default as Zhanghao } from './my/seetings/zhanghao';//服装租赁页
+export { default as Ziliao } from './my/seetings/ziliao';//服装租赁页
+export { default as Act } from './play/act';//服装租赁页
+export { default as Apply } from './talk/home/live/apply';//服装租赁页
+export { default as Create } from './talk/home/live/create';//服装租赁页
+export { default as PageOne } from './first/home/pages/pageone';//服装租赁页
+export { default as PageTwo } from './first/home/pages/pagetwo';//服装租赁页
+export { default as PageThree } from './first/home/pages/pagethree';//服装租赁页
+export { default as PageFour } from './first/home/pages/pagefour';//服装租赁页
+export { default as Change } from './play/change';//服装租赁页
+export { default as Myroute } from './first/myroute';//服装租赁页
 
 

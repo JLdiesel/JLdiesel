@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { pxToDp } from '../../../../utils/styleKits';
+import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
-import Top from '../../../../component/common/top';
+import Top from '@components/common/top';
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +19,7 @@ class Index extends Component {
                     <View style={styles.tcard}>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../assets/shop/1.jpg')}></Image>
+                                <Image style={styles.image} source={require('../../../../res/shop/1.jpg')}></Image>
                                 <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化随行杯</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥58.0</Text>
@@ -29,7 +29,7 @@ class Index extends Component {
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../assets/shop/2.jpg')}></Image>
+                                <Image style={styles.image} source={require('../../../../res/shop/2.jpg')}></Image>
                                 <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化钥匙扣</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥48.0</Text>
@@ -39,7 +39,7 @@ class Index extends Component {
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../assets/shop/3.jpg')}></Image>
+                                <Image style={styles.image} source={require('../../../../res/shop/3.jpg')}></Image>
                                 <Text style={{ fontSize: pxToDp(15) }}>韵文博鉴*恭王府晴雨伞</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥128.0</Text>
@@ -49,7 +49,7 @@ class Index extends Component {
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../assets/shop/4.jpg')}></Image>
+                                <Image style={styles.image} source={require('../../../../res/shop/4.jpg')}></Image>
                                 <Text style={{ fontSize: pxToDp(15) }}> 敦煌沙漏小夜灯</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥128.0</Text>
@@ -59,7 +59,7 @@ class Index extends Component {
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../assets/shop/5.jpg')}></Image>
+                                <Image style={styles.image} source={require('../../../../res/shop/5.jpg')}></Image>
                                 <Text style={{ fontSize: pxToDp(15) }}>韵文博鉴*恭王府 屋脊兽便签</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥9.9</Text>
@@ -69,7 +69,7 @@ class Index extends Component {
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../assets/shop/6.jpg')}></Image>
+                                <Image style={styles.image} source={require('../../../../res/shop/6.jpg')}></Image>
                                 <Text style={{ fontSize: pxToDp(15), flexWrap: 'wrap' }}>韵文博鉴*恭王府 屋脊兽木制日历</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥48.0</Text>
@@ -79,7 +79,7 @@ class Index extends Component {
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../assets/shop/1.jpg')}></Image>
+                                <Image style={styles.image} source={require('../../../../res/shop/1.jpg')}></Image>
                                 <Text style={{ fontSize: pxToDp(15) }}> 敦煌随行杯</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥58.0</Text>

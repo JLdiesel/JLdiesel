@@ -66,7 +66,7 @@ const DATA = [
 
 const Item = ({ item,index }) => (
   <View key={index} style={styles.listItem}>
-    <Image source={require("../../../assets/1.jpg")} style={styles.headPic}/>
+    <Image source={require("../../../res/1.jpg")} style={styles.headPic}/>
     <View style={styles.rightBox}>
     <Text style={styles.userName}>{item.userName}</Text> 
     <Text style={styles.content}>{item.content}{item.fans}</Text>
@@ -76,7 +76,7 @@ const Item = ({ item,index }) => (
      <Text style={styles.articleTitle}>{item.articleTitle}</Text>
      <Text style={styles.article} numberOfLines={2}>{item.article}</Text>
      <Text style={styles.like}>{item.like} * {item.discuss}</Text>
-     <Image source={require("../../../assets/3.jpg")} style={styles.articlePic}/>
+     <Image source={require("../../../res/3.jpg")} style={styles.articlePic}/>
      </View>
    </View>
   </View>

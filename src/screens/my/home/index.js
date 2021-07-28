@@ -1,140 +1,95 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity,ScrollView,RefreshControl } from 'react-native';
-import { shezhi, kefu, museum, daifahuo, daifukuan, daipingjia, daishouhuo, xiaoxi, youhuiquan, jifen, gouwuche, shoucang, dizhi, fuwu, zuji } from "../../../assets/fonts/iconSvg"
-import SvgUri from "react-native-svg-uri";
-import { pxToDp } from "../../../utils/styleKits";
+import { View, Text, Image, TouchableOpacity, ScrollView, RefreshControl } from 'react-native';
+import { pxToDp } from "@utils/styleKits";
+import Top from '@components/common/top';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import List from '@components/common/list';
+import { NavigationContext } from "@react-navigation/native";
 
-
-class MyPage extends Component {
+class Index extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
 
         }
     }
+    static contextType = NavigationContext;
     render() {
         return (
-            <ScrollView 
-            refreshControl={<RefreshControl/>}
-            contentContainerStyle={{ backgroundColor: 'lightgrey' }}>
-                {/*顶部 客服 设置 */}
-                <View style={{ flexDirection: 'row', alignSelf: 'flex-end' }}>
-                    <SvgUri width="30" height='30' svgXmlData={kefu} />
-                    <SvgUri width="30" height='30' svgXmlData={shezhi} />
-                </View>
-                {/*头像 用户名等 */}
-                <View style={{ backgroundColor: 'white', borderRadius: pxToDp(10), marginLeft: pxToDp(5), marginRight: pxToDp(5) }}>
+            <View>
+                <Top title="戏痴"/>
+                <ScrollView
+                    refreshControl={<RefreshControl />}>
                     <View style={{ flexDirection: 'row' }}>
-                        <Image
-                            style={{ margin: pxToDp(10), height: pxToDp(80), width: pxToDp(80), borderRadius: pxToDp(40) }} source={require('../../../assets/4.jpg')}>
-                        </Image>
-                        <View style={{ marginLeft: pxToDp(10), marginTop: pxToDp(15) }}>
-                            <Text style={{ fontSize: pxToDp(20) }}>百越亭</Text>
-                            <TouchableOpacity
-                                style={{ borderWidth: pxToDp(1), borderColor: '#1874CD', backgroundColor: 'white', height: pxToDp(22), width: pxToDp(90), borderRadius: pxToDp(10),alignItems: 'center' }}>
-                                <Text style={{ color: '#1874CD' }}>Lv1 九品主簿</Text>
+                        <TouchableOpacity>
+                        <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30), margin: pxToDp(10) }} source={require('../../../res/4.jpg')}></Image>
+                        </TouchableOpacity>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '70%' }}>
+                            <View>
+                                <Text style={{ margin: pxToDp(10), fontSize: pxToDp(20), fontWeight: 'bold' }}>百越庭</Text>
+                                <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>总访客1.2万 | 今日80</Text>
+                            </View>
+                            <TouchableOpacity onPress={() => this.context.navigate("Setting")}>
+                                <Ionicons name="chevron-forward" size={25} color="#000000" />
                             </TouchableOpacity>
-                            <Text style={{ fontSize: pxToDp(13), color: 'grey' }}>穿越0天|看过0件文物</Text>
-                        </View>
-                        <TouchableOpacity
-                                style={{  backgroundColor: '#1874CD', height: pxToDp(22), width: pxToDp(100),borderBottomLeftRadius:pxToDp(30),borderTopLeftRadius:pxToDp(30),alignItems:'center',alignSelf:'center',marginLeft:pxToDp(32) }}>
-                                <Text style={{ color: 'white' }}>积分福利</Text>
-                            </TouchableOpacity>
-                    </View>
-                    {/*收藏 圈子 关注 */}
-                    <View style={{ justifyContent: 'space-around', flexDirection: 'row', backgroundColor: 'white', borderRadius: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(23) }}>0</Text>
-                        <Text style={{ fontSize: pxToDp(23) }}>0</Text>
-                        <Text style={{ fontSize: pxToDp(23) }}>0</Text>
-                    </View>
-                    <View style={{ justifyContent: 'space-around', flexDirection: 'row', backgroundColor: 'white', borderRadius: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>收藏</Text>
-                        <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>圈子</Text>
-                        <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>关注</Text>
-                    </View>
-                </View>
-                {/*私人博物馆 */}
-                <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: 'white', borderRadius: pxToDp(10), marginTop: pxToDp(10), marginLeft: pxToDp(5), marginRight: pxToDp(5) }}>
-                    <SvgUri width="30" height='30' svgXmlData={museum} />
-                    <Text style={{ fontSize: pxToDp(20), fontWeight: 'bold', color: '#1874CD', margin: pxToDp(10) }}>我的私人博物馆</Text>
-                    <Text style={{ fontSize: pxToDp(13), color: '#1874CD', marginLeft: pxToDp(130) }}>查看</Text>
-                </View>
-                {/*我的订单 */}
-                <View style={{ backgroundColor: 'white', borderRadius: pxToDp(10), marginTop: pxToDp(10), marginLeft: pxToDp(5), marginRight: pxToDp(5) }}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', margin: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(20), fontWeight: 'bold', color: 'black' }}>我的订单</Text>
-                        <View>
-                            <Text style={{ fontSize: pxToDp(13), color: 'black', alignItems: 'flex-end', marginLeft: pxToDp(180) }}>查看全部订单</Text>
                         </View>
                     </View>
-                    {/*订单状态栏 */}
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                        <View>
-                            <SvgUri width="40" height='40' svgXmlData={daifukuan} />
-                            <Text style={{ fontSize: pxToDp(15) }}>待付款</Text>
+                        <View style={{ alignItems: 'center' }}>
+                            <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>17</Text>
+                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>动态</Text>
                         </View>
-                        <View>
-                            <SvgUri width="40" height='40' svgXmlData={daifahuo} />
-                            <Text style={{ fontSize: pxToDp(15) }}>待发货</Text>
+                        <View style={{ alignItems: 'center' }}>
+                            <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>99</Text>
+                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>点赞</Text>
                         </View>
-                        <View>
-                            <SvgUri width="40" height='40' svgXmlData={daishouhuo} />
-                            <Text style={{ fontSize: pxToDp(15) }}>待收货</Text>
+                        <View style={{ alignItems: 'center' }}>
+                            <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>188</Text>
+                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>关注</Text>
                         </View>
+                        <View style={{ alignItems: 'center' }}>
+                            <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>49</Text>
+                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>粉丝</Text>
+                        </View>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between',marginTop:pxToDp(20)}}>
                         <View>
-                            <SvgUri width="40" height='40' svgXmlData={daipingjia} />
+                            <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>我的订单</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row', fontSize: pxToDp(15), margin: pxToDp(10) }}>
+                            <Text>查看全部订单</Text>
+                            <Ionicons name="chevron-forward" size={17} color="#000000" />
+                        </View>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(10) }}>
+                        <View style={{ alignItems: 'center' }}>
+                            <Ionicons name="card-outline" size={30} color="#000000" />
+                            <Text style={{ fontSize: pxToDp(15) }}>待支付</Text>
+                        </View>
+                        <View style={{ alignItems: 'center' }}>
+                            <Ionicons name="alarm-outline" size={30} color="#000000" />
+                            <Text style={{ fontSize: pxToDp(15) }}>待使用</Text>
+                        </View>
+                        <View style={{ alignItems: 'center' }}>
+                            <Ionicons name="chatbox-outline" size={30} color="#000000" />
                             <Text style={{ fontSize: pxToDp(15) }}>待评价</Text>
                         </View>
-                    </View>
-                    {/*最新物流 */}
-                    <View style={{ height: pxToDp(100), borderRadius: pxToDp(10), margin: pxToDp(10), alignItems: 'center', backgroundColor: 'lightgrey' }}>
-                        <Text>最新物流</Text>
-                        <Text>物流信息空空空空空空空空空空啊</Text>
-                    </View>
-                </View>
-                {/*我的服务 */}
-                <View style={{ backgroundColor: 'white', borderRadius: pxToDp(10), marginTop: pxToDp(10), marginLeft: pxToDp(5), marginRight: pxToDp(5) }}>
-                    <Text style={{ fontSize: pxToDp(20), fontWeight: 'bold', color: 'black', margin: pxToDp(10) }}>我的服务</Text>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(10) }}>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={xiaoxi} />
-                            <Text style={{ fontSize: pxToDp(15),color:'grey' }}>我的消息</Text>
-                        </View>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={youhuiquan} />
-                            <Text style={{ fontSize: pxToDp(15),color:'grey' }}>优惠券</Text>
-                        </View>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={jifen} />
-                            <Text style={{ fontSize: pxToDp(15),color:'grey' }}>积分兑换</Text>
-                        </View>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={gouwuche} />
-                            <Text style={{ fontSize: pxToDp(15),color:'grey' }}>购物车</Text>
+                        <View style={{ alignItems: 'center' }}>
+                            <Ionicons name="refresh-circle-outline" size={30} color="#000000" />
+                            <Text style={{ fontSize: pxToDp(15) }}>售后/退款</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(10) }}>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={shoucang} />
-                            <Text style={{ fontSize: pxToDp(15),color:'grey' }}>商品收藏</Text>
-                        </View>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={dizhi} />
-                            <Text style={{ fontSize: pxToDp(15),color:'grey' }}>收货地址</Text>
-                        </View>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={fuwu} />
-                            <Text style={{ fontSize: pxToDp(15),color:'grey' }}>定制服务</Text>
-                        </View>
-                        <View style={{ alignSelf: 'center', alignItems: 'center' }}>
-                            <SvgUri width="30" height='30' svgXmlData={zuji} />
-                            <Text style={{ fontSize: pxToDp(13),color:'grey' }}>浏览足迹</Text>
-                        </View>
+                    <View style={{ marginTop: pxToDp(30) }}>
+                        <List icon='md-cart-outline' title="商城" />
+                        <List icon='md-videocam-outline' title="视频" />
+                        <List icon='md-star-outline' title="收藏" />
+                        <List icon='cafe-outline' title="话题" />
+                        <List icon='md-chatbubble-ellipses-outline' title="评论" />
+                        <List icon='time-outline' title="浏览" />
                     </View>
-                </View>
-            </ScrollView>
+                </ScrollView>
+            </View >
         );
     }
 }
-
-export default MyPage;
+export default Index;
