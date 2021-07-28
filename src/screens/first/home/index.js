@@ -20,7 +20,7 @@ class Index extends Component {
         return (
             <View >
                 <Top title="百越台" icon2="search" />
-                <ScrollView  style={{marginBottom:60}}>
+                <ScrollView style={{ marginBottom: 60 }}>
                     {/*轮播图 */}
                     <View style={{ height: pxToDp(160) }}>
                         <Swiper style={styles.wrapper}
@@ -74,13 +74,15 @@ class Index extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', marginTop: pxToDp(0) }}>
-                        <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
-                            <Text style={{ fontSize: pxToDp(20) }}>嵊州：越剧的起源地</Text>
-                            <Text style={{ fontSize: pxToDp(14), color: 'grey', marginBottom: pxToDp(10) }}>名家名篇</Text>
+                    <TouchableOpacity onPress={() => this.context.navigate("Article")}>
+                        <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', marginTop: pxToDp(0) }}>
+                            <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
+                                <Text style={{ fontSize: pxToDp(20) }}>嵊州：越剧的起源地</Text>
+                                <Text style={{ fontSize: pxToDp(14), color: 'grey', marginBottom: pxToDp(10) }}>名家名篇</Text>
+                            </View>
+                            <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10) }} source={require('../../../res/history/1.jpg')} />
                         </View>
-                        <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10) }} source={require('../../../res/history/1.jpg')} />
-                    </View>
+                    </TouchableOpacity>
                     <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey' }}>
                         <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
                             <Text style={{ fontSize: pxToDp(20) }} numberOfLines={2}>越剧十姐妹同台演出轰动上海</Text>
