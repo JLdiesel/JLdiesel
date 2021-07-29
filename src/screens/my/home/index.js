@@ -29,7 +29,7 @@ class Index extends Component {
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '70%' }}>
                             <View>
                                 <Text style={{ margin: pxToDp(10), fontSize: pxToDp(20), fontWeight: 'bold' }}>百越庭</Text>
-                                <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>总访客1.2万 | 今日80</Text>
+
                             </View>
                             <TouchableOpacity onPress={() => this.context.navigate("Setting")}>
                                 <Ionicons name="chevron-forward" size={25} color="#000000" />
@@ -68,7 +68,7 @@ class Index extends Component {
                         </View>
                         <View style={{ flexDirection: 'row', fontSize: pxToDp(15), margin: pxToDp(10) }}>
                             <TouchableOpacity onPress={()=>{this.context.navigate('Order')}}>
-                            <Text>查看全部订单</Text>
+                            <Text>全部订单</Text>
                             <Ionicons name="chevron-forward" size={17} color="#000000" />
                             </TouchableOpacity>
                         </View>
