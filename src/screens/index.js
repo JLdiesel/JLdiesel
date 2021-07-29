@@ -27,5 +27,6 @@ export { default as PageFour } from './first/home/pages/pagefour';//服装租赁
 export { default as Change } from './play/change';//服装租赁页
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
+export { default as Demo } from './play/home/demo';
 
 
