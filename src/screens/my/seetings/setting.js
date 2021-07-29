@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity,Image,ImageBackground,Text} from 'react-native';
-import List from '../../../component/common/list';
+
+
+
 import Top from '../../../component/common/top';
 import { NavigationContext } from "@react-navigation/native";
 import { pxToDp } from '../../../utils/styleKits';
