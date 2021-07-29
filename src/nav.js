@@ -3,19 +3,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from "./tabbar";
 import * as Screens from './screens'
-import Video from './component/Video'
 import Water from './component/water'
+import Video from '../screens/video'
 const Stack = createStackNavigator();
 
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="Tabbar">
+      <Stack.Navigator headerMode='none' initialRouteName="Login">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
         <Stack.Screen name="water" component={Water} />
-        <Stack.Screen name="video" component={Video} />
+        <Stack.Screen name="Video" component={Video} />
         {/*我的 */}
         <Stack.Screen name="My" component={Screens.Mine} />
         {/*游玩 */}
