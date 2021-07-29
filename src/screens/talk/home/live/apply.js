@@ -12,7 +12,7 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1="arrow-back" title="申请直播权限" />
-                <Text style={{fontSize:pxToDp(20)}}>请输入相应的文字资料</Text>
+                <Text style={{fontSize:pxToDp(18)}}>请输入相应的文字资料</Text>
                 <TextInput style={{ margin: pxToDp(20), height: pxToDp(200), borderRadius: pxToDp(20), backgroundColor: '#F5F5F5' }} placeholder="申请成为主播的原因" textAlign='center' />
                 <CheckBox
                     center

@@ -9,7 +9,11 @@ class Index extends Component {
             <View>
                 <Top icon1='arrow-back' title="隐私设置" />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(15) }}>
-                    <Text style={{ fontSize: pxToDp(20) }}>公开我的喜欢</Text>
+                    <Text style={{ fontSize: pxToDp(20) }}>公开我的关注</Text>
+                    <Switch value={true} />
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(15) }}>
+                    <Text style={{ fontSize: pxToDp(20) }}>公开我的粉丝</Text>
                     <Switch value={true} />
                 </View>
             </View>

@@ -16,12 +16,6 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1='arrow-back' title="设置" />
-                <TouchableOpacity onPress={() => this.context.navigate("Zhanghao")}>
-                    <List title="账号管理" />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.context.navigate("Ziliao")}>
-                    <List title="个人资料" />
-                </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.context.navigate("Tuisong")}>
                     <List title="消息与推送通知" />
                 </TouchableOpacity>

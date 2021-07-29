@@ -15,8 +15,6 @@ export { default as Tuisong } from './my/seetings/tuisong';//服装租赁页
 export { default as Women } from './my/seetings/women';//服装租赁页
 export { default as Yijian } from './my/seetings/yijian';//服装租赁页
 export { default as Yinsi } from './my/seetings/yinsi';//服装租赁页
-export { default as Zhanghao } from './my/seetings/zhanghao';//服装租赁页
-export { default as Ziliao } from './my/seetings/ziliao';//服装租赁页
 export { default as Act } from './play/act';//服装租赁页
 export { default as Apply } from './talk/home/live/apply';//服装租赁页
 export { default as Create } from './talk/home/live/create';//服装租赁页
@@ -28,5 +26,13 @@ export { default as Change } from './play/change';//服装租赁页
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
 export { default as Actress } from './first/actress';
-export { default as School } from './first/school'
+export { default as School } from './first/school';
+export { default as History } from './my/history';
+export { default as Jifenshop } from './my/jifenshop/jifenshop';
+export { default as Order } from './my/order';
+export { default as Orderone } from './my/order/pages/orderone';
+export { default as Ordertwo } from './my/order/pages/ordertwo';
+export { default as Orderthree } from './my/order/pages/orderthree';
+export { default as Orderfour } from './my/order/pages/orderfour';
+export { default as Refund } from './my/order/pages/refund'
 

@@ -8,7 +8,7 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1='arrow-back' title="意见反馈" />
-                <TextInput style={{margin:pxToDp(20), height:pxToDp(200),borderRadius:pxToDp(20),backgroundColor:'lightgrey'}} placeholder="留下你宝贵的意见或建议..."/>
+                <TextInput style={{margin:pxToDp(20), height:pxToDp(200),borderRadius:pxToDp(20),backgroundColor:'lightgrey',textAlign:'center'}} placeholder="留下你宝贵的意见或建议..."/>
             </View>
         );
     }

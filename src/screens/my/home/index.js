@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, RefreshControl } from 'react-native';
 import { pxToDp } from "@utils/styleKits";
 import Top from '@components/common/top';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from 'react-native-vector-icons/FontAwesome';
 import List from '@components/common/list';
 import { NavigationContext } from "@react-navigation/native";
 
@@ -17,31 +17,27 @@ class Index extends Component {
     render() {
         return (
             <View>
-                <Top title="戏痴"/>
+                <Top title="戏痴" />
                 <ScrollView
                     refreshControl={<RefreshControl />}>
                     <View style={{ flexDirection: 'row' }}>
                         <TouchableOpacity>
-                        <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30), margin: pxToDp(10) }} source={require('../../../res/4.jpg')}></Image>
+                            <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30), margin: pxToDp(10) }} source={require('../../../res/4.jpg')}></Image>
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '70%' }}>
                             <View>
                                 <Text style={{ margin: pxToDp(10), fontSize: pxToDp(20), fontWeight: 'bold' }}>百越庭</Text>
-                                <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>总访客1.2万 | 今日80</Text>
                             </View>
-                            <TouchableOpacity onPress={() => this.context.navigate("Setting")}>
-                                <Ionicons name="chevron-forward" size={25} color="#000000" />
-                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                         <View style={{ alignItems: 'center' }}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>17</Text>
-                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>动态</Text>
+                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>点赞</Text>
                         </View>
                         <View style={{ alignItems: 'center' }}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>99</Text>
-                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>点赞</Text>
+                            <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>收藏</Text>
                         </View>
                         <View style={{ alignItems: 'center' }}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>188</Text>
@@ -52,40 +48,56 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>粉丝</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between',marginTop:pxToDp(20)}}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(10), marginTop: pxToDp(20) }}>
                         <View>
-                            <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>我的订单</Text>
+                            <Text style={{ fontSize: pxToDp(18) }}>我的订单</Text>
                         </View>
-                        <View style={{ flexDirection: 'row', fontSize: pxToDp(15), margin: pxToDp(10) }}>
-                            <Text>查看全部订单</Text>
-                            <Ionicons name="chevron-forward" size={17} color="#000000" />
-                        </View>
+                        <TouchableOpacity onPress={() => this.context.navigate("Order")}>
+                            <View style={{ flexDirection: 'row', fontSize: pxToDp(15), marginRight: pxToDp(8) }}>
+                                <Text>查看全部订单 </Text>
+                                <Ionicons name="angle-right" size={17} color="#000000" />
+                            </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(10) }}>
-                        <View style={{ alignItems: 'center' }}>
-                            <Ionicons name="card-outline" size={30} color="#000000" />
-                            <Text style={{ fontSize: pxToDp(15) }}>待支付</Text>
-                        </View>
-                        <View style={{ alignItems: 'center' }}>
-                            <Ionicons name="alarm-outline" size={30} color="#000000" />
-                            <Text style={{ fontSize: pxToDp(15) }}>待使用</Text>
-                        </View>
-                        <View style={{ alignItems: 'center' }}>
-                            <Ionicons name="chatbox-outline" size={30} color="#000000" />
-                            <Text style={{ fontSize: pxToDp(15) }}>待评价</Text>
-                        </View>
-                        <View style={{ alignItems: 'center' }}>
-                            <Ionicons name="refresh-circle-outline" size={30} color="#000000" />
-                            <Text style={{ fontSize: pxToDp(15) }}>售后/退款</Text>
-                        </View>
+                        <TouchableOpacity onPress={() => this.context.navigate("Order",1)}>
+                            <View style={{ alignItems: 'center' }}>
+                                <Ionicons name="credit-card" size={30} color="#000000" />
+                                <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>待支付</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.context.navigate("Order",2)}>
+                            <View style={{ alignItems: 'center' }}>
+                                <Ionicons name="truck" size={30} color="#000000" />
+                                <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>待收货</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.context.navigate("Order",3)}>
+                            <View style={{ alignItems: 'center' }}>
+                                <Ionicons name="commenting-o" size={30} color="#000000" />
+                                <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>待评价</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.context.navigate("Refund")}>
+                            <View style={{ alignItems: 'center' }}>
+                                <Ionicons name="handshake-o" size={30} color="#000000" />
+                                <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>售后/退款</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
-                    <View style={{ marginTop: pxToDp(30) }}>
-                        <List icon='md-cart-outline' title="商城" />
-                        <List icon='md-videocam-outline' title="视频" />
-                        <List icon='md-star-outline' title="收藏" />
-                        <List icon='cafe-outline' title="话题" />
-                        <List icon='md-chatbubble-ellipses-outline' title="评论" />
-                        <List icon='time-outline' title="浏览" />
+                    <View style={{ marginTop: pxToDp(20) }}>
+                        <TouchableOpacity onPress={() => this.context.navigate("Jifenshop")} >
+                            <List icon='server-outline' title="积分商城" />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.context.navigate("History")} >
+                            <List icon='time-outline' title="历史浏览" />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.context.navigate("Apply")} >
+                            <List icon='videocam-outline' title="直播申请" />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.context.navigate("Setting")} >
+                            <List icon='settings-outline' title="设置" />
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
             </View >
