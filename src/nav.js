@@ -63,7 +63,6 @@ function Nav() {
         <Stack.Screen name="PageFour" component={Screens.PageFour} />
         {/* <Stack.Screen name="Myroute" component={Screens.Myroute} /> */}
         {/*个人首页 */}
-        <Stack.Screen name="Demo" component={Screens.Demo} />
         <Stack.Screen name="Article" component={Screens.Article} />
         <Stack.Screen name="Drama" component={Screens.Drama} />
         {/*DEMO */}
