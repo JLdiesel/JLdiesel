@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity,Image} from 'react-native';
 import List from '../../../component/common/list';
 import Top from '../../../component/common/top';
 import { NavigationContext } from "@react-navigation/native";
@@ -14,14 +14,14 @@ class Index extends Component {
     static contextType = NavigationContext;
     render() {
         return (
-            <View>
+            <View style={{flexDirection:'row'}}>
                 <Top icon1='arrow-back' title="设置" />
-                <TouchableOpacity onPress={() => this.context.navigate("Zhanghao")}>
-                    <List title="账号管理" />
-                </TouchableOpacity>
+                <View>
                 <TouchableOpacity onPress={() => this.context.navigate("Ziliao")}>
+                    <Image source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}} style={{width:50,height:50,borderRadius:50}}/>
                     <List title="个人资料" />
                 </TouchableOpacity>
+                </View>
                 <TouchableOpacity onPress={() => this.context.navigate("Tuisong")}>
                     <List title="消息与推送通知" />
                 </TouchableOpacity>
