@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView, TextInput } from "react-native";
-import Top from '../../../component/common/top'
-import { pxToDp } from "../../../utils/styleKits";
+import Top from '@components/common/top'
+import { pxToDp } from "@utils/styleKits";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class Index extends Component {
@@ -9,8 +9,8 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1="arrow-back" title="文章详情" icon2="ellipsis-horizontal" />
-                <View>
-                    <ScrollView style={{ marginBottom: pxToDp(120) }}>
+                <View >
+                    <ScrollView style={{ marginBottom: pxToDp(160) }}>
                         <View style={{ marginLeft: pxToDp(15), marginRight: pxToDp(15), marginTop: pxToDp(15) }}>
                             {/**文章标题 */}
                             <Text style={{ fontSize: pxToDp(20), fontWeight: 'bold' }}>嵊州 越剧的起源地</Text>
@@ -55,10 +55,14 @@ class Index extends Component {
                             </View>
                             <Text style={{ fontSize: pxToDp(20), marginLeft: pxToDp(25) }}> 打卡</Text>
                         </View>
+<<<<<<< HEAD
+                      
+=======
+>>>>>>> 4f1c3e992e26dfd968923570f1175ecce4cdea81
                     </ScrollView>
                 </View>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', height: pxToDp(50) }}>
-                    <TextInput style={{ height: pxToDp(30), width: pxToDp(100), backgroundColor: 'lightgrey' }} placeholder="我要评论"></TextInput>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around',alignItems:'center',alignContent:'center', height: pxToDp(40), width:'100%', position:'absolute',bottom:60}}>
+                    <TextInput style={{ height: pxToDp(30), width: pxToDp(180), borderRadius:pxToDp(10),backgroundColor: 'lightgrey',paddingLeft:pxToDp(5) }}  placeholder="我要评论"></TextInput>
                     <Ionicons name="md-chatbox-ellipses-outline" size={28} color="grey" />
                     <Ionicons name="heart-outline" size={28} color="grey" />
                     <Ionicons name="star-outline" size={28} color="grey" />

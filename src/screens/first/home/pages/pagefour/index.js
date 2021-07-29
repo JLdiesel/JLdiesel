@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { pxToDp } from '../../../../../utils/styleKits';
+import { pxToDp } from '@utils/styleKits';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Top from '../../../../../component/common/top'
+import Top from '@components/common/top'
+import { NavigationContext } from "@react-navigation/native";
 
 
 class Index extends Component {
+    static contextType = NavigationContext;
     render() {
         return (
             <View>
@@ -25,6 +27,7 @@ class Index extends Component {
                             <Text style={styles.text1}>红色经典</Text>
                         </View>
                     </View>
+                    <TouchableOpacity onPress={()=>this.context.navigate('Video')}>
                     <View style={styles.box}>
                         <Image style={styles.image} source={require('../../../../../res/13.jpg')} />
                         <View style={styles.botbox}>
@@ -34,7 +37,7 @@ class Index extends Component {
                                 <Text style={styles.text2}>2004观看 * 07-23</Text>
                             </View>
                         </View>
-                    </View>
+                    </View></TouchableOpacity>
                     <View style={styles.box}>
                         <Image style={styles.image} source={require('../../../../../res/11.jpg')} />
                         <View style={styles.botbox}>

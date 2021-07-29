@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
-import Model from './Modal';
+import Model from './Modal'
 import { TouchableOpacity } from 'react-native';
 import { Button, Text, View, StyleSheet, ScrollView,ImageBackground } from 'react-native';
-import { pxToDp } from '@utils/styleKits';
+import { pxToDp } from '../../utils/stylesKits';
 
 // import React, { Component } from 'react';
 
@@ -25,12 +25,12 @@ class index extends Component {
     }
     render() {
 
-        const { item } = this.props
+        const { arr } = this.props
 
         return (
             <View>
-              
-                    <View key={index} style={{  width: 120, height: 150, justifyContent: 'center' ,marginLeft:pxToDp(10)}}>
+                {arr.map(item => (
+                    <View key={index} style={{  width: 150, height: 150, justifyContent: 'center' ,marginLeft:pxToDp(10)}}>
                         {/* <Button title="我打开了" onPress={toggleModal} /> */}
                         <TouchableOpacity
                             style={{ justifyContent: 'center', alignItems: 'center' }}
@@ -38,10 +38,10 @@ class index extends Component {
                         >
                             <View>
                                 <ImageBackground
-                                    style={{ width: 120, height: 150 ,}} source={{ uri: item.uriFace }} imageStyle={{borderRadius:pxToDp(10)}}
+                                    style={{ width: 150, height: 150 ,}} source={{ uri: item.uriFace }} imageStyle={{borderRadius:pxToDp(20)}}
                                 >
-                                    <View style={{ justifyContent: 'center', alignItems: 'center',height:150 }}>
-                                        <Text style={{ fontSize: 24,alignItems:'center',justifyContent:'center' }}>
+                                    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                                        <Text style={{ fontSize: 28 }}>
                                             {item.teaname}
                                         </Text>
                                     </View>
@@ -49,10 +49,10 @@ class index extends Component {
                             </View>
                         </TouchableOpacity>
 
-                        <Model item={item} isModalVisible={this.state.isModalVisible} toggleModalProps={this.toggleModal} />
+                        <Model arr={this.props.arr} isModalVisible={this.state.isModalVisible} toggleModalProps={this.toggleModal} />
 
                     </View>
-              
+                ))}
             </View>
         );
     }

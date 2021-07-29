@@ -3,19 +3,23 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from "./tabbar";
 import * as Screens from './screens'
-import Video from './component/Video'
 import Water from './component/water'
+import Video from '../screens/video'
 const Stack = createStackNavigator();
 
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="Tabbar">
+<<<<<<< HEAD
+      <Stack.Navigator headerMode='none' initialRouteName="Login">
+=======
+      <Stack.Navigator headerMode='none' initialRouteName="Model">
+>>>>>>> 4f1c3e992e26dfd968923570f1175ecce4cdea81
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
         <Stack.Screen name="water" component={Water} />
-        <Stack.Screen name="video" component={Video} />
+        <Stack.Screen name="Video" component={Video} />
         {/*我的 */}
         <Stack.Screen name="My" component={Screens.Mine} />
         {/*游玩 */}
@@ -63,6 +67,8 @@ function Nav() {
         <Stack.Screen name="PageFour" component={Screens.PageFour} />
         {/* <Stack.Screen name="Myroute" component={Screens.Myroute} /> */}
         {/*个人首页 */}
+
+
         <Stack.Screen name="Article" component={Screens.Article} />
         <Stack.Screen name="Actress" component={Screens.Actress} />
         <Stack.Screen name="School" component={Screens.School} />
