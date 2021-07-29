@@ -25,6 +25,7 @@ export { default as PageTwo } from './first/home/pages/pagetwo';//服装租赁�
 export { default as PageThree } from './first/home/pages/pagethree';//服装租赁页
 export { default as PageFour } from './first/home/pages/pagefour';//服装租赁页
 export { default as Change } from './play/change';//服装租赁页
-export { default as Article } from './first/article'
+export { default as Article } from './first/article';
+export { default as Drama } from './play/act/drama';
 
 

@@ -22,14 +22,14 @@ class Index extends Component {
                     {/*戏服体验馆 */}
                     <View>
                         <TouchableOpacity onPress={() => this.context.navigate("Change")}>
-                        <ImageBackground style={{ height: pxToDp(170), width: pxToDp(355), margin: pxToDp(10) }} source={require('../../../res/27.jpg')}>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(80) }}>
-                                <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/1.jpg')} />
-                                <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/2.jpg')} />
-                                <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/3.jpg')} />
-                                <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/4.jpg')} />
-                            </View>
-                        </ImageBackground>
+                            <ImageBackground style={{ height: pxToDp(170), width: pxToDp(355), margin: pxToDp(10) }} source={require('../../../res/27.jpg')}>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(80) }}>
+                                    <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/1.jpg')} />
+                                    <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/2.jpg')} />
+                                    <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/3.jpg')} />
+                                    <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/4.jpg')} />
+                                </View>
+                            </ImageBackground>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginLeft: pxToDp(30), marginRight: pxToDp(30) }}>
@@ -50,17 +50,23 @@ class Index extends Component {
                     <View>
                         <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>单人练唱</Text>
                         <TouchableOpacity onPress={() => this.context.navigate("Study")}>
-                        <Image style={{ height: pxToDp(130), width: pxToDp(350), marginLeft: pxToDp(15) }} source={require('../../../res/26.jpg')} />
+                            <Image style={{ height: pxToDp(130), width: pxToDp(350), marginLeft: pxToDp(15) }} source={require('../../../res/26.jpg')} />
                         </TouchableOpacity>
                     </View>
                     {/*双人剧本 */}
                     <View>
                         <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>双人剧本</Text>
                         <View style={{ flexDirection: 'row', marginLeft: pxToDp(10) }}>
-                            <Image style={{ height: pxToDp(180), width: pxToDp(180), borderRadius: pxToDp(10) }} source={require('../../../res/23.jpg')} />
+                            <TouchableOpacity>
+                                <Image style={{ height: pxToDp(180), width: pxToDp(180), borderRadius: pxToDp(10) }} source={require('../../../res/23.jpg')} />
+                            </TouchableOpacity>
                             <View style={{ marginLeft: pxToDp(10) }}>
-                                <Image style={{ height: pxToDp(85), width: pxToDp(165), borderRadius: pxToDp(10) }} source={require('../../../res/24.jpg')} />
-                                <Image style={{ height: pxToDp(85), width: pxToDp(165), borderRadius: pxToDp(10), marginTop: pxToDp(10) }} source={require('../../../res/25.jpg')} />
+                                <TouchableOpacity>
+                                    <Image style={{ height: pxToDp(85), width: pxToDp(165), borderRadius: pxToDp(10) }} source={require('../../../res/24.jpg')} />
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Image style={{ height: pxToDp(85), width: pxToDp(165), borderRadius: pxToDp(10), marginTop: pxToDp(10) }} source={require('../../../res/25.jpg')} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -68,7 +74,9 @@ class Index extends Component {
                     <View>
                         <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>剧本推荐</Text>
                         <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(130) }}>
-                            <Image style={{ height: pxToDp(120), width: pxToDp(120), borderRadius: pxToDp(10) }} source={require('../../../res/play/1.jpg')} />
+                            <TouchableOpacity onPress={() => this.context.navigate("Drama")}>
+                                <Image style={{ height: pxToDp(120), width: pxToDp(120), borderRadius: pxToDp(10) }} source={require('../../../res/play/1.jpg')} />
+                            </TouchableOpacity>
                             <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
                                 <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold', }}>追鱼 书馆</Text>
                                 <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>我张珍远道来投亲</Text>
