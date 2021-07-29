@@ -14,7 +14,9 @@ class Index extends Component {
         }
     }
     static contextType = NavigationContext;
-    render() {
+  
+    render() {  
+        
         return (
             <View>
                 <Top title="戏痴"/>
@@ -36,20 +38,28 @@ class Index extends Component {
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>17</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>动态</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>99</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>点赞</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>188</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>关注</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>49</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>粉丝</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between',marginTop:pxToDp(20)}}>
@@ -57,35 +67,46 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>我的订单</Text>
                         </View>
                         <View style={{ flexDirection: 'row', fontSize: pxToDp(15), margin: pxToDp(10) }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Order')}}>
                             <Text>查看全部订单</Text>
                             <Ionicons name="chevron-forward" size={17} color="#000000" />
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(10) }}>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Pay')}}>
                             <Ionicons name="card-outline" size={30} color="#000000" />
                             <Text style={{ fontSize: pxToDp(15) }}>待支付</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                        <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Ionicons name="alarm-outline" size={30} color="#000000" />
                             <Text style={{ fontSize: pxToDp(15) }}>待使用</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Waitcomment')}}>
                             <Ionicons name="chatbox-outline" size={30} color="#000000" />
                             <Text style={{ fontSize: pxToDp(15) }}>待评价</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Ionicons name="refresh-circle-outline" size={30} color="#000000" />
                             <Text style={{ fontSize: pxToDp(15) }}>售后/退款</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={{ marginTop: pxToDp(30) }}>
-                        <List icon='md-cart-outline' title="商城" />
-                        <List icon='md-videocam-outline' title="视频" />
-                        <List icon='md-star-outline' title="收藏" />
-                        <List icon='cafe-outline' title="话题" />
-                        <List icon='md-chatbubble-ellipses-outline' title="评论" />
-                        <List icon='time-outline' title="浏览" />
+                       
+                        <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}><List icon='md-cart-outline' title="商城" /></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}><List icon='md-videocam-outline' title="视频" /></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}><List icon='md-star-outline' title="收藏" /></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}><List icon='cafe-outline' title="话题" /></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}><List icon='md-chatbubble-ellipses-outline' title="评论" /></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}><List icon='time-outline' title="浏览" /></TouchableOpacity>
                     </View>
                 </ScrollView>
             </View >

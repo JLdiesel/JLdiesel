@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 import { ACCOUNT_LOGIN, ACCOUNT_REGISTER } from './pathMap'
 import { NavigationContext } from "@react-navigation/native";
 import {changeToken} from '../store/actions'
+import { pxToDp } from "@utils/styleKits";
  class Login extends Component {
 static contextType = NavigationContext;
 
@@ -147,13 +148,13 @@ static contextType = NavigationContext;
 
 
         <ImageBackground source={require('./11.jpg')} style={{ width: '100%', height: '100%' }}>
-          <Image source={require('./111.png')} style={{ width: 150, height: 150, position: 'absolute', left: 120, top: 20 }} />
+          <Image source={require('./111.png')} style={{ width: pxToDp(150), height: pxToDp(150), position: 'absolute', left: pxToDp(120), top: pxToDp(30) }} />
           <Animated.Text
             style={[
               styles.opcity1,
               {
                 opacity: this.state.opcitytext1, // Bind opacity to animated value
-                left: 50,
+                left: pxToDp(50),
               }
             ]}>
             至死不负情
@@ -162,7 +163,7 @@ static contextType = NavigationContext;
             style={[
               styles.opcity1,
               {
-                top: 100,
+                top: pxToDp(100),
                 opacity: this.state.opcitytext2 // Bind opacity to animated value
               }
             ]}>
@@ -182,7 +183,7 @@ static contextType = NavigationContext;
             style={[
               styles.opcity2,
               {
-                right: 50, top: 100,
+                right: pxToDp(50), top:pxToDp(100),
                 opacity: this.state.opcitytext4 // Bind opacity to animated value
               }
             ]}>
@@ -192,8 +193,8 @@ static contextType = NavigationContext;
 
 
 
-          <View style={{ borderRadius: 20, height: this.state.loginbox, width: 250, position: 'absolute', top: 300, left: 75, overflow: 'hidden' }}>
-            <View style={{ width: '80%', marginLeft: 20, marginTop: 25 }}>
+          <View style={{ borderRadius: 20, height: this.state.loginbox, width: pxToDp(250), position: 'absolute', top: pxToDp(300), left: pxToDp(75), overflow: 'hidden' }}>
+            <View style={{ width: '80%', marginLeft: pxToDp(20), marginTop: pxToDp(25) }}>
               <Input
                 placeholder='我是恁爹'
                 leftIcon={
@@ -206,7 +207,7 @@ static contextType = NavigationContext;
                 value={this.state.username}
               />
             </View>
-            <View style={{ width: '80%', marginLeft: 20 }}>
+            <View style={{ width: '80%', marginLeft: pxToDp(20) }}>
               <Input
                 secureTextEntry={true}
                 placeholder="我是恁爹"
@@ -221,13 +222,13 @@ static contextType = NavigationContext;
               <Text>登录</Text>
             </TouchableOpacity>
             {/*第三方登录--------------------------------*/}
-            <View style={{ position: 'absolute', bottom: 20, left: 30, borderTopWidth: 1, borderColor: '#b0bfc4', width: 190, height: 70, flexDirection: 'row' }} >
-              <Image source={require('./bg.jpg')} style={{ width: 50, height: 50, borderRadius: 60, marginLeft: 28, marginTop: 10 }} />
-              <Image source={require('./bg.jpg')} style={{ width: 50, height: 50, borderRadius: 60, marginLeft: 37, marginTop: 10 }} />
+            <View style={{ position: 'absolute', bottom: pxToDp(20), left: pxToDp(30), borderTopWidth: 1, borderColor: '#b0bfc4', width: pxToDp(190), height: pxToDp(70), flexDirection: 'row' }} >
+              <Image source={require('./bg.jpg')} style={{ width: pxToDp(50), height: pxToDp(50), borderRadius: pxToDp(60), marginLeft: pxToDp(28), marginTop: pxToDp(10) }} />
+              <Image source={require('./bg.jpg')} style={{ width: pxToDp(50), height: pxToDp(50), borderRadius: pxToDp(60), marginLeft: pxToDp(37), marginTop: pxToDp(10) }} />
             </View>
           </View>
-          <View style={{ borderRadius: 20, height: this.state.regbox, width: 250, position: 'absolute', top: 300, left: 75, overflow: 'hidden' }}>
-            <View style={{ width: '80%', marginLeft: 20, marginTop: 15 }}>
+          <View style={{ borderRadius: 20, height: this.state.regbox, width: pxToDp(250), position: 'absolute', top: pxToDp(300), left: pxToDp(75), overflow: 'hidden' }}>
+            <View style={{ width: '80%', marginLeft: pxToDp(20), marginTop: pxToDp(15) }}>
               <Input
                 placeholder='恁是我爹'
                 leftIcon={
@@ -240,7 +241,7 @@ static contextType = NavigationContext;
                 value={this.state.regusername}
               />
             </View>
-            <View style={{ width: '80%', marginLeft: 20 }}>
+            <View style={{ width: '80%', marginLeft:pxToDp(20) }}>
               <Input
                 secureTextEntry={true}
                 placeholder="我是恁爹"
@@ -249,7 +250,7 @@ static contextType = NavigationContext;
                 value={this.state.regpassword1}
               />
             </View>
-            <View style={{ width: '80%', marginLeft: 20 }}>
+            <View style={{ width: '80%', marginLeft: pxToDp(20)}}>
               <Input
                 secureTextEntry={true}
                 placeholder="我是恁爹"
@@ -278,14 +279,14 @@ static contextType = NavigationContext;
 }
 const styles = StyleSheet.create({
   opcity1: {
-    position: 'absolute', width: 20, top: 20, left: 20, fontSize: 20, alignItems: 'center'
+    position: 'absolute', width: pxToDp(20), top: pxToDp(20), left: pxToDp(20), fontSize: pxToDp(20), alignItems: 'center'
   },
   opcity2: {
-    position: 'absolute', width: 20, top: 20, right: 20, fontSize: 20, alignItems: 'center'
+    position: 'absolute', width: pxToDp(20), top: pxToDp(20), right: pxToDp(20), fontSize: pxToDp(20), alignItems: 'center'
   },
-  login: { position: 'absolute', top: 650, left: 60, backgroundColor: '#ad0000', width: 120, height: 50, alignItems: 'center', justifyContent: 'center' },
-  loginbtn: { width: 100, height: 40, justifyContent: 'center', alignItems: 'center', backgroundColor: 'skyblue', left: 75, borderRadius: 20 }
-  , register: { position: 'absolute', top: 650, right: 60, backgroundColor: '#00A4A6', width: 120, height: 50, alignItems: 'center', justifyContent: 'center' }
+  login: { position: 'absolute', top:pxToDp(650), left:pxToDp(60), backgroundColor: '#ad0000', width: pxToDp(120), height: pxToDp(50), alignItems: 'center', justifyContent: 'center' },
+  loginbtn: { width: pxToDp(100), height: pxToDp(40), justifyContent: 'center', alignItems: 'center', backgroundColor: 'skyblue', left: pxToDp(75), borderRadius: 20 }
+  , register: { position: 'absolute', top: pxToDp(650), right:pxToDp(60), backgroundColor: '#00A4A6', width: pxToDp(120), height:pxToDp(50), alignItems: 'center', justifyContent: 'center' }
 })
 
 export default connect(state => ({token:state.getIn(['LoginReducer','token'])}), {
