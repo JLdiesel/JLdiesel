@@ -1,35 +1,21 @@
-import React, { Component } from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import List from '../../../component/common/list';
-import Top from '../../../component/common/top';
-import { NavigationContext } from "@react-navigation/native";
+import React from 'react';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+import CustormerBar from './component/CustormerBar';
+import Dongtai  from './component/dontai'
+import Collect from './component/collect';
+import Soucang from './component/soucang'
 
-class Index extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
 
-        }
-    }
-    static contextType = NavigationContext;
-    render() {
-        return (
-            <View>
-                <Top icon1='arrow-back' title="设置" />
-                <TouchableOpacity onPress={() => this.context.navigate("Tuisong")}>
-                    <List title="消息与推送通知" />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.context.navigate("Yinsi")}>
-                    <List title="隐私设置" />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.context.navigate("Yijian")}>
-                    <List title="意见反馈" />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.context.navigate("Women")}>
-                    <List title="关于我们" />
-                </TouchableOpacity>
-            </View>
-        );
-    }
+export default  () => {
+  return(
+  <ScrollableTabView
+    initialPage={0}
+    renderTabBar={() => <CustormerBar />}
+  >   
+  <Collect tabLabel='收藏'/>
+  <Dongtai tabLabel='动态'/>
+  
+    <Soucang tabLabel='剧本中心'/>
+  </ScrollableTabView>
+  );
 }
-export default Index;

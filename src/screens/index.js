@@ -10,7 +10,7 @@ export { default as Details } from './play/study/details';//商品详情页
 export { default as Sing } from './play/study/sing';//商品详情页
 export { default as Zhoubian } from './shop/home/zhoubian';//周边页
 export { default as Zulin } from './shop/home/zulin';//服装租赁页
-export { default as Setting } from './my/seetings/setting';//服装租赁页
+export { default as Set} from './my/seetings/set';//服装租赁页
 export { default as Tuisong } from './my/seetings/tuisong';//服装租赁页
 export { default as Women } from './my/seetings/women';//服装租赁页
 export { default as Yijian } from './my/seetings/yijian';//服装租赁页
@@ -34,5 +34,5 @@ export { default as Orderone } from './my/order/pages/orderone';
 export { default as Ordertwo } from './my/order/pages/ordertwo';
 export { default as Orderthree } from './my/order/pages/orderthree';
 export { default as Orderfour } from './my/order/pages/orderfour';
-export { default as Refund } from './my/order/pages/refund'
-
+export { default as Refund } from './my/order/pages/refund';
+export { default as Setting } from './my/seetings/setting'

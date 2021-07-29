@@ -40,7 +40,7 @@ function Nav() {
         {/*周边商城页 */}
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
-        <Stack.Screen name="Setting" component={Screens.Setting} />
+        <Stack.Screen name="Set" component={Screens.Set} />
         {/*具体的设置内容。。。 */}
         <Stack.Screen name="Women" component={Screens.Women} />
         <Stack.Screen name="Tuisong" component={Screens.Tuisong} />
@@ -75,6 +75,7 @@ function Nav() {
         <Stack.Screen name="Orderthree" component={Screens.Orderthree} />
         <Stack.Screen name="Orderfour" component={Screens.Orderfour} />
         <Stack.Screen name="Refund" component={Screens.Refund} />
+        <Stack.Screen name="Setting" component={Screens.Setting} />
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>

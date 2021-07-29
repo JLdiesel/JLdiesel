@@ -21,7 +21,7 @@ class Index extends Component {
                 <ScrollView
                     refreshControl={<RefreshControl />}>
                     <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity  onPress={() => this.context.navigate("Setting")}>
                             <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30), margin: pxToDp(10) }} source={require('../../../res/4.jpg')}></Image>
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '70%' }}>
@@ -95,7 +95,7 @@ class Index extends Component {
                         <TouchableOpacity onPress={() => this.context.navigate("Apply")} >
                             <List icon='videocam-outline' title="直播申请" />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.context.navigate("Setting")} >
+                        <TouchableOpacity onPress={() => this.context.navigate("Set")} >
                             <List icon='settings-outline' title="设置" />
                         </TouchableOpacity>
                     </View>
