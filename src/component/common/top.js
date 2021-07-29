@@ -13,6 +13,7 @@ export default class HeaderHaveBack extends Component {
 
     }
 }
+
 static contextType = NavigationContext;
   render() {
     return (

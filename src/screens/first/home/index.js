@@ -7,7 +7,6 @@ import Swiper from 'react-native-swiper';
 import ActressView from '@components/common/actressview';
 import GenerView from '@components/common/generview';
 import { NavigationContext } from "@react-navigation/native";
-
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -20,16 +19,16 @@ class Index extends Component {
         return (
             <View >
                 <Top title="百越台" icon2="search" />
-                <ScrollView  style={{marginBottom:60}}>
+                <ScrollView style={{ marginBottom: 60 }}>
                     {/*轮播图 */}
                     <View style={{ height: pxToDp(160) }}>
                         <Swiper style={styles.wrapper}
                             removeClippedSubviews={false}
-                            showsButtons={false}         //显示控制按钮
-                            loop={true}                    //如果设置为false，那么滑动到最后一张时，再次滑动将不会滑到第一张图片。
-                            autoplay={true}              //自动轮播
-                            showsPagination={false}   //是否显示小圆点
-                            autoplayTimeout={3}          //每隔3秒切换
+                            showsButtons={false}         //显示控制按钮
+                            loop={true}                    //如果设置为false，那么滑动到最后一张时，再次滑动将不会滑到第一张图片。
+                            autoplay={true}              //自动轮播
+                            showsPagination={false}   //是否显示小圆点
+                            autoplayTimeout={3}          //每隔3秒切换
                         >
                             <View style={styles.slide1}>
                                 <Image style={styles.image1} source={require('../../../res/22.jpg')} />
@@ -74,13 +73,15 @@ class Index extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', marginTop: pxToDp(0) }}>
-                        <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
-                            <Text style={{ fontSize: pxToDp(20) }}>嵊州：越剧的起源地</Text>
-                            <Text style={{ fontSize: pxToDp(14), color: 'grey', marginBottom: pxToDp(10) }}>名家名篇</Text>
+                    <TouchableOpacity onPress={() => this.context.navigate("Article")}>
+                        <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', marginTop: pxToDp(0) }}>
+                            <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
+                                <Text style={{ fontSize: pxToDp(20) }}>嵊州：越剧的起源地</Text>
+                                <Text style={{ fontSize: pxToDp(14), color: 'grey', marginBottom: pxToDp(10) }}>名家名篇</Text>
+                            </View>
+                            <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10) }} source={require('../../../res/history/1.jpg')} />
                         </View>
-                        <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10) }} source={require('../../../res/history/1.jpg')} />
-                    </View>
+                    </TouchableOpacity>
                     <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey' }}>
                         <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
                             <Text style={{ fontSize: pxToDp(20) }} numberOfLines={2}>越剧十姐妹同台演出轰动上海</Text>
@@ -109,9 +110,10 @@ class Index extends Component {
                     </View>
                     <ScrollView horizontal={true}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+                            <TouchableOpacity  onPress={() => this.context.navigate("Actress")}>
                             <ActressView
                                 picture={require('../../../res/performer/1.jpg')}
-                                name="方亚芬" />
+                                name="方亚芬" /></TouchableOpacity>
                             <ActressView
                                 picture={require('../../../res/performer/2.jpg')}
                                 name="王文娟" />
@@ -144,10 +146,11 @@ class Index extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
+                    <TouchableOpacity onPress={() => this.context.navigate("School")}>
                     <GenerView
                         picture={require('../../../res/genre/1.jpg')}
                         name="袁派"
-                        special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" />
+                        special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" /></TouchableOpacity>
                     <GenerView
                         picture={require('../../../res/genre/2.jpg')}
                         name="范派"

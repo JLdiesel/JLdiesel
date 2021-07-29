@@ -35,6 +35,11 @@ export default class ModalT extends Component {
             >
                 <View style={{ flex: 1, backgroundColor: '#eee', borderRadius: 20, padding: 10 }}>
                     <ScrollView>
+
+
+                        {
+                            
+                        }
                         {arr.map(item => (
                             <View key={item.id}>
                             

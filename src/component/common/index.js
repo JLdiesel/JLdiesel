@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
-
-import Model from '../../components/Model';
+import Model from './Modal'
 import { TouchableOpacity } from 'react-native';
 import { Button, Text, View, StyleSheet, ScrollView,ImageBackground } from 'react-native';
 import { pxToDp } from '../../utils/stylesKits';
