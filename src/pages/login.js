@@ -28,7 +28,7 @@ class Login extends Component {
         <Image style={{ width: pxToDp(180), height: pxToDp(150), marginLeft: pxToDp(100), marginTop: pxToDp(70) }} source={require('../res/4.jpg')} />
 
         {/*手机号码 密码输入框*/}
-        <View style={{ marginTop: pxToDp(30), marginLeft: pxToDp(10), marginRight: pxToDp(30) }}>
+        <View style={{ marginTop: pxToDp(30), marginLeft: pxToDp(20), marginRight: pxToDp(30) }}>
           <Input
             placeholder='请输入手机号码'
             maxLength={11}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-native-modal';
-import { ScrollView, View, Text, Image, Button, StyleSheet, ImageBackground } from 'react-native';
+import { ScrollView, View, Text, Image, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import FlipCard from 'react-native-flip-card';
 
@@ -14,7 +14,7 @@ export default class ModalT extends Component {
 
     render() {
 
-        const { isModalVisible, toggleModalProps, arr } = this.props
+        const { isModalVisible, toggleModalProps, item } = this.props
         // console.log(arr);
         return (
             <Modal
@@ -35,51 +35,36 @@ export default class ModalT extends Component {
             >
                 <View style={{ flex: 1, backgroundColor: '#eee', borderRadius: 20, padding: 10 }}>
                     <ScrollView>
-
-
-                        {
-                            
-                        }
-                        {arr.map(item => (
+                     
                             <View key={item.id}>
-                            
-                                    <FlipCard
-                                        style={styles.card}
-                                        friction={6}
-                                        perspective={1000}
-                                        flipHorizontal={true}
-                                        flipVertical={false}
-                                        flip={false}
-                                        clickable={true}
-                                        onFlipEnd={(isFlipEnd) => { console.log('isFlipEnd', isFlipEnd) }}
-                                    >
-                                        {/* Face Side */}
-                                        <View style={[styles.face]}>
-                                            {/* <ImageBackground style={{ height: pxToDp(140), width: '100%', justifyContent: 'center', alignItems: 'center' }} imageStyle={{ borderRadius: pxToDp(20) }} source={{ uri: "https://img.mp.itc.cn/upload/20170419/bad415b399644347abc4e1d326425793" }} > */}
-                                            {/* <ImageBackground style={{ height: pxToDp(140), width: '100%', justifyContent: 'center', alignItems: 'center' }} imageStyle={{ borderRadius: pxToDp(20) }} source={{ uri: item.uri }} > */}
 
-                                                {/* <Text style={{fontSize:pxToDp(32)}}>立夏</Text> */}
-                                            {/* </ImageBackground> */}
-                                        </View>
-                                        {/* Back Side */}
-                                        <View style={[{ backgroundColor: '#D2DFD5', height: pxToDp(140), width: '100%', borderRadius: 20, justifyContent: 'center', alignItems: 'center' }, styles.back]}>
-                                            {/* <Text style={{}}></Text> */}
-                                            {/* <Image style={{width:'100%',height:'100%'}} source={{uri:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs16.sinaimg.cn%2Fmw690%2F00688vlQzy759KVVTUX6f&refer=http%3A%2F%2Fs16.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1629551057&t=70fcff7dd4c737c7460e23d49b8c8247'}}></Image> */}
-                                            {/* <Image style={{ width: '100%', height: '100%' ,borderRadius:pxToDp(20)}} source={item.uri }></Image> */}
-                                            {/* <Button title='查看更多' onPress={() => this.context.navigate("Talk")}></Button> */}
-                                        </View>
-                                    </FlipCard>
-                                    <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: pxToDp(8) }}>
-                                        <Text style={{ fontSize: pxToDp(28), fontWeight: 'bold' }}>流派:{item.title}</Text>
-                                        <View style={{ marginTop: pxToDp(8) }}>
-                                            <Text style={{ fontSize: pxToDp(16) }}>名旦：{item.name}</Text>
-                                        </View>
+                                <FlipCard
+                                    style={styles.card}
+                                    friction={6}
+                                    perspective={1000}
+                                    flipHorizontal={true}
+                                    flipVertical={false}
+                                    flip={false}
+                                    clickable={true}
+                                    onFlipEnd={(isFlipEnd) => { console.log('isFlipEnd', isFlipEnd) }}
+                                >
+                                    {/* Face Side */}
+                                    <View style={[styles.face]}>
                                     </View>
-
- 
-                           
+                                    {/* Back Side */}
+                                    <View style={[{ backgroundColor: '#D2DFD5', height: pxToDp(140), width: '100%', borderRadius: 20, justifyContent: 'center', alignItems: 'center' }, styles.back]}>
+                                    </View>
+                                </FlipCard>
+                                <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: pxToDp(180) }}>
+                                    <TouchableOpacity style={styles.touch}>
+                                        <Text style={styles.text}>{item.name1}</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.touch}>
+                                        <Text style={styles.text}>{item.name2}</Text>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
-                        ))}
+                      
 
                     </ScrollView>
                     <Button title="返回" onPress={toggleModalProps} />
@@ -90,42 +75,17 @@ export default class ModalT extends Component {
     }
 }
 const styles = StyleSheet.create({
-    inputWrap: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 245,
-        height: 50,
-        backgroundColor: 'transparent',
-        borderColor: 'rgba(171, 190, 215, 0.56)',
-        borderRadius: 20,
-        marginLeft: 20,
-        marginTop: 20,
+   touch:{
+       height:pxToDp(60),
+       width:pxToDp(280),
+       backgroundColor:'#2296F3',
+       borderRadius:pxToDp(30), 
+       alignItems: 'center',
+       justifyContent:'center',
+       margin:pxToDp(10)
     },
-    icon: {
-        width: 16,
-        height: 16,
-        marginRight: 10,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    icon1: {
-        width: 35,
-        height: 30,
-        marginRight: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginLeft: 100,
-        backgroundColor: 'pink'
-    },
-    textInput: {
-        backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        borderWidth: 1,
-        width: 200,
-        height: 45,
-        fontSize: 18,
-        color: '#3f4b48',
-    },
+    text:{ 
+        fontSize: pxToDp(20),
+        color:'white' 
+    }
 });
-
