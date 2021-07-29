@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+
 import { View, TouchableOpacity,Image,ImageBackground,Text} from 'react-native';
+
+import { View, TouchableOpacity } from 'react-native';
+
 import List from '../../../component/common/list';
 import Top from '../../../component/common/top';
 import { NavigationContext } from "@react-navigation/native";
@@ -17,6 +21,7 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1='arrow-back' title="设置" />
+
                 
                 <ImageBackground style={{width:'100%',height:150}} source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}} >
                     <View style={{marginTop:pxToDp(130)}}>
@@ -48,6 +53,26 @@ class Index extends Component {
                         </TouchableOpacity>
                         </View>
                 </ImageBackground>
+
+                <TouchableOpacity onPress={() => this.context.navigate("Zhanghao")}>
+                    <List title="账号管理" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.context.navigate("Ziliao")}>
+                    <List title="个人资料" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.context.navigate("Tuisong")}>
+                    <List title="消息与推送通知" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.context.navigate("Yinsi")}>
+                    <List title="隐私设置" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.context.navigate("Yijian")}>
+                    <List title="意见反馈" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this.context.navigate("Women")}>
+                    <List title="关于我们" />
+                </TouchableOpacity>
+
             </View>
         );
     }
