@@ -55,10 +55,6 @@ class Index extends Component {
                             </View>
                             <Text style={{ fontSize: pxToDp(20), marginLeft: pxToDp(25) }}> 打卡</Text>
                         </View>
-<<<<<<< HEAD
-                      
-=======
->>>>>>> 4f1c3e992e26dfd968923570f1175ecce4cdea81
                     </ScrollView>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around',alignItems:'center',alignContent:'center', height: pxToDp(40), width:'100%', position:'absolute',bottom:60}}>
