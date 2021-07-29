@@ -53,6 +53,7 @@ class Index extends Component {
                             <Image style={{ height: pxToDp(130), width: pxToDp(350), marginLeft: pxToDp(15) }} source={require('../../../res/26.jpg')} />
                         </TouchableOpacity>
                     </View>
+                    <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>双人剧本</Text>
                     {/*双人剧本 */}
                     <View style={{ flexDirection: 'row' }}>
                         {this.state.arr.map((item) =>
