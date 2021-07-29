@@ -110,9 +110,10 @@ class Index extends Component {
                     </View>
                     <ScrollView horizontal={true}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+                            <TouchableOpacity  onPress={() => this.context.navigate("Actress")}>
                             <ActressView
                                 picture={require('../../../res/performer/1.jpg')}
-                                name="方亚芬" />
+                                name="方亚芬" /></TouchableOpacity>
                             <ActressView
                                 picture={require('../../../res/performer/2.jpg')}
                                 name="王文娟" />
@@ -145,10 +146,11 @@ class Index extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
+                    <TouchableOpacity onPress={() => this.context.navigate("School")}>
                     <GenerView
                         picture={require('../../../res/genre/1.jpg')}
                         name="袁派"
-                        special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" />
+                        special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" /></TouchableOpacity>
                     <GenerView
                         picture={require('../../../res/genre/2.jpg')}
                         name="范派"
