@@ -23,16 +23,29 @@ export { default as PageTwo } from './first/home/pages/pagetwo';//服装租赁�
 export { default as PageThree } from './first/home/pages/pagethree';//服装租赁页
 export { default as PageFour } from './first/home/pages/pagefour';//服装租赁页
 export { default as Change } from './play/change';//服装租赁页
+
+export { default as Nickname } from './my/component/Nickname';//修改昵称
+export { default as Singnature} from './my/component/Signature';//修改个签
+export { default as Order} from './my/order';//订单
+export { default as Pay} from './my/pay';//待支付
+export { default as Postsale} from './my/postsale';//待支付
+export { default as Waitcomment} from './my/waitcomment';//待评价
+
+
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
 export { default as Actress } from './first/actress';
 export { default as School } from './first/school';
 export { default as History } from './my/history';
 export { default as Jifenshop } from './my/jifenshop/jifenshop';
-export { default as Order } from './my/order';
+
 export { default as Orderone } from './my/order/pages/orderone';
 export { default as Ordertwo } from './my/order/pages/ordertwo';
 export { default as Orderthree } from './my/order/pages/orderthree';
 export { default as Orderfour } from './my/order/pages/orderfour';
 export { default as Refund } from './my/order/pages/refund';
 export { default as Setting } from './my/seetings/setting'
+
+
+
+

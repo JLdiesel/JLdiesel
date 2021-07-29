@@ -14,7 +14,9 @@ class Index extends Component {
         }
     }
     static contextType = NavigationContext;
-    render() {
+  
+    render() {  
+        
         return (
             <View>
                 <Top title="戏痴" />
@@ -32,20 +34,28 @@ class Index extends Component {
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>17</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>点赞</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>99</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>收藏</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>188</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>关注</Text>
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>49</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>粉丝</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(10), marginTop: pxToDp(20) }}>

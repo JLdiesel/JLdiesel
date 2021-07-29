@@ -9,7 +9,7 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1="arrow-back" title="剧本详情" />
-                <ScrollView style={{ marginLeft: pxToDp(15), marginTop: pxToDp(15), marginRight: pxToDp(15) }}>
+                <ScrollView style={{ marginLeft: pxToDp(15), marginTop: pxToDp(15), marginRight: pxToDp(15),marginBottom:pxToDp(60)}}>
                     <Image style={{ height: pxToDp(180), width: pxToDp(350) }} source={require('../../../res/play/4.jpg')} />
                     <Text style={{ fontSize: pxToDp(24),fontWeight:'bold' }}>追鱼</Text>
                     <Text style={{ fontSize: pxToDp(15) }}>作者：康德    创作年代：北宋嘉佑年间</Text>

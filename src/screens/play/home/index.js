@@ -18,7 +18,7 @@ class Index extends Component {
         return (
             <View >
                 <Top title="越吟" />
-                <ScrollView>
+                <ScrollView  style={{marginBottom:pxToDp(60)}}>
                     {/*戏服体验馆 */}
                     <View>
                         <TouchableOpacity onPress={() => this.context.navigate("Change")}>
@@ -35,11 +35,11 @@ class Index extends Component {
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginLeft: pxToDp(30), marginRight: pxToDp(30) }}>
                         <View style={{ alignItems: 'center' }}>
                             <Ionicons name="today-sharp" size={28} color="grey" />
-                            <Text>每日签到</Text>
+                            <Text>签到</Text>
                         </View>
                         <View style={{ alignItems: 'center' }}>
                             <Ionicons name="layers-outline" size={28} color="grey" />
-                            <Text>剧本库</Text>
+                            <Text>剧本</Text>
                         </View>
                         <View style={{ alignItems: 'center' }}>
                             <Ionicons name="md-logo-octocat" size={28} color="grey" />
@@ -53,6 +53,7 @@ class Index extends Component {
                             <Image style={{ height: pxToDp(130), width: pxToDp(350), marginLeft: pxToDp(15) }} source={require('../../../res/26.jpg')} />
                         </TouchableOpacity>
                     </View>
+                    <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>双人剧本</Text>
                     {/*双人剧本 */}
                     <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>双人剧本</Text>
                     <View style={{ flexDirection: 'row' }}>

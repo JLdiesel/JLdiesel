@@ -22,8 +22,7 @@ class ListItem extends Component {
                     <Text style={{ marginTop: 12, width: 250, fontSize: 12 }}>{this.props.subs}</Text>
                     <Text style={{ marginTop: 12, width: 250, fontSize: 13 }}>2019-09-12 21:57</Text>
                 </View>
-                <View style={{ position: 'absolute', top: 0, right: 10, backgroundColor: '#fff', marginTop: 10 }}>
-                </View>
+               
             </View>
         );
     }
