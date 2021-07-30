@@ -46,21 +46,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',    
     flexDirection:'row',
-    backgroundColor: '#003C66',
+    backgroundColor: '#fff',
+    justifyContent:'space-between'
   },
   icon1: {
     flexDirection: 'row',
     height: 60,
     width:40,
     alignItems: "center",
-    marginLeft:10,
+    marginLeft: 10,
+
   },
   icon2: {
     flexDirection: 'row',
     height: 60,
     width:40,
     alignItems: "center",
-    marginRight:10,
+    marginRight: 10,
+  
   },
   textview: {
     flex:1,
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
   },
   textstyle: {
     fontSize: 22,
-    color: '#FFFFCC'
+    color: '#468cd3'
   },
 });
 

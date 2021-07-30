@@ -22,7 +22,7 @@ class Index extends Component {
                     {/*戏服体验馆 */}
                     <View style={{ borderRadius: pxToDp(10) }}>
                         <TouchableOpacity onPress={() => this.context.navigate("Change")}>
-                            <View style={{ borderRadius: pxToDp(10), height: pxToDp(170), width: pxToDp(355), borderRadius: pxToDp(10), margin: pxToDp(10), backgroundColor: '#A7BAC4' }}>
+                            <View style={{ borderRadius: pxToDp(10), height: pxToDp(170), width: pxToDp(355), borderRadius: pxToDp(10), margin: pxToDp(10), backgroundColor: 'rgba(255,255,255,0.5)' }}>
                                 <Text style={{fontSize:pxToDp(25),marginTop:pxToDp(20),alignSelf:'center'}}>戏服体验馆</Text>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(30) }}>
                                     <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/1.jpg')} />
