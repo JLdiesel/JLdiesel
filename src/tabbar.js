@@ -69,7 +69,7 @@ class Index extends Component {
             onPress={v.onPress}
             selectedTitleStyle={{color:"#468cd3"}}
             tabStyle={{
-           height:pxToDp(51), 
+            height:pxToDp(51), 
               backgroundColor:"white",
               justifyContent:'center'
             }}

@@ -10,7 +10,7 @@ class Index extends Component {
         return (
             <View>
                 <Top title="越市" />
-                <ScrollView style={{ marginBottom: pxToDp(60) }}>
+                <ScrollView style={{ marginBottom: pxToDp(70) }}>
                     {/*轮播 */}
                     <View style={{ height: pxToDp(320) }}>
                         <Swiper style={styles.wrapper}

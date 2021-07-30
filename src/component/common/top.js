@@ -19,7 +19,7 @@ static contextType = NavigationContext;
   render() {
     return (
       <View style={styles.box}>
-        <View style={{marginTop:pxToDp(30), justifyContent:'space-between',flexDirection:'row'}}>
+        <View style={{marginTop:pxToDp(30),   justifyContent:'space-between',flexDirection:'row'}}>
             <View style={styles.icon1}>
           <TouchableOpacity onPress={() => this.context.goBack()}>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
@@ -50,21 +50,18 @@ const styles = StyleSheet.create({
     width:screenWidth,
     flexDirection:'row',
     backgroundColor: '#fff',
-   
     height:70
   },
   icon1: {
-    height: 18,
-    width:pxToDp(40),
- 
+    width:pxToDp(45),left:5
   },
   icon2: {
-    width:pxToDp(40),
-   
+    width:pxToDp(40),right:5
   },
   textview: {
     flex:1,
-    alignItems:'center',
+    alignItems: 'center',
+  top:pxToDp(3),
 
   },
   textstyle: {

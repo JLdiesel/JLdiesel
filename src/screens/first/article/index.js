@@ -58,7 +58,7 @@ class Index extends Component {
                       
                     </ScrollView>
                 </View>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around',alignItems:'center',alignContent:'center', height: pxToDp(40), width:'100%', position:'absolute',bottom:60}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around',alignItems:'center',alignContent:'center', height: pxToDp(40), width:'100%', position:'absolute',bottom:70}}>
                     <TextInput style={{ height: pxToDp(30), width: pxToDp(180), borderRadius:pxToDp(10),backgroundColor: 'lightgrey',paddingLeft:pxToDp(5) }}  placeholder="我要评论"></TextInput>
                     <Ionicons name="md-chatbox-ellipses-outline" size={28} color="grey" />
                     <Ionicons name="heart-outline" size={28} color="grey" />
