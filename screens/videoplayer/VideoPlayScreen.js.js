@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, Dimensions, Image, Text, Slider, TouchableWithoutFeedback, TouchableOpacity, Button, StyleSheet } from 'react-native';
-import Video from 'react-native-video';
+
+import {Video} from 'expo-av'
 // import Orientation from 'react-native-orientation';
-import Orientation from 'react-native-orientation-locker';
+// import Orientation from 'react-native-orientation-locker';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -99,7 +100,7 @@ export default class VideoPlayScreen extends Component {
                                         <Image
                                             style={styles.playButton}
                                             // source={require('../../assets/image/icon_video_play.png')}
-                                            source={require('../../images/icon_video_play.png')}
+                                            source={require('../../src/res/8.jpg')}
                                         />
                                     </TouchableWithoutFeedback>
                             }
@@ -112,7 +113,7 @@ export default class VideoPlayScreen extends Component {
                                     <Image
                                         style={styles.playControl}
                                         // source={this.state.isPlaying ? require('../../assets/image/icon_control_pause.png') : require('../../assets/image/icon_control_play.png')}
-                                        source={this.state.isPlaying ? require('../../images/icon_control_pause.png') : require('../../images/icon_control_play.png')}
+                                        source={this.state.isPlaying ? require('../../src/res/9.jpg') : require('../../src/res/10.jpg')}
 
                                     />
                                 </TouchableOpacity>
@@ -122,7 +123,7 @@ export default class VideoPlayScreen extends Component {
                                     maximumTrackTintColor={'#999999'}
                                     minimumTrackTintColor={'#00c06d'}
                                     // thumbImage={require('../../assets/image/icon_control_slider.png')}
-                                    thumbImage={require('../../images/icon_control_slider.png')}
+                                    thumbImage={require('../../src/res/12.jpg')}
                                     value={this.state.currentTime}
                                     minimumValue={0}
                                     maximumValue={this.state.duration}
@@ -133,7 +134,7 @@ export default class VideoPlayScreen extends Component {
                                     <Image
                                         style={styles.shrinkControl}
                                         // source={this.state.isFullScreen ? require('../../assets/image/icon_control_shrink_screen.png') : require('../../assets/image/icon_control_full_screen.png')}
-                                        source={this.state.isFullScreen ? require('../../images/icon_control_shrink_screen.png') : require('../../images/icon_control_full_screen.png')}
+                                        source={this.state.isFullScreen ? require('../../src/res/7.jpg') : require('../../src/res/6.jpg')}
 
                                     />
                                 </TouchableOpacity>
@@ -236,14 +237,14 @@ export default class VideoPlayScreen extends Component {
     }
 
     /// 点击了工具栏上的全屏按钮
-    onControlShrinkPress() {
-        this.props.onIt()
-        if (this.state.isFullScreen) {
-            Orientation.lockToPortrait();
-        } else {
-            Orientation.lockToLandscape();
-        }
-    }
+    // onControlShrinkPress() {
+    //     this.props.onIt()
+    //     if (this.state.isFullScreen) {
+    //         Orientation.lockToPortrait();
+    //     } else {
+    //         Orientation.lockToLandscape();
+    //     }
+    // }
     
 
     /// 进度条值改变
@@ -284,7 +285,7 @@ export default class VideoPlayScreen extends Component {
                 isFullScreen: false,
             })
         }
-        Orientation.unlockAllOrientations();
+        // Orientation.unlockAllOrientations();
     };
 
     /// -------外部调用事件方法-------

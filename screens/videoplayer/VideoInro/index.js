@@ -38,7 +38,7 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/5.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/30.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
                                             <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>《红色文物100讲》</Text>
                                             <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>《红色文物100》由国家广播电视总局、国家文物局联合出品，节目以革命文物为载体，以视听化表达来讲述党的故事、革命的故事、英雄的故事，让革命文物 “活起来”。</Text>
@@ -53,7 +53,7 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/5.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/6.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
                                             <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>茶香</Text>
                                             <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>品茗茶香，回味无穷</Text>
@@ -68,7 +68,7 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/5.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/30.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
                                             <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>商品茶与匠心茶的区别</Text>
                                             {/* <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>品茗茶香，回味无穷</Text> */}
@@ -83,7 +83,7 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/5.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/30.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
                                             <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>百家讲坛</Text>
                                             <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>【百家讲坛】江英解读《建军大业》</Text>

@@ -13,9 +13,7 @@ class index extends Component {
         super(props)
         this.state = {
             isModalVisible: false,
-
         }
-
     }
     // <Zujian arr={}/>
     // const toggleModal = () => {

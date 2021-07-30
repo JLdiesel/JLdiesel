@@ -4,13 +4,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from "./tabbar";
 import * as Screens from './screens'
 import Water from './component/water'
-import Video from '../screens/video'
+import Video from '../screens/videoplayer'
 const Stack = createStackNavigator();
 
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="Tabbar">
+      <Stack.Navigator headerMode='none' initialRouteName="Change">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
