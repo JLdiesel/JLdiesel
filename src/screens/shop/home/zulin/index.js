@@ -20,7 +20,7 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../../res/shop/1.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化随行杯</Text>
+                                <Text style={{ fontSize: pxToDp(15) }}>《西厢记》戏服租赁</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥58.0</Text>
                                     <Text style={{ color: 'grey' }}>8人购买</Text>
@@ -30,9 +30,9 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../../res/shop/2.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化钥匙扣</Text>
+                                <Text style={{ fontSize: pxToDp(15) }}>《吴越王》戏服租赁</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥48.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥248.0</Text>
                                     <Text style={{ color: 'grey' }}>5人购买</Text>
                                 </View>
                             </TouchableOpacity>
@@ -40,9 +40,9 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../../res/shop/3.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}>韵文博鉴*恭王府晴雨伞</Text>
+                                <Text style={{ fontSize: pxToDp(15) }}>红娘戏服</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥128.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥528.0</Text>
                                     <Text style={{ color: 'grey' }}>20人购买</Text>
                                 </View>
                             </TouchableOpacity>
@@ -50,9 +50,9 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../../res/shop/4.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}> 敦煌沙漏小夜灯</Text>
+                                <Text style={{ fontSize: pxToDp(15) }}>红娘同款小扇</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥128.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥28.0</Text>
                                     <Text style={{ color: 'grey' }}>101人购买</Text>
                                 </View>
                             </TouchableOpacity>
@@ -60,7 +60,7 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../../res/shop/5.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}>韵文博鉴*恭王府 屋脊兽便签</Text>
+                                <Text style={{ fontSize: pxToDp(15) }}>越剧服装头饰</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥9.9</Text>
                                     <Text style={{ color: 'grey' }}>11人购买</Text>
@@ -70,19 +70,19 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../../res/shop/6.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15), flexWrap: 'wrap' }}>韵文博鉴*恭王府 屋脊兽木制日历</Text>
+                                <Text style={{ fontSize: pxToDp(15), flexWrap: 'wrap' }}>鲤鱼精戏服租赁</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥48.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥348.0</Text>
                                     <Text style={{ color: 'grey' }}>5人购买</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../../res/shop/1.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}> 敦煌随行杯</Text>
+                                <Image style={styles.image} source={require('../../../../res/shop/7.jpg')}></Image>
+                                <Text style={{ fontSize: pxToDp(15) }}>老太君戏服</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥58.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥584.0</Text>
                                     <Text style={{ color: 'grey' }}>8人购买</Text>
                                 </View>
                             </TouchableOpacity>
@@ -95,7 +95,8 @@ class Index extends Component {
 }
 const styles = StyleSheet.create({
     scrollview: {
-        backgroundColor: 'lightgrey'
+        backgroundColor: '#E2F4FE',
+        marginBottom:pxToDp(70)
     },
     tcard: {
         flexDirection: 'row',

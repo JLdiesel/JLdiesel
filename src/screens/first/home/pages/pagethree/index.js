@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView,TouchableOpacity} from 'react-native';
 import { pxToDp } from '../../../../../utils/styleKits';
 import ActressView from '../../../../../component/common/actressview';
 import Top from '../../../../../component/common/top'

@@ -66,7 +66,7 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../res/shop/1.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化随行杯</Text>
+                                <Text style={{ fontSize: pxToDp(15) }}>《西厢记》戏服租赁</Text>
                                 <View style={styles.bottext}>
                                     <Text style={{ color: '#B22222' }}>￥58.0</Text>
                                     <Text style={{ color: 'grey' }}>8人购买</Text>
@@ -76,29 +76,31 @@ class Index extends Component {
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
                                 <Image style={styles.image} source={require('../../../res/shop/2.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化钥匙扣</Text>
+                                <Text style={{ fontSize: pxToDp(15) }}>《吴越王》戏服租赁</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥48.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥248.0</Text>
                                     <Text style={{ color: 'grey' }}>5人购买</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
+                    </View>
+                    <View style={styles.tcard}>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../res/shop/3.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}>韵文博鉴*恭王府晴雨伞</Text>
+                                <Image style={styles.image} source={require('../../../res/shop/10.jpg')}></Image>
+                                <Text style={{ fontSize: pxToDp(15) }}>《柳毅传书》立体插画</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥128.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥58.0</Text>
                                     <Text style={{ color: 'grey' }}>20人购买</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.ocard}>
                             <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                                <Image style={styles.image} source={require('../../../res/shop/4.jpg')}></Image>
-                                <Text style={{ fontSize: pxToDp(15) }}> 敦煌沙漏小夜灯</Text>
+                                <Image style={styles.image} source={require('../../../res/shop/11.jpg')}></Image>
+                                <Text style={{ fontSize: pxToDp(15) }}>越剧戏服手提袋</Text>
                                 <View style={styles.bottext}>
-                                    <Text style={{ color: '#B22222' }}>￥128.0</Text>
+                                    <Text style={{ color: '#B22222' }}>￥68.0</Text>
                                     <Text style={{ color: 'grey' }}>101人购买</Text>
                                 </View>
                             </TouchableOpacity>
@@ -153,8 +155,8 @@ const styles = StyleSheet.create({
     title: {
         fontSize: pxToDp(18),
         margin: pxToDp(10),
-        color:"#468CD3",
-        fontWeight:'bold'
+        color: "#468CD3",
+        fontWeight: 'bold'
     },
     image1: {
         height: pxToDp(100),

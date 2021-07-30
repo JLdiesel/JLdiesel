@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView,TouchableOpacity} from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import Top from '@components/common/top';
 import GenerView from '@components/common/generview'
