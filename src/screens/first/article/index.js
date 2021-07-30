@@ -10,7 +10,7 @@ class Index extends Component {
             <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="文章详情" icon2="ellipsis-horizontal" />
                 <View >
-                    <ScrollView style={{ marginBottom: pxToDp(160) }}>
+                    <ScrollView style={{ marginBottom: pxToDp(180) }}>
                         <View style={{ marginLeft: pxToDp(15), marginRight: pxToDp(15), marginTop: pxToDp(15) }}>
                             {/**文章标题 */}
                             <Text style={{ fontSize: pxToDp(20), fontWeight: 'bold' }}>嵊州 越剧的起源地</Text>
@@ -58,7 +58,7 @@ class Index extends Component {
                       
                     </ScrollView>
                 </View>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around',alignItems:'center',alignContent:'center', height: pxToDp(40), width:'100%', position:'absolute',bottom:70}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around',alignItems:'center',alignContent:'center', height: pxToDp(42), width:'100%', position:'absolute',bottom:70}}>
                     <TextInput style={{ height: pxToDp(30), width: pxToDp(180), borderRadius:pxToDp(10),backgroundColor: '#F5F5F5',paddingLeft:pxToDp(5) }}  placeholder="我要评论"></TextInput>
                     <Ionicons name="md-chatbox-ellipses-outline" size={28} color="grey" />
                     <Ionicons name="heart-outline" size={28} color="grey" />

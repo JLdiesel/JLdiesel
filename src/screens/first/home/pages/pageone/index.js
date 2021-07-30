@@ -10,7 +10,7 @@ class Index extends Component {
         return (
             <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="流派传奇" />
-                <ScrollView style={{ marginBottom: 60 }}>
+                <ScrollView style={{ marginBottom: 80 }}>
                     <View>
                         <Text style={{ fontWeight: 'bold', fontSize: pxToDp(18), margin: pxToDp(10) }}>越剧流派</Text>
                         <TouchableOpacity onPress={() => this.context.navigate("School")}>

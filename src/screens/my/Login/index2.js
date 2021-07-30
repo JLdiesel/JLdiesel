@@ -101,9 +101,8 @@ static contextType = NavigationContext;
       }).then(res => res.json()
       )
         .then(ress => {
-     
-            this.props.changeToken(ress.token)
-             this.context.navigate('Tabbar')
+          console.log(ress);
+
         })
         .catch(err => {
           console.log(this.state.regpassword2);
@@ -194,7 +193,7 @@ static contextType = NavigationContext;
 
 
 
-          <View style={{ borderRadius: 20, height: this.state.loginbox, width: pxToDp(250), position: 'absolute', top: pxToDp(300), left: pxToDp(60), overflow: 'hidden' }}>
+          <View style={{ borderRadius: 20, height: this.state.loginbox, width: pxToDp(250), position: 'absolute', top: pxToDp(300), left: pxToDp(75), overflow: 'hidden' }}>
             <View style={{ width: '80%', marginLeft: pxToDp(20), marginTop: pxToDp(25) }}>
               <Input
                 placeholder='我是恁爹'
@@ -228,7 +227,7 @@ static contextType = NavigationContext;
               <Image source={require('./bg.jpg')} style={{ width: pxToDp(50), height: pxToDp(50), borderRadius: pxToDp(60), marginLeft: pxToDp(37), marginTop: pxToDp(10) }} />
             </View>
           </View>
-          <View style={{ borderRadius: 20, height: this.state.regbox, width: pxToDp(250), position: 'absolute', top: pxToDp(300), left: pxToDp(60), overflow: 'hidden' }}>
+          <View style={{ borderRadius: 20, height: this.state.regbox, width: pxToDp(250), position: 'absolute', top: pxToDp(300), left: pxToDp(75), overflow: 'hidden' }}>
             <View style={{ width: '80%', marginLeft: pxToDp(20), marginTop: pxToDp(15) }}>
               <Input
                 placeholder='恁是我爹'

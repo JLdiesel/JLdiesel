@@ -17,7 +17,7 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(15), marginLeft: pxToDp(10) }}>戏服儿童小生衣</Text>
                             <Text style={{ marginLeft: pxToDp(65), fontSize: pxToDp(15) }}>￥128</Text>
                         </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end',right:pxToDp(85) }}>
                             <Text style={{ fontSize: pxToDp(15) }}>总价￥128 </Text>
                             <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}> 实付款￥128</Text>
                         </View>
@@ -43,7 +43,7 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(15), marginLeft: pxToDp(10) }}>越剧周边 扇子</Text>
                             <Text style={{ marginLeft: pxToDp(65), fontSize: pxToDp(15) }}>￥45</Text>
                         </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end',right:pxToDp(85) }}>
                             <Text style={{ fontSize: pxToDp(15) }}>总价￥45 </Text>
                             <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}> 实付款￥45</Text>
                         </View>
@@ -69,7 +69,7 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(15), marginLeft: pxToDp(10) }}>《梁祝》演出门票-杭州大剧院</Text>
                             <Text style={{ marginLeft: pxToDp(65), fontSize: pxToDp(15) }}>￥399</Text>
                         </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' ,right:pxToDp(85)}}>
                             <Text style={{ fontSize: pxToDp(15) }}>总价￥399 </Text>
                             <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}> 实付款￥399</Text>
                         </View>

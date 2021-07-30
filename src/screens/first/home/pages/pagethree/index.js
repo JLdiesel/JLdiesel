@@ -8,9 +8,9 @@ class Index extends Component {
         static contextType = NavigationContext;
     render() {
         return (
-            <View style={{backgroundColor:'#E2F4FE'}}>
+            <View style={{backgroundColor:'#E2F4FE',flex:1}}>
                 <Top icon1="arrow-back" title="名角风采" />
-                <ScrollView>
+                <ScrollView >
                     <View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap', width: pxToDp(380) }}>
                             <TouchableOpacity onPress={() => this.context.navigate("Actress")}>

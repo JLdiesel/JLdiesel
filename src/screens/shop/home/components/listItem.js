@@ -14,14 +14,14 @@ class ListItem extends Component {
 
     render() {
         return (
-            <View style={{ backgroundColor: 'rgba(255,255,255,0.3)', height: 100, borderBottomWidth: 0.2, borderBottomColor: 'white',marginRight:pxToDp(15) }}>
-                <View >
-                    <Image source={require('../../../../res/1.jpg')} style={{ width: 40, height: 40, borderRadius: 20, margin: 10 }} />
+            <View style={{ backgroundColor: '#fff', height: pxToDp(100), borderBottomWidth: 0.2, borderBottomColor: 'gray'}}>
+                <View style={{ backgroundColor: '#fff' }}>
+                    <Image source={require('../../../../res/1.jpg')} style={{ width: pxToDp(40), height: pxToDp(40), borderRadius: pxToDp(20), margin: pxToDp(10)}} />
                 </View>
-                <View style={{ position: 'absolute', top: 10, left: 60 }}>
+                <View style={{ position: 'absolute', top: pxToDp(10), left: pxToDp(60) }}>
                     <Text style={{ fontSize: 15, fontWeight: 'bold' }}>{this.props.username}</Text>
-                    <Text style={{ marginTop: 12, width: 250, fontSize: 12 }}>{this.props.subs}</Text>
-                    <Text style={{ marginTop: 12, width: 250, fontSize: 13 }}>{ this.props.createTime}</Text>
+                    <Text style={{ marginTop:pxToDp(12), width: pxToDp(250), fontSize: 12 }}>{this.props.subs}</Text>
+                    <Text style={{ marginTop: pxToDp(12), width: pxToDp(250), fontSize: 13 }}>{ this.props.createTime}</Text>
                 </View>
                
             </View>
