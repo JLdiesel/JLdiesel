@@ -3,10 +3,11 @@ icon1 2 是给顶部设置的返回和分享按钮 需要在引用的页面按�
 */}
 'use strict';
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity ,BVLinearGradient} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from "@react-navigation/native";
 import { pxToDp } from '../../utils/styleKits';
+import {LinearGradient} from 'expo-linear-gradient';
 export default class HeaderHaveBack extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,11 @@ export default class HeaderHaveBack extends Component {
 static contextType = NavigationContext;
   render() {
     return (
-      <View style={styles.box}>
+      
+ 
+
+
+         <LinearGradient colors={['#468cd3', '#fff']} style={styles.box} start={{x: 0, y: 0}} end={{x: 0 ,y: 0.3}}>
         <View style={styles.icon1}>
           <TouchableOpacity onPress={() => this.context.goBack()}>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
@@ -37,7 +42,8 @@ static contextType = NavigationContext;
             <Ionicons name={this.props.icon2} size={25} color="#FFFFCC" />
           </TouchableOpacity>
         </View>
-      </View >
+      </LinearGradient> 
+
     );
   }
 }
@@ -47,7 +53,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',    
     flexDirection:'row',
-    backgroundColor: '#FFF',
     height:70
   },
   icon1: {
@@ -60,7 +65,7 @@ const styles = StyleSheet.create({
   },
   icon2: {
     flexDirection: 'row',
-    height: 1,
+    height: 0,
     width:pxToDp(40),
     alignItems: "center",
 
@@ -73,7 +78,7 @@ const styles = StyleSheet.create({
   },
   textstyle: {
     fontSize: pxToDp(18),
-    color: '#468cd3'
+    color: '#FFFFCC'
   },
 });
 
