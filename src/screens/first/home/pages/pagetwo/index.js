@@ -1,53 +1,138 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { pxToDp } from '../../../../../utils/styleKits';
-import Top from '../../../../../component/common/top'
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image
+} from 'react-native';
+import Timeline from 'react-native-timeline-flatlist'
 
-class Index extends Component {
-    render() {
-        return (
-            <View>
-                <Top icon1="arrow-back" title="俯瞰百年" />
-                <ScrollView>
-                    <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: pxToDp(8) }}>
-                        <Ionicons name="git-commit-outline" size={25} />
-                        <View style={{ width: pxToDp(330), marginTop: pxToDp(3) }}>
-                            <Text style={{ fontWeight: 'bold' }}>1852年（清咸丰二年）</Text>
-                            <Text style={{ backgroundColor: '#8FBC8F' }}>嵊县西乡马塘村农民金其柄创“落地唱书”。落地唱书是浙江嵊县以马塘村为主一带流行的说唱形式，开始演变为在农村草台演出的戏曲形式，艺人初始均为是半农半艺的男性农民，故称男班。</Text>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: pxToDp(8) }}>
-                        <Ionicons name="git-commit-outline" size={25} />
-                        <View style={{ width: pxToDp(330), marginTop: pxToDp(3) }}>
-                            <Text style={{ fontWeight: 'bold' }}>1906年3月27日</Text>
-                            <Text style={{ backgroundColor: '#8FBC8F' }}>嵊县东王村香火堂前，由落地唱书艺人袁福生、李茂正、高炳火、李世泉等借用四只稻桶垫底，铺上门板，演出小戏《十件头》、《倪凤煽茶》和大戏《双金花》（后半本）。这是中国越剧第一次登台试演，越剧（最初称“小歌班”）从此诞生，该日被称为越剧诞生日。</Text>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: pxToDp(8) }}>
-                        <Ionicons name="git-commit-outline" size={25} />
-                        <View style={{ width: pxToDp(330), marginTop: pxToDp(3) }}>
-                            <Text style={{ fontWeight: 'bold' }}>1917年5月13日</Text>
-                            <Text style={{ backgroundColor: '#8FBC8F' }}>小歌班初进上海，在十六铺“新化园”演出，因艺术粗糙简陋，观众寥寥无几。后续有3班艺人来上海但均告失败。在学习绍兴大班和京剧的表演技巧后，艺术有所提高，1919年小歌班始在上海立足。</Text>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: pxToDp(8) }}>
-                        <Ionicons name="git-commit-outline" size={25} />
-                        <View style={{ width: pxToDp(330), marginTop: pxToDp(3) }}>
-                            <Text style={{ fontWeight: 'bold' }}>1921年9月16日</Text>
-                            <Text style={{ backgroundColor: '#8FBC8F' }}>由费翠棠、颜焕亭等组成的戏班演出于第一戏院，当天，《新闻报》广告首次刊出“绍兴文戏”之名谓。</Text>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: pxToDp(8) }}>
-                        <Ionicons name="git-commit-outline" size={25} />
-                        <View style={{ width: pxToDp(330), marginTop: pxToDp(3) }}>
-                            <Text style={{ fontWeight: 'bold' }}>1923年7月</Text>
-                            <Text style={{ backgroundColor: '#8FBC8F' }}>嵊县籍商人王金水请男班艺人金荣水回乡办第一个女班，招收13岁以下的女孩二十余人。翌年1月14日，该女班在上海升平歌舞台演出，称“髦儿小歌班”。</Text>
-                        </View>
-                    </View>
-                </ScrollView>
-            </View>
-        );
-    }
+export default class Example extends Component {
+  constructor(){
+    super()
+    this.onEventPress = this.onEventPress.bind(this)
+    this.renderSelected = this.renderSelected.bind(this)
+    this.renderDetail = this.renderDetail.bind(this)
+
+    this.data = [
+      {
+        time: '1917年', 
+        title: '小歌班初进上海', 
+        description: '在十六铺“新化园”演出，因艺术粗糙简陋，观众寥寥无几。后续有3班艺人来上海但均告失败。在学习绍兴大班和京剧的表演技巧后，艺术有所提高，1919年小歌班始在上海立足。',
+        lineColor:'#009688', 
+        imageUrl: 'https://img2.baidu.com/it/u=2668043386,1547377255&fm=26&fmt=auto&gp=0.jpg'
+      },
+      {
+        time: '1920年', 
+        title: '戏客班', 
+        description: '时为“小歌班”的升平歌舞台老板周麟趾，从嵊县请来民间音乐组织“戏客班”的3位乐师组成越剧史上第一支专业伴奏乐队。', 
+        imageUrl: 'https://img2.baidu.com/it/u=2668043386,1547377255&fm=26&fmt=auto&gp=0.jpg'
+      },
+      {time: '1921年',
+       title: '绍兴文戏', 
+        description:'吸收京剧、绍剧的表演程式，向古装大戏发展。剧目则受海派京剧影响，主要编演连台本戏，在“大世界”、“新世界”等游乐场以及茶楼、旅社、小型剧场演出。',
+        imageUrl: 'https://img2.baidu.com/it/u=2668043386,1547377255&fm=26&fmt=auto&gp=0.jpg'
+      },
+      {
+        time: '1923年', 
+        title: '髦儿小歌班', 
+        description: '1923年7月，嵊县籍商人王金水请男班艺人金荣水回乡办第一个女班，招收13岁以下的女孩二十余人。翌年1月14日，该女班在上海升平歌舞台演出，称“髦儿小歌班” ',
+        lineColor:'#009688', 
+
+        imageUrl: 'https://img2.baidu.com/it/u=2668043386,1547377255&fm=26&fmt=auto&gp=0.jpg。'
+      },
+      {
+        time: '1925年', 
+        title: '越剧', 
+        description: '1925年9月17日上海《新闻报》演出广告中首以“越剧”称之。', 
+
+        imageUrl: 'https://img2.baidu.com/it/u=2668043386,1547377255&fm=26&fmt=auto&gp=0.jpg'
+      }    
+       
+      
+      
+    ]
+    this.state = {selected: null}
+  } 
+
+  onEventPress(data){
+    this.setState({selected: data})
+  }
+
+  renderSelected(){
+     
+  }
+
+  renderDetail(rowData, sectionID, rowID) {
+    let title = <Text style={[styles.title]}>{rowData.title}</Text>
+    var desc = null
+    if(rowData.description && rowData.imageUrl)
+      desc = (
+        <View style={styles.descriptionContainer}>   
+          <Image source={{uri: rowData.imageUrl}} style={styles.image}/>
+          <Text style={[styles.textDescription]}>{rowData.description}</Text>
+        </View>
+      )
+    
+    return (
+      <View style={{flex:1}}>
+        {title}
+        {desc}
+      </View>
+    )
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        {this.renderSelected()}
+        <Timeline 
+          style={styles.list}
+          data={this.data}
+          circleSize={20}
+          circleColor='rgba(0,0,0,0)'
+          lineColor='rgb(45,156,219)'
+          timeContainerStyle={{minWidth:52, marginTop: 5}}
+          timeStyle={{textAlign: 'center', backgroundColor:'#ff9797', color:'white', padding:5, borderRadius:13}}
+          descriptionStyle={{color:'gray'}}
+          options={{
+            style:{paddingTop:5}
+          }}
+          innerCircle={'icon'}
+          onEventPress={this.onEventPress}
+          renderDetail={this.renderDetail}
+        />
+      </View>
+    );
+  }
 }
-export default Index;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+
+    backgroundColor:'white'
+  },
+  list: {
+    flex: 1,
+    marginTop:20,
+  },
+  title:{
+    fontSize:16,
+    fontWeight: 'bold'
+  },
+  descriptionContainer:{
+    flexDirection: 'row',
+    paddingRight: 50
+  },
+  image:{
+    width: 50,
+    height: 50,
+    borderRadius: 25
+  },
+  textDescription: {
+    marginLeft: 10,
+    color: 'gray'
+  }
+});

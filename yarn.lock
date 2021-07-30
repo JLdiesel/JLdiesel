@@ -5554,6 +5554,21 @@ react-native-tab-navigator@^0.3.4:
     immutable "^3.8.1"
     prop-types "^15.5.10"
 
+react-native-timeline-feed@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.nlark.com/react-native-timeline-feed/download/react-native-timeline-feed-2.0.0.tgz#ca1b4340121c1044196c97f1775e22d577edf216"
+  integrity sha1-yhtDQBIcEEQZbJfxd14i1Xft8hY=
+
+react-native-timeline-flatlist@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.nlark.com/react-native-timeline-flatlist/download/react-native-timeline-flatlist-0.7.6.tgz#85cfbe4c2956bfde9777766b8cc1eaf7fa7857d7"
+  integrity sha1-hc++TClWv96Xd3ZrjMHq9/p4V9c=
+
+react-native-timeline-listview@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.nlark.com/react-native-timeline-listview/download/react-native-timeline-listview-0.2.3.tgz#e46b7f0fd2c2206329eee6194795e03899afe882"
+  integrity sha1-5Gt/D9LCIGMp7uYZR5XgOJmv6II=
+
 react-native-vector-icons@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-8.1.0.tgz#e8ee2b17bc4d9f636da1c6f67feee8e2a850c3d8"
