@@ -26,7 +26,7 @@ class Index extends Component {
 const styles = StyleSheet.create({
     box: {
         flexDirection: 'row',
-        backgroundColor: '#DCDCDC',
+         backgroundColor:'rgba(255,255,255,0.5)',
         height: pxToDp(110),
         margin: pxToDp(10),
         borderRadius: pxToDp(10)

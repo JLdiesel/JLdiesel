@@ -22,7 +22,7 @@ static contextType = NavigationContext;
         <View style={styles.icon1}>
           <TouchableOpacity onPress={() => this.context.goBack()}>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
-            <Ionicons name={this.props.icon1} size={25} color="#FFFFCC" />
+            <Ionicons name={this.props.icon1} size={25} color="#468CD3" />
           </TouchableOpacity>
         </View>
 
@@ -34,7 +34,7 @@ static contextType = NavigationContext;
         <View style={styles.icon2}>
           <TouchableOpacity>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
-            <Ionicons name={this.props.icon2} size={25} color="#FFFFCC" />
+            <Ionicons name={this.props.icon2} size={25} color="#468CD3" />
           </TouchableOpacity>
         </View>
       </View >

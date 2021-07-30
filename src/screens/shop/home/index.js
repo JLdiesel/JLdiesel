@@ -151,9 +151,10 @@ const styles = StyleSheet.create({
         borderRadius: pxToDp(10)
     },
     title: {
-        fontWeight: 'bold',
         fontSize: pxToDp(18),
-        margin: pxToDp(10)
+        margin: pxToDp(10),
+        color:"#468CD3",
+        fontWeight:'bold'
     },
     image1: {
         height: pxToDp(100),

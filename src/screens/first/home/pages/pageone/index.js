@@ -9,13 +9,15 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1="arrow-back" title="流派传奇" />
-                <ScrollView style={{marginBottom:60}}>
+                <ScrollView style={{ marginBottom: 60 }}>
                     <View>
                         <Text style={{ fontWeight: 'bold', fontSize: pxToDp(18), margin: pxToDp(10) }}>越剧流派</Text>
-                        <GenerView
-                            picture={require('../../../../../res/genre/1.jpg')}
-                            name="袁派"
-                            special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" />
+                        <TouchableOpacity onPress={() => this.context.navigate("School")}>
+                            <GenerView
+                                picture={require('../../../../../res/genre/1.jpg')}
+                                name="袁派"
+                                special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" />
+                        </TouchableOpacity>
                         <GenerView
                             picture={require('../../../../../res/genre/2.jpg')}
                             name="范派"
