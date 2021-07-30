@@ -20,8 +20,8 @@ class Index extends Component {
     render() {
       return (
         <ScrollView>
-{   this.state.colloct.map((item)=>(
-    <View key={item.Index} style={{elevation:3,borderWidth:0}}>
+{   this.state.colloct.map((item,index)=>(
+    <View key={index} style={{elevation:3,borderWidth:0}}>
           
         <View style={{flexDirection:'row',marginTop:10,}}>
             <Image source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}}style={{width:100,height:80,borderRadius:5,top:-3}}/> 

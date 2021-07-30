@@ -35,24 +35,30 @@ class Index extends Component {
                     <Text style={{ fontSize: pxToDp(20) }}>想知道自己穿上戏服是什么样吗？{"\n"}
                         来试试看吧!
                     </Text>
-              
-                    <TouchableOpacity style={{ marginTop: pxToDp(20), backgroundColor: '#008080', alignItems: 'center', alignSelf: 'center', height: pxToDp(50), width: pxToDp(200), justifyContent: 'center' }}>
+              <TouchableOpacity style={{ marginTop: pxToDp(20), backgroundColor: '#008080', alignItems: 'center', alignSelf: 'center', height: pxToDp(50), width: pxToDp(200), justifyContent: 'center' }}>
                         <Text style={{ fontSize: pxToDp(25), color: 'white' }}>+导入</Text>
                     </TouchableOpacity>
+                   
                     <Carousel
+                   
                         ref={(c) => { this._carousel = c; }}
                       data={DATA}
                      renderItem={this._renderItem}
                       sliderWidth={ITEM_HEIGHT}
-                        itemWidth={ITEM_WIDTH}
-                       
+                        itemWidth={ITEM_WIDTH*1.1}
+                    containerCustomStyle={styles.carouselContainer}
+
+                     onSnapToItem={(index) => this.setState({ index })}
+                      scrollInterpolator={scrollInterpolator}
+                      slideInterpolatedStyle={animatedStyles}
                         loop={true}
-                        loopClonesPerSide={8}
+                       useScrollView={true}      
                       
                     />
-                      
+                       
                      
                 </View>
+                
             </View>
         );
     }
@@ -60,6 +66,10 @@ class Index extends Component {
 
 const styles = StyleSheet.create({
     carouselContainer: {
+
+        margin: 25,
+        marginLeft:50
+        
   },
   itemContainer: {
     width: ITEM_WIDTH,
