@@ -14,7 +14,7 @@ class Index extends Component {
     static contextType = NavigationContext;
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1='arrow-back' title="单人练唱" />
                 <View>
                     <TextInput style={styles.textinput}
@@ -109,7 +109,7 @@ class Index extends Component {
 
 const styles = StyleSheet.create({
     textinput: {
-        backgroundColor: 'lightgrey',
+        backgroundColor: '#F5F5F5',
         height: pxToDp(40),
         borderRadius: pxToDp(30),
         marginLeft: pxToDp(10),
@@ -130,16 +130,19 @@ const styles = StyleSheet.create({
     },
     text1: {
         fontSize: pxToDp(14),
-        color: '#000000'
+        color: '#000000',
+        marginLeft:pxToDp(10)
     },
     text2: {
         fontSize: pxToDp(14),
-        color: '#696969'
+        color: '#696969',
+        marginLeft:pxToDp(10)
     },
     text3: {
         fontSize: pxToDp(11),
         color: '#808080',
-        marginTop: pxToDp(25)
+        marginTop: pxToDp(25),
+        marginLeft:pxToDp(10)
     }
 })
 export default Index;

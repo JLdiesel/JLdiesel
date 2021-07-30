@@ -6,7 +6,7 @@ import Top from '../../../component/common/top'
 class Index extends Component {
     render() {
         return (
-            <ScrollView >
+            <ScrollView style={{backgroundColor:"#e2f4fe"}}>
                 <Top icon1="arrow-back" title="历史浏览" />
                 <View style={{ margin: pxToDp(10) }}>
                     <Text style={{ fontSize: pxToDp(16) }}>2021-7-28</Text>

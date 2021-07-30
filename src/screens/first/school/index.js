@@ -6,7 +6,7 @@ import Top from '../../../component/common/top'
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" />
 
                 <ScrollView style={{marginBottom:pxToDp(60)}}>

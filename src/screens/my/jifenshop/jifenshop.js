@@ -15,9 +15,9 @@ class Index extends Component {
     static contextType = NavigationContext;
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:"#e2f4fe",flex:1}}>
                 <Top icon1="arrow-back" title="积分商城" />
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                     <Text style={{ fontSize: pxToDp(40) }}>110</Text>
                     <Ionicons style={{ marginTop: pxToDp(10) }} name="server-outline" size={25} color="#000000" />
                 </View>
@@ -33,19 +33,19 @@ class Index extends Component {
                 <View style={styles.tcard}>
                     <View style={styles.ocard}>
                         <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                            <Image style={styles.image} source={require('../../../res/shop/1.jpg')}></Image>
-                            <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化随行杯</Text>
+                            <Image style={styles.image} source={require('../../../res/shop/14.jpg')}></Image>
+                            <Text style={{ fontSize: pxToDp(15), margin: pxToDp(5)}}>越剧书签</Text>
                             <View style={styles.bottext}>
-                                <Text>5000积分</Text>
+                                <Text>1000积分</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.ocard}>
                         <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                            <Image style={styles.image} source={require('../../../res/shop/2.jpg')}></Image>
-                            <Text style={{ fontSize: pxToDp(15) }}> 敦煌文化钥匙扣</Text>
+                            <Image style={styles.image} source={require('../../../res/shop/8.jpg')}></Image>
+                            <Text style={{ fontSize: pxToDp(15),margin: pxToDp(5)}}>《柳毅传书》笔记本</Text>
                             <View style={styles.bottext}>
-                                <Text>1500积分</Text>
+                                <Text>4500积分</Text>
                             </View>
                         </TouchableOpacity>
                     </View>

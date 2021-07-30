@@ -8,7 +8,7 @@ class Index extends Component {
         static contextType = NavigationContext;
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="名角风采" />
                 <ScrollView>
                     <View>

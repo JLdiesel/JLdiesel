@@ -9,7 +9,7 @@ import News from './information/news';
 
 export default () => {
     return (
-        <ScrollableTabView
+        <ScrollableTabView style={{backgroundColor:'#E2F4FE'}}
             initialPage={0}
             renderTabBar={() => <CustormerBar />}
         >

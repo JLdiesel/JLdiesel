@@ -22,7 +22,7 @@ class Index extends Component {
             
             <Top icon1='arrow-back' title="设置" />
         
-            <View style={{height:300}}>
+            <View style={{height:pxToDp(300)}}>
             <ImageBackground style={{width:'100%',height:pxToDp(150)}} source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}} />
                 <View>
                 <TouchableOpacity>
@@ -60,13 +60,13 @@ class Index extends Component {
                     </View>
                    
     
-                    <TouchableOpacity style={{position:'absolute',bottom:pxToDp(30),right:pxToDp(10)}}>
+                    <TouchableOpacity style={{position:'absolute',bottom:pxToDp(20),right:pxToDp(10)}}>
                         <SvgUri svgXmlData={dianzan} width='15' height='15'/>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{position:'absolute',bottom:pxToDp(0),right:pxToDp(8)}}>
+                    <TouchableOpacity style={{position:'absolute',bottom:pxToDp(-10),right:pxToDp(8)}}>
                         <SvgUri svgXmlData={jubao} width='20' height='17'/>
                     </TouchableOpacity>
-                    <View style={{position:'absolute',bottom:0,left:10,width:'80%'}}>
+                    <View style={{position:'absolute',bottom:pxToDp(-10),left:pxToDp(10),width:'80%'}}>
                     <Text style={{color:'#ccc',fontSize:15}} numberOfLines={1}>你所热爱的都是你的生活，蒙古上单：？？？？？？？</Text>
                     </View>
             </View>

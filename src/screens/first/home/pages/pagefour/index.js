@@ -10,7 +10,7 @@ class Index extends Component {
     static contextType = NavigationContext;
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="精选唱段" />
                 <ScrollView style={{marginBottom:pxToDp(50)}}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around'}}>

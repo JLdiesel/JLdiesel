@@ -6,7 +6,7 @@ class Index extends Component {
     render() {
         const { goToPage, tabs, activeTab } = this.props;
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" />
                  <View style={{ marginLeft: pxToDp(20), marginRight: pxToDp(20) }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>

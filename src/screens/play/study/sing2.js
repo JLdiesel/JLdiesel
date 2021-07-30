@@ -8,7 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1='arrow-back' title="穆桂英挂帅" icon2='star-outline' />
                 <View style={styles.box}>
                     <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>

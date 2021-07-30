@@ -7,7 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="剧本详情" />
                 <ScrollView style={{ marginLeft: pxToDp(15), marginTop: pxToDp(15), marginRight: pxToDp(15),marginBottom:pxToDp(60)}}>
                     <Image style={{ height: pxToDp(180), width: pxToDp(350) }} source={require('../../../res/play/4.jpg')} />

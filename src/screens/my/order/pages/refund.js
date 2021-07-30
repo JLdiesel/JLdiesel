@@ -6,7 +6,7 @@ import Top from '../../../../component/common/top'
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE',flex:1}}>
                 <Top icon1="arrow-back" title="售后/退款" />
                 <View style={{ height: pxToDp(230), marginLeft: pxToDp(20), marginRight: pxToDp(20), borderBottomWidth: pxToDp(1), borderBottomColor: 'grey' }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: pxToDp(20) }}>

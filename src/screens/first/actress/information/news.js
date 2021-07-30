@@ -5,7 +5,7 @@ import { pxToDp } from "../../../../utils/styleKits";
 class Index extends Component {
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={{backgroundColor:'#E2F4FE'}}>
                 <View style={{margin:pxToDp(10),flexDirection:'row',borderBottomColor:'grey',borderBottomWidth:pxToDp(1),height:pxToDp(110)}}>
                     <View style={{ width: pxToDp(220) }}>
                         <Text style={{ fontSize: pxToDp(17),marginTop:pxToDp(5) }}>全国越剧汇演之上海越剧院《双珠凤》，方亚芬徐标新主演</Text>

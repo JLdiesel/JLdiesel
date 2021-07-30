@@ -14,7 +14,7 @@ class Index extends Component {
     static contextType = NavigationContext;
     render() {
         return (
-            <View style={{ backgroundColor: '#FFFFFF', height: '100%' }}>
+            <View style={{backgroundColor:'#E2F4FE',flex:1}}>
                 <ScrollView>
                     <Top icon1='arrow-back' title="详情" />
                     <View style={styles.top}>

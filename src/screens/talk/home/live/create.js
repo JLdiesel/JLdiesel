@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="创作" />
                 <View style={{ height: pxToDp(400), width: pxToDp(320), margin: pxToDp(20) }}>
                     <View style={{ flexDirection: 'row' }}>

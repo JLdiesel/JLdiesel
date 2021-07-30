@@ -8,7 +8,7 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1="arrow-back" title="全部订单"/>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(20) }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around',backgroundColor:'#E2F4FE' }}>
                     {tabs.map((v, i) => <TouchableOpacity
                         key={i}
                         onPress={() => goToPage(i)}

@@ -5,7 +5,7 @@ import {pxToDp} from '@utils//styleKits'
 class Index extends Component {
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="剧本" />
                 <View>
                     <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(110) }}>

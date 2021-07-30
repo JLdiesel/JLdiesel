@@ -5,7 +5,7 @@ import { pxToDp } from "../../../../utils/styleKits";
 class Index extends Component {
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={{backgroundColor:'#E2F4FE'}}>
             <View style={{margin:pxToDp(10)}}>
                 <Image style={{height:pxToDp(170),width:pxToDp(355),borderRadius:pxToDp(10)}} source={require('../../../../res/performer/12.jpg')} />
                 <Text style={{fontSize:pxToDp(18)}}>名家名段：越剧《山河恋·送信》现在我和你口信念-表演：王君安 方亚芬</Text>

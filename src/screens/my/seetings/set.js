@@ -14,7 +14,7 @@ class Index extends Component {
     static contextType = NavigationContext;
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:"#e2f4fe",flex:1}}>
                 <Top icon1='arrow-back' title="设置" />
                 <TouchableOpacity onPress={() => this.context.navigate("Tuisong")}>
                     <List title="消息与推送通知" />

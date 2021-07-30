@@ -9,9 +9,9 @@ import Model from '@components/common/pop';
 
 class Index extends Component {
     state = {
-        arr: [{ uriFace: 'https://uploadfile.huiyi8.com/2017/0408/20170408024019384.jpg', id: 1, name1: '创建公开房间', name2: '创建私人房间', teaname: '创建房间' },
-        { uriFace: 'https://tse1-mm.cn.bing.net/th/id/R-C.de0043b7a1faf51c27853b88491afe52?rik=GyaQsnc%2bKpIJYA&riu=http%3a%2f%2f2d.zol-img.com.cn%2fproduct%2f68_940x705%2f905%2fcejzRDmJlDim2.jpg&ehk=%2b6RuYv4vbBDuJ0l5jbhhYobdEX2fGGGlCKvV5AF6qBw%3d&risl=&pid=ImgRaw', id: 2, name1: '热门剧本', name2: '最新剧本', teaname: '快速匹配' },
-        { uriFace: 'https://bpic.588ku.com/back_origin_min_pic/19/04/12/0babf93d5bfa2099ef03cec7fe344efc.jpg!/fw/750/quality/99/unsharp/true/compress/true', id: 3, name1: '', name2: '加入房间', teaname: '查找房间' }]
+        arr: [{ uriFace: 'https://img1.baidu.com/it/u=2299442732,1673944853&fm=26&fmt=auto&gp=0.jpg', id: 1, name1: '创建公开房间', name2: '创建私人房间', teaname: '创建房间' },
+        { uriFace: 'https://img0.baidu.com/it/u=191110947,1000133844&fm=26&fmt=auto&gp=0.jpg', id: 2, name1: '热门剧本', name2: '最新剧本', teaname: '快速匹配' },
+        { uriFace: 'https://img2.baidu.com/it/u=440896499,2306026917&fm=26&fmt=auto&gp=0.jpg', id: 3, name1: '', name2: '加入房间', teaname: '查找房间' }]
     }
     static contextType = NavigationContext;
     render() {
@@ -22,7 +22,7 @@ class Index extends Component {
                     {/*戏服体验馆 */}
                     <View style={{ borderRadius: pxToDp(10) }}>
                         <TouchableOpacity onPress={() => this.context.navigate("Change")}>
-                            <View style={{ borderRadius: pxToDp(10), height: pxToDp(170), width: pxToDp(355), borderRadius: pxToDp(10), margin: pxToDp(10), backgroundColor:'rgba(255,255,255,0.5)'}}>
+                            <View style={{ borderRadius: pxToDp(10), height: pxToDp(170), width: pxToDp(355), borderRadius: pxToDp(10), margin: pxToDp(10), backgroundColor: 'rgba(255,255,255,0.5)' }}>
                                 <Text style={{ fontSize: pxToDp(25), marginTop: pxToDp(20), alignSelf: 'center' }}>戏服体验馆</Text>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(30) }}>
                                     <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/1.jpg')} />
@@ -40,7 +40,7 @@ class Index extends Component {
                                 <Text>签到</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity  onPress={() => this.context.navigate("Scriptlibrary")}>
+                        <TouchableOpacity onPress={() => this.context.navigate("Scriptlibrary")}>
                             <View style={{ alignItems: 'center' }}>
                                 <Ionicons name="layers-outline" size={28} color="#468CD3" />
                                 <Text>剧本</Text>
@@ -55,14 +55,16 @@ class Index extends Component {
                     </View>
                     {/*单人练唱 */}
                     <View style={{ marginLeft: pxToDp(10), marginRight: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), marginLeft: pxToDp(0),color:"#468CD3",fontWeight:'bold' }}>单人练唱</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), marginLeft: pxToDp(0), color: "#468CD3", fontWeight: 'bold' }}>单人练唱</Text>
                         <TouchableOpacity onPress={() => this.context.navigate("Study")}>
-                            <Image style={{ height: pxToDp(130), width: pxToDp(355), borderRadius: pxToDp(10) }} source={require('../../../res/26.jpg')} />
+                            <View style={{ height: pxToDp(130), width: pxToDp(355), borderRadius: pxToDp(10),backgroundColor: 'rgba(255,255,255,0.5)'}}>
+                            <Text style={{ fontSize: pxToDp(25), marginTop: pxToDp(43), alignSelf: 'center' }}>单人练唱</Text>
+                            </View>
                         </TouchableOpacity>
                     </View>
                     {/*双人剧本 */}
                     <View style={{ marginRight: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10),color:"#468CD3",fontWeight:'bold' }}>双人剧本</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), color: "#468CD3", fontWeight: 'bold' }}>双人剧本</Text>
                         <View style={{ flexDirection: 'row' }}>
                             {this.state.arr.map((item) =>
                                 <Model key={item.id} item={item} />
@@ -71,7 +73,7 @@ class Index extends Component {
                     </View>
                     {/*剧本推荐 */}
                     <View>
-                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10),color:"#468CD3",fontWeight:'bold' }}>剧本推荐</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), color: "#468CD3", fontWeight: 'bold' }}>剧本推荐</Text>
                         <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(110) }}>
                             <TouchableOpacity onPress={() => this.context.navigate("Drama")}>
                                 <Image style={{ height: pxToDp(100), width: pxToDp(100), borderRadius: pxToDp(10) }} source={require('../../../res/play/1.jpg')} />
@@ -101,7 +103,7 @@ class Index extends Component {
         );
     }
     showAlert() {
-        Alert.alert('签到','今日获得50积分',[{text:"我知道了"}]);
-      }
+        Alert.alert('签到', '今日获得50积分', [{ text: "我知道了" }]);
+    }
 }
 export default Index;

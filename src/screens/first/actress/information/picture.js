@@ -5,7 +5,7 @@ import { pxToDp } from "../../../../utils/styleKits";
 class Index extends Component {
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={{backgroundColor:'#E2F4FE'}}>
                 <View style={{alignItems:'center',justifyContent:'center'}}>
                <Image style={{height:pxToDp(300),width:pxToDp(250),margin:pxToDp(10)}} source={require('../../../../res/performer/14.jpg')}/>
                <Image style={{height:pxToDp(300),width:pxToDp(250),margin:pxToDp(10)}} source={require('../../../../res/performer/15.jpg')}/>

@@ -29,7 +29,7 @@ class Index extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" title="戏服体验馆" />
                 <View style={{ alignItems: 'center', alignSelf: 'center', marginTop: pxToDp(30) }}>
                     <Text style={{ fontSize: pxToDp(20) }}>想知道自己穿上戏服是什么样吗？{"\n"}

@@ -7,7 +7,7 @@ import Top from '../../../../../component/common/top'
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#E2F4FE',flex:1}}>
                 <Top icon1="arrow-back" title="俯瞰百年" />
                 <ScrollView>
                     <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: pxToDp(8) }}>
