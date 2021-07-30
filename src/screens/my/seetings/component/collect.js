@@ -23,17 +23,17 @@ class Index extends Component {
 {   this.state.colloct.map((item,index)=>(
     <View key={index} style={{elevation:3,borderWidth:0}}>
           
-        <View style={{flexDirection:'row',marginTop:10,}}>
-            <Image source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}}style={{width:100,height:80,borderRadius:5,top:-3}}/> 
-            <Text style={{width:245,paddingLeft:10}} numberOfLines={2}>1111111111111111111111111111111111111111111111111111111111111111</Text>
+        <View style={{flexDirection:'row',marginTop:pxToDp(10),}}>
+            <Image source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}}style={{width:pxToDp(100),height:pxToDp(80),borderRadius:5,top:pxToDp(-3)}}/> 
+            <Text style={{width:pxToDp(245),paddingLeft:pxToDp(10)}} numberOfLines={2}>1111111111111111111111111111111111111111111111111111111111111111</Text>
             </View>
             <View style={{flexDirection:'row',justifyContent:'space-around'}}> 
-            <SvgUri svgXmlData={playnumber} width='15' height='15' style={{position:'absolute', bottom:10,left:110}}/>
-            <Text style={{position:'absolute', bottom:10,left:130,fontSize:10}}>111</Text>
-            <SvgUri svgXmlData={playnumber} width='15' height='15' style={{position:'absolute', bottom:10,right:120}}/>
-            <Text style={{position:'absolute', bottom:10,right:100,fontSize:10}}>111</Text>
+            <SvgUri svgXmlData={playnumber} width='15' height='15' style={{position:'absolute', bottom:pxToDp(10),left:pxToDp(110)}}/>
+            <Text style={{position:'absolute', bottom:pxToDp(10),left:pxToDp(130),fontSize:pxToDp(10)}}>111</Text>
+            <SvgUri svgXmlData={playnumber} width='15' height='15' style={{position:'absolute', bottom:pxToDp(10),right:pxToDp(120)}}/>
+            <Text style={{position:'absolute', bottom:pxToDp(10),right:pxToDp(100),fontSize:pxToDp(10)}}>111</Text>
             <TouchableOpacity>
-            <SvgUri svgXmlData={point} width='15' height='15' style={{position:'absolute', bottom:10,left:160}}/>
+            <SvgUri svgXmlData={point} width='15' height='15' style={{position:'absolute', bottom:pxToDp(10),left:pxToDp(160)}}/>
             </TouchableOpacity>
             </View> 
         </View>
