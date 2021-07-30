@@ -20,7 +20,7 @@ class ListItem extends Component {
                 <View style={{ position: 'absolute', top: 10, left: 60 }}>
                     <Text style={{ fontSize: 15, fontWeight: 'bold' }}>{this.props.username}</Text>
                     <Text style={{ marginTop: 12, width: 250, fontSize: 12 }}>{this.props.subs}</Text>
-                    <Text style={{ marginTop: 12, width: 250, fontSize: 13 }}>2019-09-12 21:57</Text>
+                    <Text style={{ marginTop: 12, width: 250, fontSize: 13 }}>{ this.props.createTime}</Text>
                 </View>
                
             </View>

@@ -1,5 +1,5 @@
-{
-    "list": [
+export default {
+    list: [
       {
         "page":"党史故事100讲",
         "title": "五四运动唤醒民众",

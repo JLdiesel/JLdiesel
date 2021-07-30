@@ -1,15 +1,13 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import { View,ImageBackground ,TouchableOpacity,Text} from 'react-native';
-
+import VideoPlayScreen from '../VideoPlayScreen.js';
 import { pxToDp } from '@utils/styleKits.js';
-// import { Video } from 'expo-av';
-import Video from '../video'
+import { Button } from 'react-native-elements';
 class index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            videoHeight: pxToDp(220),
-            status:{}
+            videoHeight:pxToDp(220)
         };
       }
       onIt = () => {
@@ -18,27 +16,14 @@ class index extends Component {
         });
     };
     render() {
-        const video=createRef()
         const { goToPage, tabs, activeTab } = this.props;
         const { videoHeight} = this.state;
         return (
             <View>
-         
-                    <Video
-                        style={{ height: videoHeight, width: '100%', backgroundColor: 'red' }}
-        ref={video}
-        // style={styles.video}
-                    
-                    source={
-         'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'
-        }
-        useNativeControls
-        resizeMode="contain"
-        isLooping
-        onPlaybackStatusUpdate={status => this.setState({status})}
-      />
+                <View style={{ height: videoHeight, width: '100%', backgroundColor: 'red' }}>
+                    <VideoPlayScreen onIt={this.onIt} />
                     {/* <Button onPress={()=>this.onIt()} title='111'></Button> */}
-             
+                </View>
                 <View>
                     <ImageBackground
                         style={{

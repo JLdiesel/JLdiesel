@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from "./tabbar";
 import * as Screens from './screens'
 import Water from './component/water'
-import Video from '../screens/video'
+import Video from '../screens/videoplayer'
 const Stack = createStackNavigator();
 
 function Nav() {
@@ -64,8 +64,8 @@ function Nav() {
 
 
         <Stack.Screen name="Article" component={Screens.Article} />
-        <Stack.Screen name="Actress" component={Screens.Actress} />
-        <Stack.Screen name="School" component={Screens.School} />
+       {/* <Stack.Screen name="Actress" component={Screens.Actress} */}
+        {/* <Stack.Screen name="School" component={Screens.School} />*/}
         <Stack.Screen name="Drama" component={Screens.Drama} />
         <Stack.Screen name="History" component={Screens.History} />
         <Stack.Screen name="Jifenshop" component={Screens.Jifenshop} />
@@ -76,7 +76,10 @@ function Nav() {
         <Stack.Screen name="Orderfour" component={Screens.Orderfour} />
         <Stack.Screen name="Refund" component={Screens.Refund} />
         <Stack.Screen name="Setting" component={Screens.Setting} />
-        <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
+        <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
+        <Stack.Screen name="Nickname" component={Screens.Nickname} />
+        <Stack.Screen name="Signature" component={Screens.Singnature} />
+        {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
