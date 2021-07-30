@@ -5,14 +5,14 @@ import { pxToDp } from '@utils/styleKits';
 import Swiper from 'react-native-swiper';
 import { NavigationContext } from "@react-navigation/native";
 class Index extends Component {
-     static contextType = NavigationContext;
+    static contextType = NavigationContext;
     render() {
         return (
             <View>
                 <Top title="越市" />
-                <ScrollView style={{marginBottom:pxToDp(60)}}>
+                <ScrollView style={{ marginBottom: pxToDp(60) }}>
                     {/*轮播 */}
-                    <View style={{ height: pxToDp(300) }}>
+                    <View style={{ height: pxToDp(320) }}>
                         <Swiper style={styles.wrapper}
                             removeClippedSubviews={false}
                             showsButtons={false}
@@ -31,7 +31,7 @@ class Index extends Component {
                     </View>
                     {/*新人礼遇 */}
                     <Text style={styles.title}>新人礼遇</Text>
-                    <View style={{ alignItems: 'center' }}>
+                    <View style={{ alignItems: 'center', marginLeft: pxToDp(10), marginRight: pxToDp(10) }}>
                         <Image style={styles.image1} source={require('../../../res/17.jpg')} />
                     </View>
                     {/*小推广 */}
@@ -51,10 +51,14 @@ class Index extends Component {
                         </View>
                     </View>
                     {/*戏服租赁 */}
-                    <View style={{ margin: pxToDp(20) }}>
-                        <Image style={styles.image3} source={require('../../../res/30.jpg')} />
+                    <View style={{ margin: pxToDp(20), marginLeft: pxToDp(10) }}>
+                        <TouchableOpacity onPress={() => this.context.navigate("Zulin")}>
+                            <Image style={styles.image3} source={require('../../../res/30.jpg')} />
+                        </TouchableOpacity>
                         {/*越剧周边 */}
-                        <Image style={styles.image4} source={require('../../../res/29.jpg')} />
+                        <TouchableOpacity onPress={() => this.context.navigate("Zhoubian")}>
+                            <Image style={styles.image4} source={require('../../../res/29.jpg')} />
+                        </TouchableOpacity>
                     </View>
                     {/*推荐模块 */}
                     <Text style={styles.title}>你可能喜欢</Text>
@@ -113,11 +117,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: pxToDp(300),
+        margin: pxToDp(10),
+        borderRadius: pxToDp(10)
     },
     slide2: {
         justifyContent: 'center',
         alignItems: 'center',
         height: pxToDp(300),
+        margin: pxToDp(10),
+        borderRadius: pxToDp(10),
     },
     tcard: {
         flexDirection: 'row',
@@ -129,6 +137,7 @@ const styles = StyleSheet.create({
         width: pxToDp(170),
         borderRadius: pxToDp(10),
         margin: pxToDp(10),
+        marginRight: pxToDp(5)
     },
     image: {
         height: pxToDp(170),
@@ -138,7 +147,8 @@ const styles = StyleSheet.create({
     },
     lunboimage: {
         height: pxToDp(300),
-        width: '100%'
+        width: '100%',
+        borderRadius: pxToDp(10)
     },
     title: {
         fontWeight: 'bold',
@@ -147,19 +157,19 @@ const styles = StyleSheet.create({
     },
     image1: {
         height: pxToDp(100),
-        width: pxToDp(350),
+        width: pxToDp(355),
         borderRadius: pxToDp(10)
     },
     box: {
         height: pxToDp(115),
-        width: pxToDp(80),
+        width: pxToDp(105),
         backgroundColor: '#FFB6C1',
         alignItems: 'center',
         borderRadius: pxToDp(10)
     },
     image2: {
         height: pxToDp(90),
-        width: pxToDp(80),
+        width: pxToDp(105),
         borderTopLeftRadius: pxToDp(10),
         borderTopRightRadius: pxToDp(10)
     },
@@ -170,12 +180,12 @@ const styles = StyleSheet.create({
     },
     image3: {
         height: pxToDp(150),
-        width: pxToDp(340),
+        width: pxToDp(355),
         borderRadius: pxToDp(10)
     },
     image4: {
         height: pxToDp(150),
-        width: pxToDp(340),
+        width: pxToDp(355),
         marginTop: pxToDp(10),
         borderRadius: pxToDp(10)
     }

@@ -4,6 +4,7 @@ import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
 import { FAB } from 'react-native-elements';
 
+
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -65,7 +66,7 @@ class Index extends Component {
                         </View>
                     </View>
                 </ScrollView>
-                    <FAB title="创作剧本" size="small" placement="right" color="#B0C4DE" onPress={() => this.context.navigate("Create")}/>
+                    <FAB  size="large" placement="right" color="#B0C4DE" onPress={() => this.context.navigate("Create")}/>
             </View>
         );
     }
