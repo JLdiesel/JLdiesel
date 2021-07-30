@@ -33,7 +33,7 @@ class Index extends Component {
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                        <View style={{ alignItems: 'center' }}>
+                        <View style={{alignItems:'center'}}>
                             <TouchableOpacity onPress={()=>{this.context.navigate('Shop')}}>
                             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>17</Text>
                             <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>点赞</Text>
