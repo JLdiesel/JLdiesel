@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Dimensions, Image, Text, Slider, TouchableWithoutFeedback, TouchableOpacity, Button, StyleSheet } from 'react-native';
 
-import {Video} from 'expo-av'
+import {Video} from 'expo-av' 
 // import Orientation from 'react-native-orientation';
 // import Orientation from 'react-native-orientation-locker';
 
@@ -40,7 +40,7 @@ export default class VideoPlayScreen extends Component {
             currentTime: 0,        // 视频当前播放的时间
             duration: 0,           // 视频的总时长
             isFullScreen: false,     // 当前是否全屏显示
-            playFromBeginning: false, // 是否从头开始播放
+            playFromBeginning: false, // 是否从头开始播放 
         };
     }
 
@@ -162,16 +162,18 @@ export default class VideoPlayScreen extends Component {
 
     _onLoaded = (data) => {
         console.log('视频加载完成');
+        console.log(data);
         this.setState({
-            duration: data.duration,
+            duration: data.durationMillis,
         });
     };
 
     _onProgressChanged = (data) => {
-        // console.log('视频进度更新');
+        console.log(data);
+        console.log('视频进度更新');
         if (this.state.isPlaying) {
             this.setState({
-                currentTime: data.currentTime,
+                currentTime: data.positionMillis,
             })
         }
     };
@@ -249,18 +251,18 @@ export default class VideoPlayScreen extends Component {
 
     /// 进度条值改变
     onSliderValueChanged(currentTime) {
-        this.videoPlayer.seek(currentTime);
+    
         if (this.state.isPlaying) {
+            console.log(currentTime);
             this.setState({
-                currentTime: currentTime
+                currentTime: currentTime / 1000
             })
         } else {
+            console.log(currentTime);
             this.setState({
-                currentTime: currentTime,
-                isPlaying: true,
-                showVideoCover: false
+                currentTime: currentTime / 1000
             })
-        }
+        }0, 61, 102
     }
 
     /// 屏幕旋转时宽高会发生变化，可以在onLayout的方法中做处理，比监听屏幕旋转更加及时获取宽高变化

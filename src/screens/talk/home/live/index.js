@@ -14,7 +14,11 @@ class Index extends Component {
   static contextType = NavigationContext;
   render() {
     return (
+<<<<<<< HEAD
       <View style={{ flex: 1}}>
+=======
+      <View style={{ flex: 1, backgroundColor: '#ecf6fc' }}>
+>>>>>>> 9ee98c4156c4df64b1a88237d2d50e5f74dd548d
         <ScrollView >
           <Image style={styles.image} source={require('../../../../res/13.jpg')} />
           <Image style={styles.image} source={require('../../../../res/14.jpg')} />

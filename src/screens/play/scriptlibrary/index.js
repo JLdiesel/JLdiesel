@@ -9,7 +9,7 @@ class Index extends Component {
                 <Top icon1="arrow-back" title="剧本" />
                 <View>
                     <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(110) }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity >
                             <Image style={{ height: pxToDp(100), width: pxToDp(100), borderRadius: pxToDp(10) }} source={require('../../../res/play/1.jpg')} />
                         </TouchableOpacity>
                         <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>

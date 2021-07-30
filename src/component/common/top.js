@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from "@react-navigation/native";
+import { pxToDp,screenWidth } from '../../utils/styleKits';
 export default class HeaderHaveBack extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,8 @@ static contextType = NavigationContext;
   render() {
     return (
       <View style={styles.box}>
-        <View style={styles.icon1}>
+        <View style={{marginTop:pxToDp(30), justifyContent:'space-between',flexDirection:'row'}}>
+            <View style={styles.icon1}>
           <TouchableOpacity onPress={() => this.context.goBack()}>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
             <Ionicons name={this.props.icon1} size={25} color="#468CD3" />
@@ -36,6 +38,7 @@ static contextType = NavigationContext;
             <Ionicons name={this.props.icon2} size={25} color="#468CD3" />
           </TouchableOpacity>
         </View>
+      </View>
       </View >
     );
   }
@@ -44,33 +47,29 @@ static contextType = NavigationContext;
 const styles = StyleSheet.create({
   box: {
     alignItems: 'center',
-    alignSelf: 'center',    
+    width:screenWidth,
     flexDirection:'row',
-    backgroundColor:'white'
+    backgroundColor: '#fff',
+   
+    height:70
   },
   icon1: {
-    flexDirection: 'row',
-    height: 60,
-    width:40,
-    alignItems: "center",
-    marginLeft:10,
-    color:'#468CD3'
+    height: 18,
+    width:pxToDp(40),
+ 
   },
   icon2: {
-    flexDirection: 'row',
-    height: 60,
-    width:40,
-    alignItems: "center",
-    marginRight:10,
-    color:'#468CD3'
+    width:pxToDp(40),
+   
   },
   textview: {
     flex:1,
-    alignItems:'center'
+    alignItems:'center',
+
   },
   textstyle: {
-    fontSize: 22,
-    color:'#468CD3'
+    fontSize: pxToDp(18),
+    color: '#468cd3'
   },
 });
 

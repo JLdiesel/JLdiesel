@@ -17,7 +17,7 @@ class Index extends Component {
       {
         selected: "play",
         title: "越吟",
-        renderIcon: () => <Svg width="20" height="20" svgXmlData={play} color='#FFFFCC'/>,
+        renderIcon: () => <Svg width="20" height="20" svgXmlData={play} />,
         renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedPlay} />,
         onPress: () => this.setState({ selectedTab: 'play' }),
         component: <Play />
@@ -25,7 +25,7 @@ class Index extends Component {
       {
         selected: "talk",
         title: "戏缘",
-        renderIcon: () => <Svg width="20" height="20" svgXmlData={talk} color="#FFFFCC"/>,
+        renderIcon: () => <Svg width="20" height="20" svgXmlData={talk} />,
         renderSelectedIcon: () => <Svg width="20" height="20" svgXmlData={selectedTalk} />,
         onPress: () => this.setState({ selectedTab: 'talk' }),
         component: <Talk />
@@ -60,7 +60,7 @@ class Index extends Component {
     const { selectedTab, pages } = this.state;
     return (
 
-        <TabNavigator  style={{ backgroundColor:"#ECF6FC"}} >
+        <TabNavigator style={{   backgroundColor:"#ecf6fc"}} >
           {pages.map((v, i) => <TabNavigator.Item key={i}
             selected={selectedTab===v.selected}
             title={v.title}
@@ -73,7 +73,6 @@ class Index extends Component {
               backgroundColor:"white",
               justifyContent:'center'
             }}
-            
           >
             {v.component}
           </TabNavigator.Item>)}
