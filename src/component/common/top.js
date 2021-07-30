@@ -3,11 +3,11 @@ icon1 2 是给顶部设置的返回和分享按钮 需要在引用的页面按�
 */}
 'use strict';
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity ,BVLinearGradient} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from "@react-navigation/native";
-import { pxToDp, screenWidth } from '../../utils/styleKits';
-import {LinearGradient} from 'expo-linear-gradient'
+import { pxToDp,screenWidth } from '../../utils/styleKits';
+import {LinearGradient} from 'expo-linear-gradient';
 export default class HeaderHaveBack extends Component {
   constructor(props) {
     super(props);
@@ -66,10 +66,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   top:pxToDp(3),
 
+
   },
   textstyle: {
     fontSize: pxToDp(18),
-    color: '#468cd3'
+    color:'#468cd3'
   },
 });
 
