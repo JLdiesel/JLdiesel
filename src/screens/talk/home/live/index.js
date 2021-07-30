@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, ScrollView,TouchableOpacity } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
-import { FAB } from 'react-native-elements';
+import { FAB } from 'react-native-elements'
 
 class Index extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Index extends Component {
           <Image style={styles.image} source={require('../../../../res/15.jpg')} />
           <Image style={styles.image} source={require('../../../../res/16.jpg')} />
         </ScrollView >
-          <FAB title="发起直播" size="small" placement="right" color="#B0C4DE"  onPress={() => this.context.navigate("Apply")} />
+          <FAB size="large" placement="right" color="#B0C4DE"  onPress={() => this.context.navigate("Apply")} />
       </View>
     );
   }

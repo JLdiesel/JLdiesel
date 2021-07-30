@@ -8,6 +8,7 @@ import Play from "./screens/play/home";
 import Talk from "./screens/talk/home";
 import Shop from "./screens/shop/home";
 import My from "./screens/my/home";
+import { pxToDp } from './utils/styleKits';
 
 class Index extends Component {
   state = {
@@ -68,10 +69,11 @@ class Index extends Component {
             onPress={v.onPress}
             selectedTitleStyle={{color:"#FFFFCC"}}
             tabStyle={{
-
+           height:pxToDp(51), 
               backgroundColor:"#003C66",
               justifyContent:'center'
             }}
+            
           >
             {v.component}
           </TabNavigator.Item>)}

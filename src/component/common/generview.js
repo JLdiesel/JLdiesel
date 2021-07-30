@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#DCDCDC',
         height: pxToDp(110),
         margin: pxToDp(10),
-        borderRadius: pxToDp(20)
+        borderRadius: pxToDp(10)
     },
     image: {
         height: pxToDp(90),
         width: pxToDp(90),
-        borderRadius: pxToDp(10),
+        borderRadius: pxToDp(7),
         margin: pxToDp(10)
     },
     text1: {

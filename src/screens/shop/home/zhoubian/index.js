@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
         width: pxToDp(170),
         borderRadius: pxToDp(10),
         margin: pxToDp(10),
+        marginRight:pxToDp(5)
     },
     image: {
         height: pxToDp(170),

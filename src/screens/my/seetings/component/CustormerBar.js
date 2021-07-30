@@ -82,7 +82,7 @@ class Index extends Component {
                     onPress={() => goToPage(i)}
                     style={{
                         justifyContent: 'center',
-                        borderBottomColor: "red",
+                        borderBottomColor: "#003C66",
                         borderBottomWidth: activeTab === i ? pxToDp(3) : 0
                     }}
                 >

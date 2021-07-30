@@ -10,13 +10,11 @@ export { default as Details } from './play/study/details';//商品详情页
 export { default as Sing } from './play/study/sing';//商品详情页
 export { default as Zhoubian } from './shop/home/zhoubian';//周边页
 export { default as Zulin } from './shop/home/zulin';//服装租赁页
-export { default as Setting } from './my/seetings/setting';//服装租赁页
+export { default as Set} from './my/seetings/set';//服装租赁页
 export { default as Tuisong } from './my/seetings/tuisong';//服装租赁页
 export { default as Women } from './my/seetings/women';//服装租赁页
 export { default as Yijian } from './my/seetings/yijian';//服装租赁页
 export { default as Yinsi } from './my/seetings/yinsi';//服装租赁页
-export { default as Zhanghao } from './my/seetings/zhanghao';//服装租赁页
-export { default as Ziliao } from './my/seetings/ziliao';//服装租赁页
 export { default as Act } from './play/act';//服装租赁页
 export { default as Apply } from './talk/home/live/apply';//服装租赁页
 export { default as Create } from './talk/home/live/create';//服装租赁页
@@ -38,6 +36,21 @@ export { default as Waitcomment} from './my/waitcomment';//待评价
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
 export { default as Actress } from './first/actress';
-export { default as School } from './first/school'
+export { default as School } from './first/school';
+export { default as History } from './my/history';
+export { default as Jifenshop } from './my/jifenshop/jifenshop';
+
+export { default as Orderone } from './my/order/pages/orderone';
+export { default as Ordertwo } from './my/order/pages/ordertwo';
+export { default as Orderthree } from './my/order/pages/orderthree';
+export { default as Orderfour } from './my/order/pages/orderfour';
+export { default as Refund } from './my/order/pages/refund';
+export { default as Setting } from './my/seetings/setting'
+export { default as Ziliao } from './my/seetings/ziliao'
+
+
+
+
+
 
 

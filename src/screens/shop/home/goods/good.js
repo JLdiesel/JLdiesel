@@ -233,7 +233,7 @@ export default class Shop extends Component {
                     source={require('../../../../res/6.jpg')}
                     style={{width: pxToDp(20), height: pxToDp(20), position: 'absolute', bottom: aheight, right: awidth}}/>
 
-        <View style={{ width: ScreenWidth, height: pxToDp(50), backgroundColor: '#fff', position: 'absolute', top: ScreenHeight - pxToDp(50), borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
+        <View style={{ width: ScreenWidth, height: pxToDp(50), backgroundColor: '#fff', position: 'absolute', top: ScreenHeight - pxToDp(30), borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
           <View style={{ flexDirection: 'row' }}>
             
             <View style={{ flexDirection: 'column', marginLeft: pxToDp(20)}}>

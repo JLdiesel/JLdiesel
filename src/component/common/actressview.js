@@ -32,8 +32,7 @@ const styles = StyleSheet.create({
         margin: pxToDp(8)
     },
     text1: {
-        fontSize: pxToDp(17),
-        fontWeight: 'bold',
+        fontSize: pxToDp(17)
     }
 })
 export default Index;

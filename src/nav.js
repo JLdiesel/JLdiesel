@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="Setting">
+      <Stack.Navigator headerMode='none' initialRouteName="Tabbar">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -40,14 +40,12 @@ function Nav() {
         {/*周边商城页 */}
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
-        <Stack.Screen name="Setting" component={Screens.Setting} />
+        <Stack.Screen name="Set" component={Screens.Set} />
         {/*具体的设置内容。。。 */}
         <Stack.Screen name="Women" component={Screens.Women} />
         <Stack.Screen name="Tuisong" component={Screens.Tuisong} />
         <Stack.Screen name="Yijian" component={Screens.Yijian} />
         <Stack.Screen name="Yinsi" component={Screens.Yinsi} />
-        <Stack.Screen name="Zhanghao" component={Screens.Zhanghao} />
-        <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
         {/*双人剧本 */}
         <Stack.Screen name="Act" component={Screens.Act} />
         {/*AI换衣  */}
@@ -69,6 +67,19 @@ function Nav() {
        {/* <Stack.Screen name="Actress" component={Screens.Actress} */}
         {/* <Stack.Screen name="School" component={Screens.School} />*/}
         <Stack.Screen name="Drama" component={Screens.Drama} />
+        <Stack.Screen name="History" component={Screens.History} />
+        <Stack.Screen name="Jifenshop" component={Screens.Jifenshop} />
+        <Stack.Screen name="Order" component={Screens.Order} />
+        <Stack.Screen name="Orderone" component={Screens.Orderone} />
+        <Stack.Screen name="Ordertwo" component={Screens.Ordertwo} />
+        <Stack.Screen name="Orderthree" component={Screens.Orderthree} />
+        <Stack.Screen name="Orderfour" component={Screens.Orderfour} />
+        <Stack.Screen name="Refund" component={Screens.Refund} />
+        <Stack.Screen name="Setting" component={Screens.Setting} />
+        <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
+        <Stack.Screen name="Nickname" component={Screens.Nickname} />
+        <Stack.Screen name="Signature" component={Screens.Singnature} />
+        {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
