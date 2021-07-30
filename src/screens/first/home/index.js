@@ -44,7 +44,7 @@ class Index extends Component {
                     {/*精选唱段 */}
                     <View style={{ margin: pxToDp(10) }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18) }}>精选唱段</Text>
+                            <Text style={{ fontSize: pxToDp(18),color:"#468CD3",fontWeight:'bold' }}>精选唱段</Text>
                             <TouchableOpacity onPress={() => this.context.navigate("PageFour")}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>
@@ -64,7 +64,7 @@ class Index extends Component {
                     {/*俯瞰百年 */}
                     <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18) }}>俯瞰百年</Text>
+                            <Text style={{ fontSize: pxToDp(18) ,color:"#468CD3",fontWeight:'bold'}}>俯瞰百年</Text>
                             <TouchableOpacity onPress={() => this.context.navigate("PageTwo")}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>
@@ -99,7 +99,7 @@ class Index extends Component {
                     {/*名角风采 */}
                     <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18) }}>名角风采</Text>
+                            <Text style={{ fontSize: pxToDp(18),color:"#468CD3",fontWeight:'bold' }}>名角风采</Text>
                             <TouchableOpacity onPress={() => this.context.navigate("PageThree")}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>
@@ -137,7 +137,7 @@ class Index extends Component {
                     {/*流派故事 */}
                     <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18) }}>流派传奇</Text>
+                            <Text style={{ fontSize: pxToDp(18),color:"#468CD3",fontWeight:'bold' }}>流派传奇</Text>
                             <TouchableOpacity onPress={() => this.context.navigate("PageOne")}>
                                 <View style={{ flexDirection: 'row' }}>
                                     <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>

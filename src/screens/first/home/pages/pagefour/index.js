@@ -12,7 +12,7 @@ class Index extends Component {
         return (
             <View>
                 <Top icon1="arrow-back" title="精选唱段" />
-                <ScrollView>
+                <ScrollView style={{marginBottom:pxToDp(50)}}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around'}}>
                         <View style={{ alignItems: 'center', alignSelf: 'center' }}>
                             <Ionicons name="md-bar-chart" size={35} color="#00BFFF" />
@@ -25,6 +25,10 @@ class Index extends Component {
                         <View style={{ alignItems: 'center', alignSelf: 'center' }}>
                             <Ionicons name="md-musical-notes" size={35} color="red" />
                             <Text style={styles.text1}>红色经典</Text>
+                        </View>
+                        <View style={{ alignItems: 'center', alignSelf: 'center' }}>
+                            <Ionicons name="md-happy-outline" size={35} color="green" />
+                            <Text style={styles.text1}>越剧动画</Text>
                         </View>
                     </View>
                     <TouchableOpacity onPress={()=>this.context.navigate('Video')}>

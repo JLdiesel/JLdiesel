@@ -76,6 +76,7 @@ function Nav() {
         <Stack.Screen name="Orderfour" component={Screens.Orderfour} />
         <Stack.Screen name="Refund" component={Screens.Refund} />
         <Stack.Screen name="Setting" component={Screens.Setting} />
+        <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>

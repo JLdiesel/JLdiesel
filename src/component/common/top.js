@@ -21,7 +21,7 @@ static contextType = NavigationContext;
         <View style={styles.icon1}>
           <TouchableOpacity onPress={() => this.context.goBack()}>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
-            <Ionicons name={this.props.icon1} size={25} color="#FFFFCC" />
+            <Ionicons name={this.props.icon1} size={25} color="#468CD3" />
           </TouchableOpacity>
         </View>
 
@@ -33,7 +33,7 @@ static contextType = NavigationContext;
         <View style={styles.icon2}>
           <TouchableOpacity>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
-            <Ionicons name={this.props.icon2} size={25} color="#FFFFCC" />
+            <Ionicons name={this.props.icon2} size={25} color="#468CD3" />
           </TouchableOpacity>
         </View>
       </View >
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',    
     flexDirection:'row',
-    backgroundColor: '#003C66',
+    backgroundColor:'white'
   },
   icon1: {
     flexDirection: 'row',
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     width:40,
     alignItems: "center",
     marginLeft:10,
+    color:'#468CD3'
   },
   icon2: {
     flexDirection: 'row',
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     width:40,
     alignItems: "center",
     marginRight:10,
+    color:'#468CD3'
   },
   textview: {
     flex:1,
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
   },
   textstyle: {
     fontSize: 22,
-    color: '#FFFFCC'
+    color:'#468CD3'
   },
 });
 
