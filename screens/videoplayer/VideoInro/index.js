@@ -11,7 +11,7 @@ class index extends Component {
                 <View style={{ marginVertical: 2, padding: 10, }}>
                     <View style={{ marginVertical: 2, padding: 10, }}>
                         <View>
-                            <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>看看关于茶叶那些事</Text>
+                            <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>孟丽君-见书房寂寂无声好清净</Text>
                             <Text style={{ fontSize: pxToDp(14), color: 'gray' }}>1687播放&emsp;321喜欢</Text>
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(16), marginBottom: pxToDp(16) }}>
@@ -38,10 +38,10 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/30.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/12.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
-                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>《红色文物100讲》</Text>
-                                            <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>《红色文物100》由国家广播电视总局、国家文物局联合出品，节目以革命文物为载体，以视听化表达来讲述党的故事、革命的故事、英雄的故事，让革命文物 “活起来”。</Text>
+                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>许大家境虽不好</Text>
+                                            <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>《王老虎抢亲》，越剧传统剧目。</Text>
                                             <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                                                 <Icon name="control-play" size={12} color={'black'} />
                                                 <Text>96.7万</Text>
@@ -53,10 +53,10 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/6.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/13.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
-                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>茶香</Text>
-                                            <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>品茗茶香，回味无穷</Text>
+                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>游园初遇</Text>
+                                            <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>官家子弟王景隆与名妓苏三誓偕白首，因金尽被逐，潦倒关王庙。</Text>
                                             <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                                                 <Icon name="control-play" size={12} color={'black'} />
                                                 <Text>24.7万</Text>
@@ -68,10 +68,9 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/30.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/14.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
-                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>商品茶与匠心茶的区别</Text>
-                                            {/* <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>品茗茶香，回味无穷</Text> */}
+                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>笙箫管笛耳边绕</Text>
                                             <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                                                 <Icon name="control-play" size={12} color={'black'} />
                                                 <Text>24.7万</Text>
@@ -83,10 +82,10 @@ class index extends Component {
                             <TouchableOpacity>
                                 <View style={{ width: "100%", height: pxToDp(110), borderRadius: pxToDp(10), justifyContent: 'space-around', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: 'gray' }} >
                                     <View style={{ flexDirection: 'row', marginBottom: pxToDp(5), marginTop: pxToDp(5) }}>
-                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/30.jpg")}></Image>
+                                        <Image style={{ width: '40%', height: pxToDp(90), borderRadius: pxToDp(10) }} source={require("../../../src/res/15.jpg")}></Image>
                                         <View style={{ width: '60%', height: pxToDp(90), padding: pxToDp(8), }}>
-                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>百家讲坛</Text>
-                                            <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>【百家讲坛】江英解读《建军大业》</Text>
+                                            <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>观灯</Text>
+                                            <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>《追鱼》·杨婷娜-盛舒扬</Text>
                                             <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                                                 <Icon name="control-play" size={12} color={'black'} />
                                                 <Text>24.7万</Text>
