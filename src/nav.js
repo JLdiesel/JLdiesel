@@ -79,7 +79,7 @@ function Nav() {
         <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
         <Stack.Screen name="Nickname" component={Screens.Nickname} />
         <Stack.Screen name="Signature" component={Screens.Singnature} />
-        {/*DEMO */}
+        <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
