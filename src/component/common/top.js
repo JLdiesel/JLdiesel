@@ -7,6 +7,7 @@ import { Text, View, StyleSheet, TouchableOpacity ,BVLinearGradient} from 'react
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from "@react-navigation/native";
 import { pxToDp,screenWidth } from '../../utils/styleKits';
+import {LinearGradient} from 'expo-linear-gradient';
 export default class HeaderHaveBack extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,8 @@ export default class HeaderHaveBack extends Component {
 static contextType = NavigationContext;
   render() {
     return (
-      <View style={styles.box}>
+     <LinearGradient colors={['#62b5ed','#fff']} start={{x: 0, y: 0}} end={{x: 0, y: 1.1}} style={styles.box}>
+
         <View style={{marginTop:pxToDp(30), justifyContent:'space-between',flexDirection:'row'}}>
             <View style={styles.icon1}>
           <TouchableOpacity onPress={() => this.context.goBack()}>
@@ -39,7 +41,8 @@ static contextType = NavigationContext;
           </TouchableOpacity>
         </View>
       </View>
-      </View >
+     
+      </LinearGradient>
     );
   }
 }
@@ -66,10 +69,11 @@ const styles = StyleSheet.create({
     flex:1,
     alignItems:'center',
 
+
   },
   textstyle: {
     fontSize: pxToDp(18),
-    color: '#FFFFCC'
+    color:'#468cd3'
   },
 });
 
