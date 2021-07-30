@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from "./tabbar";
 import * as Screens from './screens'
 import Water from './component/water'
-import Video from '../screens/video'
+import Video from '../screens/videoplayer'
 const Stack = createStackNavigator();
 
 function Nav() {
