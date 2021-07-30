@@ -153,7 +153,7 @@ export default class Shop extends PureComponent {
 
     return (
 
-      <View style={{backgroundColor:'transparent',position:'relative'}}>
+      <View style={{backgroundColor:'#e2f4fe',position:'relative'}}>
         <View style={{ backgroundColor:'rgba(52,52,52,alpha)',position:'absolute'}}>
           <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: pxToDp(350)}} />
 
@@ -173,7 +173,7 @@ export default class Shop extends PureComponent {
             >
               {
                 this.state.items.map((item, index) => {
-                  return (<Image style={{ height: '100%', width: ScreenWidth,borderRadius:40}} key={index} source={{ uri: item }} />)
+                  return (<Image style={{ height: '100%', width: ScreenWidth,borderRadius:40,marginRight:pxToDp(15)}} key={index} source={{ uri: item }} />)
                 })
 
               }
@@ -191,13 +191,13 @@ export default class Shop extends PureComponent {
                 <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: pxToDp(250), top: this.state.jtTop?pxToDp(8):pxToDp(0) }} />
               </TouchableOpacity>
             </View>
-            <View style={{ marginLeft: pxToDp(20) , marginTop:pxToDp(20) , borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
+            <View style={{ marginLeft: pxToDp(20) , marginTop:pxToDp(20),paddingRight:pxToDp(13), borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
                 
               {
                 this.state.items2.map((item, index) => {
                   return (<Image
-                    resizeMode='cover'
-                    style={{ width: 355, height: this.state.imagHeight,marginBottom:5}} key={index} source={{ uri: item }} />)
+                    
+                    style={{ width:'100%', height: this.state.imagHeight,marginBottom:5,}} key={index} source={{ uri: item }} />)
                 })
                 
               }
@@ -215,7 +215,7 @@ export default class Shop extends PureComponent {
               </View>
        
                 <FlatList
-                  style={{flex:1}}
+                 
                   data={this.state.commentList} renderItem={this._renderItem} />
          
              
@@ -224,7 +224,7 @@ export default class Shop extends PureComponent {
         </ScrollView>
       
 
-        <View style={{ width: ScreenWidth, height: pxToDp(50), backgroundColor: '#fff', position: 'absolute', bottom:0, borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
+        <View style={{ width: ScreenWidth, height: pxToDp(50), backgroundColor: 'rgba(255,255,255,0.5)', position: 'absolute', bottom:0, borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
            <Animated.Image
                     source={require('../../../../res/6.jpg')}
                     style={{width: pxToDp(20), height: pxToDp(20), position: 'absolute', bottom: aheight, right: awidth}}/>

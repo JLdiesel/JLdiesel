@@ -95,8 +95,11 @@ class Index extends Component {
 }
 const styles = StyleSheet.create({
     scrollview: {
-        backgroundColor: 'lightgrey'
+        
+        backgroundColor: '#e2f4fe'
+        ,marginBottom:pxToDp(70)
     },
+  
     tcard: {
         flexDirection: 'row',
         flexWrap: 'wrap',

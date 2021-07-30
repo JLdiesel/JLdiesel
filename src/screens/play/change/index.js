@@ -3,8 +3,8 @@ import { View, Text, Image, TouchableOpacity, Dimensions ,StyleSheet} from 'reac
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits'
 import Carousel from 'react-native-snap-carousel'; // Version can be specified in package.json
-import jpg1 from '@res/1.jpg'
-import jpg2 from '@res/3.jpg'
+import jpg1 from '../../../res/16.jpg'
+import jpg2 from '../../../res/20.jpg'
 import { scrollInterpolator, animatedStyles } from './animation';
 
 

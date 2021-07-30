@@ -22,7 +22,7 @@ class Index extends Component {
                 <Top title="戏痴" />
                 <ScrollView
                     refreshControl={<RefreshControl />}>
-                    <View style={{ borderRadius: pxToDp(10), backgroundColor: 'rgba(255,255,255,0.5)', margin: pxToDp(10) }}>
+                    <View style={{ borderRadius: pxToDp(10), backgroundColor: 'rgba(255,255,255,0.5)', margin: pxToDp(10),height:pxToDp(140) }}>
                         <View style={{ flexDirection: 'row' }}>
                             <TouchableOpacity onPress={() => this.context.navigate("Setting")}>
                                 <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30), margin: pxToDp(10) }} source={require('../../../res/4.jpg')}></Image>
@@ -60,7 +60,7 @@ class Index extends Component {
                             </View>
                         </View>
                     </View>
-                    <View style={{ borderRadius: pxToDp(10), backgroundColor: 'rgba(255,255,255,0.5)', margin: pxToDp(10) }}>
+                    <View style={{ borderRadius: pxToDp(10), backgroundColor: 'rgba(255,255,255,0.5)', margin: pxToDp(10),height:pxToDp(140)}}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(10), marginTop: pxToDp(20) }}>
                             <View>
                                 <Text style={{ fontSize: pxToDp(18) }}>我的订单</Text>
@@ -75,31 +75,31 @@ class Index extends Component {
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(10) }}>
                             <TouchableOpacity onPress={() => this.context.navigate("Order", 1)}>
                                 <View style={{ alignItems: 'center' }}>
-                                    <Ionicons name="credit-card" size={30} color="#468CD3" />
+                                    <Ionicons name="credit-card" size={25} color="#468CD3" />
                                     <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>待支付</Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => this.context.navigate("Order", 2)}>
                                 <View style={{ alignItems: 'center' }}>
-                                    <Ionicons name="truck" size={30} color="#468CD3" />
+                                    <Ionicons name="truck" size={25} color="#468CD3" />
                                     <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>待收货</Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => this.context.navigate("Order", 3)}>
                                 <View style={{ alignItems: 'center' }}>
-                                    <Ionicons name="commenting-o" size={30} color="#468CD3" />
+                                    <Ionicons name="commenting-o" size={25} color="#468CD3" />
                                     <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>待评价</Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={() => this.context.navigate("Refund")}>
                                 <View style={{ alignItems: 'center' }}>
-                                    <Ionicons name="handshake-o" size={30} color="#468CD3" />
+                                    <Ionicons name="handshake-o" size={25} color="#468CD3" />
                                     <Text style={{ fontSize: pxToDp(15), marginTop: pxToDp(8) }}>售后/退款</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{ marginTop: pxToDp(20) }}>
+                    <View>
                         <TouchableOpacity onPress={() => this.context.navigate("Jifenshop")} >
                             <List icon='server-outline' title="积分商城" />
                         </TouchableOpacity>
