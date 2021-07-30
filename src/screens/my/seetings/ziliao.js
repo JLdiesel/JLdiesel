@@ -67,7 +67,9 @@ export default class Ziliao extends Component {
     console.log('name', this.props.route.params);
     return (
       <View>
-        <Ohterbanner title="个人信息" back="arrow-back" />
+        <Ohterbanner title="个人信息" back="arrow-back" 
+
+        />
         <View style={s.avatar}>
           <View style={{marginLeft: pxToDp(20)}}>
             <Text style={{fontSize: pxToDp(20)}}>头像</Text>
