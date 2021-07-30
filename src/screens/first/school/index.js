@@ -9,7 +9,7 @@ class Index extends Component {
             <View style={{backgroundColor:'#E2F4FE'}}>
                 <Top icon1="arrow-back" />
 
-                <ScrollView style={{marginBottom:pxToDp(60)}}>
+                <ScrollView style={{marginBottom:pxToDp(80)}}>
                     <View style={{ margin: pxToDp(10) }}>
                         <Image style={{ height: pxToDp(200), width: '100%' }} source={require('../../../res/genre/14.jpg')} />
                         <Text style={{ fontSize: pxToDp(25), fontWeight: 'bold' }}>袁派</Text>

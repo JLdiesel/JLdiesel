@@ -6,7 +6,7 @@ import Top from '../../../component/common/top'
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View style={{backgroundColor:'#e2f4fe',flex:1}}>
                 <Top icon1='arrow-back' title="隐私设置" />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(15) }}>
                     <Text style={{ fontSize: pxToDp(20) }}>公开我的关注</Text>

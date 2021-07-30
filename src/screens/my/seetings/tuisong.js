@@ -8,7 +8,7 @@ import Top from '../../../component/common/top'
 class Index extends Component {
     render() {
         return (
-            <View>
+            <View  style={{backgroundColor:'#e2f4fe',flex:1}}>
                 <Top icon1='arrow-back' title="消息通知与推送" />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(15) }}>
                     <View>
