@@ -1,36 +1,24 @@
-import React,{Component} from 'react'
-import { View,Text,Image, TouchableOpacity,FlatList  } from 'react-native'
-import OrderItem from './component/listItem'
-class index extends Component{
+import React from 'react';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+import CustormerBar from './components/CustormerBar';
+import Orderone from './pages/orderone';
+import Ordertwo from './pages/ordertwo';
+import Orderthree from './pages/orderthree';
+import Orderfour from './pages/orderfour';
 
-state={
-    shop:[
-       {name:'胶囊工作室新品全棉圆领T恤',size:'黑色XL[180-185]',price:'86',shopname:'胶囊1工作室'},
-       {name:'胶囊工作室新品全棉圆领T恤',size:'黑色XL[180-185]',price:'86',shopname:'胶囊2工作室'},
-       {name:'胶囊工作室新品全棉圆领T恤',size:'黑色XL[180-185]',price:'86',shopname:'胶囊3工作室'}
-    ]
+
+export default ({route,navigation}) => {
+    console.log(route.params);
+    return (
+        <ScrollableTabView
+            initialPage={route.params}
+            renderTabBar={() => <CustormerBar />}
+        >
+
+            <Orderone tabLabel='全部' />
+            <Ordertwo tabLabel='待支付' />
+            <Orderthree tabLabel='待收货' />
+            <Orderfour tabLabel='待评价' />
+        </ScrollableTabView>
+    );
 }
-
-    _renderItem=({item})=>{
-        return(
-        <OrderItem
-            name={item.name}
-            size={item.size}
-            price={item.price}
-            shopname={item.shopname}
-        />)
-    }
-    render(){
-        return(
-           <View>
-               <FlatList
-
-                data={this.state.shop}
-                renderItem={this._renderItem}
-                />
-           </View>
-             
-        )
-    }
-}
-export default index

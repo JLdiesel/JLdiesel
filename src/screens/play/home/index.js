@@ -48,13 +48,14 @@ class Index extends Component {
                     </View>
                     {/*单人练唱 */}
                     <View>
-                        <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>单人练唱</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>单人练唱</Text>
                         <TouchableOpacity onPress={() => this.context.navigate("Study")}>
                             <Image style={{ height: pxToDp(130), width: pxToDp(350), marginLeft: pxToDp(15) }} source={require('../../../res/26.jpg')} />
                         </TouchableOpacity>
                     </View>
                     <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>双人剧本</Text>
                     {/*双人剧本 */}
+                    <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>双人剧本</Text>
                     <View style={{ flexDirection: 'row' }}>
                         {this.state.arr.map((item) =>
 
@@ -64,7 +65,7 @@ class Index extends Component {
                     </View>
                     {/*剧本推荐 */}
                     <View>
-                        <Text style={{ fontSize: pxToDp(23), margin: pxToDp(10) }}>剧本推荐</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>剧本推荐</Text>
                         <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(130) }}>
                             <TouchableOpacity onPress={() => this.context.navigate("Drama")}>
                                 <Image style={{ height: pxToDp(120), width: pxToDp(120), borderRadius: pxToDp(10) }} source={require('../../../res/play/1.jpg')} />
