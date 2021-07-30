@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from "@react-navigation/native";
+import { pxToDp } from '../../utils/styleKits';
 export default class HeaderHaveBack extends Component {
   constructor(props) {
     super(props);
@@ -46,29 +47,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',    
     flexDirection:'row',
-    backgroundColor: '#003C66',
+    backgroundColor: '#FFF',
+    height:70
   },
   icon1: {
     flexDirection: 'row',
-    height: 60,
-    width:40,
+    height: 18,
+    width:30,
     alignItems: "center",
     marginLeft:10,
+    marginTop:30
   },
   icon2: {
     flexDirection: 'row',
-    height: 60,
-    width:40,
+    height: 1,
+    width:pxToDp(40),
     alignItems: "center",
-    marginRight:10,
+
+    marginTop:30
   },
   textview: {
     flex:1,
     alignItems:'center'
+    ,marginTop:30
   },
   textstyle: {
-    fontSize: 22,
-    color: '#FFFFCC'
+    fontSize: pxToDp(18),
+    color: '#468cd3'
   },
 });
 

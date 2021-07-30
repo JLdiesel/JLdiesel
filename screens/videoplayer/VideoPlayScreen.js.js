@@ -40,7 +40,7 @@ export default class VideoPlayScreen extends Component {
             currentTime: 0,        // 视频当前播放的时间
             duration: 0,           // 视频的总时长
             isFullScreen: false,     // 当前是否全屏显示
-            playFromBeginning: false, // 是否从头开始播放
+            playFromBeginning: false, // 是否从头开始播放 
         };
     }
 
