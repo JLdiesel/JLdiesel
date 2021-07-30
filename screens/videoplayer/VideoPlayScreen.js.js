@@ -113,7 +113,7 @@ export default class VideoPlayScreen extends Component {
                                     <Image
                                         style={styles.playControl}
                                         // source={this.state.isPlaying ? require('../../assets/image/icon_control_pause.png') : require('../../assets/image/icon_control_play.png')}
-                                        source={this.state.isPlaying ? require('../../src/res/9.jpg') : require('../../src/res/10.jpg')}
+                                        source={this.state.isPlaying ? require('../../src/res/14.jpg') : require('../../src/res/10.jpg')}
 
                                     />
                                 </TouchableOpacity>
