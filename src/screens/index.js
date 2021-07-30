@@ -42,9 +42,14 @@ export { default as Ordertwo } from './my/order/pages/ordertwo';
 export { default as Orderthree } from './my/order/pages/orderthree';
 export { default as Orderfour } from './my/order/pages/orderfour';
 export { default as Refund } from './my/order/pages/refund';
-export { default as Setting } from './my/seetings/setting'
-export { default as Ziliao } from './my/seetings/ziliao'
-export { default as Scriptlibrary } from './play/scriptlibrary'
+export { default as Setting } from './my/seetings/setting';
+export { default as Ziliao } from './my/seetings/ziliao';
+export { default as Scriptlibrary } from './play/scriptlibrary';
+export { default as Collection } from './my/collection';
+export { default as Fan } from './my/fan';
+export { default as Follow } from './my/follow';
+export { default as Like } from './my/like';
+
 
 
 

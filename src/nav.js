@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="Login">
+      <Stack.Navigator headerMode='none' initialRouteName="Tabbar">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -80,6 +80,11 @@ function Nav() {
         <Stack.Screen name="Nickname" component={Screens.Nickname} />
         <Stack.Screen name="Signature" component={Screens.Singnature} />
         <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
+
+        <Stack.Screen name="Follow" component={Screens.Follow} />
+        <Stack.Screen name="Like" component={Screens.Like} />
+        <Stack.Screen name="Fan" component={Screens.Fan} />
+        <Stack.Screen name="Collection" component={Screens.Collection} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
