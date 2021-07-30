@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, ImageBackground, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, ScrollView, Alert } from 'react-native';
 import { NavigationContext } from "@react-navigation/native";
 import Top from '@components/common/top'
 import { pxToDp } from '@utils/styleKits';
@@ -22,8 +22,8 @@ class Index extends Component {
                     {/*戏服体验馆 */}
                     <View style={{ borderRadius: pxToDp(10) }}>
                         <TouchableOpacity onPress={() => this.context.navigate("Change")}>
-                            <View style={{ borderRadius: pxToDp(10), height: pxToDp(170), width: pxToDp(355), borderRadius: pxToDp(10), margin: pxToDp(10), backgroundColor: '#A7BAC4' }}>
-                                <Text style={{fontSize:pxToDp(25),marginTop:pxToDp(20),alignSelf:'center'}}>戏服体验馆</Text>
+                            <View style={{ borderRadius: pxToDp(10), height: pxToDp(170), width: pxToDp(355), borderRadius: pxToDp(10), margin: pxToDp(10), backgroundColor:'rgba(255,255,255,0.5)'}}>
+                                <Text style={{ fontSize: pxToDp(25), marginTop: pxToDp(20), alignSelf: 'center' }}>戏服体验馆</Text>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: pxToDp(30) }}>
                                     <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/1.jpg')} />
                                     <Image style={{ height: pxToDp(60), width: pxToDp(60), borderRadius: pxToDp(30) }} source={require('../../../res/performer/2.jpg')} />
@@ -34,29 +34,35 @@ class Index extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginLeft: pxToDp(30), marginRight: pxToDp(30) }}>
-                        <View style={{ alignItems: 'center' }}>
-                            <Ionicons name="today-sharp" size={28} color="grey" />
-                            <Text>签到</Text>
-                        </View>
-                        <View style={{ alignItems: 'center' }}>
-                            <Ionicons name="layers-outline" size={28} color="grey" />
-                            <Text>剧本</Text>
-                        </View>
-                        <View style={{ alignItems: 'center' }}>
-                            <Ionicons name="md-logo-octocat" size={28} color="grey" />
-                            <Text>教程</Text>
-                        </View>
+                        <TouchableOpacity onPress={this.showAlert.bind(this)}>
+                            <View style={{ alignItems: 'center' }}>
+                                <Ionicons name="today-sharp" size={28} color="#468CD3" />
+                                <Text>签到</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity  onPress={() => this.context.navigate("Scriptlibrary")}>
+                            <View style={{ alignItems: 'center' }}>
+                                <Ionicons name="layers-outline" size={28} color="#468CD3" />
+                                <Text>剧本</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={{ alignItems: 'center' }}>
+                                <Ionicons name="md-logo-octocat" size={28} color="#468CD3" />
+                                <Text>教程</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                     {/*单人练唱 */}
                     <View style={{ marginLeft: pxToDp(10), marginRight: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), marginLeft: pxToDp(0) }}>单人练唱</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), marginLeft: pxToDp(0),color:"#468CD3",fontWeight:'bold' }}>单人练唱</Text>
                         <TouchableOpacity onPress={() => this.context.navigate("Study")}>
                             <Image style={{ height: pxToDp(130), width: pxToDp(355), borderRadius: pxToDp(10) }} source={require('../../../res/26.jpg')} />
                         </TouchableOpacity>
                     </View>
                     {/*双人剧本 */}
                     <View style={{ marginRight: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>双人剧本</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10),color:"#468CD3",fontWeight:'bold' }}>双人剧本</Text>
                         <View style={{ flexDirection: 'row' }}>
                             {this.state.arr.map((item) =>
                                 <Model key={item.id} item={item} />
@@ -65,7 +71,7 @@ class Index extends Component {
                     </View>
                     {/*剧本推荐 */}
                     <View>
-                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10) }}>剧本推荐</Text>
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10),color:"#468CD3",fontWeight:'bold' }}>剧本推荐</Text>
                         <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(110) }}>
                             <TouchableOpacity onPress={() => this.context.navigate("Drama")}>
                                 <Image style={{ height: pxToDp(100), width: pxToDp(100), borderRadius: pxToDp(10) }} source={require('../../../res/play/1.jpg')} />
@@ -94,9 +100,8 @@ class Index extends Component {
             </View>
         );
     }
+    showAlert() {
+        Alert.alert('签到','今日获得50积分',[{text:"我知道了"}]);
+      }
 }
-
-const styles = StyleSheet.create({
-
-});
 export default Index;

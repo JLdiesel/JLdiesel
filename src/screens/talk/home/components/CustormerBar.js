@@ -13,27 +13,27 @@ class Index extends Component {
         return (
             <View>
                 <Top title="戏缘" />
-                <ImageBackground
-                    style={{
+              
+                    <View    style={{
                         height: pxToDp(60), flexDirection: "row", paddingLeft: pxToDp(16),
-                        justifyContent:"space-around"
-                    }}
-                    source={require("../../../../res/2.png")}
-                >
-                    {tabs.map((v, i) => <TouchableOpacity
+                        justifyContent:"space-around",backgroundColor:'#ecf6fc'
+                    }}>
+                          {tabs.map((v, i) => <TouchableOpacity
                         key={i}
                         onPress={() => goToPage(i)}
                         style={{
                             justifyContent: 'center',
                             borderBottomColor: "#003C66",
-                            borderBottomWidth: activeTab === i ? pxToDp(3) : 0
+                            borderBottomWidth: activeTab === i ? pxToDp(3) : 0,
+                          
                         }}
                     >
                         <Text
                             style={{ color: activeTab === i ? "black" : "grey", fontSize: activeTab === i ? pxToDp(20) : pxToDp(15) }}
                         >{v}</Text>
                     </TouchableOpacity>)}
-                </ImageBackground>
+                  </View>
+                
             </View>
         );
     }

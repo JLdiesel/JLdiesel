@@ -31,15 +31,12 @@ export { default as Order} from './my/order';//订单
 export { default as Pay} from './my/pay';//待支付
 export { default as Postsale} from './my/postsale';//待支付
 export { default as Waitcomment} from './my/waitcomment';//待评价
-
-
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
 export { default as Actress } from './first/actress';
 export { default as School } from './first/school';
 export { default as History } from './my/history';
 export { default as Jifenshop } from './my/jifenshop/jifenshop';
-
 export { default as Orderone } from './my/order/pages/orderone';
 export { default as Ordertwo } from './my/order/pages/ordertwo';
 export { default as Orderthree } from './my/order/pages/orderthree';
@@ -47,6 +44,7 @@ export { default as Orderfour } from './my/order/pages/orderfour';
 export { default as Refund } from './my/order/pages/refund';
 export { default as Setting } from './my/seetings/setting'
 export { default as Ziliao } from './my/seetings/ziliao'
+export { default as Scriptlibrary } from './play/scriptlibrary'
 
 
 
