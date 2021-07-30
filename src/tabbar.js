@@ -60,7 +60,7 @@ class Index extends Component {
     const { selectedTab, pages } = this.state;
     return (
 
-        <TabNavigator style={{   backgroundColor:"#ecf6fc"}} >
+        <TabNavigator style={{   backgroundColor:"#e2f4fe"}} >
           {pages.map((v, i) => <TabNavigator.Item key={i}
             selected={selectedTab===v.selected}
             title={v.title}
@@ -69,8 +69,8 @@ class Index extends Component {
             onPress={v.onPress}
             selectedTitleStyle={{color:"#468cd3"}}
             tabStyle={{
-           height:pxToDp(51), 
-              backgroundColor:"white",
+            height:pxToDp(51), 
+              backgroundColor:"#ecf6fc",
               justifyContent:'center'
             }}
           >

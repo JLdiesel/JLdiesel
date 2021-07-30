@@ -153,7 +153,7 @@ export default class Shop extends PureComponent {
 
     return (
 
-      <View style={{backgroundColor:'transparent',position:'relative'}}>
+      <View style={{backgroundColor:'#e2f4fe',position:'relative'}}>
         <View style={{ backgroundColor:'rgba(52,52,52,alpha)',position:'absolute'}}>
           <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: pxToDp(350)}} />
 
@@ -173,7 +173,7 @@ export default class Shop extends PureComponent {
             >
               {
                 this.state.items.map((item, index) => {
-                  return (<Image style={{ height: '100%', width: ScreenWidth,borderRadius:40}} key={index} source={{ uri: item }} />)
+                  return (<Image style={{ height: '100%', width: ScreenWidth,borderRadius:40,marginRight:pxToDp(15)}} key={index} source={{ uri: item }} />)
                 })
 
               }
@@ -185,27 +185,25 @@ export default class Shop extends PureComponent {
             <Text style={{ fontSize: 12, marginTop: 10, marginBottom:pxToDp(20), color: '#DAA520', fontWeight: 'bold' }}>正品保证·品牌授权·七日退换·商品包邮</Text>
           </View>
           <View>
-            <View style={{ marginLeft: pxToDp(20), marginTop: pxToDp(30), width: pxToDp(350), flexDirection: 'row', marginBottom: pxToDp(25) }}>
+            <View style={{ marginLeft: pxToDp(20), marginTop: pxToDp(30), width: pxToDp(350), flexDirection: 'row', }}>
               <Text style={{ fontSize: pxToDp(20) , fontWeight: 'bold' }}>设计细节</Text>
               <TouchableOpacity onPress={this.ChangeBoxheight} style={{ transform: ([{ rotateX: this.state.angle }]) }}>
                 <SvgUri svgXmlData={expandIcon} width='20' height='20' style={{ marginLeft: pxToDp(250), top: this.state.jtTop?pxToDp(8):pxToDp(0) }} />
               </TouchableOpacity>
             </View>
-            <View style={{ marginLeft: pxToDp(20) , marginTop:pxToDp(20) , borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
+            <View style={{ marginLeft: pxToDp(20) , marginTop:pxToDp(20),paddingRight:pxToDp(13), borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
                 
               {
                 this.state.items2.map((item, index) => {
                   return (<Image
-                    resizeMode='cover'
-                    style={{ width: 355, height: this.state.imagHeight}} key={index} source={{ uri: item }} />)
+                    
+                    style={{ width:'100%', height: this.state.imagHeight,marginBottom:5,}} key={index} source={{ uri: item }} />)
                 })
                 
               }
             </View>
 
-            <View style={{ marginLeft: pxToDp(20) , borderBottomWidth:.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
-              <Text style={{ fontSize: pxToDp(20) , fontWeight: 'bold', marginBottom: pxToDp(20) , marginTop: pxToDp(20) }}>商品规格</Text>
-            </View>
+           
             <View style={{ marginLeft: 20, marginTop: 0, borderBottomWidth: 0.8, width: pxToDp(350), borderBottomColor: 'gray' }}>
               <View style={{ flexDirection: 'row' }}>
                 
@@ -215,23 +213,21 @@ export default class Shop extends PureComponent {
                 </TouchableOpacity >
 
               </View>
-              <View style={{  height: this.state.Commentheight }}>
-                
+       
                 <FlatList
-                  
+                 
                   data={this.state.commentList} renderItem={this._renderItem} />
-              </View>
-              <View>
-
-              </View>
+         
+             
             </View>
           </View>
         </ScrollView>
-        <Animated.Image
+      
+
+        <View style={{ width: ScreenWidth, height: pxToDp(50), backgroundColor: 'rgba(255,255,255,0.5)', position: 'absolute', bottom:0, borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
+           <Animated.Image
                     source={require('../../../../res/6.jpg')}
                     style={{width: pxToDp(20), height: pxToDp(20), position: 'absolute', bottom: aheight, right: awidth}}/>
-
-        <View style={{ width: ScreenWidth, height: pxToDp(50), backgroundColor: '#fff', position: 'absolute', top: ScreenHeight - pxToDp(50), borderTopWidth: 0.8, borderTopColor: 'gray', justifyContent: 'center' }}>
           <View style={{ flexDirection: 'row' }}>
             
             <View style={{ flexDirection: 'column', marginLeft: pxToDp(20)}}>

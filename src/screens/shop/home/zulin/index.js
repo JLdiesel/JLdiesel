@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#E2F4FE',
         marginBottom:pxToDp(70)
     },
+  
     tcard: {
         flexDirection: 'row',
         flexWrap: 'wrap',

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView,TouchableOpacity} from 'react-native';
+import { View, Text, ScrollView,TouchableOpacity } from 'react-native';
 import { pxToDp } from '../../../../../utils/styleKits';
 import ActressView from '../../../../../component/common/actressview';
 import Top from '../../../../../component/common/top'
-
+import { NavigationContext } from "@react-navigation/native";
 class Index extends Component {
+        static contextType = NavigationContext;
     render() {
         return (
             <View>

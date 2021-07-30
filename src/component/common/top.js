@@ -6,7 +6,8 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from "@react-navigation/native";
-import { pxToDp,screenWidth } from '../../utils/styleKits';
+import { pxToDp, screenWidth } from '../../utils/styleKits';
+import {LinearGradient} from 'expo-linear-gradient'
 export default class HeaderHaveBack extends Component {
   constructor(props) {
     super(props);
@@ -18,8 +19,8 @@ export default class HeaderHaveBack extends Component {
 static contextType = NavigationContext;
   render() {
     return (
-      <View style={styles.box}>
-        <View style={{marginTop:pxToDp(30), justifyContent:'space-between',flexDirection:'row'}}>
+      <LinearGradient style={styles.box} colors={['#e2f4fe','white']} start={{x: 0, y: 0}} end={{x: 0, y: 1.6}}>
+        <View style={{marginTop:pxToDp(30),   justifyContent:'space-between',flexDirection:'row'}}>
             <View style={styles.icon1}>
           <TouchableOpacity onPress={() => this.context.goBack()}>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
@@ -39,7 +40,7 @@ static contextType = NavigationContext;
           </TouchableOpacity>
         </View>
       </View>
-      </View >
+      </LinearGradient >
     );
   }
 }
@@ -49,22 +50,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width:screenWidth,
     flexDirection:'row',
-    backgroundColor: '#fff',
-   
-    height:70
+    // backgroundColor: '#e0f3fe',
+    height: 70,
+ 
+    
   },
   icon1: {
-    height: 18,
-    width:pxToDp(40),
- 
+    width:pxToDp(45),left:5
   },
   icon2: {
-    width:pxToDp(40),
-   
+    width:pxToDp(40),right:5
   },
   textview: {
     flex:1,
-    alignItems:'center',
+    alignItems: 'center',
+  top:pxToDp(3),
 
   },
   textstyle: {

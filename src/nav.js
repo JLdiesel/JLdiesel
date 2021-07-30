@@ -64,8 +64,8 @@ function Nav() {
 
 
         <Stack.Screen name="Article" component={Screens.Article} />
-       {/* <Stack.Screen name="Actress" component={Screens.Actress} */}
-        {<Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />}
+       <Stack.Screen name="Actress" component={Screens.Actress}/>
+        <Stack.Screen name="School" component={Screens.School} />
         <Stack.Screen name="Drama" component={Screens.Drama} />
         <Stack.Screen name="History" component={Screens.History} />
         <Stack.Screen name="Jifenshop" component={Screens.Jifenshop} />
@@ -79,6 +79,8 @@ function Nav() {
         <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
         <Stack.Screen name="Nickname" component={Screens.Nickname} />
         <Stack.Screen name="Signature" component={Screens.Singnature} />
+        <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
+        {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
