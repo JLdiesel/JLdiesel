@@ -285,15 +285,15 @@ export default class Shop extends PureComponent {
         Animated.timing(this.state.heightValue, {
             toValue: 1,
           duration: 800,
-              useNativeDriver:true,
-          // easing: Easing.linear,// 线性的渐变函数
+          
+          easing: Easing.linear,// 线性的渐变函数
             
         }),
         Animated.timing(this.state.heightValue, {
             toValue: 1,
           duration: 800,
-              useNativeDriver:true,
-            // easing: Easing.linear,// 线性的渐变函数
+            
+            easing: Easing.linear,// 线性的渐变函数
         }),
         // ]),
         // Animated.timing(this.state.fontValue, {
