@@ -34,9 +34,10 @@ export { default as Pay} from './my/pay';//待支付
 export { default as Postsale} from './my/postsale';//待支付
 export { default as Waitcomment} from './my/waitcomment';//待评价
 
+
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
-//export { default as Actress } from './first/actress';
-//export { default as School } from './first/school'
+export { default as Actress } from './first/actress';
+export { default as School } from './first/school'
 
 
