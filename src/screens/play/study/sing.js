@@ -92,7 +92,7 @@ class Index extends Component {
         const video=createRef()
        
         return (
-            <View style={{backgroundColor:'#E2F4FE'}}>
+            <View style={{backgroundColor:'#E2F4FE',flex:1}}>
                 <Top icon1='arrow-back' title="穆桂英挂帅" icon2='star-outline' />
                 <View style={styles.box}>
                     <Image style={styles.image} source={require('../../../res/4.jpg')}></Image>
@@ -105,7 +105,7 @@ class Index extends Component {
                 <View style={{ alignItems: 'center' }}>
                     <Slider duration="60" />
                 </View>
-                <View style={{ alignItems: 'center' }}>
+                <View style={{ alignItems: 'center',flex:1 }}>
                     <ScrollView style={{ height: '62%' }}>
                         <Text style={{ fontSize: pxToDp(25) }}>
                             《穆桂英挂帅》选段{'\n'}
@@ -196,13 +196,14 @@ const styles = StyleSheet.create({
         marginTop: pxToDp(40)
     },
     bottom: {
-        height: pxToDp(80),
+         bottom:0,
         width: '100%',
         backgroundColor: '#3399cc',
         alignSelf: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        
     }
 })
 

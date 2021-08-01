@@ -6,7 +6,7 @@ import { pxToDp } from "../../../utils/styleKits";
 class Index extends Component {
     render() {
         return (
-            <View style={{ backgroundColor: '#E2F4FE' }}>
+            <View style={{ backgroundColor: '#E2F4FE' ,flex:1}}>
                 <Top icon1="arrow-back" title="粉丝" />
                 <View>
                     <View>
@@ -19,7 +19,7 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(16), marginLeft: pxToDp(10) }}>Jauua</Text>
                         </View>
                         <TouchableOpacity style={styles.touch}>
-                            <Text style={{ fontSize: pxToDp(16) }}>已互粉</Text>
+                            <Text style={{ fontSize: pxToDp(16) ,color:'pink'}}>已互粉</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.box}>
@@ -28,7 +28,7 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(16), marginLeft: pxToDp(10) }}>qwerdsjos</Text>
                         </View>
                         <TouchableOpacity style={styles.touch}>
-                            <Text style={{ fontSize: pxToDp(16) }}>已互粉</Text>
+                            <Text style={{ fontSize: pxToDp(16),color:'pink' }}>已互粉</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.box}>
@@ -37,7 +37,7 @@ class Index extends Component {
                             <Text style={{ fontSize: pxToDp(16), marginLeft: pxToDp(10) }}>风</Text>
                         </View>
                         <TouchableOpacity style={styles.touch}>
-                            <Text style={{ fontSize: pxToDp(16) }}>关注</Text>
+                            <Text style={{ fontSize: pxToDp(16),color:'pink' }}>关注</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -72,12 +72,15 @@ const styles = StyleSheet.create({
     touch:{ 
         height: pxToDp(30), 
         width: pxToDp(80), 
-        backgroundColor: '#DCDCDC', 
+    
         marginRight: pxToDp(10), 
         alignSelf: 'center', 
         borderRadius: pxToDp(20), 
         alignItems: 'center', 
-        justifyContent: 'center' 
+        justifyContent: 'center',
+        borderWidth: 1,
+            backgroundColor: 'white', 
+        borderColor:'pink'
     }
 })
 export default Index;

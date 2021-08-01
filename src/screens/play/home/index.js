@@ -63,11 +63,12 @@ class Index extends Component {
                         </TouchableOpacity>
                     </View>
                     {/*双人剧本 */}
-                    <View style={{ marginRight: pxToDp(10) }}>
-                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), color: "#468CD3", fontWeight: 'bold' }}>双人剧本</Text>
-                        <View style={{ flexDirection: 'row' }}>
+                       <View >
+                    <View >
+                        <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), color: "#468CD3", fontWeight: 'bold' }}>双人剧本</Text></View>
+                        <View style={{ flexDirection: 'row',}}>
                             {this.state.arr.map((item) =>
-                                <Model key={item.id} item={item} />
+                                <Model  key={item.id} item={item} />
                             )}
                         </View>
                     </View>

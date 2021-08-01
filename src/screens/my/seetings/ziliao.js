@@ -11,13 +11,13 @@ import {
   TouchableHighlight,
   Modal,
 } from 'react-native';
-import Ohterbanner from '../component/Otherbanner';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {NavigationContext} from '@react-navigation/native';
 import CustomAlertDialog from '../component/CustomAlertDialog';
 import {pxToDp} from '../../../utils/styleKits';
 import * as ImagePicker from 'expo-image-picker'; 
 import DatePicker from 'react-native-datepicker';
+import Top from '@components/common/top'
 //import DatePicker from 'react-native-datepicker';
 const typeArr = ['男', '女'];
 export default class Ziliao extends Component {
@@ -46,16 +46,15 @@ export default class Ziliao extends Component {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
     if (permissionResult.granted === false) {
-      alert("Permission to access camera roll is required!");
+      alert(" ");
       return;
     }
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
     console.log(pickerResult);
   
-
-    this.setState({ localUri: pickerResult.uri });
-   
+    
+    this.setState({ localUri: pickerResult.uri,modalVisible: !this.state.modalVisible });
   }
   render() {
     console.log(this.props.navigation);
@@ -66,8 +65,11 @@ export default class Ziliao extends Component {
     const {birthday} = this.state;
     console.log('name', this.props.route.params);
     return (
-      <View>
-        <Ohterbanner title="个人信息" back="arrow-back" />
+      <View  style={{flex:1,backgroundColor:'#e2f4fe'}} >
+        <Top title="个人信息"   icon1="arrow-back"
+        
+      
+          rightCallback={() => this.context.goBack()} />
         <View style={s.avatar}>
           <View style={{marginLeft: pxToDp(20)}}>
             <Text style={{fontSize: pxToDp(20)}}>头像</Text>
@@ -79,7 +81,7 @@ export default class Ziliao extends Component {
                   width: pxToDp(60),
                   height: pxToDp(60),
                   borderRadius: pxToDp(60),
-                  backgroundColor: 'gray',
+                  backgroundColor: '#e2f4fe',
                 }}        
               source={{ uri: this.state.localUri }}
               />
@@ -241,10 +243,10 @@ const s = StyleSheet.create({
     height: pxToDp(100),
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#eee',
+    backgroundColor: '#e2f4fe',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#e2f4fe',
   },
   basic: {
     height: pxToDp(70),
@@ -252,7 +254,7 @@ const s = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#e2f4fe',
   },
   button: {
     marginTop: pxToDp(20),
@@ -268,7 +270,7 @@ const s = StyleSheet.create({
   alertBox: {
     width: pxToDp(300),
     height: pxToDp(250),
-    backgroundColor: 'white',
+    backgroundColor: '#e2f4fe',
     justifyContent: 'space-evenly',
     borderRadius: pxToDp(30),
   },

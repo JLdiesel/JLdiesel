@@ -24,16 +24,13 @@ class index extends Component {
     render() {
         const { item } = this.props
         return (
-            <View>
-                <View key={index} style={{ width: 120, height: 150, justifyContent: 'center', marginLeft: pxToDp(12) }}>
+            <View style={{ flex:1,left:pxToDp(10) }}>
                     {/* <Button title="我打开了" onPress={toggleModal} /> */}
-                    <TouchableOpacity
-                        style={{ justifyContent: 'center', alignItems: 'center' }}
-                        onPress={this.toggleModal}
-                    >
+                    <TouchableOpacity   // onPress={this.toggleModal}
+ >
                         <View>
                             <ImageBackground
-                                style={{ width: 120, height: 150, }} source={{ uri: item.uriFace }} imageStyle={{ borderRadius: pxToDp(10) }}
+                                style={{ width: 100, height: 150, }} source={{ uri: item.uriFace }} imageStyle={{ borderRadius: pxToDp(10) }}
                             >
                                 <View style={{ justifyContent: 'center', alignItems: 'center', height: 150 }}>
                                     <Text style={{ fontSize: pxToDp(18), alignItems: 'center', justifyContent: 'center' }}>
@@ -44,7 +41,7 @@ class index extends Component {
                         </View>
                     </TouchableOpacity>
                     <Model item={item} isModalVisible={this.state.isModalVisible} toggleModalProps={this.toggleModal} />
-                </View>
+               
             </View>
         );
     }
