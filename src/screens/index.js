@@ -22,6 +22,7 @@ export { default as PageOne } from './first/home/pages/pageone';//服装租赁�
 export { default as PageTwo } from './first/home/pages/pagetwo';//服装租赁页
 export { default as PageThree } from './first/home/pages/pagethree';//服装租赁页
 export { default as PageFour } from './first/home/pages/pagefour';//服装租赁页
+export { default as Screenpaly} from './talk/home/script/screenplay'//剧本阅读
 export { default as Change } from './play/change';//服装租赁页
 
 //export { default as Myroute } from './first/myroute';//服装租赁页
@@ -49,6 +50,8 @@ export { default as Collection } from './my/collection';
 export { default as Fan } from './my/fan';
 export { default as Follow } from './my/follow';
 export { default as Like } from './my/like';
+export { default as Forum} from './talk/home/forum/index'
+
 
 
 

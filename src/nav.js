@@ -54,7 +54,10 @@ function Nav() {
         <Stack.Screen name="Apply" component={Screens.Apply} />
         {/*创作剧本 */}
         <Stack.Screen name="Create" component={Screens.Create} />
-
+        {/* 剧本阅读 */}
+        <Stack.Screen name="Screenpaly" component={Screens.Screenpaly} />
+        {/* 论坛 */}
+        <Stack.Screen name="Forum" component={Screens.Forum} />
         <Stack.Screen name="PageOne" component={Screens.PageOne} />
         <Stack.Screen name="PageTwo" component={Screens.PageTwo} />
         <Stack.Screen name="PageThree" component={Screens.PageThree} />
@@ -64,7 +67,7 @@ function Nav() {
 
 
         <Stack.Screen name="Article" component={Screens.Article} />
-       <Stack.Screen name="Actress" component={Screens.Actress}/>
+        <Stack.Screen name="Actress" component={Screens.Actress}/>
         <Stack.Screen name="School" component={Screens.School} />
         <Stack.Screen name="Drama" component={Screens.Drama} />
         <Stack.Screen name="History" component={Screens.History} />
