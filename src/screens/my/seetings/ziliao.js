@@ -18,9 +18,10 @@ import {pxToDp} from '../../../utils/styleKits';
 import * as ImagePicker from 'expo-image-picker'; 
 import DatePicker from 'react-native-datepicker';
 import Top from '@components/common/top'
-//import DatePicker from 'react-native-datepicker';
+import { connect } from 'react-redux'
+import axios from 'axios'
 const typeArr = ['男', '女'];
-export default class Ziliao extends Component {
+ class Ziliao extends Component {
   static contextType = NavigationContext;
   constructor(props) {
     super(props);
@@ -46,18 +47,32 @@ export default class Ziliao extends Component {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
     if (permissionResult.granted === false) {
-      alert(" ");
       return;
     }
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
-    console.log(pickerResult);
-  
-    
+   const fd = new FormData()
+   fd.append('file',pickerResult)
+   axios({
+     url: 'http://192.168.50.146:3000/upload/avatar',
+     data:fd,
+        headers: {
+          'content-type': 'multipart/form-data',
+          "authorization":this.props.token
+     },
+     timeout: 2000,
+     method:'post'
+   }).then(res => {
+       console.log(res);
+   }).catch(err => {
+       console.log(err);
+     })
+     
+      console.log(pickerResult);
     this.setState({ localUri: pickerResult.uri,modalVisible: !this.state.modalVisible });
   }
-  render() {
-    console.log(this.props.navigation);
+   render() {
+    console.log(this.props.token);
     const dateNow = new Date();
     const currentDate = `${dateNow.getFullYear()}-${
       dateNow.getMonth() + 1
@@ -287,3 +302,4 @@ const s = StyleSheet.create({
     alignSelf: 'center',
   },
 });
+export default connect(state => ({token:state.getIn(['LoginReducer','token'])}))(Ziliao)
