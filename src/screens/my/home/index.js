@@ -34,27 +34,27 @@ class Index extends Component {
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                            <View style={{ alignItems: 'center' }}>
-                                <TouchableOpacity onPress={() => { this.context.navigate('Shop') }}>
-                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>17</Text>
+                            <View>
+                                <TouchableOpacity onPress={() => { this.context.navigate('Like') }}>
+                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold',alignSelf:'center' }}>2</Text>
                                     <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>点赞</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ alignItems: 'center' }}>
-                                <TouchableOpacity onPress={() => { this.context.navigate('Shop') }}>
-                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>99</Text>
+                            <View>
+                                <TouchableOpacity onPress={() => { this.context.navigate('Collection') }}>
+                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold',alignSelf:'center' }}>5</Text>
                                     <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>收藏</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ alignItems: 'center' }}>
-                                <TouchableOpacity onPress={() => { this.context.navigate('Shop') }}>
-                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>188</Text>
+                            <View>
+                                <TouchableOpacity onPress={() => { this.context.navigate('Follow') }}>
+                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold',alignSelf:'center' }}>3</Text>
                                     <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>关注</Text>
                                 </TouchableOpacity>
                             </View>
-                            <View style={{ alignItems: 'center' }}>
-                                <TouchableOpacity onPress={() => { this.context.navigate('Shop') }}>
-                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>49</Text>
+                            <View>
+                                <TouchableOpacity onPress={() => { this.context.navigate('Fan') }}>
+                                    <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold',alignSelf:'center' }}>3</Text>
                                     <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>粉丝</Text>
                                 </TouchableOpacity>
                             </View>

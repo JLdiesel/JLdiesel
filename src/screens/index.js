@@ -22,15 +22,20 @@ export { default as PageOne } from './first/home/pages/pageone';//服装租赁�
 export { default as PageTwo } from './first/home/pages/pagetwo';//服装租赁页
 export { default as PageThree } from './first/home/pages/pagethree';//服装租赁页
 export { default as PageFour } from './first/home/pages/pagefour';//服装租赁页
+export { default as Screenpaly} from './talk/home/script/screenplay'//剧本阅读
 export { default as Change } from './play/change';//服装租赁页
 
 //export { default as Myroute } from './first/myroute';//服装租赁页
 export { default as Nickname } from './my/component/Nickname';//修改昵称
-export { default as Singnature} from './my/component/Signature';//修改个签
-export { default as Order} from './my/order';//订单
+export { default as Singnature } from './my/component/Signature';//修改个签
+export { default as Myorder } from './my/order/Myorder';//正在支付订单
+export { default as orderdetails } from './my/order/orderdetails';//订单确认
+export { default as newAddress } from './my/address/newAddress';//新增收货地址
+export { default as Order} from './my/order/index';//订单
 export { default as Pay} from './my/pay';//待支付
 export { default as Postsale} from './my/postsale';//待支付
 export { default as Waitcomment} from './my/waitcomment';//待评价
+export { default as address } from './my/address/address';//待评价
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
 export { default as Actress } from './first/actress';
@@ -42,9 +47,16 @@ export { default as Ordertwo } from './my/order/pages/ordertwo';
 export { default as Orderthree } from './my/order/pages/orderthree';
 export { default as Orderfour } from './my/order/pages/orderfour';
 export { default as Refund } from './my/order/pages/refund';
-export { default as Setting } from './my/seetings/setting'
-export { default as Ziliao } from './my/seetings/ziliao'
-export { default as Scriptlibrary } from './play/scriptlibrary'
+export { default as Setting } from './my/seetings/setting';
+export { default as Ziliao } from './my/seetings/ziliao';
+export { default as Scriptlibrary } from './play/scriptlibrary';
+export { default as Collection } from './my/collection';
+export { default as Fan } from './my/fan';
+export { default as Follow } from './my/follow';
+export { default as Like } from './my/like';
+export { default as Forum} from './talk/home/forum/index'
+
+
 
 
 
