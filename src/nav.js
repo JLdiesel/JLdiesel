@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode='none' initialRouteName="Tabbar">
+      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -65,14 +65,16 @@ function Nav() {
         {/* <Stack.Screen name="Myroute" component={Screens.Myroute} /> */}
         {/*个人首页 */}
 
-
         <Stack.Screen name="Article" component={Screens.Article} />
-        <Stack.Screen name="Actress" component={Screens.Actress}/>
+        <Stack.Screen name="Actress" component={Screens.Actress} />
         <Stack.Screen name="School" component={Screens.School} />
         <Stack.Screen name="Drama" component={Screens.Drama} />
         <Stack.Screen name="History" component={Screens.History} />
         <Stack.Screen name="Jifenshop" component={Screens.Jifenshop} />
         <Stack.Screen name="Order" component={Screens.Order} />
+        <Stack.Screen name="Myorder" component={Screens.Myorder} />
+        <Stack.Screen name="address" component={Screens.address} />
+        <Stack.Screen name="newAddress" component={Screens.newAddress} />
         <Stack.Screen name="Orderone" component={Screens.Orderone} />
         <Stack.Screen name="Ordertwo" component={Screens.Ordertwo} />
         <Stack.Screen name="Orderthree" component={Screens.Orderthree} />
@@ -83,6 +85,7 @@ function Nav() {
         <Stack.Screen name="Nickname" component={Screens.Nickname} />
         <Stack.Screen name="Signature" component={Screens.Singnature} />
         <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
+        <Stack.Screen name="orderdetails" component={Screens.orderdetails} />
 
         <Stack.Screen name="Follow" component={Screens.Follow} />
         <Stack.Screen name="Like" component={Screens.Like} />
