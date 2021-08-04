@@ -43,10 +43,10 @@ class Index extends Component {
                     </View>
                     {/*精选唱段 */}
                     <View style={{ margin: pxToDp(10) }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18),color:"#468CD3",fontWeight:'bold' }}>精选唱段</Text>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between',alignItems:"center" }}>
+                            <Text style={{ fontSize: pxToDp(18), color: "#468CD3", fontWeight: 'bold' }}>精选唱段</Text>
                             <TouchableOpacity onPress={() => this.context.navigate("PageFour")}>
-                                <View style={{ flexDirection: 'row' }}>
+                                <View style={{ flexDirection: 'row' ,alignItems:"center"}}>
                                     <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>
                                     <Ionicons name="chevron-forward" size={20} color="grey" />
                                 </View>
@@ -63,10 +63,12 @@ class Index extends Component {
                     </View>
                     {/*俯瞰百年 */}
                     <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18) ,color:"#468CD3",fontWeight:'bold'}}>俯瞰百年</Text>
-                            <TouchableOpacity onPress={() => this.context.navigate("PageTwo")}>
-                                <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between',alignItems:"center"}}>
+                            <View>
+                                <Text style={{ fontSize: pxToDp(18), color: "#468CD3", fontWeight: 'bold' }}>俯瞰百年</Text>
+                            </View>
+                            <TouchableOpacity onPress={() => this.context.navigate("PageTwo")} >
+                                <View style={{ flexDirection: 'row',alignItems:"center"}}>
                                     <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>
                                     <Ionicons name="chevron-forward" size={20} color="grey" />
                                 </View>
@@ -74,34 +76,34 @@ class Index extends Component {
                         </View>
                     </View>
                     <TouchableOpacity onPress={() => this.context.navigate("Article")}>
-                        <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', marginTop: pxToDp(0),height:pxToDp(100),alignItems:'center'}}>
+                        <View style={{ margin: pxToDp(15), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', marginTop: pxToDp(0), height: pxToDp(100), alignItems: 'center' }}>
                             <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
                                 <Text style={{ fontSize: pxToDp(17) }}>嵊州：越剧的起源地</Text>
                                 <Text style={{ fontSize: pxToDp(13), color: 'grey', marginTop: pxToDp(10) }}>名家名篇</Text>
                             </View>
-                            <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10),borderRadius:pxToDp(10)}} source={require('../../../res/history/1.jpg')} />
+                            <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10), borderRadius: pxToDp(10) }} source={require('../../../res/history/1.jpg')} />
                         </View>
                     </TouchableOpacity>
-                    <View style={{ margin: pxToDp(15), marginTop:pxToDp(0),flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey',height:pxToDp(100),alignItems:'center' }}>
+                    <View style={{ margin: pxToDp(15), marginTop: pxToDp(0), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', height: pxToDp(100), alignItems: 'center' }}>
                         <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
                             <Text style={{ fontSize: pxToDp(17) }} numberOfLines={2}>越剧十姐妹同台演出轰动上海</Text>
                             <Text style={{ fontSize: pxToDp(13), color: 'grey', marginTop: pxToDp(10) }}>书摘</Text>
                         </View>
-                        <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10),borderRadius:pxToDp(10) }} source={require('../../../res/history/2.jpg')} />
+                        <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10), borderRadius: pxToDp(10) }} source={require('../../../res/history/2.jpg')} />
                     </View>
-                    <View style={{ margin: pxToDp(15),marginTop:pxToDp(0),flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey',height:pxToDp(100),alignItems:'center' }}>
+                    <View style={{ margin: pxToDp(15), marginTop: pxToDp(0), flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: pxToDp(0.5), borderBottomColor: 'grey', height: pxToDp(100), alignItems: 'center' }}>
                         <View style={{ justifyContent: 'space-between', width: pxToDp(220) }}>
                             <Text style={{ fontSize: pxToDp(17) }} numberOfLines={2}>新中国的第一部彩色戏曲艺术片越剧电影</Text>
-                            <Text style={{ fontSize: pxToDp(13), color: 'grey',marginTop: pxToDp(10) }}>拓跋云</Text>
+                            <Text style={{ fontSize: pxToDp(13), color: 'grey', marginTop: pxToDp(10) }}>拓跋云</Text>
                         </View>
-                        <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10),borderRadius:pxToDp(10) }} source={require('../../../res/history/3.jpg')} />
+                        <Image style={{ height: pxToDp(80), width: pxToDp(100), margin: pxToDp(10), borderRadius: pxToDp(10) }} source={require('../../../res/history/3.jpg')} />
                     </View>
                     {/*名角风采 */}
-                    <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
+                    <View style={{ margin: pxToDp(10), marginTop: pxToDp(0),justifyContent:"center"}}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18),color:"#468CD3",fontWeight:'bold' }}>名角风采</Text>
+                            <Text style={{ fontSize: pxToDp(18), color: "#468CD3", fontWeight: 'bold' }}>名角风采</Text>
                             <TouchableOpacity onPress={() => this.context.navigate("PageThree")}>
-                                <View style={{ flexDirection: 'row' }}>
+                                <View style={{ flexDirection: 'row' ,alignItems:"center"}}>
                                     <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>
                                     <Ionicons name="chevron-forward" size={20} color="grey" />
                                 </View>
@@ -110,10 +112,10 @@ class Index extends Component {
                     </View>
                     <ScrollView horizontal={true}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                            <TouchableOpacity  onPress={() => this.context.navigate("Actress")}>
-                            <ActressView
-                                picture={require('../../../res/performer/1.jpg')}
-                                name="方亚芬" /></TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.context.navigate("Actress")}>
+                                <ActressView
+                                    picture={require('../../../res/performer/1.jpg')}
+                                    name="方亚芬" /></TouchableOpacity>
                             <ActressView
                                 picture={require('../../../res/performer/2.jpg')}
                                 name="王文娟" />
@@ -137,20 +139,20 @@ class Index extends Component {
                     {/*流派故事 */}
                     <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ fontSize: pxToDp(18),color:"#468CD3",fontWeight:'bold' }}>流派传奇</Text>
+                            <Text style={{ fontSize: pxToDp(18), color: "#468CD3", fontWeight: 'bold',justifyContent:"center" }}>流派传奇</Text>
                             <TouchableOpacity onPress={() => this.context.navigate("PageOne")}>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>查看更多</Text>
+                                <View style={{ flexDirection: 'row',alignItems:"center" }}>
+                                    <Text style={{ fontSize: pxToDp(15), color: 'grey'}}>查看更多</Text>
                                     <Ionicons name="chevron-forward" size={20} color="grey" />
                                 </View>
                             </TouchableOpacity>
                         </View>
                     </View>
                     <TouchableOpacity onPress={() => this.context.navigate("School")}>
-                    <GenerView
-                        picture={require('../../../res/genre/1.jpg')}
-                        name="袁派"
-                        special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" /></TouchableOpacity>
+                        <GenerView
+                            picture={require('../../../res/genre/1.jpg')}
+                            name="袁派"
+                            special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚" /></TouchableOpacity>
                     <GenerView
                         picture={require('../../../res/genre/2.jpg')}
                         name="范派"
@@ -159,6 +161,7 @@ class Index extends Component {
                         picture={require('../../../res/genre/3.jpg')}
                         name="尹派"
                         special="委婉缠绵，洒脱深沉，纯朴隽永，清新舒展" />
+                    <View style={{ width: "100%", height: pxToDp(10) }} />
                 </ScrollView>
             </View>
         );
