@@ -19,7 +19,7 @@ import * as ImagePicker from 'expo-image-picker';
 import DatePicker from 'react-native-datepicker';
 import Top from '@components/common/top'
 import { connect } from 'react-redux'
-import axios from 'axios'
+import requset from '../../../service'
 const typeArr = ['男', '女'];
  class Ziliao extends Component {
   static contextType = NavigationContext;
@@ -52,33 +52,36 @@ const typeArr = ['男', '女'];
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
    const fd = new FormData()
-   fd.append('file',pickerResult)
-   axios({
-     url: 'http://192.168.50.146:3000/upload/avatar',
+   let file = {
+     uri: pickerResult.uri,
+     type: pickerResult.type,
+     name: 'image.jpg',
+     'content-type': 'multipart/form-data',
+   };
+   fd.append('files',file)
+   requset.post({
+     url: '/picture',
      data:fd,
-        headers: {
+     headers: {
+           'Accept':'Application/json',
           'content-type': 'multipart/form-data',
-          "authorization":this.props.token
-     },
-     timeout: 2000,
-     method:'post'
+     }
    }).then(res => {
+     console.log(123);
        console.log(res);
    }).catch(err => {
+     console.log(234);
        console.log(err);
-     })
-     
-      console.log(pickerResult);
+   })
+   console.log(pickerResult);
     this.setState({ localUri: pickerResult.uri,modalVisible: !this.state.modalVisible });
   }
    render() {
-    console.log(this.props.token);
     const dateNow = new Date();
     const currentDate = `${dateNow.getFullYear()}-${
       dateNow.getMonth() + 1
     }-${dateNow.getDate()}`;
     const {birthday} = this.state;
-    console.log('name', this.props.route.params);
     return (
       <View  style={{flex:1,backgroundColor:'#e2f4fe'}} >
         <Top title="个人信息"   icon1="arrow-back"

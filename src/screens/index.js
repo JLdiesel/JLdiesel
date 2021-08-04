@@ -27,11 +27,15 @@ export { default as Change } from './play/change';//服装租赁页
 
 //export { default as Myroute } from './first/myroute';//服装租赁页
 export { default as Nickname } from './my/component/Nickname';//修改昵称
-export { default as Singnature} from './my/component/Signature';//修改个签
-export { default as Order} from './my/order';//订单
+export { default as Singnature } from './my/component/Signature';//修改个签
+export { default as Myorder } from './my/order/Myorder';//正在支付订单
+export { default as orderdetails } from './my/order/orderdetails';//订单确认
+export { default as newAddress } from './my/address/newAddress';//新增收货地址
+export { default as Order} from './my/order/index';//订单
 export { default as Pay} from './my/pay';//待支付
 export { default as Postsale} from './my/postsale';//待支付
 export { default as Waitcomment} from './my/waitcomment';//待评价
+export { default as address } from './my/address/address';//待评价
 export { default as Article } from './first/article';
 export { default as Drama } from './play/act/drama';
 export { default as Actress } from './first/actress';

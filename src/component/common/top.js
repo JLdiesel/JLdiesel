@@ -22,10 +22,11 @@ static contextType = NavigationContext;
       <LinearGradient style={styles.box} colors={['#e2f4fe','white']} start={{x: 0, y: 0}} end={{x: 0, y: 1.6}}>
         <View style={{marginTop:pxToDp(30),   justifyContent:'space-between',flexDirection:'row'}}>
             <View style={styles.icon1}>
-          <TouchableOpacity onPress={() => this.context.goBack()}>
+            {this.props.icon1 ?
+             ( <TouchableOpacity onPress={() => this.context.goBack()}>
             {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
             <Ionicons name={this.props.icon1} size={25} color="#468CD3" />
-          </TouchableOpacity>
+          </TouchableOpacity>):null}
         </View>
 
         <View style={styles.textview}>
