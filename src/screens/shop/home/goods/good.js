@@ -18,38 +18,7 @@ import RBSheet from "react-native-raw-bottom-sheet";
 const WINDOW_WIDTH = Dimensions.get("window").width;
 const BASE_PADDING = 10;
 
-const renderCarousel = () => (
-  <Carousel style={{ width: WINDOW_WIDTH, height: WINDOW_WIDTH }}>
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: "https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg",
-      }}
-    />
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: "https://img30.360buyimg.com/imgzone/jfs/t1/185921/14/13299/64961/60e68717E994b4e11/f4293d93cc127341.jpg",
-      }}
-    />
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: "https://img11.360buyimg.com/imgzone/jfs/t1/178143/10/13271/54708/60e68718E2e4aa44c/792cfcbe006f8bf4.jpg",
-      }}
-    />
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: "https://img14.360buyimg.com/imgzone/jfs/t1/195337/32/12126/50736/60e6871aE1b2efc7e/7e5fc1a3aa875609.jpg",
-      }}
-    />
-  </Carousel>
-);
+
 
 class shopdetails extends Component {
   constructor(props) {
@@ -86,17 +55,34 @@ class shopdetails extends Component {
             "https://img12.360buyimg.com/imgzone/jfs/t1/186471/16/12270/114029/60e6871aE7719a6fe/8a034db53107b527.jpg",
         },
       ],
-      record: ["花旦戏服", "yueju"],
-      nowprice: ["166.90"],
-      beforeprice: ["199.99"],
-      comment: [
+
+      shop:{id:1,record: "花旦戏服", nowprice: "166.90", beforeprice: "199.99",comment: 
         "花旦戏服戏剧服装越剧小姐戏服装女新款 白色 女披+水袖+裙子(+护领) ",
-      ],
+        imgURL:"https://img20.360buyimg.com/imgzone/jfs/t1/172012/34/18776/85309/60e68716E853b5d5d/f061df06cb1786b6.jpg",
+   
+      },
       Select: false,
       activeTab: 1,
       guanbi: false,
+      shopimg:[{id:1,imguri:"https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg",},
+              {id:1,imguri:"https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg",},
+              {id:1,imguri:"https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg",},
+              {id:1,imguri:"https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg",},]
     };
   }
+  renderCarousel = () => (
+    <Carousel style={{ width: WINDOW_WIDTH, height: WINDOW_WIDTH }}>
+      {this.state.shopimg.map((item,id)=>(
+      <Image
+        key={id}
+        style={{ flex: 1 }}
+        resizeMode="contain"
+        source={{
+          uri:item.imguri,
+        }}
+      />))}
+    </Carousel>
+  );
 
   onPress = () => {
     this.setState({
@@ -153,7 +139,7 @@ class shopdetails extends Component {
             <Lightbox
               springConfig={{ tension: 15, friction: 7 }}
               swipeToDismiss={true}
-              renderContent={renderCarousel}
+              renderContent={this.renderCarousel}
             >
               <Image
                 style={{
@@ -162,7 +148,7 @@ class shopdetails extends Component {
                   borderRadius: pxToDp(5),
                 }}
                 source={{
-                  uri: "https://img20.360buyimg.com/imgzone/jfs/t1/172012/34/18776/85309/60e68716E853b5d5d/f061df06cb1786b6.jpg",
+                  uri: this.state.shop.imgURL,
                 }}
               />
             </Lightbox>
@@ -171,7 +157,7 @@ class shopdetails extends Component {
           {/* 品名 价格 */}
           <View style={{ alignItems: "center", marginTop: pxToDp(20) }}>
             <Text style={{ fontSize: pxToDp(22), fontWeight: "bold" }}>
-              {this.state.record[0]}
+              {this.state.shop.record}
             </Text>
             <View
               style={{
@@ -181,7 +167,7 @@ class shopdetails extends Component {
               }}
             >
               <Text style={{ fontSize: pxToDp(20), fontWeight: "bold" }}>
-                ￥{this.state.nowprice}
+                ￥{this.state.shop.nowprice}
               </Text>
               <Text
                 style={{
@@ -190,7 +176,7 @@ class shopdetails extends Component {
                   marginLeft: pxToDp(10),
                 }}
               >
-                ￥{this.state.beforeprice}
+                ￥{this.state.shop.beforeprice}
               </Text>
             </View>
           </View>
@@ -204,7 +190,7 @@ class shopdetails extends Component {
               marginTop: pxToDp(15),
             }}
           >
-            <Text>{this.state.comment}</Text>
+            <Text>{this.state.shop.comment}</Text>
           </View>
 
           {/* 购买规格 */}

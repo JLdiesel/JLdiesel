@@ -13,7 +13,7 @@ class Index extends Component {
         return (
             <View>
                     <View style={styles.box}>
-                        <Image style={styles.image} source={this.props.picture}/>
+                        <Image style={styles.image} source={{uri:this.props.imguri}}/>
                         <View style={{ marginTop: pxToDp(20),width:pxToDp(240) }}>
                             <Text style={styles.text1}>{this.props.name}</Text>
                             <Text style={styles.text2}>{this.props.special}</Text>

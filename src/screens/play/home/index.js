@@ -5,13 +5,21 @@ import Top from '@components/common/top'
 import { pxToDp } from '@utils/styleKits';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Model from '@components/common/pop';
+import JBitem from '../components/jbitem'
+import index from '../../my/pay/component/listItem';
 
 
 class Index extends Component {
     state = {
         arr: [{ uriFace: 'https://img1.baidu.com/it/u=2299442732,1673944853&fm=26&fmt=auto&gp=0.jpg', id: 1, name1: '创建公开房间', name2: '创建私人房间', teaname: '创建房间' },
         { uriFace: 'https://img0.baidu.com/it/u=191110947,1000133844&fm=26&fmt=auto&gp=0.jpg', id: 2, name1: '热门剧本', name2: '最新剧本', teaname: '快速匹配' },
-        { uriFace: 'https://img2.baidu.com/it/u=440896499,2306026917&fm=26&fmt=auto&gp=0.jpg', id: 3, name1: '', name2: '加入房间', teaname: '查找房间' }]
+        { uriFace: 'https://img2.baidu.com/it/u=440896499,2306026917&fm=26&fmt=auto&gp=0.jpg', id: 3, name1: '', name2: '加入房间', teaname: '查找房间' }],
+        jubenlist:[ 
+        {id:1,jbname:'追鱼 书馆',jbtext:'我张珍远道来投亲',imguri:''},
+        {id:2,jbname:'周仁哭坟',jbtext:'冷冷雨飕飕风',imguri:''},
+        {id:3,jbname:'梁祝 十八相送',jbtext:'梁祝 十八相送',imguri:''},
+           
+        ]
     }
     static contextType = NavigationContext;
     render() {
@@ -74,29 +82,17 @@ class Index extends Component {
                     {/*剧本推荐 */}
                     <View>
                         <Text style={{ fontSize: pxToDp(18), margin: pxToDp(10), color: "#468CD3", fontWeight: 'bold' }}>剧本推荐</Text>
-                        <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(110) }}>
-                            <TouchableOpacity onPress={() => this.context.navigate("Drama")}>
-                                <Image style={{ height: pxToDp(100), width: pxToDp(100), borderRadius: pxToDp(10) }} source={require('../../../res/play/1.jpg')} />
-                            </TouchableOpacity>
-                            <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold', }}>追鱼 书馆</Text>
-                                <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>我张珍远道来投亲</Text>
-                            </View>
-                        </View>
-                        <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(110) }}>
-                            <Image style={{ height: pxToDp(100), width: pxToDp(100), borderRadius: pxToDp(10) }} source={require('../../../res/play/2.jpg')} />
-                            <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold', }}>周仁哭坟</Text>
-                                <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>冷冷雨飕飕风</Text>
-                            </View>
-                        </View>
-                        <View style={{ flexDirection: 'row', borderBottomColor: 'grey', borderBottomWidth: pxToDp(0.5), margin: pxToDp(10), height: pxToDp(110) }}>
-                            <Image style={{ height: pxToDp(100), width: pxToDp(100), borderRadius: pxToDp(10) }} source={require('../../../res/play/3.jpg')} />
-                            <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold', }}>梁祝 十八相送</Text>
-                                <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>书房门前一枝梅</Text>
-                            </View>
-                        </View>
+                       
+                       {this.state.jubenlist.map((item,index)=>(
+                                <JBitem
+                                    key={index}
+                                    jbname={item.jbname}
+                                    jbtext={item.jbtext}
+                                    imguri={item.imguri}
+                                />
+                       )
+
+                       )}
                     </View>
                 </ScrollView>
             </View>
@@ -106,4 +102,5 @@ class Index extends Component {
         Alert.alert('签到', '今日获得50积分', [{ text: "我知道了" }]);
     }
 }
+
 export default Index;

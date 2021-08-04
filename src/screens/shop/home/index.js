@@ -11,6 +11,7 @@ import Top from "@components/common/top";
 import { pxToDp } from "@utils/styleKits";
 import Swiper from "react-native-swiper";
 import { NavigationContext } from "@react-navigation/native";
+import Maylike from './components/maylike'
 class Index extends Component {
   state = {
     ocard: [
@@ -149,22 +150,16 @@ class Index extends Component {
               flexDirection: "row",
             }}
           >
-            {this.state.ocard.map((item) => (
-              <View style={styles.ocard}>
-                <TouchableOpacity onPress={() => this.context.navigate("Good")}>
-                  <Image
-                    style={styles.image}
-                    source={{ uri: item.picture }}
-                  ></Image>
-                  <View style={{ padding: pxToDp(4) }}>
-                    <Text style={{ fontSize: pxToDp(15) }}>{item.name}</Text>
-                    <View style={styles.bottext}>
-                      <Text style={{ color: "#B22222" }}>{item.price}</Text>
-                      <Text style={{ color: "grey" }}>{item.number}</Text>
-                    </View>
-                  </View>
-                </TouchableOpacity>
-              </View>
+            {this.state.ocard.map((item,id) => (
+                <Maylike
+                  key={id}
+                  URL={item.picture}
+                  name={item.name}
+                  number={item.number}
+                  price={item.price}
+                
+                
+                />
             ))}
           </View>
           <View style={styles.tcard}></View>

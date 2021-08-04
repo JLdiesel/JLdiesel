@@ -15,7 +15,8 @@ class Index extends Component {
         playingsong:'',
         sound:[],
       isplay:false,
-      URI:[]
+      URI:[],
+      sing:{imgURL:'',lisnum:1959,lyric:' 《穆桂英挂帅》选段猛听得金鼓响画角声震唤起我破天门壮志凌云想当年桃花马上威风凛凛敌血飞溅石榴裙有生之日责当尽寸土怎能够属于他人番王小丑何足论我一剑能当百万的兵',toptitle:'穆桂英挂面',songURL:''}
     }
 
    playSound=async()=>{
@@ -93,12 +94,12 @@ class Index extends Component {
        
         return (
             <View style={{backgroundColor:'#E2F4FE'}}>
-                <Top icon1='arrow-back' title="穆桂英挂帅" icon2='star-outline' />
+                <Top icon1='arrow-back' title={this.state.sing.toptitle} icon2='star-outline' />
                 <View style={styles.box}>
-                    <Image style={styles.image} source={require('../../../res/4.jpg')}></Image>
+                    <Image style={styles.image} source={this.state.imgURL}></Image>
                     <View>
-                        <Text style={styles.text1}>穆桂英挂帅 - 猛听得金鼓响画角声震</Text>
-                        <Text style={styles.text3}>1959人唱过</Text>
+                        <Text style={styles.text1}>{this.state.sing.img}</Text>
+                        <Text style={styles.text3}>{this.state.sing.lisnum}人唱过</Text>
                     </View>
                   
                 </View>
@@ -108,20 +109,12 @@ class Index extends Component {
                 <View style={{ alignItems: 'center' }}>
                     <ScrollView style={{ height: '62%' }}>
                         <Text style={{ fontSize: pxToDp(25) }}>
-                            《穆桂英挂帅》选段{'\n'}
-                            猛听得金鼓响画角声震{'\n'}
-                            唤起我破天门壮志凌云{'\n'}
-                            想当年桃花马上威风凛凛{'\n'}
-                            敌血飞溅石榴裙{'\n'}
-                            有生之日责当尽{'\n'}
-                            寸土怎能够属于他人{'\n'}
-                            番王小丑何足论{'\n'}
-                            我一剑能当百万的兵
+                        {this.state.sing.lyric}
                         </Text>
                         <View style={{alignItems:'center',justifyContent:'center'}}>
                         <Video
                 ref={video}
-                source={require('./越剧追鱼.mp3')}
+                source={{uri:this.state.sing.songURL}}
                 resizeMode="contain"
                 onPlaybackStatusUpdate={status => this.setState({status})}
             />

@@ -8,12 +8,9 @@ import ActressView from '@components/common/actressview';
 import GenerView from '@components/common/generview';
 import { NavigationContext } from "@react-navigation/native";
 class Index extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
+  state={
+    actor:[{id:1,name:'方亚芬',imguri:''},{id:2,name:'方亚芬',imguri:''},{id:3,name:'方亚芬',imguri:''},{id:4,name:'方亚芬',imguri:''},]
+}  
     static contextType = NavigationContext;
     render() {
         return (
@@ -311,38 +308,14 @@ class Index extends Component {
                     justifyContent: "space-around",
                   }}
                 >
-                  <TouchableOpacity
-                    onPress={() => this.context.navigate("Actress")}
-                  >
-                    <ActressView
-                      picture={require("../../../res/performer/1.jpg")}
-                      name="方亚芬"
-                    />
-                  </TouchableOpacity>
-                  <ActressView
-                    picture={require("../../../res/performer/2.jpg")}
-                    name="王文娟"
-                  />
-                  <ActressView
-                    picture={require("../../../res/performer/3.jpg")}
-                    name="王君安"
-                  />
-                  <ActressView
-                    picture={require("../../../res/performer/4.jpg")}
-                    name="茅威涛"
-                  />
-                  <ActressView
-                    picture={require("../../../res/performer/7.jpg")}
-                    name="蔡浙飞"
-                  />
-                  <ActressView
-                    picture={require("../../../res/performer/9.jpg")}
-                    name="何赛飞"
-                  />
-                  <ActressView
-                    picture={require("../../../res/performer/10.jpg")}
-                    name="陈丽君"
-                  />
+             {this.state.actor.map((item,id)=>(  
+                            <TouchableOpacity onPress={() => this.context.navigate("Actress")}>
+                                <ActressView
+                                    key={id}
+                                    picture={{uri:item.imguri}}
+                                    name={item.name} />
+                            </TouchableOpacity>
+                        ))}
                 </View>
               </ScrollView>
               {/*流派故事 */}

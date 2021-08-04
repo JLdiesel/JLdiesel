@@ -21,27 +21,7 @@ class Index extends Component {
                         <Image style={styles.image4} source={require('../../../res/play/1.jpg')} />
                         <View style={{ marginLeft: pxToDp(10) }}>
                             <Text style={styles.text2}>追鱼</Text>
-                            <TouchableOpacity style={styles.touch}>
-                                <Text>加入</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={styles.botbox}>
-                        <Image style={styles.image4} source={require('../../../res/play/2.jpg')} />
-                        <View style={{ marginLeft: pxToDp(10) }}>
-                            <Text style={styles.text2}>周仁哭坟</Text>
-                            <TouchableOpacity style={styles.touch}>
-                                <Text>加入</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={styles.botbox}>
-                        <Image style={styles.image4} source={require('../../../res/play/3.jpg')} />
-                        <View style={{ marginLeft: pxToDp(10) }}>
-                            <Text style={styles.text2}>梁祝</Text>
-                            <TouchableOpacity style={styles.touch}>
-                                <Text>加入</Text>
-                            </TouchableOpacity>
+           
                         </View>
                     </View>
                 </ScrollView>
