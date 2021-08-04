@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, Image, TextInput, StyleSheet, ScrollView, TouchableOpacity, ImageBackground } from "react-native";
-import Swiper from 'react-native-swiper';
+import RBSheet from "react-native-raw-bottom-sheet";
 import { pxToDp } from "../../../../utils/styleKits";
-
+import Icon from 'react-native-vector-icons/AntDesign';
 
 class Index extends Component {
     state = {
@@ -64,7 +64,6 @@ class Index extends Component {
                 answername: "K宝爸吖",
                 answertime: "7-20",
                 answercomment: "真的不像吗？要不再看看。",
-
             },
             {
                 id: "5",
@@ -79,7 +78,6 @@ class Index extends Component {
                 answername: "K宝爸吖",
                 answertime: "7-20",
                 answercomment: "真的不像吗？要不再看看。",
-
             },
             {
                 id: "6",
@@ -96,9 +94,17 @@ class Index extends Component {
                 answercomment: "真的不像吗？要不再看看。",
             },
         ],
+        showSharePop: false,//分享弹窗，默认不显示
     }
+
+    onSharePress() {
+        const { showSharePop } = this.state
+        this.setState({ showSharePop: !this.state.showSharePop })
+    }
+
+
     render() {
-        const { imformation } = this.state
+        const { imformation, } = this.state
         return (
             <ScrollView>
                 <View>
@@ -148,19 +154,23 @@ class Index extends Component {
                         {imformation.map((item, index) => (
                             <View key={item.id} style={{ justifyContent: "center" }}>
                                 {/* 头像栏  开始 */}
-                                <View style={{ flexDirection: "row", marginTop: pxToDp(20), justifyContent: "space-between" }}>
-                                    <TouchableOpacity style={{ marginLeft: pxToDp(15) }}>
-                                        <Image style={{ width: pxToDp(40), height: pxToDp(40), borderRadius: pxToDp(50), justifyContent: "center", alignItems: "center" }} source={{ uri: item.avatar }} />
-                                    </TouchableOpacity>
-                                    <View style={{ flexDirection: "row", alignItems: "center", marginRight: pxToDp(0), right: pxToDp(40) }}>
-                                        <Text style={{ fontSize: pxToDp(17), }}>{item.name}</Text>
-                                    </View >
-                                    <TouchableOpacity style={{ alignItems: "center", justifyContent: "center", right: pxToDp(85), borderColor: "#F38C23", borderWidth: pxToDp(0.9), width: pxToDp(65), height: pxToDp(18), borderRadius: pxToDp(20), top: pxToDp(10) }}>
-                                        <Text style={{ color: "#F38C23", fontSize: pxToDp(12) }}>{item.title}</Text>
-                                    </TouchableOpacity>
-                                    <View style={{ justifyContent: "flex-end", marginRight: pxToDp(20) }}>
-                                        <Text style={{ textAlign: "right", color: "black" }}>{item.time}</Text>
+                                <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                                    <View style={{ flexDirection: "row", marginTop: pxToDp(20), justifyContent: "flex-start" }}>
+                                        <TouchableOpacity style={{ marginLeft: pxToDp(15) }}>
+                                            <Image style={{ width: pxToDp(40), height: pxToDp(40), borderRadius: pxToDp(50), justifyContent: "center", alignItems: "center" }} source={{ uri: item.avatar }} />
+                                        </TouchableOpacity>
+                                        <View style={{ alignItems: "flex-start", marginLeft: pxToDp(10), height: pxToDp(40), justifyContent: "space-between" }}>
+                                            <Text style={{ fontSize: pxToDp(17), }}>{item.name}</Text>
+                                            <Text style={{ textAlign: "right", color: "black", fontSize: pxToDp(13), opacity: 0.5 }}>{item.time}</Text>
+                                        </View >
+                                        <TouchableOpacity style={{ alignItems: "center", marginLeft: pxToDp(15), justifyContent: "center", borderColor: "#F38C23", borderWidth: pxToDp(0.9), width: pxToDp(65), height: pxToDp(18), borderRadius: pxToDp(20), top: pxToDp(10) }}>
+                                            <Text style={{ color: "#F38C23", fontSize: pxToDp(12) }}>{item.title}</Text>
+                                        </TouchableOpacity>
                                     </View>
+                                    <TouchableOpacity style={{ alignItems: "center", flexDirection: "row", justifyContent: "center", marginTop: pxToDp(15), marginRight: pxToDp(15) }}>
+                                        <Icon name="like2" size={16} color={'black'} />
+                                        <Text style={{ marginTop: pxToDp(3) }}>15</Text>
+                                    </TouchableOpacity>
                                 </View>
                                 {/* 头像栏  结束 */}
 
@@ -179,29 +189,72 @@ class Index extends Component {
                                 {/* 文章内容  结束 */}
 
                                 {/* 热门回复  开始 */}
-                                <View style={{ flexDirection: "row", marginTop: pxToDp(10), justifyContent: "space-between", marginLeft: pxToDp(40) }}>
+                                <View style={{ flexDirection: "row", marginTop: pxToDp(10), justifyContent: "flex-start", marginLeft: pxToDp(40) }}>
                                     <TouchableOpacity style={{ marginLeft: pxToDp(15) }}>
                                         <Image style={{ width: pxToDp(30), height: pxToDp(30), borderRadius: pxToDp(50), justifyContent: "center", alignItems: "center" }} source={{ uri: item.answeravatar }} />
                                     </TouchableOpacity>
-                                    <View style={{ flexDirection: "row", alignItems: "center", marginRight: pxToDp(0), right: pxToDp(85), marginLeft: pxToDp(15) }}>
+                                    <View style={{ height: pxToDp(30), justifyContent: "space-between", alignItems: "flex-start", marginLeft: pxToDp(15) }}>
                                         <Text style={{ fontSize: pxToDp(15) }}>{item.answername}</Text>
+                                        <Text style={{ textAlign: "right", color: "black", fontSize: pxToDp(12), opacity: 0.5 }}>{item.answertime}</Text>
                                     </View >
-                                    <View style={{ justifyContent: "flex-end", marginRight: pxToDp(40) }}>
-                                        <Text style={{ textAlign: "right", color: "black", fontSize: pxToDp(13) }}>{item.answertime}</Text>
-                                    </View>
                                 </View>
                                 <TouchableOpacity style={{ marginLeft: pxToDp(85), marginRight: pxToDp(50), marginTop: pxToDp(5) }}>
                                     <Text numberOfLines={4} style={{ fontSize: pxToDp(15), letterSpacing: pxToDp(1) }}>{item.answercomment}</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{ marginLeft: pxToDp(85), marginTop: pxToDp(10) }}>
+                                <TouchableOpacity onPress={() => this.Scrollable.open()} style={{ marginLeft: pxToDp(85), marginTop: pxToDp(10) }}>
                                     <Text style={{ color: "#6790DB", fontWeight: "bold" }}>展开89条回复</Text>
                                 </TouchableOpacity>
                                 {/* 热门回复  结束 */}
 
-                                <View style={{ marginTop: pxToDp(20), marginLeft: pxToDp(50), width: pxToDp(315), height: pxToDp(1), backgroundColor: 'black', opacity: 0.1 }} />
+                                <RBSheet
+                                    ref={ref => {
+                                        this.Scrollable = ref;
+                                    }}
+                                    height={600}
+                                    closeOnDragDown
+                                    customStyles={{
+                                        container: {
+                                            borderTopLeftRadius: 10,
+                                            borderTopRightRadius: 10
+                                        }
+                                    }}
+                                >
+
+
+                                    <ScrollView showsHorizontalScrollIndicator={false}>
+                                        {imformation.map((item, index) => (
+                                            <View>
+                                                <View >
+                                                    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                                                        <View style={{ flexDirection: "row", marginTop: pxToDp(20), justifyContent: "flex-start" }}>
+                                                            <TouchableOpacity style={{ marginLeft: pxToDp(15) }}>
+                                                                <Image style={{ width: pxToDp(40), height: pxToDp(40), borderRadius: pxToDp(50), justifyContent: "center", alignItems: "center" }} source={{ uri: item.avatar }} />
+                                                            </TouchableOpacity>
+                                                            <View style={{ alignItems: "flex-start", marginLeft: pxToDp(10), height: pxToDp(40), justifyContent: "space-between" }}>
+                                                                <Text style={{ fontSize: pxToDp(17), }}>{item.name}</Text>
+                                                                <Text style={{ textAlign: "right", color: "black", fontSize: pxToDp(13), opacity: 0.5 }}>{item.time}</Text>
+                                                            </View >
+                                                        </View>
+                                                        <TouchableOpacity style={{ alignItems: "center", flexDirection: "row", justifyContent: "center", marginTop: pxToDp(15), marginRight: pxToDp(15) }}>
+                                                            <Icon name="like2" size={16} color={'black'} />
+                                                            <Text style={{ marginTop: pxToDp(3) }}>15</Text>
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                </View>
+                                                <View style={{ marginLeft: pxToDp(55), marginRight: pxToDp(15), marginTop: pxToDp(5) }}>
+                                                    <Text numberOfLines={4} style={{ fontSize: pxToDp(15), letterSpacing: pxToDp(1) }}>{item.comment}</Text>
+                                                </View>
+                                                <View style={{ marginTop: pxToDp(10), marginLeft: pxToDp(50), width: pxToDp(315), height: pxToDp(1), backgroundColor: 'black', opacity: 0.1 }} />
+                                            </View>
+                                        ))}
+                                    </ScrollView>
+                                </RBSheet>
+
+                                <View style={{ marginTop: pxToDp(15), marginLeft: pxToDp(50), width: pxToDp(315), height: pxToDp(1), backgroundColor: 'black', opacity: 0.1 }} />
 
                             </View>
                         ))}
+
                     </View>
                 </View>
             </ScrollView>

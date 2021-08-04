@@ -66,7 +66,7 @@ function Nav() {
         {/*个人首页 */}
 
         <Stack.Screen name="Article" component={Screens.Article} />
-        <Stack.Screen name="Actress" component={Screens.Actress}/>
+        <Stack.Screen name="Actress" component={Screens.Actress} />
         <Stack.Screen name="School" component={Screens.School} />
         <Stack.Screen name="Drama" component={Screens.Drama} />
         <Stack.Screen name="History" component={Screens.History} />
