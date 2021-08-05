@@ -22,7 +22,10 @@ class Index extends Component {
 }
 const styles = StyleSheet.create({
     box: {
-        margin: pxToDp(10),
+        marginTop:pxToDp(0),
+        marginBottom:pxToDp(20),
+        marginLeft:pxToDp(0),
+        marginRight:pxToDp(3),
         alignItems:'center'
     },
     image: {

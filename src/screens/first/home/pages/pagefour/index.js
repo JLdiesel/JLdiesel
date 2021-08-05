@@ -13,7 +13,7 @@ class Index extends Component {
             <View style={{backgroundColor:'#E2F4FE',flex:1}}>
                 <Top icon1="arrow-back" title="精选唱段" />
                 <ScrollView style={{marginBottom:pxToDp(50)}}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-around'}}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-around',marginTop:pxToDp(10)}}>
                         <View style={{ alignItems: 'center', alignSelf: 'center' }}>
                             <Ionicons name="md-bar-chart" size={35} color="#00BFFF" />
                             <Text style={styles.text1}>排行榜</Text>
