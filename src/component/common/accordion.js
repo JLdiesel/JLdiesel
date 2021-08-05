@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Accordion from "react-native-collapsible/Accordion";
 import Collapsible from "react-native-collapsible";
 import {
   Text,

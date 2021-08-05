@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
-import pxToDp from "../../../../../utils/styleKits"
+import { pxToDp } from '../../../../../utils/styleKits';
 import { colors } from './index.style';
 
 const IS_IOS = Platform.OS === 'ios';
@@ -22,8 +22,9 @@ const entryBorderRadius = 8;
 export default StyleSheet.create({
     // 修改盒子大小  加不了pxtodp
     slideInnerContainer: {
-        width: 330,
-        height: 240,
+        width: pxToDp(330),
+        height: pxToDp(240),
+        right:pxToDp(20),
         paddingHorizontal: itemHorizontalMargin,
         paddingBottom: 18 // needed for shadow
     },

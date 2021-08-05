@@ -80,71 +80,8 @@ class Index extends Component {
                     borderRadius: pxToDp(10),
                     margin: pxToDp(10)
                   }}
-<<<<<<< HEAD
                   source={require("../../../res/22.jpg")}
                 />
-=======
-                >
-                  <Text
-                    style={{
-                      fontSize: pxToDp(18),
-                      color: "#468CD3",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    精选唱段
-                  </Text>
-                  <TouchableOpacity
-                    onPress={() => this.context.navigate("PageFour")}
-                  >
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={{ fontSize: pxToDp(15), color: "grey" }}>
-                        查看更多
-                      </Text>
-                      <Ionicons name="chevron-forward" size={20} color="grey" />
-                    </View>
-                  </TouchableOpacity>
-                </View>
-                <ScrollView horizontal={true}>
-                  <View style={{ flexDirection: "row", marginTop: pxToDp(5) }}>
-                    <Image
-                      style={{
-                        height: pxToDp(130),
-                        width: pxToDp(200),
-                        borderRadius: pxToDp(10),
-                      }}
-                      source={require("../../../res/13.jpg")}
-                    />
-                    <Image
-                      style={{
-                        height: pxToDp(130),
-                        width: pxToDp(200),
-                        borderRadius: pxToDp(10),
-                        marginLeft: pxToDp(10),
-                      }}
-                      source={require("../../../res/14.jpg")}
-                    />
-                    <Image
-                      style={{
-                        height: pxToDp(130),
-                        width: pxToDp(200),
-                        borderRadius: pxToDp(10),
-                        marginLeft: pxToDp(10),
-                      }}
-                      source={require("../../../res/15.jpg")}
-                    />
-                    <Image
-                      style={{
-                        height: pxToDp(130),
-                        width: pxToDp(200),
-                        borderRadius: pxToDp(10),
-                        marginLeft: pxToDp(10),
-                      }}
-                      source={require("../../../res/16.jpg")}
-                    />
-                  </View>
-                </ScrollView>
->>>>>>> 4e95e1b063ef43b53231b0569ed937dbacbfcd6c
               </View>
               <View style={{
                 justifyContent: 'center',
@@ -398,7 +335,6 @@ class Index extends Component {
               </TouchableOpacity>
             </View>
           </View>
-<<<<<<< HEAD
           <TouchableOpacity onPress={() => this.context.navigate("School")}>
             <GenerView
               picture={require("../../../res/genre/1.jpg")}
@@ -420,10 +356,6 @@ class Index extends Component {
       </View>
     );
   }
-=======
-        );
-    }
->>>>>>> 4e95e1b063ef43b53231b0569ed937dbacbfcd6c
 }
 
 export default Index;
