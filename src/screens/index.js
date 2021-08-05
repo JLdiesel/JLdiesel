@@ -16,6 +16,7 @@ export { default as Women } from './my/seetings/women';//服装租赁页
 export { default as Yijian } from './my/seetings/yijian';//服装租赁页
 export { default as Yinsi } from './my/seetings/yinsi';//服装租赁页
 export { default as Act } from './play/act';//服装租赁页
+export { default as Timeline } from './Timeline/index';//服装租赁页
 export { default as Apply } from './talk/home/live/apply';//服装租赁页
 export { default as Create } from './talk/home/live/create';//服装租赁页
 export { default as PageOne } from './first/home/pages/pageone';//服装租赁页

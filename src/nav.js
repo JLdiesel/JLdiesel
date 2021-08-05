@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
+      <Stack.Navigator headerMode="none" initialRouteName="Timeline">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -38,6 +38,8 @@ function Nav() {
         {/*租赁商城页 */}
         <Stack.Screen name="Zulin" component={Screens.Zulin} />
         {/*周边商城页 */}
+        <Stack.Screen name="Timeline" component={Screens.Timeline} />
+        {/* 时间轴 */}
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
         <Stack.Screen name="Set" component={Screens.Set} />
