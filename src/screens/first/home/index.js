@@ -1,21 +1,54 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, SafeAreaView } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { sliderWidth, itemWidth } from './scorll/styles/SliderEntry.style';
+import SliderEntry from './scorll/components/SliderEntry';
+import styles, { colors } from './scorll/styles/index.style';
+import { ENTRIES1, ENTRIES2 } from './scorll/static/entries';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Top from '@components/common/top';
 import ImageFade from '../../../component/ImageFade/index'
 import ActressView from '@components/common/actressview';
 import GenerView from '@components/common/generview';
 import { NavigationContext } from "@react-navigation/native";
+
+const SLIDER_1_FIRST_ITEM = 1;
+
 class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
-    }
+      slider1ActiveSlide: SLIDER_1_FIRST_ITEM
+    };
   }
   static contextType = NavigationContext;
+
+  _renderItem({ item, index }) {
+    return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
+  }
+  _renderLightItem({ item, index }) {
+    return <SliderEntry data={item} even={false} />;
+  }
+  layoutExample(number, title, type) {
+    const isTinder = type === 'tinder';
+    return (
+      <View style={{ marginBottom: pxToDp(-10), marginTop: pxToDp(-10), }}>
+        <Carousel
+          data={isTinder ? ENTRIES2 : ENTRIES1}
+          renderItem={isTinder ? this._renderLightItem : this._renderItem}
+          sliderWidth={sliderWidth}
+          itemWidth={itemWidth}
+          containerCustomStyle={styles.slider}
+          contentContainerCustomStyle={styles.sliderContentContainer}
+          layout={type}
+          loop={true}
+        />
+      </View>
+    );
+  }
   render() {
+    const example3 = this.layoutExample('', '', 'stack');
     return (
       <View>
         <Top title="百越台" icon2="search" />
@@ -31,15 +64,23 @@ class Index extends Component {
               <Image style={{ width: "100%", height: pxToDp(200), borderRadius: pxToDp(20) }} source={require("../../../res/19-2.jpg")} />
             </ImageFade>
           </View>
-          {/*精选唱段 */}
-          <View style={{ margin: pxToDp(10) }}>
+          {/*俯瞰百年 */}
+          <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
             <View
               style={{
                 flexDirection: "row",
                 justifyContent: "space-between",
               }}
             >
-              <Text style={styles.title}>精选唱段</Text>
+              <Text
+                style={{
+                  fontSize: pxToDp(18),
+                  color: "#468CD3",
+                  fontWeight: "bold",
+                }}
+              >
+                精选唱段
+              </Text>
               <TouchableOpacity
                 onPress={() => this.context.navigate("PageFour")}
               >
@@ -54,19 +95,38 @@ class Index extends Component {
             <ScrollView horizontal={true}>
               <View style={{ flexDirection: "row", marginTop: pxToDp(5) }}>
                 <Image
-                  style={styles.image2}
+                  style={{
+                    height: pxToDp(130),
+                    width: pxToDp(200),
+                    borderRadius: pxToDp(10),
+                  }}
                   source={require("../../../res/13.jpg")}
                 />
                 <Image
-                  style={styles.image2}
+                  style={{
+                    height: pxToDp(130),
+                    width: pxToDp(200),
+                    borderRadius: pxToDp(10),
+                    marginLeft: pxToDp(10),
+                  }}
                   source={require("../../../res/14.jpg")}
                 />
                 <Image
-                  style={styles.image2}
+                  style={{
+                    height: pxToDp(130),
+                    width: pxToDp(200),
+                    borderRadius: pxToDp(10),
+                    marginLeft: pxToDp(10),
+                  }}
                   source={require("../../../res/15.jpg")}
                 />
                 <Image
-                  style={styles.image2}
+                  style={{
+                    height: pxToDp(130),
+                    width: pxToDp(200),
+                    borderRadius: pxToDp(10),
+                    marginLeft: pxToDp(10),
+                  }}
                   source={require("../../../res/16.jpg")}
                 />
               </View>
@@ -80,7 +140,15 @@ class Index extends Component {
                 justifyContent: "space-between",
               }}
             >
-              <Text style={styles.title}>俯瞰百年</Text>
+              <Text
+                style={{
+                  fontSize: pxToDp(18),
+                  color: "#468CD3",
+                  fontWeight: "bold",
+                }}
+              >
+                俯瞰百年
+              </Text>
               <TouchableOpacity
                 onPress={() => this.context.navigate("PageTwo")}
               >
@@ -93,91 +161,21 @@ class Index extends Component {
               </TouchableOpacity>
             </View>
           </View>
-          <TouchableOpacity
-            onPress={() => this.context.navigate("Article")}
-          >
-            <View
-              style={styles.articlebox}
-            >
-              <View
-                style={{
-                  justifyContent: "space-between",
-                  width: pxToDp(220),
-                }}
+          <SafeAreaView style={styles.safeArea}>
+            <View style={styles.container}>
+
+              {this.gradient}
+              <ScrollView
+                style={styles.scrollview}
+                scrollEventThrottle={200}
+                directionalLockEnabled={true}
               >
-                <Text style={{ fontSize: pxToDp(17) }}>
-                  嵊州：越剧的起源地
-                </Text>
-                <Text
-                  style={{
-                    fontSize: pxToDp(13),
-                    color: "grey",
-                    marginTop: pxToDp(10),
-                  }}
-                >
-                  名家名篇
-                </Text>
-              </View>
-              <Image
-                style={styles.image3}
-                source={require("../../../res/history/1.jpg")}
-              />
+                {example3}
+              </ScrollView>
             </View>
-          </TouchableOpacity>
-          <View
-            style={styles.articlebox}
-          >
-            <View
-              style={{
-                justifyContent: "space-between",
-                width: pxToDp(220),
-              }}
-            >
-              <Text style={{ fontSize: pxToDp(17) }} numberOfLines={2}>
-                越剧十姐妹同台演出轰动上海
-              </Text>
-              <Text
-                style={{
-                  fontSize: pxToDp(13),
-                  color: "grey",
-                  marginTop: pxToDp(10),
-                }}
-              >
-                书摘
-              </Text>
-            </View>
-            <Image
-              style={styles.image3}
-              source={require("../../../res/history/2.jpg")}
-            />
-          </View>
-          <View
-            style={styles.articlebox}
-          >
-            <View
-              style={{
-                justifyContent: "space-between",
-                width: pxToDp(220),
-              }}
-            >
-              <Text style={{ fontSize: pxToDp(17) }} numberOfLines={2}>
-                新中国的第一部彩色戏曲艺术片越剧电影
-              </Text>
-              <Text
-                style={{
-                  fontSize: pxToDp(13),
-                  color: "grey",
-                  marginTop: pxToDp(10),
-                }}
-              >
-                拓跋云
-              </Text>
-            </View>
-            <Image
-              style={styles.image3}
-              source={require("../../../res/history/3.jpg")}
-            />
-          </View>
+          </SafeAreaView>
+
+
           {/*名角风采 */}
           <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
             <View
@@ -186,7 +184,15 @@ class Index extends Component {
                 justifyContent: "space-between",
               }}
             >
-              <Text style={styles.title}>名角风采</Text>
+              <Text
+                style={{
+                  fontSize: pxToDp(18),
+                  color: "#468CD3",
+                  fontWeight: "bold",
+                }}
+              >
+                名角风采
+              </Text>
               <TouchableOpacity
                 onPress={() => this.context.navigate("PageThree")}
               >
@@ -253,7 +259,15 @@ class Index extends Component {
                 justifyContent: "space-between",
               }}
             >
-              <Text style={styles.title}>流派传奇</Text>
+              <Text
+                style={{
+                  fontSize: pxToDp(18),
+                  color: "#468CD3",
+                  fontWeight: "bold",
+                }}
+              >
+                流派传奇
+              </Text>
               <TouchableOpacity
                 onPress={() => this.context.navigate("PageOne")}
               >
@@ -288,48 +302,4 @@ class Index extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  wrapper: {
-  },
-  slide: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: pxToDp(150),
-    borderRadius: pxToDp(10),
-    margin: pxToDp(10)
-  },
-  image1: {
-    height: pxToDp(150),
-    width: pxToDp(355),
-    borderRadius: pxToDp(10),
-    margin: pxToDp(10)
-  },
-  title: {
-    fontSize: pxToDp(18),
-    color: "#468CD3",
-    fontWeight: "bold",
-  },
-  image2: {
-    height: pxToDp(130),
-    width: pxToDp(200),
-    borderRadius: pxToDp(10),
-    marginLeft: pxToDp(10)
-  },
-  articlebox: {
-    margin: pxToDp(15),
-    flexDirection: "row",
-    justifyContent: "space-between",
-    borderBottomWidth: pxToDp(0.5),
-    borderBottomColor: "grey",
-    marginTop: pxToDp(0),
-    height: pxToDp(100),
-    alignItems: "center",
-  },
-  image3: {
-    height: pxToDp(80),
-    width: pxToDp(100),
-    margin: pxToDp(10),
-    borderRadius: pxToDp(10),
-  }
-})
 export default Index;
