@@ -15,6 +15,7 @@ import Lightbox from "react-native-lightbox";
 import Carousel from "react-native-looped-carousel";
 import RBSheet from "react-native-raw-bottom-sheet";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import Swiper from "../../../../component/common/Swiper";
 
 const WINDOW_WIDTH = Dimensions.get("window").width;
 const BASE_PADDING = 10;
@@ -197,16 +198,17 @@ class shopdetails extends Component {
               swipeToDismiss={true}
               renderContent={renderCarousel}
             >
-              <Image
-                style={{
-                  width: pxToDp(230),
-                  height: pxToDp(200),
-                  borderRadius: pxToDp(5),
-                }}
-                source={{
-                  uri: "https://img20.360buyimg.com/imgzone/jfs/t1/172012/34/18776/85309/60e68716E853b5d5d/f061df06cb1786b6.jpg",
-                }}
-              />
+              {/* <Image
+              style={{
+                width: pxToDp(230),
+                height: pxToDp(200),
+                borderRadius: pxToDp(5),
+              }}
+              source={{
+                uri: "https://img20.360buyimg.com/imgzone/jfs/t1/172012/34/18776/85309/60e68716E853b5d5d/f061df06cb1786b6.jpg",
+              }}
+            /> */}
+              <Swiper />
             </Lightbox>
           </View>
 
@@ -237,7 +239,7 @@ class shopdetails extends Component {
             </View>
           </View>
 
-          {/* 商品详情 */}
+          {/* 商品资料 */}
 
           <View
             style={{
@@ -249,37 +251,7 @@ class shopdetails extends Component {
             <Text>{this.state.comment}</Text>
           </View>
 
-          {/* 购买规格 */}
-          {/* <View
-            style={{ flexDirection: "row", justifyContent: "space-evenly" }}
-          >
-            {this.state.products.map((item, index) => (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => this.changeTab(index)}
-                style={[
-                  styles.button,
-                  {
-                    backgroundColor:
-                      index === activeTab ? "#468cd3" : "#ecf6fc",
-                  },
-                ]}
-              >
-                <View
-                  style={{ justifyContent: "center", alignItems: "center" }}
-                >
-                  <Text
-                    style={{
-                      fontWeight: index === activeTab ? "bold" : "normal",
-                    }}
-                  >
-                    {item.text}
-                  </Text>
-                  <Text>{item.weight}</Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View> */}
+          {/* 商品详情 */}
           <View style={{ marginTop: pxToDp(20) }}>
             {this.state.products.map((item, index) => (
               <View>
