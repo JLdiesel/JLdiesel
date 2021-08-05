@@ -55,6 +55,7 @@ export { default as Fan } from './my/fan';
 export { default as Follow } from './my/follow';
 export { default as Like } from './my/like';
 export { default as Forum} from './talk/home/forum/index'
+export { default as Ddd} from '../ddd/index'
 
 
 
