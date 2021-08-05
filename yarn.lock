@@ -7331,8 +7331,8 @@ react-native-legacy-components@^0.1.3:
 
 react-native-lightbox@^0.8.1:
   version "0.8.1"
-  resolved "https://registry.npm.taobao.org/react-native-lightbox/download/react-native-lightbox-0.8.1.tgz#4e561ec46e61617a0f3f12c88ec2695360998878"
-  integrity sha1-TlYexG5hYXoPPxLIjsJpU2CZiHg=
+  resolved "https://registry.yarnpkg.com/react-native-lightbox/-/react-native-lightbox-0.8.1.tgz#4e561ec46e61617a0f3f12c88ec2695360998878"
+  integrity sha512-TFZA6iKEEHpAUIXjMTRb6vx0/9rHgEKy3ZBiRAy295PwldYg5c8opwnbyURLIl522ykeqhVx9uGdXjSMIowLvA==
   dependencies:
     prop-types "^15.7.2"
 
@@ -7422,13 +7422,8 @@ react-native-ratings@8.0.4:
 
 react-native-raw-bottom-sheet@^2.2.0:
   version "2.2.0"
-<<<<<<< HEAD
-  resolved "https://registry.yarnpkg.com/react-native-raw-bottom-sheet/-/react-native-raw-bottom-sheet-2.2.0.tgz#d11dabb86aadb014273767ef7b554924b13633c5"
-  integrity sha512-qL4JKIqvbcVxbkKzeh51hjV7suoJN3ouxzvLmOg0FBUV1yiJAfEbacjQdtRCI6+OU5pyGFBIifLsTXcFDwHggg==
-=======
   resolved "https://registry.nlark.com/react-native-raw-bottom-sheet/download/react-native-raw-bottom-sheet-2.2.0.tgz#d11dabb86aadb014273767ef7b554924b13633c5"
   integrity sha1-0R2ruGqtsBQnN2fve1VJJLE2M8U=
->>>>>>> 8dbc8ecb5419b112ed4b0a66863461240eb1dd1d
 
 react-native-reanimated@^2.2.0:
   version "2.2.0"

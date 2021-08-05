@@ -22,6 +22,7 @@ export { default as PageOne } from './first/home/pages/pageone';//服装租赁�
 export { default as PageTwo } from './first/home/pages/pagetwo';//服装租赁页
 export { default as PageThree } from './first/home/pages/pagethree';//服装租赁页
 export { default as PageFour } from './first/home/pages/pagefour';//服装租赁页
+export { default as Pagefive } from './first/home/pages/pagefive';//俯瞰百年文章
 export { default as Screenpaly} from './talk/home/script/screenplay'//剧本阅读
 export { default as Change } from './play/change';//服装租赁页
 
