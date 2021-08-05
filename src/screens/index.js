@@ -54,7 +54,11 @@ export { default as Collection } from './my/collection';
 export { default as Fan } from './my/fan';
 export { default as Follow } from './my/follow';
 export { default as Like } from './my/like';
-export { default as Forum} from './talk/home/forum/index'
+export { default as Forum} from './talk/home/forum/index';
+export { default as Opera } from './first/opera/index';
+export { default as Optuijian } from './first/opera/optuijian';
+export { default as Opperson } from './first/opera/opperson';
+export { default as Opgroup } from './first/opera/opgroup';
 
 
 

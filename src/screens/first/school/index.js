@@ -1,43 +1,42 @@
 import React, { Component } from "react";
-import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
+import { View, Text, Image, ScrollView, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { pxToDp } from "../../../utils/styleKits";
-import Top from '../../../component/common/top'
+import Top from '../../../component/common/top';
+import Icon from 'react-native-vector-icons/AntDesign';
+
 
 class Index extends Component {
+    state = {
+        schoolstate: {
+            image: 'https://tse1-mm.cn.bing.net/th/id/R-C.1693d122b9478d7792a51f549aadb2c9?rik=q5ATrivKbTnqzg&riu=http%3a%2f%2fd.ifengimg.com%2fq100%2fimg1.ugc.ifeng.com%2fnewugc%2f20190421%2f16%2fwemedia%2f51bf42238f5692a72322a20d11f6f10d01091eae_size425_w640_h360.png&ehk=YsxOvziJPS9igx1T%2b9GKznbYEGxsre4EhhwxE1A269s%3d&risl=&pid=ImgRaw&r=0',
+            text: '袁派唱腔的特点是质朴平易，委婉细腻,深沉含蓄，韵味醇厚。袁雪芬擅长依照人物的特定性格和感情创腔，不追求曲调的花梢，而注意以情带声，以真情实感和润腔韵味扣人心弦。在演唱上，她气息饱满，运腔婉转，喷口有力，吐字坚实而富有弹性，运腔中运用欲放又收、抑扬有致的处理，形成特有的韵味美。她常根据唱词的寓意，采用特殊的节奏形式，改变原来较为平稳的字位节奏，使唱腔和唱词语气紧密结合起来。如《西厢记》“赖婚”中的“若不是张解元他识人多”，在“若不是”后面的拖腔中运用了后起半拍的特殊的节奏形式，形象地显露了莺莺一提到意中人时难以掩饰的喜悦；“琴心”中“宝髻玲珑”的“玲珑”二字和“身在墙东”的“墙东”二字，都采用了前切分音节奏，使唱腔旋律在流畅中有跌宕，平稳中有跳跃。\n        袁派十分讲究重点唱句的演唱，擅用喷口、气口、加虚词以及强音、顿音等技巧进行特殊处理，造成演唱上的高潮。如《祥林嫂》中“阎王要把我一锯两半分”一句中，“一锯”二字以重音强调，"分"字以喷口唱法吐出，随即在三小节的拖腔中又多次运用气口，使唱腔若断若续，渲染了人物内心的恐惧。袁派的甩腔也常通过句幅的扩充、节奏的顿挫、调式的交替、结构的变化，使旋律迂回曲折，回味无穷。如《白蛇传·断桥》中的"到如今，凤泊鸾飘两地怨"的甩腔，通过句头、句幅的乐汇扩充，显得柔婉悠长；《祥林嫂》中“这真是走也难来留也难，进退两难怎安排”两句，通过宫徵调式交替的手法产生回肠荡气的效果。\n        袁派影响很大，戚雅仙、吕瑞英、金采风、张云霞等都师承袁派而后自成一家；师承袁派的演员有上海的朱东韵、方亚芬、华怡青和南京的陶琪等。',
+            video1: 'https://tse1-mm.cn.bing.net/th/id/R-C.1ab89fef7cc91ff8b288c7127f95b69e?rik=C%2fifpGj17xRn6w&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2f9c87d0c61fb7e03a5e842b0a44d83b2b9ee99112.jpg&ehk=BkzVVrJJQM9%2ftrNGYCnXpftTwexUySj6ypqyUWTqYwI%3d&risl=&pid=ImgRaw&r=0',
+            video2: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20181016%2F45c85fb7dbcc48058ee5f94c2d799cc9.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1630714303&t=bc77a6fb87c8f73930403585149cf29c',
+            videotitle1: '袁雪芬专辑',
+            videotitle2: '越剧“女王”方亚芬',
+            videotitle3: '赵心瑜越剧名段',
+            videotitle4: '袁派·华怡青专辑',
+        }
+    }
     render() {
         return (
-            <View style={{backgroundColor:'#E2F4FE'}}>
-                <Top icon1="arrow-back" />
-
-                <ScrollView style={{marginBottom:pxToDp(80)}}>
-                    <View style={{ margin: pxToDp(10) }}>
-                        <Image style={{ height: pxToDp(200), width: '100%' }} source={require('../../../res/genre/14.jpg')} />
-                        <Text style={{ fontSize: pxToDp(25), fontWeight: 'bold' }}>袁派</Text>
-                        <Text style={styles.title}>创始人信息</Text>
-                        <Text>袁雪芬，1922年3月26日生于浙江省嵊县。中国越剧女演员，代表作品为《香妃》《红粉金戈》等。1991年7月起，享受国务院有突出贡献专家的政府特殊津贴；2003年12月获文化部颁发的国家级艺术终身成就奖——“表演艺术成就奖”</Text>
-                        <Text style={styles.title}>袁派的创立</Text>
-                        <Text>1942年10月起，在进步话剧的影响下，在大来剧场开始越剧改革，拿出自己的大部分包银，聘请专职编剧、导演、舞美设计、舞台监督，成立剧务部主持演出活动，在越剧界首次建立起正规的编戏、排戏制度；废除幕表制，使用完整的剧本；废除衣箱制，参照古代绘画，根据人物身份设计服装；打破传统的舞台形式，采用立体布景、油彩化装、灯光、音响，逐步形成综合的艺术机制。在表演上，博采众长，将话剧、电影重视刻画人物性格和内心活动的写实主义表演特点，与昆曲载歌载舞、重视形体动作美化的长处吸收到越剧中，加以融化、创新。1943年11月演出《香妃》时，与琴师周宝财合作，创造了新的〔尺调〕腔，后被其他越剧演员吸收、不断丰富，发展成越剧的主腔，并在此基础上衍化出不同的流派。其唱腔旋律淳朴，节奏多变，感情真挚深沉，韵味醇厚，委婉缠绵，声情并茂，被称“袁派”。</Text>
-                        <Text style={styles.title}>袁派的发展</Text>
-                        <Text>其唱腔旋律淳朴，节奏多变，感情真挚深沉，韵味醇厚，委婉缠绵，声情并茂，被称“袁派”，为戚雅仙、张云霞、金采风、吕瑞英等一批越剧演员所继承和发展。{"\n"}在日本帝国主义侵占期间，演出了《香妃》、《红粉金戈》、《木兰从军》、《黑暗家庭》、《王昭君》等表现爱国思想、歌颂民族气节、反对封建礼教的剧目。</Text>
-                        <Text style={styles.title}>历史沿革</Text>
-                        <Text>1950年初，拍摄16毫米彩色越剧影片《相思树》，并创造了新的〔男调〕腔；同年4月，参加上海戏曲界第一个国营剧团--华东越剧实验剧团，袁雪芬任团长。{"\n"}1951年3月华东戏曲研究院成立，任副院长兼越剧实验剧团团长。{"\n"}1952年参加第一届全国戏曲观摩演出大会，获荣誉奖。
-                            {"\n"}1953年与范瑞娟合作主演的《梁山伯与祝英台》，拍摄成我国第一部大型彩色戏曲影片，翌年获国际电影节“音乐片奖”；同年，排演了根据王实甫原著改编的《西厢记》，成功地塑造了崔莺莺一角。
-                            {"\n"}1954年加入中国共产党。
-                            {"\n"}1955年上海越剧院成立，任院长；同年，在许广平率领的“中国越剧团”赴德意志民主共和国和苏联访问演出。
-                            {"\n"}1960年、1961年先后到香港、朝鲜访问演出。1965年演出《火椰村》时与琴师周柏龄合作创造了〔降B调〕唱腔。文化大革命中受到残酷迫害。
-                            {"\n"}1977年1月参加中国音乐家代表团访问联邦德国。
-                            {"\n"}1978年她主演的《祥林嫂》拍摄成宽银幕彩色影片。
-                            {"\n"}1978年底，重新受命担任上海越剧院院长，主持和组织了一系列新剧目的创作演出，并大力培养青年演员。
-                            {"\n"}1979年参加全国人大代表团访问日本。
-                            {"\n"}1985年退居二线，担任剧院名誉院长。
-                            {"\n"}1986年以“艺术指导”身份与上海越剧院演出团参加巴黎第15届秋季艺术节，获格诸布尔市、里昂·维勒班市、勒阿弗尔市荣誉奖章和荣誉公民称号。
-                            {"\n"}1989年夏率团去美国演出。她是第一、二、三、五、六、七、八届全国人大代表和第五、六、七届全国人大常务委员会委员。曾任中国戏剧家协会副主席。上海市人民对外友好协会副会长，
-                            {"\n"}1995年起担任上海市白玉兰戏剧奖评委会主任。1955年缅甸总理吴努授予她金质奖章，
-                            {"\n"}1956年获文化部颁发的“1949-1955优秀影片奖”荣誉奖。1989年获中国唱片总公司颁发的首届“金唱片奖”，</Text>
-                        <Text style={styles.title}>片段赏析</Text>
-                        <Image style={{ height: pxToDp(170), width: '100%' }} source={require('../../../res/performer/7.jpg')} />
-                        <Image style={{ height: pxToDp(170), width: '100%', marginTop: pxToDp(10) }} source={require('../../../res/performer/10.jpg')} />
-                    </View>
+            <View style={styles.view}>
+                <Top icon1="arrow-back" title="袁派" />
+                <ScrollView style={styles.box}>
+                    <Image style={styles.image} source={{ uri: this.state.schoolstate.image }} />
+                    <Text style={styles.title}>流派特点</Text>
+                    <Text style={styles.text}>&emsp;&emsp;{this.state.schoolstate.text}</Text>
+                    <Text style={styles.title}>经典赏析</Text>
+                    <TouchableOpacity>
+                        <ImageBackground style={styles.video} imageStyle={styles.videoimage} source={{ uri: this.state.schoolstate.video1 }}>
+                            <Icon name="playcircleo" size={30} color={'white'} />
+                        </ImageBackground>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <ImageBackground style={styles.video} imageStyle={styles.videoimage} source={{ uri: this.state.schoolstate.video2 }}>
+                            <Icon name="playcircleo" size={30} color={'white'} />
+                        </ImageBackground>
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
         )
@@ -45,8 +44,44 @@ class Index extends Component {
 }
 
 const styles = StyleSheet.create({
+    view: {
+        backgroundColor: '#E2F4FE'
+    },
+    box: {
+        marginLeft: pxToDp(10),
+        marginLeft: pxToDp(10),
+        marginTop: pxToDp(10),
+        marginBottom: pxToDp(80)
+    },
+    image: {
+        width: pxToDp(355),
+        borderRadius: pxToDp(12),
+        height: pxToDp(170)
+    },
     title: {
         fontSize: pxToDp(20)
+    },
+    text: {
+        fontSize: pxToDp(14)
+    },
+    videobox: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        width: pxToDp(357)
+    },
+    video: {
+        justifyContent: "space-between",
+        height: pxToDp(150),
+        width: pxToDp(355),
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: pxToDp(10)
+    },
+    videoimage: {
+        borderRadius: pxToDp(10),
+        width: pxToDp(355),
+        height: pxToDp(150),
     }
 })
 export default Index;

@@ -91,6 +91,11 @@ function Nav() {
         <Stack.Screen name="Like" component={Screens.Like} />
         <Stack.Screen name="Fan" component={Screens.Fan} />
         <Stack.Screen name="Collection" component={Screens.Collection} />
+
+        <Stack.Screen name="Opera" component={Screens.Opera} />
+        <Stack.Screen name="Optuijian" component={Screens.Optuijian} />
+        <Stack.Screen name="Opperson" component={Screens.Opperson} />
+        <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
