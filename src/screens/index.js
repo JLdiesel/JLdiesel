@@ -16,12 +16,14 @@ export { default as Women } from './my/seetings/women';//服装租赁页
 export { default as Yijian } from './my/seetings/yijian';//服装租赁页
 export { default as Yinsi } from './my/seetings/yinsi';//服装租赁页
 export { default as Act } from './play/act';//服装租赁页
+export { default as Timeline } from './Timeline/index';//服装租赁页
 export { default as Apply } from './talk/home/live/apply';//服装租赁页
 export { default as Create } from './talk/home/live/create';//服装租赁页
 export { default as PageOne } from './first/home/pages/pageone';//服装租赁页
 export { default as PageTwo } from './first/home/pages/pagetwo';//服装租赁页
 export { default as PageThree } from './first/home/pages/pagethree';//服装租赁页
 export { default as PageFour } from './first/home/pages/pagefour';//服装租赁页
+export { default as Pagefive } from './first/home/pages/pagefive';//俯瞰百年文章
 export { default as Screenpaly} from './talk/home/script/screenplay'//剧本阅读
 export { default as Change } from './play/change';//服装租赁页
 
@@ -54,8 +56,11 @@ export { default as Collection } from './my/collection';
 export { default as Fan } from './my/fan';
 export { default as Follow } from './my/follow';
 export { default as Like } from './my/like';
-export { default as Forum} from './talk/home/forum/index'
-export { default as Ddd} from '../ddd/index'
+export { default as Forum} from './talk/home/forum/index';
+export { default as Opera } from './first/opera/index';
+export { default as Optuijian } from './first/opera/optuijian';
+export { default as Opperson } from './first/opera/opperson';
+export { default as Opgroup } from './first/opera/opgroup';
 
 
 

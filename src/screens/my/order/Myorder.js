@@ -14,6 +14,7 @@ import { pxToDp } from "../../../utils/styleKits";
 import LinearGradient from "expo-linear-gradient";
 import RBSheet from "react-native-raw-bottom-sheet";
 import { NavigationContext } from "@react-navigation/native";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 class orders extends Component {
   constructor(props) {
@@ -324,33 +325,53 @@ class orders extends Component {
           }}
         >
           <View>
-            <Text
-              style={{
-                marginLeft: pxToDp(25),
-                fontSize: pxToDp(16),
-                marginTop: pxToDp(10),
-              }}
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
             >
-              支付方式
-            </Text>
-            {this.state.paidway.map((item, index) => (
-              <TouchableOpacity
-                key={item.id}
-                onPress={() => this.changeTab(index)}
+              <Text
                 style={{
-                  alignItems: "center",
-                  flexDirection: "row",
-                  marginTop: pxToDp(15),
-                  marginLeft: pxToDp(20),
+                  marginLeft: pxToDp(25),
+                  fontSize: pxToDp(16),
+                  marginTop: pxToDp(10),
                 }}
               >
-                <Image
-                  style={{ width: pxToDp(30), height: pxToDp(30) }}
-                  source={item.image}
-                />
-                <Text style={{ marginLeft: pxToDp(10) }}>{item.text}</Text>
+                支付方式
+              </Text>
+              <TouchableOpacity onPress={() => this.Scrollable.close()}>
+                <View
+                  style={{
+                    marginTop: pxToDp(10),
+                    marginRight: pxToDp(20),
+                  }}
+                >
+                  <AntDesign
+                    name="closecircleo"
+                    size={pxToDp(18)}
+                    color="#666"
+                  />
+                </View>
               </TouchableOpacity>
-            ))}
+            </View>
+            <View>
+              {this.state.paidway.map((item, index) => (
+                <TouchableOpacity
+                  key={item.id}
+                  onPress={() => this.changeTab(index)}
+                  style={{
+                    alignItems: "center",
+                    flexDirection: "row",
+                    marginTop: pxToDp(15),
+                    marginLeft: pxToDp(20),
+                  }}
+                >
+                  <Image
+                    style={{ width: pxToDp(30), height: pxToDp(30) }}
+                    source={item.image}
+                  />
+                  <Text style={{ marginLeft: pxToDp(10) }}>{item.text}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         </RBSheet>
       </View>

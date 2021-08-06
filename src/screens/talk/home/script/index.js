@@ -1,6 +1,13 @@
-import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView,TouchableOpacity } from 'react-native';
-import { pxToDp } from '@utils/styleKits';
+import React, { Component } from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+import { pxToDp } from "@utils/styleKits";
 import { NavigationContext } from "@react-navigation/native";
 import { FAB } from 'react-native-elements';
 import  JBitem from '../components/jbitem'
@@ -53,35 +60,35 @@ class Index extends Component {
     }
 }
 const styles = StyleSheet.create({
-    text1: {
-        fontSize: pxToDp(20),
-        fontWeight: 'bold',
-        marginLeft: pxToDp(10)
-    },
-    botbox: {
-        flexDirection: 'row',
-        borderBottomColor: 'grey',
-        borderBottomWidth: pxToDp(0.5),
-        margin: pxToDp(10),
-        height: pxToDp(130)
-    },
-    text2: {
-        fontSize: pxToDp(18),
-        fontWeight: 'bold',
-    },
-    image: {
-        height: pxToDp(120),
-        width: pxToDp(120),
-        borderRadius: pxToDp(10)
-    },
-    text3: {
-        fontSize: pxToDp(14),
-        marginTop: pxToDp(5)
-    },
-    actionButtonIcon: {
-        fontSize: 20,
-        height: 22,
-        color: 'white',
-    },
-})
+  text1: {
+    fontSize: pxToDp(20),
+    fontWeight: "bold",
+    marginLeft: pxToDp(10),
+  },
+  botbox: {
+    flexDirection: "row",
+    borderBottomColor: "grey",
+    borderBottomWidth: pxToDp(0.5),
+    margin: pxToDp(10),
+    height: pxToDp(130),
+  },
+  text2: {
+    fontSize: pxToDp(18),
+    fontWeight: "bold",
+  },
+  image: {
+    height: pxToDp(120),
+    width: pxToDp(120),
+    borderRadius: pxToDp(10),
+  },
+  text3: {
+    fontSize: pxToDp(14),
+    marginTop: pxToDp(5),
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: "white",
+  },
+});
 export default Index;

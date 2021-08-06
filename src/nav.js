@@ -38,6 +38,8 @@ function Nav() {
         {/*租赁商城页 */}
         <Stack.Screen name="Zulin" component={Screens.Zulin} />
         {/*周边商城页 */}
+        <Stack.Screen name="Timeline" component={Screens.Timeline} />
+        {/* 时间轴 */}
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
         <Stack.Screen name="Set" component={Screens.Set} />
@@ -62,11 +64,12 @@ function Nav() {
         <Stack.Screen name="PageTwo" component={Screens.PageTwo} />
         <Stack.Screen name="PageThree" component={Screens.PageThree} />
         <Stack.Screen name="PageFour" component={Screens.PageFour} />
+        <Stack.Screen name="Pagefive" component={Screens.Pagefive} />
         {/* <Stack.Screen name="Myroute" component={Screens.Myroute} /> */}
         {/*个人首页 */}
 
         <Stack.Screen name="Article" component={Screens.Article} />
-        <Stack.Screen name="Actress" component={Screens.Actress}/>
+        <Stack.Screen name="Actress" component={Screens.Actress} />
         <Stack.Screen name="School" component={Screens.School} />
         <Stack.Screen name="Drama" component={Screens.Drama} />
         <Stack.Screen name="History" component={Screens.History} />
@@ -91,7 +94,11 @@ function Nav() {
         <Stack.Screen name="Like" component={Screens.Like} />
         <Stack.Screen name="Fan" component={Screens.Fan} />
         <Stack.Screen name="Collection" component={Screens.Collection} />
-        <Stack.Screen name="Ddd" component={Screens.Ddd} />
+
+        <Stack.Screen name="Opera" component={Screens.Opera} />
+        <Stack.Screen name="Optuijian" component={Screens.Optuijian} />
+        <Stack.Screen name="Opperson" component={Screens.Opperson} />
+        <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
