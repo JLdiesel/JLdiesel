@@ -19,11 +19,11 @@ export { default as Act } from './play/act';//双人剧本页
 export { default as Timeline } from './Timeline/index';//时间轴页
 export { default as Apply } from './talk/home/live/apply';//申请直播页
 export { default as Create } from './talk/home/live/create';//剧本创作页
-export { default as PageOne } from './first/home/pages/liupai';//流派传奇页
-export { default as PageTwo } from './first/home/pages/bainian';//俯瞰百年页
+export { default as PageOne } from './first/home/pages/pageone';//流派传奇页
+export { default as PageTwo } from './first/home/pages/pagetwo';//俯瞰百年页
 export { default as PageThree } from './first/home/pages/pagethree';//名角风采页
 export { default as PageFour } from './first/home/pages/pagefour';//精选唱段页
-export { default as Pagefive } from './first/home/pages/kapian';//俯瞰百年文章
+export { default as Pagefive } from './first/home/pages/pagefive';//俯瞰百年文章
 export { default as Screenpaly} from './talk/home/script/screenplay'//剧本阅读
 export { default as Change } from './play/change';//AI换衣页
 
