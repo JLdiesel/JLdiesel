@@ -12,7 +12,7 @@ export default class Nickname extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nickname: ''
+      nickName: ''
     };
   }
   render() {
@@ -41,9 +41,9 @@ export default class Nickname extends Component {
       </View>
     );
   }
-  getNickName(nickname) {
+  getNickName(nickName) {
     this.setState({
-      nickname
+      nickName
     });
   }
 }

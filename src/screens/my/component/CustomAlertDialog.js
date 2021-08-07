@@ -1,31 +1,31 @@
 /* eslint-disable prettier/prettier */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Dimensions,
   Modal,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 export default class CustomAlertDialog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: this.props.show,
+      isVisible: this.props.show
     };
     this.entityList = this.props.entityList;
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({isVisible: nextProps.show});
+    this.setState({ isVisible: nextProps.show });
   }
 
   closeModal() {
     this.setState({
-      isVisible: false,
+      isVisible: false
     });
     this.props.closeModal(false);
   }
@@ -35,7 +35,8 @@ export default class CustomAlertDialog extends Component {
       <TouchableOpacity
         key={i}
         onPress={this.choose.bind(this, i)}
-        style={styles.item}>
+        style={styles.item}
+      >
         <Text style={styles.itemText}>{item}</Text>
       </TouchableOpacity>
     );
@@ -60,16 +61,18 @@ export default class CustomAlertDialog extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <Modal
           transparent={true}
           visible={this.state.isVisible}
           animationType={'fade'}
-          onRequestClose={() => this.closeModal()}>
+          onRequestClose={() => this.closeModal()}
+        >
           <TouchableOpacity
             style={styles.container}
             activeOpacity={1}
-            onPress={() => this.closeModal()}>
+            onPress={() => this.closeModal()}
+          >
             {this.renderDialog()}
           </TouchableOpacity>
         </Modal>
@@ -81,7 +84,7 @@ export default class CustomAlertDialog extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   modalStyle: {
     position: 'absolute',
@@ -90,29 +93,29 @@ const styles = StyleSheet.create({
     width: width,
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#ffffff'
   },
   optArea: {
     flex: 1,
     flexDirection: 'column',
     marginTop: 12,
-    marginBottom: 12,
+    marginBottom: 12
   },
   item: {
     width: width,
     height: 40,
     paddingLeft: 20,
     paddingRight: 20,
-    alignItems: 'center',
+    alignItems: 'center'
   },
   itemText: {
-    fontSize: 16,
+    fontSize: 16
   },
   cancel: {
     width: width,
     height: 30,
     marginTop: 12,
     alignItems: 'center',
-    backgroundColor: '#ffffff',
-  },
+    backgroundColor: '#ffffff'
+  }
 });

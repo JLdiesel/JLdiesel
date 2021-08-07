@@ -1,10 +1,10 @@
 /* eslint-disable semi */
 /* eslint-disable prettier/prettier */
 ('use strict');
-import React, {Component} from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {NavigationContext} from '@react-navigation/native';
+import { NavigationContext } from '@react-navigation/native';
 export default class HeaderHaveBackNoshare extends Component {
   constructor(props) {
     super(props);
@@ -31,7 +31,7 @@ export default class HeaderHaveBackNoshare extends Component {
           {/* <TouchableOpacity onPress={this.context.goBack}> */}
           {/* <IconFont style={{ color: "#fff" }} name="iconfanhui" /> */}
           <TouchableOpacity onPress={this.props.rightCallback}>
-          <Text style={styles.textstyle1}>{this.props.share}</Text>
+            <Text style={styles.textstyle1}>{this.props.share}</Text>
           </TouchableOpacity>
           {/* </TouchableOpacity> */}
         </View>
@@ -47,25 +47,25 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     height: 100,
     width: '100%',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   back: {
     justifyContent: 'center',
-    marginLeft: 20,
+    marginLeft: 20
   },
   share: {
     justifyContent: 'center',
-    marginRight: 10,
+    marginRight: 10
   },
   textview: {
-    alignItems: 'center',
+    alignItems: 'center'
   },
   textstyle: {
     fontSize: 22,
-    color: '#fff',
+    color: '#fff'
   },
   textstyle1: {
     fontSize: 18,
-    color: '#fff',
-  },
+    color: '#fff'
+  }
 });

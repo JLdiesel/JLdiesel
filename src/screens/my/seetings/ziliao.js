@@ -40,8 +40,9 @@ class Ziliao extends Component {
   componentDidMount() {
     console.log(this.props.route);
 
-    // const { ownSay, nickName, sex, birthday } = res;
-    // this.setState({ ownSay, nickName, sex, birthday });
+    const { ownSay, nickName, sex, birthday, avatar_url } =
+      this.props.route.params;
+    this.setState({ ownSay, nickName, sex, birthday, avatar_url });
   }
 
   _openTypeDialog() {
@@ -69,7 +70,7 @@ class Ziliao extends Component {
     fd.append('file', file);
     requset
       .post({
-        url: '/uploads/avatar',
+        url: URL.UPDATE_AVATER,
         data: fd,
         headers: {
           Accept: 'Application/json',
@@ -93,12 +94,16 @@ class Ziliao extends Component {
     const ownSay = this.state.ownSay;
     const birthday = this.state.birthday;
     requset
-      .post({
-        url: '/user/updateUserInfo',
-        data: { nickName, sex, birthday, ownSay }
+      .patch({
+        url: URL.GHANGE_USER_INFO,
+        data: { nickName, sex, birthday, ownSay },
+        headers: {
+          'content-type': 'application/json'
+        }
       })
       .then((res) => {
         ToastAndroid.show('保存信息成功', ToastAndroid.SHORT);
+        this.props.navigate('Setting');
       });
   };
   render() {
@@ -175,9 +180,7 @@ class Ziliao extends Component {
                     marginBottom: pxToDp(20)
                   }}
                 >
-                  {this.props.route.params?.nickname
-                    ? this.props.route.params?.nickname
-                    : this.state.nickName}
+                  {this.state.nickName}
                 </Text>
               </View>
             </View>
@@ -242,7 +245,7 @@ class Ziliao extends Component {
                     marginBottom: pxToDp(20)
                   }}
                 >
-                  {this.props.route.params?.signature}
+                  {this.state.ownSay}
                 </Text>
               </View>
             </View>
