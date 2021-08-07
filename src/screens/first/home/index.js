@@ -53,6 +53,71 @@ class Index extends Component {
       <View>
         <Top title="百越台" icon2="search" />
         <ScrollView style={{ marginBottom: 60 }}>
+<<<<<<< HEAD
+          {/*轮播图 */}
+          <View style={{ height: pxToDp(160) }}>
+            <Swiper
+              style={styles.wrapper}
+              removeClippedSubviews={false}
+              showsButtons={false} //显示控制按钮
+              loop={true} //如果设置为false，那么滑动到最后一张时，再次滑动将不会滑到第一张图片。
+              autoplay={true} //自动轮播
+              showsPagination={false} //是否显示小圆点
+              autoplayTimeout={3} //每隔3秒切换
+            >
+              <View style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: pxToDp(150),
+                borderRadius: pxToDp(10),
+                margin: pxToDp(10)
+              }}>
+                <Image
+                  style={{
+                    height: pxToDp(150),
+                    width: pxToDp(355),
+                    borderRadius: pxToDp(10),
+                    margin: pxToDp(10)
+                  }}
+                  source={require("../../../res/22.jpg")}
+                />
+              </View>
+              <View style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: pxToDp(150),
+                borderRadius: pxToDp(10),
+                margin: pxToDp(10)
+              }}>
+                <Image
+                  style={{
+                    height: pxToDp(150),
+                    width: pxToDp(355),
+                    borderRadius: pxToDp(10),
+                    margin: pxToDp(10)
+                  }}
+                  source={require("../../../res/8.jpg")}
+                />
+              </View>
+              <View style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: pxToDp(150),
+                borderRadius: pxToDp(10),
+                margin: pxToDp(10)
+              }}>
+                <Image
+                  style={{
+                    height: pxToDp(150),
+                    width: pxToDp(355),
+                    borderRadius: pxToDp(10),
+                    margin: pxToDp(10)
+                  }}
+                  source={require("../../../res/performer/10.jpg")}
+                />
+              </View>
+            </Swiper>
+=======
           {/* 轮播图 */}
           <View style={{ margin: pxToDp(8), borderRadius: pxToDp(20) }}>
             <ImageFade
@@ -63,6 +128,7 @@ class Index extends Component {
               <Image style={{ width: "100%", height: pxToDp(200), borderRadius: pxToDp(20) }} source={require("../../../res/12.jpg")} />
               <Image style={{ width: "100%", height: pxToDp(200), borderRadius: pxToDp(20) }} source={require("../../../res/19-2.jpg")} />
             </ImageFade>
+>>>>>>> 31a400942bff7127102d269d2baa88c7e9d92d1d
           </View>
           {/*俯瞰百年 */}
           <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
