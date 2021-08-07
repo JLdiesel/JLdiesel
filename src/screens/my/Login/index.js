@@ -135,11 +135,11 @@ class Login extends Component {
         }
       })
       .then(async (res) => {
-        if (res.errCode === 400) {
-          ToastAndroid.show(res.errMessage, ToastAndroid.SHORT);
+        console.log(res);
+        if (!res) {
+          ToastAndroid.show('用户名或密码错误', ToastAndroid.SHORT);
         } else {
           await AsyncStorage.setItem('token', res.token);
-
           this.context.navigate('Tabbar');
         }
       })
@@ -230,7 +230,7 @@ class Login extends Component {
               }}
             >
               <Input
-                placeholder="我是恁爹"
+                placeholder="请输入用户名"
                 leftIcon={<Icon name="user" size={24} />}
                 onChangeText={(username) => this.setState({ username })}
                 value={this.state.username}
@@ -239,7 +239,7 @@ class Login extends Component {
             <View style={{ width: '80%', marginLeft: pxToDp(20) }}>
               <Input
                 secureTextEntry={true}
-                placeholder="我是恁爹"
+                placeholder="请输入密码"
                 leftIcon={{ type: 'font-awesome', name: 'lock' }}
                 onChangeText={(password) => this.setState({ password })}
                 value={this.state.password}

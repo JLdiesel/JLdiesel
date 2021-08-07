@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -10,98 +10,126 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   Modal,
+  ToastAndroid
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {NavigationContext} from '@react-navigation/native';
+import { NavigationContext } from '@react-navigation/native';
 import CustomAlertDialog from '../component/CustomAlertDialog';
-import {pxToDp} from '../../../utils/styleKits';
-import * as ImagePicker from 'expo-image-picker'; 
+import { pxToDp } from '../../../utils/styleKits';
+import * as ImagePicker from 'expo-image-picker';
 import DatePicker from 'react-native-datepicker';
-import Top from '@components/common/top'
-import { connect } from 'react-redux'
-import requset from '../../../service'
+import Top from '@components/common/top';
+import { connect } from 'react-redux';
+import requset from '../../../service';
+import * as URL from './constent';
 const typeArr = ['男', '女'];
- class Ziliao extends Component {
+class Ziliao extends Component {
   static contextType = NavigationContext;
   constructor(props) {
     super(props);
     this.state = {
-      typeName: '男',
+      sex: 0,
       showTypePop: false,
-      currentIndex: 0,
-      records: [],
       modalVisible: false,
       birthday: '',
-      localUri:''
-
+      avatar_url: '',
+      nickName: '',
+      ownSay: ''
     };
+  }
+  componentDidMount() {
+    console.log(this.props.route);
+
+    // const { ownSay, nickName, sex, birthday } = res;
+    // this.setState({ ownSay, nickName, sex, birthday });
   }
 
   _openTypeDialog() {
-    this.setState({showTypePop: !this.state.showTypePop});
+    this.setState({ showTypePop: !this.state.showTypePop });
   }
   _changeModal() {
-    this.setState({modalVisible: !this.state.modalVisible});
+    this.setState({ modalVisible: !this.state.modalVisible });
   }
- openImagePickerAsync = async () => {
-    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+  openImagePickerAsync = async () => {
+    let permissionResult =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
 
     if (permissionResult.granted === false) {
       return;
     }
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
-   const fd = new FormData()
-   let file = {
-     uri: pickerResult.uri,
-     type: pickerResult.type,
-     name: 'image.jpg',
-     'content-type': 'multipart/form-data',
-   };
-   fd.append('files',file)
-   requset.post({
-     url: '/picture',
-     data:fd,
-     headers: {
-           'Accept':'Application/json',
-          'content-type': 'multipart/form-data',
-     }
-   }).then(res => {
-     console.log(123);
-       console.log(res);
-   }).catch(err => {
-     console.log(234);
-       console.log(err);
-   })
-   console.log(pickerResult);
-    this.setState({ localUri: pickerResult.uri,modalVisible: !this.state.modalVisible });
-  }
-   render() {
+    console.log(pickerResult);
+    const fd = new FormData();
+    let file = {
+      uri: pickerResult.uri,
+      type: 'multipart/form-data',
+      name: pickerResult.type
+    };
+    fd.append('file', file);
+    requset
+      .post({
+        url: '/uploads/avatar',
+        data: fd,
+        headers: {
+          Accept: 'Application/json',
+          'content-type': 'multipart/form-data'
+        }
+      })
+      .then((res) => {
+        ToastAndroid.show(res, ToastAndroid.SHORT);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    this.setState({
+      avatar_url: pickerResult.uri,
+      modalVisible: !this.state.modalVisible
+    });
+  };
+  saveUserInfo = () => {
+    const nickName = this.state.nickName;
+    const sex = this.state.sex;
+    const ownSay = this.state.ownSay;
+    const birthday = this.state.birthday;
+    requset
+      .post({
+        url: '/user/updateUserInfo',
+        data: { nickName, sex, birthday, ownSay }
+      })
+      .then((res) => {
+        ToastAndroid.show('保存信息成功', ToastAndroid.SHORT);
+      });
+  };
+  render() {
     const dateNow = new Date();
     const currentDate = `${dateNow.getFullYear()}-${
       dateNow.getMonth() + 1
     }-${dateNow.getDate()}`;
-    const {birthday} = this.state;
+    const { birthday } = this.state;
     return (
-      <View  style={{flex:1,backgroundColor:'#e2f4fe'}} >
-        <Top title="个人信息"   icon1="arrow-back"
-        
-      
-          rightCallback={() => this.context.goBack()} />
+      <View style={{ flex: 1, backgroundColor: '#e2f4fe' }}>
+        <Top
+          title="个人信息"
+          icon1="arrow-back"
+          rightCallback={() => this.context.goBack()}
+        />
         <View style={s.avatar}>
-          <View style={{marginLeft: pxToDp(20)}}>
-            <Text style={{fontSize: pxToDp(20)}}>头像</Text>
+          <View style={{ marginLeft: pxToDp(20) }}>
+            <Text style={{ fontSize: pxToDp(20) }}>头像</Text>
           </View>
-          <View style={{marginRight: pxToDp(20)}}>
+          <View style={{ marginRight: pxToDp(20) }}>
             <TouchableOpacity onPress={() => this._changeModal()}>
               <Image
                 style={{
                   width: pxToDp(60),
                   height: pxToDp(60),
                   borderRadius: pxToDp(60),
-                  backgroundColor: '#e2f4fe',
-                }}        
-              source={{ uri: this.state.localUri }}
+                  backgroundColor: '#e2f4fe'
+                }}
+                source={{
+                  uri: this.state.avatar_url ? this.state.avatar_url : ''
+                }}
               />
             </TouchableOpacity>
             <View>
@@ -110,18 +138,21 @@ const typeArr = ['男', '女'];
                 visible={this.state.modalVisible}
                 animationType={'fade'}
                 transparent={true}
-                onRequestClose={() => this.onRequestClose()}>
+                onRequestClose={() => this.onRequestClose()}
+              >
                 <View style={s.alertBackground}>
                   <View style={s.alertBox}>
                     <Text style={s.modalTitle}>请选择</Text>
                     <TouchableHighlight
                       underlayColor={'#F5F5F5'}
-                      onPress={this.openImagePickerAsync}>
+                      onPress={this.openImagePickerAsync}
+                    >
                       <Text style={s.modalItem}>打开相册</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
                       underlayColor={'#F5F5F5'}
-                      onPress={() => this._changeModal()}>
+                      onPress={() => this._changeModal()}
+                    >
                       <Text style={s.modalItem}>取消</Text>
                     </TouchableHighlight>
                   </View>
@@ -131,97 +162,109 @@ const typeArr = ['男', '女'];
           </View>
         </View>
         <TouchableOpacity onPress={() => this.context.navigate('Nickname')}>
-        <View style={[s.basic,{height:90}]}>
-            <View style={{marginLeft: pxToDp(20)}}>
-              <View style={{marginTop: pxToDp(20)}}>
-                <Text style={{fontSize: pxToDp(16), color: '#aaa'}}>昵称</Text>
-                <Text style={{fontSize: pxToDp(20), marginTop: pxToDp(10),marginBottom:pxToDp(20)}}>
-                  {this.props.route.params
-                    ? this.props.route.params.nickname
-                    : ''}
+          <View style={[s.basic, { height: 90 }]}>
+            <View style={{ marginLeft: pxToDp(20) }}>
+              <View style={{ marginTop: pxToDp(20) }}>
+                <Text style={{ fontSize: pxToDp(16), color: '#aaa' }}>
+                  昵称
+                </Text>
+                <Text
+                  style={{
+                    fontSize: pxToDp(20),
+                    marginTop: pxToDp(10),
+                    marginBottom: pxToDp(20)
+                  }}
+                >
+                  {this.props.route.params?.nickname
+                    ? this.props.route.params?.nickname
+                    : this.state.nickName}
                 </Text>
               </View>
             </View>
-            <View style={{marginRight: pxToDp(20)}}>
+            <View style={{ marginRight: pxToDp(20) }}>
               <AntDesign name="right" size={pxToDp(18)} color="#000" />
             </View>
           </View>
         </TouchableOpacity>
         <TouchableHighlight
-              onPress={() => this._openTypeDialog()}
-              style={s.button}
-              underlayColor="#eee">
-        <View style={s.basic}>
-          <View style={{marginLeft: pxToDp(15)}}>
-            <Text
-              style={{
-                fontSize: pxToDp(16),
-                color: '#aaa',
-               
-              }}>
-              性别
-            </Text>
-            
-              <Text style={{fontSize: pxToDp(20), marginTop:pxToDp(10)}}>
-                {this.state.typeName}
+          onPress={() => this._openTypeDialog()}
+          style={s.button}
+          underlayColor="#eee"
+        >
+          <View style={s.basic}>
+            <View style={{ marginLeft: pxToDp(15) }}>
+              <Text
+                style={{
+                  fontSize: pxToDp(16),
+                  color: '#aaa'
+                }}
+              >
+                性别
               </Text>
-          
 
-            <CustomAlertDialog
-              entityList={typeArr}
-              callback={i => {
-                this.setState({
-                  typeName: typeArr[i],
-                });
-              }}
-              show={this.state.showTypePop}
-              closeModal={show => {
-                this.setState({
-                  showTypePop: show,
-                });
-              }}
-            />
+              <Text style={{ fontSize: pxToDp(20), marginTop: pxToDp(10) }}>
+                {typeArr[this.state.sex ? this.state.sex : 0]}
+              </Text>
+
+              <CustomAlertDialog
+                entityList={typeArr}
+                callback={(i) => {
+                  this.setState({
+                    sex: i
+                  });
+                }}
+                show={this.state.showTypePop}
+                closeModal={(show) => {
+                  this.setState({
+                    showTypePop: show
+                  });
+                }}
+              />
+            </View>
+            <View style={{ marginRight: pxToDp(20) }}>
+              <AntDesign name="right" size={pxToDp(18)} color="#000" />
+            </View>
           </View>
-          <View style={{marginRight: pxToDp(20)}}>
-            <AntDesign name="right" size={pxToDp(18)} color="#000" />
-          </View>
-        </View>  
         </TouchableHighlight>
         <TouchableOpacity onPress={() => this.context.navigate('Signature')}>
-          <View style={[s.basic,{height:100}]}>
-            <View style={{marginLeft: pxToDp(20), flex: 1}}>
-              <View style={{marginTop: pxToDp(20)}}>
-                <Text style={{fontSize: pxToDp(16), color: '#aaa'}}>
+          <View style={[s.basic, { height: 100 }]}>
+            <View style={{ marginLeft: pxToDp(20), flex: 1 }}>
+              <View style={{ marginTop: pxToDp(20) }}>
+                <Text style={{ fontSize: pxToDp(16), color: '#aaa' }}>
                   个性签名
                 </Text>
                 <Text
                   numberOfLines={1}
                   ellipsizeMode={'tail'}
-                  style={{fontSize: pxToDp(20), marginTop: pxToDp(10),marginBottom:pxToDp(20)}}>
-                  {this.props.route.params
-                    ? this.props.route.params.signature
-                    : ''}
+                  style={{
+                    fontSize: pxToDp(20),
+                    marginTop: pxToDp(10),
+                    marginBottom: pxToDp(20)
+                  }}
+                >
+                  {this.props.route.params?.signature}
                 </Text>
               </View>
             </View>
-            <View style={{marginRight: pxToDp(20), width: pxToDp(20)}}>
+            <View style={{ marginRight: pxToDp(20), width: pxToDp(20) }}>
               <AntDesign name="right" size={pxToDp(18)} color="#000" />
             </View>
           </View>
         </TouchableOpacity>
-        <View style={[s.basic,{height:80}]}>
-          <View style={{marginLeft: pxToDp(20),}}>
+        <View style={[s.basic, { height: 80 }]}>
+          <View style={{ marginLeft: pxToDp(20) }}>
             <Text
               style={{
                 fontSize: pxToDp(16),
                 color: '#aaa',
                 marginBottom: pxToDp(10),
-                marginTop:pxToDp(10),
-              }}>
+                marginTop: pxToDp(10)
+              }}
+            >
               生日
             </Text>
-           <DatePicker
-              style={{width:300}}
+            <DatePicker
+              style={{ width: 300 }}
               androidMode="spinner"
               placeholder="设置生日"
               date={birthday}
@@ -231,26 +274,29 @@ const typeArr = ['男', '女'];
               cancelBtnText="取消"
               customStyles={{
                 dateIcon: {
-                  display: 'none',
+                  display: 'none'
                 },
                 dateInput: {
                   borderWidth: 0,
-                  alignItems: 'flex-start',
+                  alignItems: 'flex-start'
                 },
                 placeholderText: {
                   fontSize: pxToDp(20),
-                  color: '#afafaf',
-                },
+                  color: '#afafaf'
+                }
               }}
-              onDateChange={birthday => {
-                this.setState({birthday});
+              onDateChange={(birthday) => {
+                this.setState({ birthday });
               }}
             />
           </View>
-          <View style={{marginRight: pxToDp(20)}}>
+          <View style={{ marginRight: pxToDp(20) }}>
             <AntDesign name="right" size={pxToDp(18)} color="#000" />
           </View>
         </View>
+        <TouchableOpacity style={s.save} onPress={this.saveUserInfo}>
+          <Text>保存</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -264,7 +310,7 @@ const s = StyleSheet.create({
     backgroundColor: '#e2f4fe',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderBottomColor: '#e2f4fe',
+    borderBottomColor: '#e2f4fe'
   },
   basic: {
     height: pxToDp(70),
@@ -272,17 +318,17 @@ const s = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
-    borderBottomColor: '#e2f4fe',
+    borderBottomColor: '#e2f4fe'
   },
   button: {
     marginTop: pxToDp(20),
-    marginLeft: pxToDp(5),
+    marginLeft: pxToDp(5)
   },
   alertBackground: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // 如果要遮罩要显示成半透明状态，这里一定要设置，reba中的a控制透明度，取值在 0.0 ～ 1.0 范围内。
+    backgroundColor: 'rgba(0, 0, 0, 0.5)' // 如果要遮罩要显示成半透明状态，这里一定要设置，reba中的a控制透明度，取值在 0.0 ～ 1.0 范围内。
   },
 
   alertBox: {
@@ -290,7 +336,7 @@ const s = StyleSheet.create({
     height: pxToDp(250),
     backgroundColor: '#e2f4fe',
     justifyContent: 'space-evenly',
-    borderRadius: pxToDp(30),
+    borderRadius: pxToDp(30)
   },
   modalTitle: {
     width: '70%',
@@ -298,11 +344,19 @@ const s = StyleSheet.create({
     alignSelf: 'center',
     textAlign: 'center',
     borderBottomWidth: 1.1,
-    borderBottomColor: '#AFAFAF',
+    borderBottomColor: '#AFAFAF'
   },
   modalItem: {
     fontSize: pxToDp(18),
-    alignSelf: 'center',
+    alignSelf: 'center'
   },
+  save: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: pxToDp(1),
+    borderColor: '#000'
+  }
 });
-export default connect(state => ({token:state.getIn(['LoginReducer','token'])}))(Ziliao)
+export default connect((state) => ({
+  token: state.getIn(['LoginReducer', 'token'])
+}))(Ziliao);

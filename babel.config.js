@@ -11,9 +11,10 @@ module.exports = function (api) {
             '@components': './src/component',
             '@screens': './src/screens',
             '@assets': './src/assets',
-            '@res':'./src/res'
-          },
-        },
+            '@res': './src/res',
+            '@service': './src/service'
+          }
+        }
       ],
 
       'react-native-reanimated/plugin'

@@ -13,7 +13,9 @@ import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Model from '@components/common/pop';
-import { connect } from 'react-redux';
+import JBitem from '../components/jbitem';
+import index from '../../my/pay/component/listItem';
+import {connect} from 'react-redux'
 class Index extends Component {
   state = {
     arr: [
@@ -41,6 +43,11 @@ class Index extends Component {
         name2: '加入房间',
         teaname: '查找房间'
       }
+    ],
+    jubenlist: [
+      { id: 1, jbname: '追鱼 书馆', jbtext: '我张珍远道来投亲', imguri: '' },
+      { id: 2, jbname: '周仁哭坟', jbtext: '冷冷雨飕飕风', imguri: '' },
+      { id: 3, jbname: '梁祝 十八相送', jbtext: '梁祝 十八相送', imguri: '' }
     ]
   };
   static contextType = NavigationContext;
@@ -178,19 +185,17 @@ class Index extends Component {
             </TouchableOpacity>
           </View>
           {/*双人剧本 */}
-          <View>
-            <View>
-              <Text
-                style={{
-                  fontSize: pxToDp(18),
-                  margin: pxToDp(10),
-                  color: '#468CD3',
-                  fontWeight: 'bold'
-                }}
-              >
-                双人剧本
-              </Text>
-            </View>
+          <View style={{ marginRight: pxToDp(10) }}>
+            <Text
+              style={{
+                fontSize: pxToDp(18),
+                margin: pxToDp(10),
+                color: '#468CD3',
+                fontWeight: 'bold'
+              }}
+            >
+              双人剧本
+            </Text>
             <View style={{ flexDirection: 'row' }}>
               {this.state.arr.map((item) => (
                 <Model key={item.id} item={item} />
@@ -209,86 +214,15 @@ class Index extends Component {
             >
               剧本推荐
             </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                borderBottomColor: 'grey',
-                borderBottomWidth: pxToDp(0.5),
-                margin: pxToDp(10),
-                height: pxToDp(110)
-              }}
-            >
-              <TouchableOpacity onPress={() => this.context.navigate('Drama')}>
-                <Image
-                  style={{
-                    height: pxToDp(100),
-                    width: pxToDp(100),
-                    borderRadius: pxToDp(10)
-                  }}
-                  source={require('../../../res/play/1.jpg')}
-                />
-              </TouchableOpacity>
-              <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
-                  追鱼 书馆
-                </Text>
-                <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>
-                  我张珍远道来投亲
-                </Text>
-              </View>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                borderBottomColor: 'grey',
-                borderBottomWidth: pxToDp(0.5),
-                margin: pxToDp(10),
-                height: pxToDp(110)
-              }}
-            >
-              <Image
-                style={{
-                  height: pxToDp(100),
-                  width: pxToDp(100),
-                  borderRadius: pxToDp(10)
-                }}
-                source={require('../../../res/play/2.jpg')}
+
+            {this.state.jubenlist.map((item, index) => (
+              <JBitem
+                key={index}
+                jbname={item.jbname}
+                jbtext={item.jbtext}
+                imguri={item.imguri}
               />
-              <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
-                  周仁哭坟
-                </Text>
-                <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>
-                  冷冷雨飕飕风
-                </Text>
-              </View>
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                borderBottomColor: 'grey',
-                borderBottomWidth: pxToDp(0.5),
-                margin: pxToDp(10),
-                height: pxToDp(110)
-              }}
-            >
-              <Image
-                style={{
-                  height: pxToDp(100),
-                  width: pxToDp(100),
-                  borderRadius: pxToDp(10)
-                }}
-                source={require('../../../res/play/3.jpg')}
-              />
-              <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
-                  梁祝 十八相送
-                </Text>
-                <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>
-                  书房门前一枝梅
-                </Text>
-              </View>
-            </View>
+            ))}
           </View>
         </ScrollView>
       </View>

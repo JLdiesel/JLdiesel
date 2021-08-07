@@ -3,11 +3,26 @@ import { View, Image, ScrollView, TextInput, Text, TouchableOpacity,StyleSheet }
 import Top from '../../../component/common/top';
 import { pxToDp } from '../../../utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
+import  SongItem from '../components/songitem'
 
 class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            songlist:[
+                {id:1,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:2,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:3,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:4,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:5,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:6,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:7,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:8,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:9,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:10,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+                {id:11,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
+
+            ]
 
         }
     }
@@ -21,86 +36,16 @@ class Index extends Component {
                         placeholder="搜索" />
                 </View>
                 <ScrollView >
-                    <TouchableOpacity onPress={() => this.context.navigate("Details")}>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <View style={styles.box}>
-                            <Image style={styles.image} source={require('../../../res/5.jpg')}></Image>
-                            <View>
-                                <Text style={styles.text1}>穆桂英挂帅</Text>
-                                <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                                <Text style={styles.text3}>1959人唱过</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
+                    {this.state.songlist.map((item,id)=>(
+                            <SongItem
+                                key={id}
+                                text1={item.title}
+                                lyric={item.lyric}
+                                lisnum={item.lisnum}
+                               imguri={item.imguri}
+                            />
+                    )
+                )}
                 </ScrollView>
             </View>
         );

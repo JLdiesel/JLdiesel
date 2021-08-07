@@ -21,9 +21,8 @@ export default class Nickname extends Component {
         <Top
           icon1="arrow-back"
           title="昵称"
-          rightCallback={() =>
-            this.context.navigate('Ziliao', this.state.nickname)
-          }
+          rightTitle="确定"
+          rightCallback={() => this.context.navigate('Ziliao', this.state)}
         />
         <View
           style={{
@@ -44,7 +43,7 @@ export default class Nickname extends Component {
   }
   getNickName(nickname) {
     this.setState({
-      nickname: nickname
+      nickname
     });
   }
 }

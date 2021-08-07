@@ -8,6 +8,9 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            detailList:
+                {id:1,title:'穆桂英挂帅',first:'猛听得金鼓响画角声震',lisnum:1959, lyric:'曲子简介猛听得金鼓响画角声震，唤起我破天门壮志凌云。想当年桃花马上威风凛凛，敌血飞溅石榴裙。有生之日责当尽，寸土怎能够属于他人。番王小丑何足论，我一剑能当百万的兵',imguri:'' }
+            
 
         }
     }
@@ -18,17 +21,14 @@ class Index extends Component {
                 <ScrollView>
                     <Top icon1='arrow-back' title="详情" />
                     <View style={styles.top}>
-                        <Image style={styles.image} source={require('../../../res/6.jpg')}></Image>
-                        <Text style={styles.text1}>穆桂英挂帅</Text>
-                        <Text style={styles.text2}>猛听得金鼓响画角声震</Text>
-                        <Text style={styles.text3}>1959人唱过</Text>
+                        <Image style={styles.image} source={{uri:this.state.detailList.imguri}}></Image>
+                        <Text style={styles.text1}>{this.state.detailList.title}</Text>
+                        <Text style={styles.text2}>{this.state.detailList.fires}</Text>
+                        <Text style={styles.text3}>{this.state.detailList.lisnum}</Text>
                     </View>
                     <View style={styles.center}>
-                        <Text style={{ fontSize: pxToDp(15) }}>曲子简介{'\n'}
-                            猛听得金鼓响画角声震，唤起我破天门壮志凌云。{'\n'}
-                            想当年桃花马上威风凛凛，敌血飞溅石榴裙。{'\n'}
-                            有生之日责当尽，寸土怎能够属于他人。{'\n'}
-                            番王小丑何足论，我一剑能当百万的兵。
+                        <Text style={{ fontSize: pxToDp(15) }}>
+                            {this.state.detailList.lyric}
                         </Text>
                     </View>
                 </ScrollView>

@@ -10,7 +10,6 @@ export default new JLRequest({
     async requestInterceptor(config) {
       //可以在这里添加这个请求的token
       const token = await AsyncStorage.getItem('token');
-      console.log(token);
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
