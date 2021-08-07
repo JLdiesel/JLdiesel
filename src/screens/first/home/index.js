@@ -8,7 +8,7 @@ import styles, { colors } from './scorll/styles/index.style';
 import { ENTRIES1, ENTRIES2 } from './scorll/static/entries';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Top from '@components/common/top';
-import Swiper from 'react-native-swiper';
+import ImageFade from '../../../component/ImageFade/index'
 import ActressView from '@components/common/actressview';
 import GenerView from '@components/common/generview';
 import { NavigationContext } from "@react-navigation/native";
@@ -47,14 +47,13 @@ class Index extends Component {
       </View>
     );
   }
-
-
   render() {
     const example3 = this.layoutExample('', '', 'stack');
     return (
       <View>
         <Top title="百越台" icon2="search" />
         <ScrollView style={{ marginBottom: 60 }}>
+<<<<<<< HEAD
           {/*轮播图 */}
           <View style={{ height: pxToDp(160) }}>
             <Swiper
@@ -118,9 +117,21 @@ class Index extends Component {
                 />
               </View>
             </Swiper>
+=======
+          {/* 轮播图 */}
+          <View style={{ margin: pxToDp(8), borderRadius: pxToDp(20) }}>
+            <ImageFade
+              ref="ImageFade"
+              duration={800}
+              delay={3000}
+              style={{ width: "100%", height: pxToDp(200) }}>
+              <Image style={{ width: "100%", height: pxToDp(200), borderRadius: pxToDp(20) }} source={require("../../../res/12.jpg")} />
+              <Image style={{ width: "100%", height: pxToDp(200), borderRadius: pxToDp(20) }} source={require("../../../res/19-2.jpg")} />
+            </ImageFade>
+>>>>>>> 31a400942bff7127102d269d2baa88c7e9d92d1d
           </View>
-          {/*精选唱段 */}
-          <View style={{ margin: pxToDp(10) }}>
+          {/*俯瞰百年 */}
+          <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
             <View
               style={{
                 flexDirection: "row",
@@ -357,5 +368,4 @@ class Index extends Component {
     );
   }
 }
-
 export default Index;

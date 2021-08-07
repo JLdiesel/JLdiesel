@@ -43,7 +43,7 @@ function Nav() {
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
         <Stack.Screen name="Set" component={Screens.Set} />
-        {/*具体的设置内容。。。 */}
+        {/*具体的设置内容 关于我们、推送、意见、隐私 */}
         <Stack.Screen name="Women" component={Screens.Women} />
         <Stack.Screen name="Tuisong" component={Screens.Tuisong} />
         <Stack.Screen name="Yijian" component={Screens.Yijian} />
@@ -60,40 +60,77 @@ function Nav() {
         <Stack.Screen name="Screenpaly" component={Screens.Screenpaly} />
         {/* 论坛 */}
         <Stack.Screen name="Forum" component={Screens.Forum} />
+        {/* 流派传奇 */}
         <Stack.Screen name="PageOne" component={Screens.PageOne} />
+        {/* 俯瞰百年 */}
         <Stack.Screen name="PageTwo" component={Screens.PageTwo} />
+        {/* 名角风采 */}
         <Stack.Screen name="PageThree" component={Screens.PageThree} />
+        {/* 精选唱段 */}
         <Stack.Screen name="PageFour" component={Screens.PageFour} />
+        {/* 俯瞰百年文章 */}
         <Stack.Screen name="Pagefive" component={Screens.Pagefive} />
         {/* <Stack.Screen name="Myroute" component={Screens.Myroute} /> */}
         {/*个人首页 */}
 
+        {/**文章 */}
         <Stack.Screen name="Article" component={Screens.Article} />
+        {/**名角个人页 */}
         <Stack.Screen name="Actress" component={Screens.Actress} />
+        {/**流派详情页 */}
         <Stack.Screen name="School" component={Screens.School} />
+        {/**剧本页 */}
         <Stack.Screen name="Drama" component={Screens.Drama} />
+        {/** 历史浏览*/}
         <Stack.Screen name="History" component={Screens.History} />
+        {/** 积分商城*/}
         <Stack.Screen name="Jifenshop" component={Screens.Jifenshop} />
+        {/** 总订单页面*/}
         <Stack.Screen name="Order" component={Screens.Order} />
+        {/** 订单信息页*/}
         <Stack.Screen name="Myorder" component={Screens.Myorder} />
+        {/**地址 */}
         <Stack.Screen name="address" component={Screens.address} />
+        {/**增加新地址 */}
         <Stack.Screen name="newAddress" component={Screens.newAddress} />
+        {/**全部订单 */}
         <Stack.Screen name="Orderone" component={Screens.Orderone} />
+        {/**待支付订单 */}
         <Stack.Screen name="Ordertwo" component={Screens.Ordertwo} />
+        {/**待收货订单 */}
         <Stack.Screen name="Orderthree" component={Screens.Orderthree} />
+        {/**待评价订单 */}
         <Stack.Screen name="Orderfour" component={Screens.Orderfour} />
+        {/**退款订单页面 */}
         <Stack.Screen name="Refund" component={Screens.Refund} />
+        {/**设置首页面 */}
         <Stack.Screen name="Setting" component={Screens.Setting} />
+        {/**更改资料页面 */}
         <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
+        {/**昵称页面 */}
         <Stack.Screen name="Nickname" component={Screens.Nickname} />
+        {/** 个性签名页面*/}
         <Stack.Screen name="Signature" component={Screens.Singnature} />
+        {/**剧本库页面 */}
         <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
+        {/**订单确认页面*/}
         <Stack.Screen name="orderdetails" component={Screens.orderdetails} />
-
+        {/**关注列表 */}
         <Stack.Screen name="Follow" component={Screens.Follow} />
+        {/**点赞 */}
         <Stack.Screen name="Like" component={Screens.Like} />
+        {/** */}
         <Stack.Screen name="Fan" component={Screens.Fan} />
+        {/**粉丝 */}
         <Stack.Screen name="Collection" component={Screens.Collection} />
+        {/**唱段的首页 */}
+        <Stack.Screen name="Opera" component={Screens.Opera} />
+        {/**唱段推荐 */}
+        <Stack.Screen name="Optuijian" component={Screens.Optuijian} />
+        {/**名角个人唱段视频 */}
+        <Stack.Screen name="Opperson" component={Screens.Opperson} />
+        {/**流派唱段视频 */}
+        <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
