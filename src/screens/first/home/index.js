@@ -5,63 +5,90 @@ import {
   Image,
   StyleSheet,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { sliderWidth, itemWidth } from './scorll/styles/SliderEntry.style';
+import SliderEntry from './scorll/components/SliderEntry';
+import styles, { colors } from './scorll/styles/index.style';
+import { ENTRIES1, ENTRIES2 } from './scorll/static/entries';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Top from '@components/common/top';
-import Swiper from 'react-native-swiper';
+import ImageFade from '../../../component/ImageFade/index';
 import ActressView from '@components/common/actressview';
 import GenerView from '@components/common/generview';
 import { NavigationContext } from '@react-navigation/native';
-import { connect } from 'react-redux';
-import { changeToken } from '../../my/store/actions';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const SLIDER_1_FIRST_ITEM = 1;
+
 class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      slider1ActiveSlide: SLIDER_1_FIRST_ITEM
+    };
   }
-
   static contextType = NavigationContext;
+
+  _renderItem({ item, index }) {
+    return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
+  }
+  _renderLightItem({ item, index }) {
+    return <SliderEntry data={item} even={false} />;
+  }
+  layoutExample(number, title, type) {
+    const isTinder = type === 'tinder';
+    return (
+      <View style={{ marginBottom: pxToDp(-10), marginTop: pxToDp(-10) }}>
+        <Carousel
+          data={isTinder ? ENTRIES2 : ENTRIES1}
+          renderItem={isTinder ? this._renderLightItem : this._renderItem}
+          sliderWidth={sliderWidth}
+          itemWidth={itemWidth}
+          containerCustomStyle={styles.slider}
+          contentContainerCustomStyle={styles.sliderContentContainer}
+          layout={type}
+          loop={true}
+        />
+      </View>
+    );
+  }
   render() {
+    const example3 = this.layoutExample('', '', 'stack');
     return (
       <View>
         <Top title="百越台" icon2="search" />
         <ScrollView style={{ marginBottom: 60 }}>
-          {/*轮播图 */}
-          <View style={{ height: pxToDp(160) }}>
-            <Swiper
-              style={styles.wrapper}
-              removeClippedSubviews={false}
-              showsButtons={false} //显示控制按钮
-              loop={true} //如果设置为false，那么滑动到最后一张时，再次滑动将不会滑到第一张图片。
-              autoplay={true} //自动轮播
-              showsPagination={false} //是否显示小圆点
-              autoplayTimeout={3} //每隔3秒切换
+          {/* 轮播图 */}
+          <View style={{ margin: pxToDp(8), borderRadius: pxToDp(20) }}>
+            <ImageFade
+              ref="ImageFade"
+              duration={800}
+              delay={3000}
+              style={{ width: '100%', height: pxToDp(200) }}
             >
-              <View style={styles.slide1}>
-                <Image
-                  style={styles.image1}
-                  source={require('../../../res/22.jpg')}
-                />
-              </View>
-              <View style={styles.slide2}>
-                <Image
-                  style={styles.image1}
-                  source={require('../../../res/8.jpg')}
-                />
-              </View>
-              <View style={styles.slide3}>
-                <Image
-                  style={styles.image1}
-                  source={require('../../../res/performer/10.jpg')}
-                />
-              </View>
-            </Swiper>
+              <Image
+                style={{
+                  width: '100%',
+                  height: pxToDp(200),
+                  borderRadius: pxToDp(20)
+                }}
+                source={require('../../../res/12.jpg')}
+              />
+              <Image
+                style={{
+                  width: '100%',
+                  height: pxToDp(200),
+                  borderRadius: pxToDp(20)
+                }}
+                source={require('../../../res/19-2.jpg')}
+              />
+            </ImageFade>
           </View>
-          {/*精选唱段 */}
-          <View style={{ margin: pxToDp(10) }}>
+          {/*俯瞰百年 */}
+          <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
             <View
               style={{
                 flexDirection: 'row',
@@ -94,7 +121,8 @@ class Index extends Component {
                   style={{
                     height: pxToDp(130),
                     width: pxToDp(200),
-                    borderRadius: pxToDp(10)
+                    borderRadius: pxToDp(10),
+                    marginLeft: pxToDp(10)
                   }}
                   source={require('../../../res/13.jpg')}
                 />
@@ -157,129 +185,19 @@ class Index extends Component {
               </TouchableOpacity>
             </View>
           </View>
-          <TouchableOpacity onPress={() => this.context.navigate('Article')}>
-            <View
-              style={{
-                margin: pxToDp(15),
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                borderBottomWidth: pxToDp(0.5),
-                borderBottomColor: 'grey',
-                marginTop: pxToDp(0),
-                height: pxToDp(100),
-                alignItems: 'center'
-              }}
-            >
-              <View
-                style={{
-                  justifyContent: 'space-between',
-                  width: pxToDp(220)
-                }}
+          <SafeAreaView style={styles.safeArea}>
+            <View style={styles.container}>
+              {this.gradient}
+              <ScrollView
+                style={styles.scrollview}
+                scrollEventThrottle={200}
+                directionalLockEnabled={true}
               >
-                <Text style={{ fontSize: pxToDp(17) }}>嵊州：越剧的起源地</Text>
-                <Text
-                  style={{
-                    fontSize: pxToDp(13),
-                    color: 'grey',
-                    marginTop: pxToDp(10)
-                  }}
-                >
-                  名家名篇
-                </Text>
-              </View>
-              <Image
-                style={{
-                  height: pxToDp(80),
-                  width: pxToDp(100),
-                  margin: pxToDp(10),
-                  borderRadius: pxToDp(10)
-                }}
-                source={require('../../../res/history/1.jpg')}
-              />
+                {example3}
+              </ScrollView>
             </View>
-          </TouchableOpacity>
-          <View
-            style={{
-              margin: pxToDp(15),
-              marginTop: pxToDp(0),
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              borderBottomWidth: pxToDp(0.5),
-              borderBottomColor: 'grey',
-              height: pxToDp(100),
-              alignItems: 'center'
-            }}
-          >
-            <View
-              style={{
-                justifyContent: 'space-between',
-                width: pxToDp(220)
-              }}
-            >
-              <Text style={{ fontSize: pxToDp(17) }} numberOfLines={2}>
-                越剧十姐妹同台演出轰动上海
-              </Text>
-              <Text
-                style={{
-                  fontSize: pxToDp(13),
-                  color: 'grey',
-                  marginTop: pxToDp(10)
-                }}
-              >
-                书摘
-              </Text>
-            </View>
-            <Image
-              style={{
-                height: pxToDp(80),
-                width: pxToDp(100),
-                margin: pxToDp(10),
-                borderRadius: pxToDp(10)
-              }}
-              source={require('../../../res/history/2.jpg')}
-            />
-          </View>
-          <View
-            style={{
-              margin: pxToDp(15),
-              marginTop: pxToDp(0),
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              borderBottomWidth: pxToDp(0.5),
-              borderBottomColor: 'grey',
-              height: pxToDp(100),
-              alignItems: 'center'
-            }}
-          >
-            <View
-              style={{
-                justifyContent: 'space-between',
-                width: pxToDp(220)
-              }}
-            >
-              <Text style={{ fontSize: pxToDp(17) }} numberOfLines={2}>
-                新中国的第一部彩色戏曲艺术片越剧电影
-              </Text>
-              <Text
-                style={{
-                  fontSize: pxToDp(13),
-                  color: 'grey',
-                  marginTop: pxToDp(10)
-                }}
-              >
-                拓跋云
-              </Text>
-            </View>
-            <Image
-              style={{
-                height: pxToDp(80),
-                width: pxToDp(100),
-                margin: pxToDp(10),
-                borderRadius: pxToDp(10)
-              }}
-              source={require('../../../res/history/3.jpg')}
-            />
-          </View>
+          </SafeAreaView>
+
           {/*名角风采 */}
           <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
             <View
@@ -406,34 +324,4 @@ class Index extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  wrapper: {},
-  slide1: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: pxToDp(150),
-    borderRadius: pxToDp(10),
-    margin: pxToDp(10)
-  },
-  slide2: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: pxToDp(150),
-    borderRadius: pxToDp(10),
-    margin: pxToDp(10)
-  },
-  slide3: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: pxToDp(150),
-    borderRadius: pxToDp(10),
-    margin: pxToDp(10)
-  },
-  image1: {
-    height: pxToDp(150),
-    width: pxToDp(355),
-    borderRadius: pxToDp(10),
-    margin: pxToDp(10)
-  }
-});
 export default Index;
