@@ -5,7 +5,8 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  RefreshControl
+  RefreshControl,
+  DeviceEventEmitter
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import Top from '@components/common/top';
@@ -17,8 +18,17 @@ import changeImgSize from '@utils/changeImgSize';
 class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { avatar: '' };
   }
+  componentDidMount() {
+    this.subscript = DeviceEventEmitter.addListener(
+      'valueChange',
+      this.changeAvatar
+    );
+  }
+  changeAvatar = (avatar) => {
+    this.setState({ avatar });
+  };
   static contextType = NavigationContext;
   render() {
     const { fansCount, followCount, nickName, avatar } = this.props.userInfo;
@@ -47,7 +57,7 @@ class Index extends Component {
                     margin: pxToDp(10)
                   }}
                   source={{
-                    uri: changeImgSize(avatar, 'small')
+                    uri: changeImgSize(avatar)
                   }}
                 ></Image>
               </TouchableOpacity>

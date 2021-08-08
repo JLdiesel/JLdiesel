@@ -82,7 +82,6 @@ class Ziliao extends Component {
     }
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
-    console.log(pickerResult);
     const fd = new FormData();
     let file = {
       uri: pickerResult.uri,
@@ -106,8 +105,8 @@ class Ziliao extends Component {
         console.log(err);
       });
     this.setState({
-      avatar_url: pickerResult.uri,
-      modalVisible: !this.state.modalVisible
+      avatar: pickerResult.uri,
+      modalVisible: false
     });
   };
   saveUserInfo = () => {
@@ -160,7 +159,7 @@ class Ziliao extends Component {
                   backgroundColor: '#e2f4fe'
                 }}
                 source={{
-                  uri: changeImgSize(this.state.avatar, 'small')
+                  uri: changeImgSize(this.state.avatar)
                 }}
               />
             </TouchableOpacity>

@@ -107,14 +107,16 @@ class Index extends Component {
           </View>
           {/*戏服租赁 */}
           <View style={{ margin: pxToDp(10) }}>
-            <TouchableOpacity onPress={() => this.context.navigate('Zulin')}>
+            <TouchableOpacity onPress={() => this.context.navigate('Zulin', 0)}>
               <Image
                 style={styles.image3}
                 source={require('../../../res/30.jpg')}
               />
             </TouchableOpacity>
             {/*越剧周边 */}
-            <TouchableOpacity onPress={() => this.context.navigate('Zhoubian')}>
+            <TouchableOpacity
+              onPress={() => this.context.navigate('Zhoubian', 1)}
+            >
               <Image
                 style={styles.image4}
                 source={require('../../../res/29.jpg')}
