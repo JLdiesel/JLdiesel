@@ -6,45 +6,24 @@ import Top from '../../../../../component/common/top'
 import { NavigationContext } from "@react-navigation/native";
 class Index extends Component {
         static contextType = NavigationContext;
-    render() {
+        state={
+            actor:[{id:1,name:'方亚芬',imguri:''},{id:2,name:'方亚芬',imguri:''},{id:3,name:'方亚芬',imguri:''},{id:4,name:'方亚芬',imguri:''},]
+        }  
+          render() {
         return (
             <View style={{backgroundColor:'#E2F4FE',flex:1}}>
                 <Top icon1="arrow-back" title="名角风采" />
                 <ScrollView >
                     <View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap', width: pxToDp(380) }}>
+                        {this.state.actor.map((item,id)=>(  
                             <TouchableOpacity onPress={() => this.context.navigate("Actress")}>
                                 <ActressView
-                                    picture={require('../../../../../res/performer/1.jpg')}
-                                    name="方亚芬" />
+                                    key={id}
+                                    picture={{uri:item.imguri}}
+                                    name={item.name} />
                             </TouchableOpacity>
-                            <ActressView
-                                picture={require('../../../../../res/performer/2.jpg')}
-                                name="王文娟" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/3.jpg')}
-                                name="王君安" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/4.jpg')}
-                                name="茅威涛" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/5.jpg')}
-                                name="吴凤花" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/6.jpg')}
-                                name="单仰萍" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/7.jpg')}
-                                name="蔡浙飞" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/8.jpg')}
-                                name="金美芳" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/9.jpg')}
-                                name="何赛飞" />
-                            <ActressView
-                                picture={require('../../../../../res/performer/10.jpg')}
-                                name="陈丽君" />
+                        ))}
                         </View>
                     </View>
                 </ScrollView>

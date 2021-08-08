@@ -62,7 +62,7 @@ class orders extends Component {
   render() {
     const { count, tabs, activeTab, way } = this.state;
     return (
-      <View style={{ backgroundColor: "#e2f4fe" }}>
+      <View style={{ backgroundColor: "#e2f4fe",flex:1 }}>
         <Top icon1="arrow-back" title="确认订单" />
         <ScrollView style={{ height: pxToDp(675) }}>
           {/* 订单状态 */}
@@ -273,7 +273,7 @@ class orders extends Component {
               ￥166.90
             </Text>
           </View>
-          <View>
+        
             <TouchableOpacity
               cisabled={this.props.disabled}
               onPress={() => {
@@ -313,7 +313,7 @@ class orders extends Component {
                 <Text>提交订单</Text>
               </View>
             </TouchableOpacity>
-          </View>
+       
         </View>
 
         {/* 支付方式弹窗 */}

@@ -1,16 +1,21 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Tabbar from "./tabbar";
-import * as Screens from './screens'
-import Water from './component/water'
-import Video from '../screens/videoplayer'
+import Tabbar from './tabbar';
+import * as Screens from './screens';
+import Water from './component/water';
+import Video from '../screens/videoplayer';
+
 const Stack = createStackNavigator();
 
 function Nav() {
   return (
     <NavigationContainer>
+<<<<<<< HEAD
       <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
+=======
+      <Stack.Navigator headerMode="none" initialRouteName={'Tabbar'}>
+>>>>>>> 22cc5df09a5740eb6324a72864db81e4119b88a0
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -27,6 +32,7 @@ function Nav() {
         {/*登录 */}
         <Stack.Screen name="Login" component={Screens.Login} />
         {/*注册 */}
+
         {/*商品 */}
         <Stack.Screen name="Good" component={Screens.GoodsList} />
         {/*练唱 */}
@@ -35,6 +41,8 @@ function Nav() {
         <Stack.Screen name="Details" component={Screens.Details} />
         {/*练唱页面*/}
         <Stack.Screen name="Sing" component={Screens.Sing} />
+        {/* 进入练唱页面 */}
+        <Stack.Screen name="Singbefore" component={Screens.Singbefore} />
         {/*租赁商城页 */}
         <Stack.Screen name="Zulin" component={Screens.Zulin} />
         {/*周边商城页 */}
