@@ -8,7 +8,6 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-<<<<<<< HEAD
             products: [
                 {
                     id: 1,
@@ -53,12 +52,6 @@ class Index extends Component {
                     image: require("../../../res/播放.png")
                 }
             ],
-=======
-            detailList:
-                {id:1,title:'穆桂英挂帅',first:'猛听得金鼓响画角声震',lisnum:1959, lyric:'曲子简介猛听得金鼓响画角声震，唤起我破天门壮志凌云。想当年桃花马上威风凛凛，敌血飞溅石榴裙。有生之日责当尽，寸土怎能够属于他人。番王小丑何足论，我一剑能当百万的兵',imguri:'' }
-            
-
->>>>>>> 2a1bb2f2b249ac9264ed220cc38fa05daa48d221
         }
     }
     static contextType = NavigationContext;
@@ -70,7 +63,6 @@ class Index extends Component {
                 </View>
                 <ScrollView>
                     <View style={styles.top}>
-<<<<<<< HEAD
                         <Image style={styles.image} source={require('../../../res/6.png')}></Image>
                         <View style={{ justifyContent: "center", marginLeft: pxToDp(10) }}>
                             <Text style={styles.text1}>穆桂英挂帅</Text>
@@ -82,7 +74,7 @@ class Index extends Component {
                         <TouchableOpacity style={{ backgroundColor: "#6666", width: pxToDp(80), height: pxToDp(25), justifyContent: "center", alignItems: "center", marginLeft: pxToDp(25), borderRadius: pxToDp(16) }}>
                             <Text style={{ fontSize: pxToDp(12), fontWeight: "bold", color: "white" }}>练唱</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.context.navigate("Singbefore")} style={{ backgroundColor: "red", width: pxToDp(230), height: pxToDp(25), justifyContent: "center", alignItems: "center", marginLeft: pxToDp(25), borderRadius: pxToDp(16) }}>
+                        <TouchableOpacity onPress={() => this.context.navigate("Singbefore")} style={{ backgroundColor: "#468CD3", width: pxToDp(230), height: pxToDp(25), justifyContent: "center", alignItems: "center", marginLeft: pxToDp(25), borderRadius: pxToDp(16) }}>
                             <Text style={{ fontSize: pxToDp(12), fontWeight: "bold", color: "white" }}>我要跟唱</Text>
                         </TouchableOpacity>
                     </View>
@@ -126,17 +118,6 @@ class Index extends Component {
                                 </View>
                             </View>
                         ))}
-=======
-                        <Image style={styles.image} source={{uri:this.state.detailList.imguri}}></Image>
-                        <Text style={styles.text1}>{this.state.detailList.title}</Text>
-                        <Text style={styles.text2}>{this.state.detailList.fires}</Text>
-                        <Text style={styles.text3}>{this.state.detailList.lisnum}</Text>
-                    </View>
-                    <View style={styles.center}>
-                        <Text style={{ fontSize: pxToDp(15) }}>
-                            {this.state.detailList.lyric}
-                        </Text>
->>>>>>> 2a1bb2f2b249ac9264ed220cc38fa05daa48d221
                     </View>
                 </ScrollView>
             </View>

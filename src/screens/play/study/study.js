@@ -9,7 +9,6 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-<<<<<<< HEAD
             products: [
                 {
                     id: 1,
@@ -54,23 +53,6 @@ class Index extends Component {
                     image:"https://img1.baidu.com/it/u=3612396864,2823727184&fm=26&fmt=auto&gp=0.jpg"
                 }
             ],
-=======
-            songlist:[
-                {id:1,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:2,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:3,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:4,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:5,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:6,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:7,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:8,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:9,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:10,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-                {id:11,title:'穆桂英挂帅',lyric:'猛听得金鼓响画角声震',lisnum:1959,imguri:''},
-
-            ]
-
->>>>>>> 2a1bb2f2b249ac9264ed220cc38fa05daa48d221
         }
     }
     static contextType = NavigationContext;
@@ -84,7 +66,6 @@ class Index extends Component {
                         placeholder="" />
                 </View>
                 <ScrollView >
-<<<<<<< HEAD
                     {this.state.products.map((item, index) => (
                         <TouchableOpacity onPress={() => this.context.navigate("Details")}>
                             <View style={styles.box}>
@@ -97,18 +78,6 @@ class Index extends Component {
                             </View>
                         </TouchableOpacity>
                     ))}
-=======
-                    {this.state.songlist.map((item,id)=>(
-                            <SongItem
-                                key={id}
-                                text1={item.title}
-                                lyric={item.lyric}
-                                lisnum={item.lisnum}
-                               imguri={item.imguri}
-                            />
-                    )
-                )}
->>>>>>> 2a1bb2f2b249ac9264ed220cc38fa05daa48d221
                 </ScrollView>
             </View>
         );

@@ -58,7 +58,7 @@ class Index extends Component {
                             </View>
                         </View>
                     </ScrollView>
-                    <TouchableOpacity onPress={() => this.context.navigate("Sing")} style={{ marginTop: pxToDp(30), backgroundColor: "#D5642F", width: pxToDp(180), height: pxToDp(40), borderRadius: pxToDp(24), justifyContent: "center", alignItems: "center" }}>
+                    <TouchableOpacity onPress={() => this.context.navigate("Sing")} style={{ marginTop: pxToDp(30), backgroundColor: "#468CD3", width: pxToDp(180), height: pxToDp(40), borderRadius: pxToDp(24), justifyContent: "center", alignItems: "center" }}>
                         <Text style={{ fontWeight: "bold", fontSize: pxToDp(16), color: "white" }}>开始独唱</Text>
                     </TouchableOpacity>
 
