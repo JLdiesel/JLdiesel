@@ -29,6 +29,14 @@ class Index extends Component {
            </View>
               <View style={{width:'90%',marginBottom:pxToDp(30),alignSelf:'center'}}>
                 <Text>{item.dt}</Text>
+                <ScrollView style={{flex:1,height:150,marginTop:10}} horizontal={true}>
+                  {item.dtimg2.map((item)=>(
+                  <Image 
+                  style={{width:100,height:'100%',borderRadius:10,marginRight:10}}
+                  source={{uri:item}}/>
+                  ))}
+                </ScrollView>
+                  
                   </View>
                   <View style={{flexDirection:'row',justifyContent:'space-around',marginBottom:pxToDp(10)}}>
                   <TouchableOpacity style={{flexDirection:'row'}}>

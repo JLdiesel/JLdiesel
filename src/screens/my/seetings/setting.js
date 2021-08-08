@@ -18,9 +18,12 @@ export default  class hhh extends Component{
 
     collect:[{collectid:1,collectimg:'',title:'乌拉乌拉乌拉',playnum:111}],
 
-    dongtai:[{dtid:1,dtimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',name:'wulawulaaaa',date:'2019-02-12',dt:'sbsbsbsbsb',dz:123}],
+    dongtai:[{dtid:1,dtimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+    name:'wulawulaaaa',date:'2019-02-12',dt:'sbsbsbsbsb',dz:123,
+    dtimg2:['https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'
+    ]}],
 
-    soucang:[{scid:1,scimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',bookname:'111111',name:'12111',date:'2019-05-02'}]
+    soucang:{scid:1,scimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',bookname:'111111',name:'12111',date:'2019-05-02'}
   
   }}
    
@@ -85,13 +88,15 @@ export default  class hhh extends Component{
   <ScrollableTabView
     initialPage={0}
     renderTabBar={() => <CustormerBar/>}
-  >   
+  >  
+  <Dongtai tabLabel='动态'
+           dongtai={userinfo.dongtai}
+
+  />  
   <Collect tabLabel='收藏'
            collect={userinfo.collect}
           />
-  <Dongtai tabLabel='动态'
-           dongtai={userinfo.dongtai}
-  />
+ 
           
     <Soucang tabLabel='剧本中心'
            soucang={userinfo.soucang}
