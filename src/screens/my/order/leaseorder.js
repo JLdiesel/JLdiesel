@@ -60,7 +60,8 @@ class orders extends Component {
   static contextType = NavigationContext;
 
   render() {
-    const { count, tabs, activeTab, way } = this.state;
+    const { count, tabs, activeTab, way, leaseprice } = this.state;
+    console.log("day", this.props.route.params);
     return (
       <View style={{ backgroundColor: "#e2f4fe" }}>
         <Top icon1="arrow-back" title="确认订单" />
@@ -243,6 +244,29 @@ class orders extends Component {
               />
             </TouchableOpacity>
           </View>
+          {/* 租赁选项 */}
+          <View
+            style={{
+              backgroundColor: "white",
+              margin: pxToDp(5),
+              borderRadius: pxToDp(10),
+              height: pxToDp(120),
+              justifyContent: "space-around",
+            }}
+          >
+            <View style={styles.leasebox}>
+              <Text>租赁天数</Text>
+              <Text>{this.props.route.params.leaseday}</Text>
+            </View>
+            <View style={styles.leasebox}>
+              <Text>租赁价格</Text>
+              <Text>{this.props.route.params.leaseprice}</Text>
+            </View>
+            <View style={styles.leasebox}>
+              <Text>押金价格</Text>
+              <Text>{this.props.route.params.price}</Text>
+            </View>
+          </View>
         </ScrollView>
 
         <View
@@ -277,7 +301,7 @@ class orders extends Component {
             <TouchableOpacity
               cisabled={this.props.disabled}
               onPress={() => {
-                this.context.navigate("orderdetails");
+                this.context.navigate("leasedetails");
               }}
               style={{
                 borderRadius: pxToDp(25),
@@ -398,6 +422,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#ffffff",
     backgroundColor: "transparent",
+  },
+  leasebox: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: pxToDp(10),
+    marginRight: pxToDp(10),
   },
 });
 export default orders;

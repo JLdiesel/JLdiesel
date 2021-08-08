@@ -115,7 +115,7 @@ class Index extends Component {
                 style={styles.image2}
                 source={require("../../../res/13.jpg")}
               />
-              <Text style={styles.text}>更低价格</Text>
+              <Text style={styles.text}>线下门票</Text>
             </View>
             <View style={styles.box}>
               <Image
@@ -235,6 +235,8 @@ const styles = StyleSheet.create({
     fontSize: pxToDp(15),
     color: "white",
     fontWeight: "bold",
+    alignSelf: "center",
+    marginTop: pxToDp(3),
   },
   image3: {
     height: pxToDp(150),
