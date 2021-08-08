@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
+      <Stack.Navigator headerMode="none" initialRouteName="Setting">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />

@@ -6,15 +6,6 @@ import {
   Image,
   StyleSheet,
   ScrollView,
-<<<<<<< HEAD
-  Alert,
-} from "react-native";
-import { NavigationContext } from "@react-navigation/native";
-import Top from "@components/common/top";
-import { pxToDp } from "@utils/styleKits";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import Model from "@components/common/pop";
-=======
   Alert
 } from 'react-native';
 import { NavigationContext } from '@react-navigation/native';
@@ -22,7 +13,6 @@ import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Model from '@components/common/pop';
->>>>>>> 22cc5df09a5740eb6324a72864db81e4119b88a0
 
 class Index extends Component {
   state = {

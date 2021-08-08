@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { Component } from "react";
-=======
 import React, { Component } from 'react';
->>>>>>> 22cc5df09a5740eb6324a72864db81e4119b88a0
 import {
   View,
   Text,

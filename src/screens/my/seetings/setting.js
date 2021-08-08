@@ -23,7 +23,7 @@ export default  class hhh extends Component{
     soucang:[{scid:1,scimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',bookname:'111111',name:'12111',date:'2019-05-02'}]
   
   }}
-  
+   
 
   render(){
     const {userinfo}=this.state
@@ -84,7 +84,7 @@ export default  class hhh extends Component{
 
   <ScrollableTabView
     initialPage={0}
-    renderTabBar={() => <CustormerBar />}
+    renderTabBar={() => <CustormerBar/>}
   >   
   <Collect tabLabel='收藏'
            collect={userinfo.collect}
