@@ -1,4 +1,3 @@
-import reducer from './reducers'
+import LoginReducer from '../Login/store/reducers';
 
-
-export  {reducer}
+export { LoginReducer };

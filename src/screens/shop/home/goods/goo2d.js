@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,16 +11,16 @@ import {
   FlatList,
   UIManager,
   Animated,
-  Easing,
-} from "react-native";
-import Swiper from "react-native-swiper";
-import ListItem from "../components/listItem";
-import { Badge } from "react-native-elements";
-import SvgUri from "react-native-svg-uri";
-import { pxToDp } from "@utils/styleKits";
+  Easing
+} from 'react-native';
+import Swiper from 'react-native-swiper';
+import ListItem from '../components/listItem';
+import { Badge } from 'react-native-elements';
+import SvgUri from 'react-native-svg-uri';
+import { pxToDp } from '@utils/styleKits';
 
-const ScreenWidth = Dimensions.get("window").width;
-const ScreenHeight = Dimensions.get("window").height;
+const ScreenWidth = Dimensions.get('window').width;
+const ScreenHeight = Dimensions.get('window').height;
 const expandIcon =
   '<svg t="1626745495953" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2626" width="200" height="200"><path d="M507.584 736.064a32.896 32.896 0 0 1-23.36-9.664L110.912 353.088a33.024 33.024 0 0 1 46.72-46.656l373.312 373.248a33.024 33.024 0 0 1-23.36 56.384" fill="#5477BB" p-id="2627"></path><path d="M507.584 736.064a32.896 32.896 0 0 1-23.36-56.32l382.144-382.08a33.024 33.024 0 0 1 46.656 46.656l-382.016 382.08a33.152 33.152 0 0 1-23.424 9.664" fill="#5477BB" p-id="2628"></path></svg>';
 const shopzz =
@@ -28,37 +28,37 @@ const shopzz =
 export default class Shop extends PureComponent {
   state = {
     items: [
-      "https://iknow-pic.cdn.bcebos.com/4034970a304e251fae75ad03a786c9177e3e534e",
-      "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d",
-      "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d",
+      'https://iknow-pic.cdn.bcebos.com/4034970a304e251fae75ad03a786c9177e3e534e',
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d',
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d'
     ],
     items2: [
-      "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d",
-      "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d",
-      "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d",
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d',
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d',
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130223%2F890845_101648793000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628482217&t=780b6043de8e564cf304bf41fd4d547d'
     ],
     commentList: [
       {
         rank: 1,
-        username: "GATHERING PREY",
-        subs: "啊啊实打实大苏打实",
-        createTime: "2020-1-5",
+        username: 'GATHERING PREY',
+        subs: '啊啊实打实大苏打实',
+        createTime: '2020-1-5'
       },
       {
         rank: 2,
-        username: "GATHERING PREY",
-        subs: "啊啊实打实大苏打实",
-        createTime: "2020-1-2",
+        username: 'GATHERING PREY',
+        subs: '啊啊实打实大苏打实',
+        createTime: '2020-1-2'
       },
       {
         rank: 3,
-        username: "GATHERING PREY",
-        subs: "啊啊实打实大苏打实",
-        createTime: "2020-1-3",
-      },
+        username: 'GATHERING PREY',
+        subs: '啊啊实打实大苏打实',
+        createTime: '2020-1-3'
+      }
     ],
 
-    angle: "0deg",
+    angle: '0deg',
     Commentheight: 95,
     isshowall: false,
     isExpend: false,
@@ -69,10 +69,10 @@ export default class Shop extends PureComponent {
     //   fontValue: new Animated.Value(0),
     springValue: new Animated.Value(0),
     shopCarNum: 0,
-    jtTop: true,
+    jtTop: true
   };
   componentDidMount() {
-    if (Platform.OS === "android") {
+    if (Platform.OS === 'android') {
       UIManager.setLayoutAnimationEnabledExperimental &&
         UIManager.setLayoutAnimationEnabledExperimental(true);
     }
@@ -84,16 +84,16 @@ export default class Shop extends PureComponent {
         // spring,linear,easeInEaseOut,easeIn,easeOut,keyboard
         type: LayoutAnimation.Types.linear,
         // opacity,scaleXY 透明度，位移
-        property: LayoutAnimation.Properties.opacity,
+        property: LayoutAnimation.Properties.opacity
       },
       update: {
         // 更新时显示的动画
-        type: LayoutAnimation.Types.easeInEaseOut,
-      },
+        type: LayoutAnimation.Types.easeInEaseOut
+      }
     });
     if (!this.state.isshowall) {
       this.setState({
-        Commentheight: this.state.commentList.length * pxToDp(100),
+        Commentheight: this.state.commentList.length * pxToDp(100)
       });
       this.setState({ isshowall: true });
     } else {
@@ -109,22 +109,22 @@ export default class Shop extends PureComponent {
         // spring,linear,easeInEaseOut,easeIn,easeOut,keyboard
         type: LayoutAnimation.Types.linear,
         // opacity,scaleXY 透明度，位移
-        property: LayoutAnimation.Properties.opacity,
+        property: LayoutAnimation.Properties.opacity
       },
       update: {
         // 更新时显示的动画
-        type: LayoutAnimation.Types.easeInEaseOut,
-      },
+        type: LayoutAnimation.Types.easeInEaseOut
+      }
     });
     if (!this.state.isshowall) {
       this.setState({
-        imagHeight: this.state.commentList.length * pxToDp(100),
+        imagHeight: this.state.commentList.length * pxToDp(100)
       });
-      this.setState({ angle: "180deg" });
+      this.setState({ angle: '180deg' });
       this.setState({ isshowall: true });
     } else {
       this.setState({ imagHeight: 0 });
-      this.setState({ angle: "0deg" });
+      this.setState({ angle: '0deg' });
       this.setState({ isshowall: false });
     }
   };
@@ -140,17 +140,17 @@ export default class Shop extends PureComponent {
     );
   };
   BadgeValue = () => {
-    return <Text style={{ color: "#fcfcfc" }}>{this.state.shopCarNum}</Text>;
+    return <Text style={{ color: '#fcfcfc' }}>{this.state.shopCarNum}</Text>;
   };
 
   render() {
     const aheight = this.state.heightValue.interpolate({
       inputRange: [0, 0.25, 0.5, 0.75, 1],
-      outputRange: [25, 75, 90, 75, 25],
+      outputRange: [25, 75, 90, 75, 25]
     });
     const awidth = this.state.heightValue.interpolate({
       inputRange: [0, 0.25, 0.5, 0.75, 1],
-      outputRange: [160, 180, 200, 220, 240],
+      outputRange: [160, 180, 200, 220, 240]
     });
     /*const font = this.state.fontValue.interpolate({
    inputRange: [0, 0.5, 1],
@@ -158,11 +158,11 @@ export default class Shop extends PureComponent {
    });*/
 
     return (
-      <View style={{ backgroundColor: "transparent", position: "relative" }}>
+      <View style={{ backgroundColor: 'transparent', position: 'relative' }}>
         <View
           style={{
-            backgroundColor: "rgba(52,52,52,alpha)",
-            position: "absolute",
+            backgroundColor: 'rgba(52,52,52,alpha)',
+            position: 'absolute'
           }}
         >
           <SvgUri
@@ -185,9 +185,9 @@ export default class Shop extends PureComponent {
                 return (
                   <Image
                     style={{
-                      height: "100%",
+                      height: '100%',
                       width: ScreenWidth,
-                      borderRadius: 40,
+                      borderRadius: 40
                     }}
                     key={index}
                     source={{ uri: item }}
@@ -202,18 +202,18 @@ export default class Shop extends PureComponent {
               marginTop: pxToDp(30),
               borderBottomWidth: 0.8,
               width: pxToDp(350),
-              borderBottomColor: "gray",
+              borderBottomColor: 'gray'
             }}
           >
-            <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
               敦煌文化沙漏小夜灯
             </Text>
             <Text
               style={{
                 fontSize: 15,
                 marginTop: 10,
-                color: "#A0522D",
-                fontWeight: "bold",
+                color: '#A0522D',
+                fontWeight: 'bold'
               }}
             >
               ￥128.00
@@ -223,8 +223,8 @@ export default class Shop extends PureComponent {
                 fontSize: 12,
                 marginTop: 10,
                 marginBottom: pxToDp(20),
-                color: "#DAA520",
-                fontWeight: "bold",
+                color: '#DAA520',
+                fontWeight: 'bold'
               }}
             >
               正品保证·品牌授权·七日退换·商品包邮
@@ -236,11 +236,11 @@ export default class Shop extends PureComponent {
                 marginLeft: pxToDp(10),
                 marginTop: pxToDp(30),
                 width: pxToDp(350),
-                flexDirection: "row",
-                marginBottom: pxToDp(25),
+                flexDirection: 'row',
+                marginBottom: pxToDp(25)
               }}
             >
-              <Text style={{ fontSize: pxToDp(10), fontWeight: "bold" }}>
+              <Text style={{ fontSize: pxToDp(10), fontWeight: 'bold' }}>
                 设计细节
               </Text>
               <TouchableOpacity
@@ -253,7 +253,7 @@ export default class Shop extends PureComponent {
                   height="20"
                   style={{
                     marginLeft: pxToDp(250),
-                    top: this.state.jtTop ? pxToDp(8) : pxToDp(0),
+                    top: this.state.jtTop ? pxToDp(8) : pxToDp(0)
                   }}
                 />
               </TouchableOpacity>
@@ -264,7 +264,7 @@ export default class Shop extends PureComponent {
                 marginTop: pxToDp(20),
                 borderBottomWidth: 0.8,
                 width: pxToDp(350),
-                borderBottomColor: "gray",
+                borderBottomColor: 'gray'
               }}
             >
               {this.state.items2.map((item, index) => {
@@ -284,15 +284,15 @@ export default class Shop extends PureComponent {
                 marginLeft: pxToDp(10),
                 borderBottomWidth: 0.8,
                 width: pxToDp(350),
-                borderBottomColor: "gray",
+                borderBottomColor: 'gray'
               }}
             >
               <Text
                 style={{
                   fontSize: pxToDp(10),
-                  fontWeight: "bold",
+                  fontWeight: 'bold',
                   marginBottom: pxToDp(20),
-                  marginTop: pxToDp(20),
+                  marginTop: pxToDp(20)
                 }}
               >
                 商品规格
@@ -302,35 +302,35 @@ export default class Shop extends PureComponent {
               style={{
                 marginLeft: pxToDp(20),
                 marginTop: 0,
-                width: pxToDp(350),
+                width: pxToDp(350)
               }}
             >
-              <View style={{ flexDirection: "row" }}>
+              <View style={{ flexDirection: 'row' }}>
                 <Text
                   style={{
                     fontSize: 20,
-                    fontWeight: "bold",
+                    fontWeight: 'bold',
                     marginBottom: pxToDp(20),
-                    marginTop: pxToDp(20),
+                    marginTop: pxToDp(20)
                   }}
                 >
                   用户评价
                 </Text>
                 <TouchableOpacity
                   style={{
-                    position: "absolute",
+                    position: 'absolute',
                     right: pxToDp(10),
-                    top: pxToDp(20),
+                    top: pxToDp(20)
                   }}
                   onPress={this.showall}
                 >
                   <Text>
-                    {this.state.isshowall ? "收回 ＜" : "展开全部 ＞"}{" "}
+                    {this.state.isshowall ? '收回 ＜' : '展开全部 ＞'}{' '}
                   </Text>
                 </TouchableOpacity>
               </View>
               <View
-                style={{ height: this.state.Commentheight, overflow: "hidden" }}
+                style={{ height: this.state.Commentheight, overflow: 'hidden' }}
               >
                 <FlatList
                   style={{ marginRight: pxToDp(15) }}
@@ -343,13 +343,13 @@ export default class Shop extends PureComponent {
           </View>
         </ScrollView>
         <Animated.Image
-          source={require("../../../../res/6.jpg")}
+          source={require('../../../../res/6.jpg')}
           style={{
             width: pxToDp(20),
             height: pxToDp(20),
-            position: "absolute",
+            position: 'absolute',
             bottom: aheight,
-            right: awidth,
+            right: awidth
           }}
         />
 
@@ -357,41 +357,41 @@ export default class Shop extends PureComponent {
           style={{
             width: ScreenWidth,
             height: pxToDp(50),
-            backgroundColor: "#fff",
-            position: "absolute",
+            backgroundColor: '#fff',
+            position: 'absolute',
             top: ScreenHeight - pxToDp(10),
             borderTopWidth: 0.8,
-            borderTopColor: "gray",
-            justifyContent: "center",
+            borderTopColor: 'gray',
+            justifyContent: 'center'
           }}
         >
-          <View style={{ flexDirection: "row" }}>
-            <View style={{ flexDirection: "column", marginLeft: pxToDp(20) }}>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'column', marginLeft: pxToDp(20) }}>
               <TouchableOpacity>
                 <SvgUri svgXmlData={expandIcon} width="20" height="20" />
                 <Text>商城</Text>
               </TouchableOpacity>
             </View>
 
-            <View style={{ flexDirection: "column", marginLeft: pxToDp(20) }}>
+            <View style={{ flexDirection: 'column', marginLeft: pxToDp(20) }}>
               <TouchableOpacity>
                 <SvgUri svgXmlData={expandIcon} width="20" height="20" />
                 <Text>收藏</Text>
               </TouchableOpacity>
             </View>
 
-            <View style={{ flexDirection: "column", marginLeft: pxToDp(20) }}>
+            <View style={{ flexDirection: 'column', marginLeft: pxToDp(20) }}>
               <TouchableOpacity>
                 <SvgUri svgXmlData={expandIcon} width="20" height="20" />
                 <Badge
                   value={this.BadgeValue()}
                   status="error"
-                  containerStyle={{ position: "absolute", top: -4, right: -9 }}
+                  containerStyle={{ position: 'absolute', top: -4, right: -9 }}
                 />
                 <Text>购物车</Text>
               </TouchableOpacity>
             </View>
-            <View style={{ flexDirection: "row", left: pxToDp(60) }}>
+            <View style={{ flexDirection: 'row', left: pxToDp(60) }}>
               <TouchableOpacity
                 onPress={() => {
                   this.startAnimated();
@@ -399,27 +399,27 @@ export default class Shop extends PureComponent {
                 style={{
                   width: pxToDp(80),
                   height: pxToDp(40),
-                  backgroundColor: "#2e2e2e",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  backgroundColor: '#2e2e2e',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   borderBottomLeftRadius: 20,
-                  borderTopLeftRadius: 20,
+                  borderTopLeftRadius: 20
                 }}
               >
-                <Text style={{ color: "#fff" }}>加入购物车</Text>
+                <Text style={{ color: '#fff' }}>加入购物车</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={{
                   width: pxToDp(80),
                   height: pxToDp(40),
-                  backgroundColor: "#23a4c4",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  backgroundColor: '#23a4c4',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   borderBottomRightRadius: 20,
-                  borderTopRightRadius: 20,
+                  borderTopRightRadius: 20
                 }}
               >
-                <Text style={{ color: "#fff" }}>立即购买</Text>
+                <Text style={{ color: '#fff' }}>立即购买</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -434,7 +434,7 @@ export default class Shop extends PureComponent {
     this.setState({ shopCarNum: this.state.shopCarNum + 1 });
 
     this.setState({
-      number: this.state.number + 2,
+      number: this.state.number + 2
     });
     // Animated.sequence([
     Animated.parallel([
@@ -442,14 +442,14 @@ export default class Shop extends PureComponent {
         toValue: 1,
         duration: 800,
 
-        easing: Easing.linear, // 线性的渐变函数
+        easing: Easing.linear // 线性的渐变函数
       }),
       Animated.timing(this.state.heightValue, {
         toValue: 1,
         duration: 800,
 
-        easing: Easing.linear, // 线性的渐变函数
-      }),
+        easing: Easing.linear // 线性的渐变函数
+      })
       // ]),
       // Animated.timing(this.state.fontValue, {
       //     toValue: 1,
@@ -464,7 +464,7 @@ export default class Shop extends PureComponent {
     Animated.spring(this.state.springValue, {
       useNativeDriver: true,
       toValue: 1,
-      firction: 1,
+      firction: 1
     }).start();
   }
 }
@@ -472,9 +472,9 @@ export default class Shop extends PureComponent {
 const styles = StyleSheet.create({
   wrapper: {},
   slide1: {
-    width: "100%",
+    width: '100%',
     height: 300,
-    justifyContent: "center",
-    alignItems: "center",
-  },
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
