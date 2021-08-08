@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, DeviceEventEmitter } from 'react-native';
 import Otherbanner from './Otherbanner';
 import { Input } from 'react-native-elements';
 import { NavigationContext } from '@react-navigation/native';
@@ -15,13 +15,18 @@ export default class Signature extends Component {
       ownSay: ''
     };
   }
+  goback = () => {
+    DeviceEventEmitter.emit('ownSay', this.state.ownSay);
+    this.context.navigate('Ziliao', { ownSay: this.state.ownSay });
+  };
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#e2f4fe' }}>
         <Top
           icon1="arrow-back"
           title="个性签名"
-          rightCallback={() => this.context.navigate('Ziliao', this.state)}
+          rightTitle="保存"
+          rightCallback={this.goback}
         />
         <View>
           <Input
@@ -36,16 +41,16 @@ export default class Signature extends Component {
               textShadowColor: '#000'
             }}
             multiline={true}
-            onChangeText={(signature) => this.getNickName(signature)}
-            value={this.state}
+            onChangeText={(ownSay) => this.getNickName(ownSay)}
+            value={this.state.ownSay}
           />
         </View>
       </View>
     );
   }
-  getNickName(signature) {
+  getNickName(ownSay) {
     this.setState({
-      ownSay: signature
+      ownSay
     });
   }
 }

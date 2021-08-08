@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   Modal,
-  ToastAndroid
+  ToastAndroid,
+  DeviceEventEmitter
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { NavigationContext } from '@react-navigation/native';
@@ -22,6 +23,8 @@ import Top from '@components/common/top';
 import { connect } from 'react-redux';
 import requset from '../../../service';
 import * as URL from './constent';
+import { getUserInfoAction } from '../../first/home/store/actions';
+import changeImgSize from '@utils/changeImgSize';
 const typeArr = ['男', '女'];
 class Ziliao extends Component {
   static contextType = NavigationContext;
@@ -32,19 +35,38 @@ class Ziliao extends Component {
       showTypePop: false,
       modalVisible: false,
       birthday: '',
-      avatar_url: '',
+      avatar: '',
       nickName: '',
       ownSay: ''
     };
   }
   componentDidMount() {
-    console.log(this.props.route);
+    this.subscript = DeviceEventEmitter.addListener(
+      'ownSay',
+      this.refeshOwnSay
+    );
+    this.subscript2 = DeviceEventEmitter.addListener(
+      'nickName',
+      this.refeshnickName
+    );
 
-    const { ownSay, nickName, sex, birthday, avatar_url } =
-      this.props.route.params;
-    this.setState({ ownSay, nickName, sex, birthday, avatar_url });
+    const { ownSay, nickName, sex, birthday, avatar } = this.props.route.params;
+    this.setState({ ownSay, nickName, sex, birthday, avatar });
   }
-
+  componentWillUnmount() {
+    this.subscript.remove();
+    this.subscript2.remove();
+  }
+  refeshOwnSay = (ownSay) => {
+    this.setState({
+      ownSay
+    });
+  };
+  refeshnickName = (nickName) => {
+    this.setState({
+      nickName
+    });
+  };
   _openTypeDialog() {
     this.setState({ showTypePop: !this.state.showTypePop });
   }
@@ -93,6 +115,7 @@ class Ziliao extends Component {
     const sex = this.state.sex;
     const ownSay = this.state.ownSay;
     const birthday = this.state.birthday;
+    console.log(nickName, sex, birthday, ownSay);
     requset
       .patch({
         url: URL.GHANGE_USER_INFO,
@@ -103,7 +126,11 @@ class Ziliao extends Component {
       })
       .then((res) => {
         ToastAndroid.show('保存信息成功', ToastAndroid.SHORT);
-        this.props.navigate('Setting');
+        this.props.getUserInfoAction();
+      })
+      .then((ress) => {
+        DeviceEventEmitter.emit('valueChange');
+        this.context.navigate('Setting');
       });
   };
   render() {
@@ -133,7 +160,7 @@ class Ziliao extends Component {
                   backgroundColor: '#e2f4fe'
                 }}
                 source={{
-                  uri: this.state.avatar_url ? this.state.avatar_url : ''
+                  uri: changeImgSize(this.state.avatar, 'small')
                 }}
               />
             </TouchableOpacity>
@@ -270,7 +297,7 @@ class Ziliao extends Component {
               style={{ width: 300 }}
               androidMode="spinner"
               placeholder="设置生日"
-              date={birthday}
+              date={birthday.split(' ').shift()}
               minDate="1900-01-01"
               maxDate={currentDate}
               confirmBtnText="确定"
@@ -289,6 +316,7 @@ class Ziliao extends Component {
                 }
               }}
               onDateChange={(birthday) => {
+                console.log(birthday);
                 this.setState({ birthday });
               }}
             />
@@ -318,7 +346,6 @@ const s = StyleSheet.create({
   basic: {
     height: pxToDp(70),
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
     borderBottomColor: '#e2f4fe'
@@ -360,6 +387,9 @@ const s = StyleSheet.create({
     borderColor: '#000'
   }
 });
-export default connect((state) => ({
-  token: state.getIn(['LoginReducer', 'token'])
-}))(Ziliao);
+export default connect(
+  (state) => ({
+    token: state.getIn(['LoginReducer', 'token'])
+  }),
+  { getUserInfoAction }
+)(Ziliao);

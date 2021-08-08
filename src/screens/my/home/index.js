@@ -13,7 +13,7 @@ import Ionicons from 'react-native-vector-icons/FontAwesome';
 import List from '@components/common/list';
 import { NavigationContext } from '@react-navigation/native';
 import { connect } from 'react-redux';
-
+import changeImgSize from '@utils/changeImgSize';
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +21,8 @@ class Index extends Component {
   }
   static contextType = NavigationContext;
   render() {
+    const { fansCount, followCount, nickName, avatar } = this.props.userInfo;
+    console.log(avatar);
     return (
       <View>
         <Top title="戏痴" />
@@ -44,7 +46,9 @@ class Index extends Component {
                     borderRadius: pxToDp(30),
                     margin: pxToDp(10)
                   }}
-                  source={require('../../../res/4.jpg')}
+                  source={{
+                    uri: changeImgSize(avatar, 'small')
+                  }}
                 ></Image>
               </TouchableOpacity>
               <View
@@ -63,7 +67,7 @@ class Index extends Component {
                       fontWeight: 'bold'
                     }}
                   >
-                    百越庭
+                    {nickName}
                   </Text>
                 </View>
               </View>
@@ -124,7 +128,7 @@ class Index extends Component {
                       alignSelf: 'center'
                     }}
                   >
-                    3
+                    {followCount}
                   </Text>
                   <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>
                     关注
@@ -144,7 +148,7 @@ class Index extends Component {
                       alignSelf: 'center'
                     }}
                   >
-                    3
+                    {fansCount}
                   </Text>
                   <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>
                     粉丝
@@ -254,5 +258,5 @@ class Index extends Component {
   }
 }
 export default connect((state) => ({
-  token: state.getIn(['LoginReducer', 'token'])
+  userInfo: state.getIn(['homeReducer', 'userInfo'])
 }))(Index);

@@ -20,7 +20,8 @@ import ImageFade from '../../../component/ImageFade/index';
 import ActressView from '@components/common/actressview';
 import GenerView from '@components/common/generview';
 import { NavigationContext } from '@react-navigation/native';
-
+import { getUserInfoAction } from './store/actions';
+import { connect } from 'react-redux';
 const SLIDER_1_FIRST_ITEM = 1;
 
 class Index extends Component {
@@ -30,6 +31,10 @@ class Index extends Component {
       slider1ActiveSlide: SLIDER_1_FIRST_ITEM
     };
   }
+  componentDidMount() {
+    this.props.getUserInfoAction();
+  }
+
   static contextType = NavigationContext;
 
   _renderItem({ item, index }) {
@@ -324,4 +329,6 @@ class Index extends Component {
     );
   }
 }
-export default Index;
+export default connect((state) => ({}), {
+  getUserInfoAction
+})(Index);
