@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -62,33 +62,33 @@ class Index extends Component {
 const styles = StyleSheet.create({
   text1: {
     fontSize: pxToDp(20),
-    fontWeight: "bold",
-    marginLeft: pxToDp(10),
+    fontWeight: 'bold',
+    marginLeft: pxToDp(10)
   },
   botbox: {
-    flexDirection: "row",
-    borderBottomColor: "grey",
+    flexDirection: 'row',
+    borderBottomColor: 'grey',
     borderBottomWidth: pxToDp(0.5),
     margin: pxToDp(10),
-    height: pxToDp(130),
+    height: pxToDp(130)
   },
   text2: {
     fontSize: pxToDp(18),
-    fontWeight: "bold",
+    fontWeight: 'bold'
   },
   image: {
     height: pxToDp(120),
     width: pxToDp(120),
-    borderRadius: pxToDp(10),
+    borderRadius: pxToDp(10)
   },
   text3: {
     fontSize: pxToDp(14),
-    marginTop: pxToDp(5),
+    marginTop: pxToDp(5)
   },
   actionButtonIcon: {
     fontSize: 20,
     height: 22,
-    color: "white",
-  },
+    color: 'white'
+  }
 });
 export default Index;

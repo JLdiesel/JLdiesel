@@ -6,6 +6,7 @@ import Otherbanner from './Otherbanner'
 import { Input } from 'react-native-elements';
 import { NavigationContext } from '@react-navigation/native';
 import { pxToDp } from '../../../utils/styleKits';
+import Top from '@components/common/top'
 export default class Signature extends Component {
   static contextType = NavigationContext;
   constructor(props) {
@@ -17,12 +18,12 @@ export default class Signature extends Component {
   render() {
   
     return (
-      <View>
-        <Otherbanner
-          back="arrow-back"
+      <View style={{flex:1,backgroundColor:'#e2f4fe'}}>
+        <Top
+          icon1="arrow-back"
           title="个性签名"
-          share="确定"
-          rightCallback={() => this.context.navigate('Ziliao', this.state)}
+         
+          rightCallback={() => this.context.navigate('Ziliao',this.state)}
         />
         <View>
           <Input
