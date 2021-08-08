@@ -155,7 +155,7 @@ class Index extends Component {
           </View>
           {/* 猜你喜欢 */}
           <View>
-            <Text style={styles.text1}>他山之石</Text>
+            <Text style={styles.text1}>猜你喜欢</Text>
             <View style={{ flex: 1 }}>
               {this.state.data3.map((item, index) => (
                 <TouchableOpacity

@@ -18,58 +18,7 @@ class Index extends Component {
         //activeTab 当前激活索引
         return (
            
-            <View style={{flexDirection:'column'}}>
-            
-            <Top icon1='arrow-back' title="设置" />
-        
-            <View style={{height:pxToDp(300)}}>
-            <ImageBackground style={{width:'100%',height:pxToDp(150)}} source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}} />
-                <View>
-                <TouchableOpacity>
-                <Image source={{uri:'https://img0.baidu.com/it/u=3225163326,3627210682&fm=26&fmt=auto&gp=0.jpg'}} style={{width:pxToDp(90),height:pxToDp(90),borderRadius:pxToDp(50),margin:pxToDp(10)}}/>
-                 </TouchableOpacity>
-                 <Text style={{fontSize:pxToDp(20),top:pxToDp(0),left:pxToDp(10),width:pxToDp(150)}}numberOfLines={1}>aaa</Text>
-                </View>
-                <View style={{ flexDirection: 'row',position:'absolute',top:pxToDp(160),right:pxToDp(0)}}>
-                    <View style={{marginRight:pxToDp(55)}}>
-                        
-                    <TouchableOpacity style={{justifyContent:'center',alignItems:'center'}}>
-                        <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold'}}>17</Text>
-                        <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>粉丝</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{marginRight:pxToDp(55)}}>
-                        <TouchableOpacity style={{justifyContent:'center',alignItems:'center'}}>
-                        <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>99</Text>
-                        <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>关注</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{marginRight:pxToDp(10)}}>
-                       
-                    <TouchableOpacity style={{justifyContent:'center',alignItems:'center'}}>
-                        <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>188</Text>
-                        <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>获赞</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <TouchableOpacity 
-                   onPress={() => this.context.navigate("Ziliao")}
-                    style={{position:'absolute',top:pxToDp(50),borderRadius:pxToDp(5),right:pxToDp(10),width:pxToDp(200),height:pxToDp(40),justifyContent:'center',alignItems:'center',borderWidth:pxToDp(2),borderColor:'pink'}}>
-                        <Text style={{color:'pink',fontSize:pxToDp(15)}}>编辑资料</Text>
-                    </TouchableOpacity>
-                    
-                    </View>
-                   
-    
-                    <TouchableOpacity style={{position:'absolute',bottom:pxToDp(20),right:pxToDp(10)}}>
-                        <SvgUri svgXmlData={dianzan} width='15' height='15'/>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={{position:'absolute',bottom:pxToDp(-10),right:pxToDp(8)}}>
-                        <SvgUri svgXmlData={jubao} width='20' height='17'/>
-                    </TouchableOpacity>
-                    <View style={{position:'absolute',bottom:pxToDp(-10),left:pxToDp(10),width:'80%'}}>
-                    <Text style={{color:'#ccc',fontSize:15}} numberOfLines={1}>你所热爱的都是你的生活，蒙古上单：？？？？？？？</Text>
-                    </View>
-            </View>
+          
             <View
                 style={{
                     height: pxToDp(60), flexDirection: "row", paddingLeft: pxToDp(16),
@@ -92,7 +41,7 @@ class Index extends Component {
                 </TouchableOpacity>)}
             </View>
           
-        </View>
+        
         );
     }
 }
