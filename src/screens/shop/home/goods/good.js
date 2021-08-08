@@ -16,161 +16,65 @@ import Carousel from 'react-native-looped-carousel';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Swiper from '../../../../component/common/Swiper';
-
+import { getShopInfo } from '@service/shop';
+import { PureComponent } from 'react';
+import { EasyLoading, Loading } from '@utils/ezLoading';
 const WINDOW_WIDTH = Dimensions.get('window').width;
-const BASE_PADDING = 10;
 
-const renderCarousel = () => (
-  <Carousel style={{ width: WINDOW_WIDTH, height: WINDOW_WIDTH }}>
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: 'https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg'
-      }}
-    />
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: 'https://img30.360buyimg.com/imgzone/jfs/t1/185921/14/13299/64961/60e68717E994b4e11/f4293d93cc127341.jpg'
-      }}
-    />
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: 'https://img11.360buyimg.com/imgzone/jfs/t1/178143/10/13271/54708/60e68718E2e4aa44c/792cfcbe006f8bf4.jpg'
-      }}
-    />
-    <Image
-      style={{ flex: 1 }}
-      resizeMode="contain"
-      source={{
-        uri: 'https://img14.360buyimg.com/imgzone/jfs/t1/195337/32/12126/50736/60e6871aE1b2efc7e/7e5fc1a3aa875609.jpg'
-      }}
-    />
-  </Carousel>
-);
-
-class shopdetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 1,
-      //商品
-      products: [
-        {
-          id: 1,
-          text: '红色',
-          weight: '全套',
-          imgUri:
-            'https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg',
-          price: '119.99'
-        },
-        {
-          id: 2,
-          text: '粉色',
-          weight: '全套',
-          imgUri:
-            'https://img30.360buyimg.com/imgzone/jfs/t1/185921/14/13299/64961/60e68717E994b4e11/f4293d93cc127341.jpg',
-          price: '139.99'
-        },
-        {
-          id: 3,
-          text: '绿色',
-          weight: '全套',
-          imgUri:
-            'https://img11.360buyimg.com/imgzone/jfs/t1/178143/10/13271/54708/60e68718E2e4aa44c/792cfcbe006f8bf4.jpg',
-          price: '169.90'
-        },
-        {
-          id: 4,
-          text: '黄色',
-          weight: '全套',
-          imgUri:
-            'https://img12.360buyimg.com/imgzone/jfs/t1/186471/16/12270/114029/60e6871aE7719a6fe/8a034db53107b527.jpg',
-          price: '159.90'
-        }
-      ],
-      //尺码
-      Size: [
-        {
-          id: 1,
-          size: 'XS'
-        },
-        {
-          id: 2,
-          size: 'S'
-        },
-        {
-          id: 3,
-          size: 'M'
-        },
-        {
-          id: 4,
-          size: 'L'
-        },
-        {
-          id: 5,
-          size: 'XL'
-        },
-        {
-          id: 6,
-          size: 'XXL'
-        },
-        {
-          id: 7,
-          size: 'XXXL'
-        }
-      ],
-
-      shop: {
+class shopdetails extends PureComponent {
+  state = {
+    count: 1,
+    //商品
+    products: [],
+    //尺码
+    Size: [
+      {
         id: 1,
-        record: '花旦戏服',
-        nowprice: '166.90',
-        beforeprice: '199.99',
-        comment:
-          '花旦戏服戏剧服装越剧小姐戏服装女新款 白色 女披+水袖+裙子(+护领) ',
-        imgURL:
-          'https://img20.360buyimg.com/imgzone/jfs/t1/172012/34/18776/85309/60e68716E853b5d5d/f061df06cb1786b6.jpg'
+        size: 'XS'
       },
-      Select: false,
-      activeTab: 1,
-      guanbi: false,
-      shopimg: [
-        {
-          id: 1,
-          imguri:
-            'https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg'
-        },
-        {
-          id: 1,
-          imguri:
-            'https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg'
-        },
-        {
-          id: 1,
-          imguri:
-            'https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg'
-        },
-        {
-          id: 1,
-          imguri:
-            'https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg'
-        }
-      ]
-    };
-  }
+      {
+        id: 2,
+        size: 'S'
+      },
+      {
+        id: 3,
+        size: 'M'
+      },
+      {
+        id: 4,
+        size: 'L'
+      },
+      {
+        id: 5,
+        size: 'XL'
+      },
+      {
+        id: 6,
+        size: 'XXL'
+      },
+      {
+        id: 7,
+        size: 'XXXL'
+      }
+    ],
+
+    shop: {},
+    Select: false,
+    activeTab: 0,
+    guanbi: false,
+    shopimg: [],
+    acitveId: 0
+  };
+
   renderCarousel = () => (
     <Carousel style={{ width: WINDOW_WIDTH, height: WINDOW_WIDTH }}>
-      {this.state.shopimg.map((item, id) => (
+      {this.state.shopimg.map((item) => (
         <Image
-          key={id}
+          key={item.id}
           style={{ flex: 1 }}
           resizeMode="contain"
           source={{
-            uri: item.imguri
+            uri: item.imgurl
           }}
         />
       ))}
@@ -207,55 +111,53 @@ class shopdetails extends Component {
     }
   };
 
-  changeTab = (index) => {
-    this.setState({ activeTab: index });
+  changeTab = (index, id) => {
+    console.log(id);
+    this.setState({ activeTab: index, acitveId: id });
   };
   static contextType = NavigationContext;
   changeSizeTab = (index) => {
     this.setState({ activeSizeTab: index });
   };
-
+  componentDidMount() {
+    const id = this.props.route.params;
+    EasyLoading.show('loading');
+    return getShopInfo(id)
+      .then((res) => {
+        this.setState({
+          shop: { ...res.shopInner },
+          shopimg: [...res.shopinnerimages],
+          products: [...res.shopcarimages]
+        });
+      })
+      .then(() => {
+        EasyLoading.dismiss();
+        console.log(123);
+      });
+  }
+  //
   render() {
     const { count, tabs, activeTab, activeSizeTab } = this.state;
-    console.log(activeTab);
-    console.log(activeSizeTab);
     return (
       <View style={{ flex: 1, backgroundColor: '#ecf6fc' }}>
         {/* 顶部导航 */}
         <Top icon1="arrow-back" title="猜你喜欢" />
-
+        <Loading color="#468cd3" />
         <ScrollView
           style={{
-            flex: 1,
-            paddingBottom: pxToDp(40)
+            flex: 1
           }}
         >
           {/* 商品图片 */}
 
           <View style={{ alignItems: 'center', marginTop: pxToDp(20) }}>
-            <Lightbox
-              springConfig={{ tension: 15, friction: 7 }}
-              swipeToDismiss={true}
-              renderContent={this.renderCarousel}
-            >
-              {/* <Image
-              style={{
-                width: pxToDp(230),
-                height: pxToDp(200),
-                borderRadius: pxToDp(5),
-              }}
-              source={{
-                uri: "https://img20.360buyimg.com/imgzone/jfs/t1/172012/34/18776/85309/60e68716E853b5d5d/f061df06cb1786b6.jpg",
-              }}
-            /> */}
-              <Swiper />
-            </Lightbox>
+            <Swiper />
           </View>
 
           {/* 品名 价格 */}
           <View style={{ alignItems: 'center', marginTop: pxToDp(20) }}>
             <Text style={{ fontSize: pxToDp(22), fontWeight: 'bold' }}>
-              {this.state.shop.record}
+              {this.state.shop.title}
             </Text>
             <View
               style={{
@@ -265,7 +167,10 @@ class shopdetails extends Component {
               }}
             >
               <Text style={{ fontSize: pxToDp(20), fontWeight: 'bold' }}>
-                ￥{this.state.shop.nowprice}
+                ￥
+                {parseInt(
+                  this.state.shop.price ? this.state.shop.price * 0.8 : 0
+                )}
               </Text>
               <Text
                 style={{
@@ -274,7 +179,7 @@ class shopdetails extends Component {
                   marginLeft: pxToDp(10)
                 }}
               >
-                ￥{this.state.shop.beforeprice}
+                ￥{parseInt(this.state.shop.price ? this.state.shop.price : 0)}
               </Text>
             </View>
           </View>
@@ -288,7 +193,7 @@ class shopdetails extends Component {
               marginTop: pxToDp(15)
             }}
           >
-            <Text>{this.state.shop.comment}</Text>
+            <Text>{this.state.shop.inner}</Text>
           </View>
 
           {/* 商品详情 */}
@@ -302,7 +207,7 @@ class shopdetails extends Component {
                     margin: pxToDp(12),
                     borderRadius: pxToDp(8)
                   }}
-                  source={{ uri: item.imgUri }}
+                  source={{ uri: item.img }}
                 />
               </View>
             ))}
@@ -313,12 +218,12 @@ class shopdetails extends Component {
           ref={(ref) => {
             this.Scrollable = ref;
           }}
-          height={650}
+          height={600}
           closeOnDragDowncustomStyles={{
             container: { borderTopLeftRadius: 10, borderTopRightRadius: 10 }
           }}
         >
-          <View>
+          <ScrollView>
             {/* 标题 */}
             <View
               style={{
@@ -326,19 +231,10 @@ class shopdetails extends Component {
                 flexDirection: 'row'
               }}
             >
-              {/*  <Image
-                style={{
-                  width: pxToDp(60),
-                  height: pxToDp(60),
-                  margin: pxToDp(10),
-                  borderRadius: 8,
-                }}
-                source={{ uri: this.state.products[activeTab].imgUri }}
-              /> */}
               <Lightbox
                 springConfig={{ tension: 15, friction: 7 }}
                 swipeToDismiss={true}
-                renderContent={renderCarousel}
+                renderContent={this.renderCarousel}
               >
                 <Image
                   style={{
@@ -348,7 +244,7 @@ class shopdetails extends Component {
                     borderRadius: pxToDp(8)
                   }}
                   source={{
-                    uri: this.state.products[activeTab].imgUri
+                    uri: this.state.products[activeTab]?.img
                   }}
                 />
               </Lightbox>
@@ -361,7 +257,7 @@ class shopdetails extends Component {
               >
                 <View style={{ flexDirection: 'row' }}>
                   <Text style={{ fontSize: pxToDp(18), marginTop: pxToDp(10) }}>
-                    ￥{this.state.products[activeTab].price}
+                    ￥{this.state.products[activeTab]?.price}
                   </Text>
                 </View>
                 <TouchableOpacity onPress={() => this.Scrollable.close()}>
@@ -448,7 +344,9 @@ class shopdetails extends Component {
               {this.state.products.map((item, index) => (
                 <TouchableOpacity
                   key={item.id}
-                  onPress={() => this.changeTab(index)}
+                  onPress={() => {
+                    this.changeTab(index, item.id);
+                  }}
                   style={{
                     alignItems: 'center',
                     flexDirection: 'row',
@@ -471,7 +369,7 @@ class shopdetails extends Component {
                         height: pxToDp(100),
                         borderRadius: pxToDp(8)
                       }}
-                      source={{ uri: item.imgUri }}
+                      source={{ uri: item.img }}
                     />
                     <Text
                       style={{
@@ -481,15 +379,15 @@ class shopdetails extends Component {
                         marginBottom: pxToDp(5)
                       }}
                     >
-                      {item.text}
+                      {item.color}
                     </Text>
                   </View>
                 </TouchableOpacity>
               ))}
             </View>
-          </View>
+          </ScrollView>
           {/* 购买数量 */}
-          <View style={{ height: pxToDp(40) }}>
+          <View style={{ height: pxToDp(40), marginBottom: pxToDp(50) }}>
             <View
               style={{
                 margin: pxToDp(13),
@@ -564,7 +462,6 @@ class shopdetails extends Component {
         {/* 购买按钮 */}
         <View
           style={{
-            flexDirection: 'row',
             justifyContent: 'space-evenly'
           }}
         >
@@ -586,52 +483,22 @@ class shopdetails extends Component {
             onPress={() => this.Scrollable.open()}
             // onPress={() => this.context.navigate("Myorder")}
             style={{
+              position: 'absolute',
+              bottom: 0,
+              backgroundColor: '#468cd3',
               width: pxToDp(320),
               height: pxToDp(40),
-              borderRadius: pxToDp(20),
-              justifyContent: 'center',
+              borderRadius: pxToDp(40),
               alignItems: 'center',
-              marginTop: pxToDp(10),
-              marginBottom: pxToDp(10),
-              backgroundColor: '#468cd3'
+              alignSelf: 'center',
+              justifyContent: 'center',
+              marginBottom: pxToDp(5)
             }}
           >
             <Text>立即购买</Text>
           </TouchableOpacity>
         </View>
       </View>
-    );
-  }
-  decrease() {
-    // 单击减少
-    let newValue = this.props.defaultValue - this.props.step;
-    if (newValue < this.props.min) {
-      newValue = this.props.min;
-    }
-    this.setState(
-      {
-        currentNumber: newValue
-      },
-      () => {
-        this.onChange(newValue);
-      }
-    );
-  }
-
-  increase() {
-    // 单击增加
-    let newValue = this.props.defaultValue + this.props.step;
-
-    if (newValue > this.props.max) {
-      newValue = this.props.max;
-    }
-    this.setState(
-      {
-        currentNumber: newValue
-      },
-      () => {
-        this.onChange(newValue);
-      }
     );
   }
 }

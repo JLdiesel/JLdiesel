@@ -7,44 +7,23 @@ import {
   StyleSheet,
   ScrollView
 } from 'react-native';
+
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
 import Swiper from 'react-native-swiper';
 import { NavigationContext } from '@react-navigation/native';
 import Maylike from './components/maylike';
+import { getShopList } from '@service/shop';
 class Index extends Component {
   state = {
-    ocard: [
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服租赁1',
-        price: '￥58.0',
-        number: '8人购买'
-      },
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服租赁2',
-        price: '￥58.0',
-        number: '8人购买'
-      },
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服租赁3',
-        price: '￥58.0',
-        number: '8人购买'
-      },
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服赁4',
-        price: '￥58.0',
-        number: '8人购买'
-      }
-    ]
+    arr: []
   };
+  componentDidMount() {
+    getShopList(0, 5).then((res) => {
+      console.log(res);
+      this.setState({ arr: res });
+    });
+  }
   static contextType = NavigationContext;
   render() {
     return (
@@ -150,13 +129,14 @@ class Index extends Component {
               flexDirection: 'row'
             }}
           >
-            {this.state.ocard.map((item, id) => (
+            {this.state.arr.map((item) => (
               <Maylike
-                key={id}
-                URL={item.picture}
-                name={item.name}
-                number={item.number}
+                key={item.id}
+                imguri={item.imguri}
+                name={item.title}
+                number={item.sellnum}
                 price={item.price}
+                id={item.id}
               />
             ))}
           </View>
