@@ -20,10 +20,7 @@ class index extends Component {
         const { videoHeight} = this.state;
         return (
             <View>
-                <View style={{ height: videoHeight, width: '100%', backgroundColor: 'red' }}>
-                    <VideoPlayScreen onIt={this.onIt} />
-                    {/* <Button onPress={()=>this.onIt()} title='111'></Button> */}
-                </View>
+            
                 <View>
                     <ImageBackground
                         style={{
@@ -45,9 +42,7 @@ class index extends Component {
                                 style={{ color: "black", fontSize: activeTab === i ? pxToDp(20) : pxToDp(18), fontWeight: activeTab === i ? 'bold' : 'normal' }}
                             >{v}</Text>
                         </TouchableOpacity>)}
-                        {/* <View style={{ height: pxToDp(40), width: pxToDp(40), marginRight:pxToDp(-10) ,justifyContent:'center',alignItems:'center',flex:1}}>
-          <Image style={{width:pxToDp(30),height:pxToDp(30)}} source={require('../../../../images/分类(1).png')}></Image>
-        </View> */}
+                    
                     </ImageBackground>
                 </View>
             </View>

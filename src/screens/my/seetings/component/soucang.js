@@ -17,12 +17,14 @@ class Index extends Component {
           
             <ScrollView style={{}}> 
                  <View style={{flexDirection:'row',flexWrap:'wrap'}}>
-                 {this.state.book.map(item=>(
-                     <View  key={item.bookname}  style={{width:pxToDp(110),marginTop:pxToDp(10),marginLeft:pxToDp(10),backgroundColor:'#ccc',borderRadius:pxToDp(10),overflow:'hidden'}}>
-                     <Image source={{uri:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'}} style={{width:'100%',height:pxToDp(150)}}/>
-                     <Text style={{alignSelf:'center',marginLeft:pxToDp(10)}}>{item.bookname}</Text>
-                     <Text style={{alignSelf:'center',marginLeft:pxToDp(10)}}>{item.date}</Text>
-                 </View>  
+                {this.props.soucang.map((item,scid)=>(
+                    <View  key={scid}  style={{width:pxToDp(110),marginTop:pxToDp(10),marginLeft:pxToDp(10),backgroundColor:'#ccc',borderRadius:pxToDp(10),overflow:'hidden'}}>
+                        <TouchableOpacity>
+                    <Image source={{uri:item.scimg}} style={{width:'100%',height:pxToDp(150)}}/>
+                    </TouchableOpacity>
+                        <Text style={{alignSelf:'center',marginLeft:pxToDp(10),fontSize:15}}>{item.bookname}</Text>
+                        <Text style={{alignSelf:'center',marginLeft:pxToDp(10),fontSize:10}}>{item.date}</Text>
+                </View>  
                  ))}
                 </View>
             </ScrollView>

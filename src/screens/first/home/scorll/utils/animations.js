@@ -17,7 +17,8 @@ function animatedStyles1 (index, animatedValue, carouselProps) {
         opacity: animatedValue.interpolate({
             inputRange: [2, 3],
             outputRange: [1, 0],
-            extrapolate: 'clamp'
+            extrapolate: 'clamp',
+            user
         }),
         transform: [{
             rotate: animatedValue.interpolate({
@@ -58,6 +59,7 @@ function animatedStyles2 (index, animatedValue, carouselProps) {
         opacity: animatedValue.interpolate({
             inputRange: [-1, 0, 1, 2],
             outputRange: [0.75, 1, 0.6, 0.4]
+        
         }),
         transform: [{
             rotate: animatedValue.interpolate({
