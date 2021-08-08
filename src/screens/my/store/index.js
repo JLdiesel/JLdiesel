@@ -1,3 +1,3 @@
 import LoginReducer from '../Login/store/reducers';
-
-export { LoginReducer };
+import SettingReducer from '../seetings/store';
+export { LoginReducer, SettingReducer };

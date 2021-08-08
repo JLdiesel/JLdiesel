@@ -24,6 +24,7 @@ import { connect } from 'react-redux';
 import requset from '../../../service';
 import * as URL from './constent';
 import { getUserInfoAction } from '../../first/home/store/actions';
+import { changeAvatar } from './store/actions';
 import changeImgSize from '@utils/changeImgSize';
 const typeArr = ['男', '女'];
 class Ziliao extends Component {
@@ -99,6 +100,7 @@ class Ziliao extends Component {
         }
       })
       .then((res) => {
+        this.props.changeAvatar(pickerResult.uri);
         ToastAndroid.show(res, ToastAndroid.SHORT);
       })
       .catch((err) => {
@@ -114,7 +116,7 @@ class Ziliao extends Component {
     const sex = this.state.sex;
     const ownSay = this.state.ownSay;
     const birthday = this.state.birthday;
-    console.log(nickName, sex, birthday, ownSay);
+
     requset
       .patch({
         url: URL.GHANGE_USER_INFO,
@@ -159,7 +161,9 @@ class Ziliao extends Component {
                   backgroundColor: '#e2f4fe'
                 }}
                 source={{
-                  uri: changeImgSize(this.state.avatar)
+                  uri: this.props.avatar
+                    ? this.props.avatar
+                    : changeImgSize(this.state.avatar, 'small')
                 }}
               />
             </TouchableOpacity>
@@ -388,7 +392,8 @@ const s = StyleSheet.create({
 });
 export default connect(
   (state) => ({
-    token: state.getIn(['LoginReducer', 'token'])
+    token: state.getIn(['LoginReducer', 'token']),
+    avatar: state.getIn(['SettingReducer', 'avatar'])
   }),
-  { getUserInfoAction }
+  { getUserInfoAction, changeAvatar }
 )(Ziliao);

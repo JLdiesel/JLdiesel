@@ -29,10 +29,12 @@ class Index extends Component {
   changeAvatar = (avatar) => {
     this.setState({ avatar });
   };
+  componentWillUnmount() {
+    this.subscript.remove();
+  }
   static contextType = NavigationContext;
   render() {
     const { fansCount, followCount, nickName, avatar } = this.props.userInfo;
-    console.log(avatar);
     return (
       <View>
         <Top title="戏痴" />
@@ -57,7 +59,9 @@ class Index extends Component {
                     margin: pxToDp(10)
                   }}
                   source={{
-                    uri: changeImgSize(avatar)
+                    uri: this.props.avatar
+                      ? this.props.avatar
+                      : changeImgSize(avatar, 'small')
                   }}
                 ></Image>
               </TouchableOpacity>
@@ -268,5 +272,6 @@ class Index extends Component {
   }
 }
 export default connect((state) => ({
-  userInfo: state.getIn(['homeReducer', 'userInfo'])
+  userInfo: state.getIn(['homeReducer', 'userInfo']),
+  avatar: state.getIn(['SettingReducer', 'avatar'])
 }))(Index);

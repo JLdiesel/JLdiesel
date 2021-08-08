@@ -49,14 +49,18 @@ class Index extends Component {
           <ImageBackground
             style={{ width: '100%', height: pxToDp(150) }}
             source={{
-              uri: changeImgSize(avatar)
+              uri: this.props.avatar
+                ? this.props.avatar
+                : changeImgSize(avatar, 'small')
             }}
           />
           <View>
             <TouchableOpacity>
               <Image
                 source={{
-                  uri: changeImgSize(avatar)
+                  uri: this.props.avatar
+                    ? this.props.avatar
+                    : changeImgSize(avatar, 'small')
                 }}
                 style={{
                   width: pxToDp(90),
@@ -212,5 +216,6 @@ class Index extends Component {
 }
 
 export default connect((state) => ({
-  userInfo: state.getIn(['homeReducer', 'userInfo'])
+  userInfo: state.getIn(['homeReducer', 'userInfo']),
+  avatar: state.getIn(['SettingReducer', 'avatar'])
 }))(Index);
