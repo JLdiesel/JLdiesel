@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -152,7 +152,7 @@ class Index extends Component {
         <ScrollView style={{ marginBottom: pxToDp(60) }}>
           {/*戏服体验馆 */}
           <View style={{ borderRadius: pxToDp(10) }}>
-            <TouchableOpacity onPress={() => this.context.navigate("Change")}>
+            <TouchableOpacity onPress={() => this.context.navigate('Change')}>
               <View
                 style={{
                   borderRadius: pxToDp(10),
@@ -160,56 +160,56 @@ class Index extends Component {
                   width: pxToDp(355),
                   borderRadius: pxToDp(10),
                   margin: pxToDp(10),
-                  backgroundColor: "rgba(255,255,255,0.5)",
+                  backgroundColor: 'rgba(255,255,255,0.5)'
                 }}
               >
                 <Text
                   style={{
                     fontSize: pxToDp(25),
                     marginTop: pxToDp(20),
-                    alignSelf: "center",
+                    alignSelf: 'center'
                   }}
                 >
                   戏服体验馆
                 </Text>
                 <View
                   style={{
-                    flexDirection: "row",
-                    justifyContent: "space-around",
-                    marginTop: pxToDp(30),
+                    flexDirection: 'row',
+                    justifyContent: 'space-around',
+                    marginTop: pxToDp(30)
                   }}
                 >
                   <Image
                     style={{
                       height: pxToDp(60),
                       width: pxToDp(60),
-                      borderRadius: pxToDp(30),
+                      borderRadius: pxToDp(30)
                     }}
-                    source={require("../../../res/performer/1.jpg")}
+                    source={require('../../../res/performer/1.jpg')}
                   />
                   <Image
                     style={{
                       height: pxToDp(60),
                       width: pxToDp(60),
-                      borderRadius: pxToDp(30),
+                      borderRadius: pxToDp(30)
                     }}
-                    source={require("../../../res/performer/2.jpg")}
+                    source={require('../../../res/performer/2.jpg')}
                   />
                   <Image
                     style={{
                       height: pxToDp(60),
                       width: pxToDp(60),
-                      borderRadius: pxToDp(30),
+                      borderRadius: pxToDp(30)
                     }}
-                    source={require("../../../res/performer/3.jpg")}
+                    source={require('../../../res/performer/3.jpg')}
                   />
                   <Image
                     style={{
                       height: pxToDp(60),
                       width: pxToDp(60),
-                      borderRadius: pxToDp(30),
+                      borderRadius: pxToDp(30)
                     }}
-                    source={require("../../../res/performer/4.jpg")}
+                    source={require('../../../res/performer/4.jpg')}
                   />
                 </View>
               </View>
@@ -217,10 +217,10 @@ class Index extends Component {
           </View>
           <View
             style={{
-              flexDirection: "row",
-              justifyContent: "space-around",
+              flexDirection: 'row',
+              justifyContent: 'space-around',
               marginLeft: pxToDp(30),
-              marginRight: pxToDp(30),
+              marginRight: pxToDp(30)
             }}
           >
             <TouchableOpacity onPress={() => {
@@ -232,15 +232,15 @@ class Index extends Component {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.context.navigate("Scriptlibrary")}
+              onPress={() => this.context.navigate('Scriptlibrary')}
             >
-              <View style={{ alignItems: "center" }}>
+              <View style={{ alignItems: 'center' }}>
                 <Ionicons name="layers-outline" size={28} color="#468CD3" />
                 <Text>剧本</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity>
-              <View style={{ alignItems: "center" }}>
+              <View style={{ alignItems: 'center' }}>
                 <Ionicons name="md-logo-octocat" size={28} color="#468CD3" />
                 <Text>教程</Text>
               </View>
@@ -253,26 +253,26 @@ class Index extends Component {
                 fontSize: pxToDp(18),
                 margin: pxToDp(10),
                 marginLeft: pxToDp(0),
-                color: "#468CD3",
-                fontWeight: "bold",
+                color: '#468CD3',
+                fontWeight: 'bold'
               }}
             >
               单人练唱
             </Text>
-            <TouchableOpacity onPress={() => this.context.navigate("Study")}>
+            <TouchableOpacity onPress={() => this.context.navigate('Study')}>
               <View
                 style={{
                   height: pxToDp(130),
                   width: pxToDp(355),
                   borderRadius: pxToDp(10),
-                  backgroundColor: "rgba(255,255,255,0.5)",
+                  backgroundColor: 'rgba(255,255,255,0.5)'
                 }}
               >
                 <Text
                   style={{
                     fontSize: pxToDp(25),
                     marginTop: pxToDp(43),
-                    alignSelf: "center",
+                    alignSelf: 'center'
                   }}
                 >
                   单人练唱
@@ -408,33 +408,33 @@ class Index extends Component {
               style={{
                 fontSize: pxToDp(18),
                 margin: pxToDp(10),
-                color: "#468CD3",
-                fontWeight: "bold",
+                color: '#468CD3',
+                fontWeight: 'bold'
               }}
             >
               剧本推荐
             </Text>
             <View
               style={{
-                flexDirection: "row",
-                borderBottomColor: "grey",
+                flexDirection: 'row',
+                borderBottomColor: 'grey',
                 borderBottomWidth: pxToDp(0.5),
                 margin: pxToDp(10),
-                height: pxToDp(110),
+                height: pxToDp(110)
               }}
             >
-              <TouchableOpacity onPress={() => this.context.navigate("Drama")}>
+              <TouchableOpacity onPress={() => this.context.navigate('Drama')}>
                 <Image
                   style={{
                     height: pxToDp(100),
                     width: pxToDp(100),
-                    borderRadius: pxToDp(10),
+                    borderRadius: pxToDp(10)
                   }}
-                  source={require("../../../res/play/1.jpg")}
+                  source={require('../../../res/play/1.jpg')}
                 />
               </TouchableOpacity>
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                <Text style={{ fontSize: pxToDp(18), fontWeight: "bold" }}>
+                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
                   追鱼 书馆
                 </Text>
                 <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>
@@ -444,23 +444,23 @@ class Index extends Component {
             </View>
             <View
               style={{
-                flexDirection: "row",
-                borderBottomColor: "grey",
+                flexDirection: 'row',
+                borderBottomColor: 'grey',
                 borderBottomWidth: pxToDp(0.5),
                 margin: pxToDp(10),
-                height: pxToDp(110),
+                height: pxToDp(110)
               }}
             >
               <Image
                 style={{
                   height: pxToDp(100),
                   width: pxToDp(100),
-                  borderRadius: pxToDp(10),
+                  borderRadius: pxToDp(10)
                 }}
-                source={require("../../../res/play/2.jpg")}
+                source={require('../../../res/play/2.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                <Text style={{ fontSize: pxToDp(18), fontWeight: "bold" }}>
+                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
                   周仁哭坟
                 </Text>
                 <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>
@@ -470,23 +470,23 @@ class Index extends Component {
             </View>
             <View
               style={{
-                flexDirection: "row",
-                borderBottomColor: "grey",
+                flexDirection: 'row',
+                borderBottomColor: 'grey',
                 borderBottomWidth: pxToDp(0.5),
                 margin: pxToDp(10),
-                height: pxToDp(110),
+                height: pxToDp(110)
               }}
             >
               <Image
                 style={{
                   height: pxToDp(100),
                   width: pxToDp(100),
-                  borderRadius: pxToDp(10),
+                  borderRadius: pxToDp(10)
                 }}
-                source={require("../../../res/play/3.jpg")}
+                source={require('../../../res/play/3.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
-                <Text style={{ fontSize: pxToDp(18), fontWeight: "bold" }}>
+                <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
                   梁祝 十八相送
                 </Text>
                 <Text style={{ fontSize: pxToDp(14), marginTop: pxToDp(15) }}>

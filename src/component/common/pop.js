@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { Image } from "react-native";
-import Model from "./Modal";
-import { TouchableOpacity } from "react-native";
+import React, { Component } from 'react';
+import { Image } from 'react-native';
+import Model from './Modal';
+import { TouchableOpacity } from 'react-native';
 import {
   Button,
   Text,
   View,
   StyleSheet,
   ScrollView,
-  ImageBackground,
-} from "react-native";
-import { pxToDp } from "@utils/styleKits";
+  ImageBackground
+} from 'react-native';
+import { pxToDp } from '@utils/styleKits';
 
 // import React, { Component } from 'react';
 
@@ -19,7 +19,7 @@ class index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalVisible: false,
+      isModalVisible: false
     };
   }
   // <Zujian arr={}/>
@@ -36,13 +36,13 @@ class index extends Component {
           key={index}
           style={{
             height: pxToDp(150),
-            justifyContent: "center",
-            marginLeft: pxToDp(12),
+            justifyContent: 'center',
+            marginLeft: pxToDp(12)
           }}
         >
           {/* <Button title="我打开了" onPress={toggleModal} /> */}
           <TouchableOpacity
-            style={{ justifyContent: "center", alignItems: "center" }}
+            style={{ justifyContent: 'center', alignItems: 'center' }}
             onPress={this.toggleModal}
           >
             <View>
@@ -53,16 +53,16 @@ class index extends Component {
               >
                 <View
                   style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: pxToDp(150),
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: pxToDp(150)
                   }}
                 >
                   <Text
                     style={{
                       fontSize: pxToDp(18),
-                      alignItems: "center",
-                      justifyContent: "center",
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
                   >
                     {item.teaname}
@@ -86,30 +86,30 @@ export default index;
 
 const styles = StyleSheet.create({
   modal: {
-    justifyContent: "flex-end",
-    margin: 0,
+    justifyContent: 'flex-end',
+    margin: 0
   },
   scrollableModal: {
-    height: pxToDp(300),
+    height: pxToDp(300)
   },
   scrollableModalContent1: {
     height: pxToDp(200),
-    backgroundColor: "#87BBE0",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#87BBE0',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   scrollableModalText1: {
     fontSize: pxToDp(20),
-    color: "white",
+    color: 'white'
   },
   scrollableModalContent2: {
     height: pxToDp(200),
-    backgroundColor: "#A9DCD3",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#A9DCD3',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   scrollableModalText2: {
     fontSize: pxToDp(20),
-    color: "white",
-  },
+    color: 'white'
+  }
 });

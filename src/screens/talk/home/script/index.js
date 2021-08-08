@@ -1,20 +1,20 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   View,
   Text,
   Image,
   StyleSheet,
   ScrollView,
-  TouchableOpacity,
-} from "react-native";
-import { pxToDp } from "@utils/styleKits";
-import { NavigationContext } from "@react-navigation/native";
-import { FAB } from "react-native-elements";
+  TouchableOpacity
+} from 'react-native';
+import { pxToDp } from '@utils/styleKits';
+import { NavigationContext } from '@react-navigation/native';
+import { FAB } from 'react-native-elements';
 
 class Index extends Component {
   constructor(props) {
     super(props);
-      this.state = {};
+    this.state = {};
   }
   static contextType = NavigationContext;
   render() {
@@ -24,12 +24,12 @@ class Index extends Component {
           <View>
             <Text style={styles.text1}>他山之石</Text>
             <TouchableOpacity
-              onPress={() => this.context.navigate("Screenpaly")}
+              onPress={() => this.context.navigate('Screenpaly')}
               style={styles.botbox}
             >
               <Image
                 style={styles.image}
-                source={require("../../../../res/play/1.jpg")}
+                source={require('../../../../res/play/1.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
                 <Text style={styles.text2}>追鱼</Text>
@@ -41,7 +41,7 @@ class Index extends Component {
             <TouchableOpacity style={styles.botbox}>
               <Image
                 style={styles.image}
-                source={require("../../../../res/play/2.jpg")}
+                source={require('../../../../res/play/2.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
                 <Text style={styles.text2}>周仁哭坟</Text>
@@ -53,7 +53,7 @@ class Index extends Component {
             <TouchableOpacity style={styles.botbox}>
               <Image
                 style={styles.image}
-                source={require("../../../../res/play/3.jpg")}
+                source={require('../../../../res/play/3.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
                 <Text style={styles.text2}>梁祝</Text>
@@ -68,7 +68,7 @@ class Index extends Component {
             <TouchableOpacity style={styles.botbox}>
               <Image
                 style={styles.image}
-                source={require("../../../../res/play/1.jpg")}
+                source={require('../../../../res/play/1.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
                 <Text style={styles.text2}>追鱼</Text>
@@ -80,7 +80,7 @@ class Index extends Component {
             <TouchableOpacity style={styles.botbox}>
               <Image
                 style={styles.image}
-                source={require("../../../../res/play/2.jpg")}
+                source={require('../../../../res/play/2.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
                 <Text style={styles.text2}>周仁哭坟</Text>
@@ -92,7 +92,7 @@ class Index extends Component {
             <TouchableOpacity style={styles.botbox}>
               <Image
                 style={styles.image}
-                source={require("../../../../res/play/3.jpg")}
+                source={require('../../../../res/play/3.jpg')}
               />
               <View style={{ marginLeft: pxToDp(10), width: pxToDp(230) }}>
                 <Text style={styles.text2}>梁祝</Text>
@@ -107,7 +107,7 @@ class Index extends Component {
           size="large"
           placement="right"
           color="#B0C4DE"
-          onPress={() => this.context.navigate("Create")}
+          onPress={() => this.context.navigate('Create')}
         />
       </View>
     );
@@ -116,33 +116,33 @@ class Index extends Component {
 const styles = StyleSheet.create({
   text1: {
     fontSize: pxToDp(20),
-    fontWeight: "bold",
-    marginLeft: pxToDp(10),
+    fontWeight: 'bold',
+    marginLeft: pxToDp(10)
   },
   botbox: {
-    flexDirection: "row",
-    borderBottomColor: "grey",
+    flexDirection: 'row',
+    borderBottomColor: 'grey',
     borderBottomWidth: pxToDp(0.5),
     margin: pxToDp(10),
-    height: pxToDp(130),
+    height: pxToDp(130)
   },
   text2: {
     fontSize: pxToDp(18),
-    fontWeight: "bold",
+    fontWeight: 'bold'
   },
   image: {
     height: pxToDp(120),
     width: pxToDp(120),
-    borderRadius: pxToDp(10),
+    borderRadius: pxToDp(10)
   },
   text3: {
     fontSize: pxToDp(14),
-    marginTop: pxToDp(5),
+    marginTop: pxToDp(5)
   },
   actionButtonIcon: {
     fontSize: 20,
     height: 22,
-    color: "white",
-  },
+    color: 'white'
+  }
 });
 export default Index;
