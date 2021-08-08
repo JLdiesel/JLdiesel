@@ -67,25 +67,6 @@ class Index extends Component {
               ref="ImageFade"
               duration={800}
               delay={3000}
-<<<<<<< HEAD
-              style={{ width: "100%", height: pxToDp(200) }}
-            >
-              <Image
-                style={{
-                  width: "100%",
-                  height: pxToDp(200),
-                  borderRadius: pxToDp(20),
-                }}
-                source={require("../../../res/12.jpg")}
-              />
-              <Image
-                style={{
-                  width: "100%",
-                  height: pxToDp(200),
-                  borderRadius: pxToDp(20),
-                }}
-                source={require("../../../res/19-2.jpg")}
-=======
               style={{ width: '100%', height: pxToDp(200) }}
             >
               <Image
@@ -103,7 +84,6 @@ class Index extends Component {
                   borderRadius: pxToDp(20)
                 }}
                 source={require('../../../res/19-2.jpg')}
->>>>>>> 22cc5df09a5740eb6324a72864db81e4119b88a0
               />
             </ImageFade>
           </View>

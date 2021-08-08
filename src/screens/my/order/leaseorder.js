@@ -60,10 +60,18 @@ class orders extends Component {
   static contextType = NavigationContext;
 
   render() {
+    let total =
+      this.props.route.params.price * 1 * this.props.route.params.count * 1 +
+      this.props.route.params.count *
+        1 *
+        this.props.route.params.leaseday *
+        this.props.route.params.leaseprice *
+        1;
     const { count, tabs, activeTab, way, leaseprice } = this.state;
-    console.log("day", this.props.route.params);
+    console.log('day', this.props.route.params);
+    console.log('message', this.props.route.params.count);
     return (
-      <View style={{ backgroundColor: "#e2f4fe" }}>
+      <View style={{ backgroundColor: '#e2f4fe' }}>
         <Top icon1="arrow-back" title="确认订单" />
         <ScrollView style={{ height: pxToDp(675) }}>
           {/* 订单状态 */}
@@ -72,28 +80,28 @@ class orders extends Component {
               borderRadius: pxToDp(10),
               margin: pxToDp(5),
               height: pxToDp(50),
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "white",
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'white'
             }}
           >
             <Text style={{ fontSize: pxToDp(16) }}>订单状态: 待确认</Text>
           </View>
           {/* 收获地址 */}
           <TouchableOpacity
-            onPress={() => this.context.navigate("address")}
+            onPress={() => this.context.navigate('address')}
             style={{
               marginTop: pxToDp(5),
               borderRadius: pxToDp(10),
               margin: pxToDp(5),
-              backgroundColor: "white",
+              backgroundColor: 'white'
             }}
           >
             <View
               style={{
                 marginTop: pxToDp(20),
                 marginLeft: pxToDp(20),
-                flexDirection: "row",
+                flexDirection: 'row'
               }}
             >
               <Text style={{ fontSize: pxToDp(16) }}>真是厉害</Text>
@@ -105,9 +113,9 @@ class orders extends Component {
                   width: pxToDp(20),
                   height: pxToDp(20),
                   marginLeft: pxToDp(130),
-                  marginTop: pxToDp(15),
+                  marginTop: pxToDp(15)
                 }}
-                source={require("../../../res/箭头.png")}
+                source={require('../../../res/箭头.png')}
               />
             </View>
             <View style={{ marginLeft: pxToDp(20), marginBottom: pxToDp(10) }}>
@@ -120,17 +128,17 @@ class orders extends Component {
           <TouchableOpacity
             style={{
               height: pxToDp(140),
-              flexDirection: "row",
-              backgroundColor: "white",
+              flexDirection: 'row',
+              backgroundColor: 'white',
               margin: pxToDp(5),
-              borderRadius: pxToDp(10),
+              borderRadius: pxToDp(10)
             }}
           >
-            <View style={{ justifyContent: "center", marginLeft: pxToDp(15) }}>
+            <View style={{ justifyContent: 'center', marginLeft: pxToDp(15) }}>
               <Image
                 style={{ width: pxToDp(110), height: pxToDp(110) }}
                 source={{
-                  uri: "https://img20.360buyimg.com/imgzone/jfs/t1/173507/4/18790/68769/60e68718E0f0ea850/91903dd60a5c5707.jpg",
+                  uri: 'https://img20.360buyimg.com/imgzone/jfs/t1/173507/4/18790/68769/60e68718E0f0ea850/91903dd60a5c5707.jpg'
                 }}
               />
             </View>
@@ -138,98 +146,67 @@ class orders extends Component {
               style={{
                 marginLeft: pxToDp(8),
                 marginTop: pxToDp(18),
-                justifyContent: "space-between",
+                justifyContent: 'space-between'
               }}
             >
               <View style={{}}>
-                <Text style={{ fontSize: pxToDp(15), fontWeight: "bold" }}>
-                  花旦戏服戏剧越剧服装
+                <Text
+                  numberOfLines={1}
+                  style={{
+                    fontSize: pxToDp(15),
+                    fontWeight: 'bold',
+                    width: pxToDp(230)
+                  }}
+                >
+                  {this.props.route.params.comment}
                 </Text>
               </View>
               <View
                 style={{
                   marginBottom: pxToDp(30),
                   width: pxToDp(220),
-                  flexDirection: "row",
-                  justifyContent: "space-between",
+                  flexDirection: 'row',
+                  justifyContent: 'space-between'
                 }}
               >
                 <View style={{ width: pxToDp(150) }}>
-                  <Text style={{ fontSize: pxToDp(12) }}>蓝色 全套</Text>
+                  <Text style={{ fontSize: pxToDp(12) }}>
+                    {this.props.route.params.text}{' '}
+                    {this.props.route.params.weight}
+                  </Text>
                 </View>
                 <View>
-                  <Text style={{ fontSize: pxToDp(12) }}>X1</Text>
+                  <Text style={{ fontSize: pxToDp(12) }}>
+                    X {this.props.route.params.count}
+                  </Text>
                 </View>
               </View>
               <View style={{ marginBottom: pxToDp(15) }}>
                 <Text
                   style={{
                     fontSize: pxToDp(18),
-                    color: "red",
-                    fontWeight: "bold",
+                    color: 'red',
+                    fontWeight: 'bold'
                   }}
                 >
-                  166.90
+                  {this.props.route.params.price}
                 </Text>
               </View>
             </View>
           </TouchableOpacity>
-          {/* 商品价格 */}
-          <View
-            style={{
-              backgroundColor: "white",
-              margin: pxToDp(5),
-              borderRadius: pxToDp(10),
-            }}
-          >
-            <View
-              style={{
-                marginRight: pxToDp(10),
-                justifyContent: "space-between",
-                flexDirection: "row",
-                marginLeft: pxToDp(20),
-                marginTop: pxToDp(10),
-              }}
-            >
-              <Text style={{ opacity: 0.6 }}>商品价格</Text>
-              <Text style={{ opacity: 0.6 }}>￥166.90</Text>
-            </View>
-            <View
-              style={{
-                alignItems: "flex-end",
-                marginRight: pxToDp(10),
-                justifyContent: "space-between",
-                flexDirection: "row",
-                marginTop: pxToDp(10),
-                marginBottom: pxToDp(15),
-                marginLeft: pxToDp(20),
-              }}
-            >
-              <Text style={{ fontSize: pxToDp(18) }}>合计</Text>
-              <Text
-                style={{
-                  fontSize: pxToDp(18),
-                  color: "red",
-                  fontWeight: "bold",
-                }}
-              >
-                ￥166.90
-              </Text>
-            </View>
-          </View>
           {/* 支付方式 */}
           <View>
             <TouchableOpacity
               onPress={() => this.Scrollable.open()}
               style={{
-                justifyContent: "space-between",
-                alignItems: "center",
+                justifyContent: 'space-between',
+                alignItems: 'center',
                 height: pxToDp(40),
                 margin: pxToDp(10),
-                flexDirection: "row",
-                backgroundColor: "white",
+                flexDirection: 'row',
+                backgroundColor: 'white',
                 margin: pxToDp(5),
-                borderRadius: pxToDp(10),
+                borderRadius: pxToDp(10)
               }}
             >
               <Text style={{ marginLeft: pxToDp(15) }}>支付方式:</Text>
@@ -238,20 +215,20 @@ class orders extends Component {
                 style={{
                   width: pxToDp(15),
                   height: pxToDp(15),
-                  marginRight: pxToDp(10),
+                  marginRight: pxToDp(10)
                 }}
-                source={require("../../../res/箭头.png")}
+                source={require('../../../res/箭头.png')}
               />
             </TouchableOpacity>
           </View>
           {/* 租赁选项 */}
           <View
             style={{
-              backgroundColor: "white",
+              backgroundColor: 'white',
               margin: pxToDp(5),
               borderRadius: pxToDp(10),
               height: pxToDp(120),
-              justifyContent: "space-around",
+              justifyContent: 'space-around'
             }}
           >
             <View style={styles.leasebox}>
@@ -267,22 +244,53 @@ class orders extends Component {
               <Text>{this.props.route.params.price}</Text>
             </View>
           </View>
+          {/* 商品价格 */}
+          <View
+            style={{
+              backgroundColor: 'white',
+              margin: pxToDp(5),
+              borderRadius: pxToDp(10)
+            }}
+          >
+            <View
+              style={{
+                alignItems: 'flex-end',
+                marginRight: pxToDp(10),
+                justifyContent: 'space-between',
+                flexDirection: 'row',
+                marginTop: pxToDp(10),
+                marginBottom: pxToDp(15),
+                marginLeft: pxToDp(20)
+              }}
+            >
+              <Text style={{ fontSize: pxToDp(18) }}>合计</Text>
+              <Text
+                style={{
+                  fontSize: pxToDp(18),
+                  color: 'red',
+                  fontWeight: 'bold'
+                }}
+              >
+                ￥{total}
+              </Text>
+            </View>
+          </View>
         </ScrollView>
 
         <View
           style={{
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexDirection: "row",
-            backgroundColor: "white",
-            height: pxToDp(70),
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            backgroundColor: 'white',
+            height: pxToDp(70)
           }}
         >
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginLeft: pxToDp(15),
-              alignItems: "flex-end",
+              alignItems: 'flex-end'
             }}
           >
             <Text style={{ fontSize: pxToDp(13) }}>合计金额</Text>
@@ -290,18 +298,18 @@ class orders extends Component {
               style={{
                 fontSize: pxToDp(18),
                 marginLeft: pxToDp(5),
-                fontWeight: "bold",
-                color: "red",
+                fontWeight: 'bold',
+                color: 'red'
               }}
             >
-              ￥166.90
+              ￥{total}
             </Text>
           </View>
           <View>
             <TouchableOpacity
               cisabled={this.props.disabled}
               onPress={() => {
-                this.context.navigate("leasedetails");
+                this.context.navigate('leasedetails');
               }}
               style={{
                 borderRadius: pxToDp(25),
@@ -309,7 +317,7 @@ class orders extends Component {
                 width: pxToDp(130),
                 height: pxToDp(40),
                 ...this.props.style,
-                overflow: "hidden",
+                overflow: 'hidden'
               }}
             >
               {/* <LinearGradient
@@ -327,11 +335,11 @@ class orders extends Component {
                   paddingLeft: pxToDp(15),
                   paddingRight: pxToDp(15),
                   borderRadius: pxToDp(5),
-                  width: "100%",
-                  height: "100%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#ecf6fc",
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: '#ecf6fc'
                 }}
               >
                 <Text>提交订单</Text>
@@ -347,18 +355,18 @@ class orders extends Component {
           }}
           height={200}
           closeOnDragDowncustomStyles={{
-            container: { borderTopLeftRadius: 10, borderTopRightRadius: 10 },
+            container: { borderTopLeftRadius: 10, borderTopRightRadius: 10 }
           }}
         >
           <View>
             <View
-              style={{ flexDirection: "row", justifyContent: "space-between" }}
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}
             >
               <Text
                 style={{
                   marginLeft: pxToDp(25),
                   fontSize: pxToDp(16),
-                  marginTop: pxToDp(10),
+                  marginTop: pxToDp(10)
                 }}
               >
                 支付方式
@@ -367,7 +375,7 @@ class orders extends Component {
                 <View
                   style={{
                     marginTop: pxToDp(10),
-                    marginRight: pxToDp(20),
+                    marginRight: pxToDp(20)
                   }}
                 >
                   <AntDesign
@@ -384,10 +392,10 @@ class orders extends Component {
                   key={item.id}
                   onPress={() => this.changeTab(index)}
                   style={{
-                    alignItems: "center",
-                    flexDirection: "row",
+                    alignItems: 'center',
+                    flexDirection: 'row',
                     marginTop: pxToDp(15),
-                    marginLeft: pxToDp(20),
+                    marginLeft: pxToDp(20)
                   }}
                 >
                   <Image

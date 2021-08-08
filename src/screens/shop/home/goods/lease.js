@@ -58,83 +58,81 @@ class shopdetails extends Component {
     super(props);
     this.state = {
       count: 1,
-      leaseday: "",
+      leaseday: '',
       //商品
       products: [
         {
           id: 1,
-          text: "红色",
-          weight: "全套",
+          text: '红色',
+          weight: '全套',
           imgUri:
-            "https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg",
-          price: "119.99",
-          leaseprice: "10",
+            'https://img20.360buyimg.com/imgzone/jfs/t1/190571/34/12335/52311/60e68717E0199cac9/1492d2c4b569dd1a.jpg',
+          price:119.99,
+          leaseprice: 10
         },
         {
           id: 2,
-          text: "粉色",
-          weight: "全套",
+          text: '粉色',
+          weight: '全套',
           imgUri:
-            "https://img30.360buyimg.com/imgzone/jfs/t1/185921/14/13299/64961/60e68717E994b4e11/f4293d93cc127341.jpg",
-          price: "139.99",
-          leaseprice: "15",
+            'https://img30.360buyimg.com/imgzone/jfs/t1/185921/14/13299/64961/60e68717E994b4e11/f4293d93cc127341.jpg',
+          price: 139.99,
+          leaseprice: 15
         },
         {
           id: 3,
-          text: "绿色",
-          weight: "全套",
+          text: '绿色',
+          weight: '全套',
           imgUri:
-            "https://img11.360buyimg.com/imgzone/jfs/t1/178143/10/13271/54708/60e68718E2e4aa44c/792cfcbe006f8bf4.jpg",
-          price: "169.90",
-          leaseprice: "8",
+            'https://img11.360buyimg.com/imgzone/jfs/t1/178143/10/13271/54708/60e68718E2e4aa44c/792cfcbe006f8bf4.jpg',
+          price: 169.90,
+          leaseprice: 8
         },
         {
           id: 4,
-          text: "黄色",
-          weight: "全套",
+          text: '黄色',
+          weight: '全套',
           imgUri:
-            "https://img12.360buyimg.com/imgzone/jfs/t1/186471/16/12270/114029/60e6871aE7719a6fe/8a034db53107b527.jpg",
-          price: "159.90",
-          leaseprice: "12",
-        },
+            'https://img12.360buyimg.com/imgzone/jfs/t1/186471/16/12270/114029/60e6871aE7719a6fe/8a034db53107b527.jpg',
+          price: 159.90,
+          leaseprice: 12
+        }
       ],
       //尺码
       Size: [
         {
           id: 1,
-          size: "XS",
+          size: 'XS'
         },
         {
           id: 2,
-          size: "S",
+          size: 'S'
         },
         {
           id: 3,
-          size: "M",
+          size: 'M'
         },
         {
           id: 4,
-          size: "L",
+          size: 'L'
         },
         {
           id: 5,
-          size: "XL",
+          size: 'XL'
         },
         {
           id: 6,
-          size: "XXL",
+          size: 'XXL'
         },
         {
           id: 7,
-          size: "XXXL",
-        },
+          size: 'XXXL'
+        }
       ],
-      record: ["花旦戏服", "yueju"],
-      nowprice: ["166.90"],
-      beforeprice: ["199.99"],
-      comment: [
-        "花旦戏服戏剧服装越剧小姐戏服装女新款 白色 女披+水袖+裙子(+护领) ",
-      ],
+      record: ['花旦戏服', 'yueju'],
+      nowprice: ['166.90'],
+      beforeprice: ['199.99'],
+      comment:'花旦戏服戏剧服装越剧小姐戏服装女新款 白色 女披+水袖+裙子(+护领) ',
       Select: false,
       activeTab: 1,
       activeSizeTab: 1,
@@ -568,6 +566,9 @@ class shopdetails extends Component {
                 this.context.navigate("leaseorder", {
                   ...this.state.products[this.state.activeTab],
                   leaseday: this.state.leaseday,
+                  comment: this.state.comment,
+                  count:this.state.count,
+                  
                 })
               }
             >
