@@ -27,6 +27,7 @@ function Nav() {
         {/*登录 */}
         <Stack.Screen name="Login" component={Screens.Login} />
         {/*注册 */}
+
         {/*商品 */}
         <Stack.Screen name="Good" component={Screens.GoodsList} />
         {/*练唱 */}
@@ -35,6 +36,8 @@ function Nav() {
         <Stack.Screen name="Details" component={Screens.Details} />
         {/*练唱页面*/}
         <Stack.Screen name="Sing" component={Screens.Sing} />
+        {/* 进入练唱页面 */}
+        <Stack.Screen name="Singbefore" component={Screens.Singbefore} />
         {/*租赁商城页 */}
         <Stack.Screen name="Zulin" component={Screens.Zulin} />
         {/*周边商城页 */}
