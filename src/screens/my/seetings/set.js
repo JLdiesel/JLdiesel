@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import List from '../../../component/common/list';
 import Top from '../../../component/common/top';
 import { NavigationContext } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-class Index extends Component {
+class Index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {};

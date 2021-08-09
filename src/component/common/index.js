@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {PureComponent} from 'react';
 import { Image } from 'react-native';
 import Model from './Modal'
 import { TouchableOpacity } from 'react-native';
@@ -7,7 +7,7 @@ import { pxToDp } from '../../utils/stylesKits';
 
 // import React, { Component } from 'react';
 
-class index extends Component {
+class index extends PureComponent {
     // const [isModalVisible, setModalVisible] = useState(false);
     constructor(props) {
         super(props)

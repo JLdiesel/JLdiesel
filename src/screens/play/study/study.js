@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Image, ScrollView, TextInput, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Top from '../../../component/common/top';
 import { pxToDp } from '../../../utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
-import  SongItem from '../components/songitem'
+import SongItem from '../components/songitem'
 
-class Index extends Component {
+class Index extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,44 +13,44 @@ class Index extends Component {
                 {
                     id: 1,
                     title: '穆桂英挂帅',
-                    content:"猛听得金鼓响画角声震",
+                    content: "猛听得金鼓响画角声震",
                     listener: "13526人听过",
-                    image:"https://img0.baidu.com/it/u=35873461,1923186899&fm=26&fmt=auto&gp=0.jpg"
+                    image: "https://img0.baidu.com/it/u=35873461,1923186899&fm=26&fmt=auto&gp=0.jpg"
                 },
                 {
                     id: 2,
                     title: '梁祝',
-                    content:"历尽磨难真情在， 天长地久不分开。",
+                    content: "历尽磨难真情在， 天长地久不分开。",
                     listener: "22546人听过",
-                    image:"https://img2.baidu.com/it/u=207643023,600080192&fm=26&fmt=auto&gp=0.jpg"
+                    image: "https://img2.baidu.com/it/u=207643023,600080192&fm=26&fmt=auto&gp=0.jpg"
                 },
                 {
                     id: 3,
                     title: '柳永',
-                    content:"尤红殢翠、耽溺诗酒的放浪生涯",
+                    content: "尤红殢翠、耽溺诗酒的放浪生涯",
                     listener: "12112人听过",
-                    image:"https://img1.baidu.com/it/u=720064541,3497357660&fm=26&fmt=auto&gp=0.jpg"
+                    image: "https://img1.baidu.com/it/u=720064541,3497357660&fm=26&fmt=auto&gp=0.jpg"
                 },
                 {
                     id: 4,
                     title: '红楼梦',
-                    content:"红楼金犹在，唯有风月鉴空",
+                    content: "红楼金犹在，唯有风月鉴空",
                     listener: "17758人听过",
-                    image:"https://img2.baidu.com/it/u=2932484343,1004633708&fm=26&fmt=auto&gp=0.jpg"
+                    image: "https://img2.baidu.com/it/u=2932484343,1004633708&fm=26&fmt=auto&gp=0.jpg"
                 },
                 {
                     id: 5,
                     title: '追鱼',
-                    content:"对纯真爱情的追求",
+                    content: "对纯真爱情的追求",
                     listener: "9846人听过",
-                    image:"https://img1.baidu.com/it/u=4103620704,420644192&fm=26&fmt=auto&gp=0.jpg"
+                    image: "https://img1.baidu.com/it/u=4103620704,420644192&fm=26&fmt=auto&gp=0.jpg"
                 },
                 {
                     id: 6,
                     title: '白兔记',
-                    content:"悲欢离合的故事",
+                    content: "悲欢离合的故事",
                     listener: "13663人听过",
-                    image:"https://img1.baidu.com/it/u=3612396864,2823727184&fm=26&fmt=auto&gp=0.jpg"
+                    image: "https://img1.baidu.com/it/u=3612396864,2823727184&fm=26&fmt=auto&gp=0.jpg"
                 }
             ],
         }
@@ -69,7 +69,7 @@ class Index extends Component {
                     {this.state.products.map((item, index) => (
                         <TouchableOpacity onPress={() => this.context.navigate("Details")}>
                             <View style={styles.box}>
-                                <Image style={styles.image} source={{uri:item.image}}></Image>
+                                <Image style={styles.image} source={{ uri: item.image }}></Image>
                                 <View>
                                     <Text style={styles.text1}>{item.title}</Text>
                                     <Text style={styles.text2}>{item.content}</Text>

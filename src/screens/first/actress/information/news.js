@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, ScrollView, Image } from "react-native";
 import { pxToDp } from "../../../../utils/styleKits";
 
-class Index extends Component {
+class Index extends PureComponent {
     state={
         zzz:[
         {id:1,title:'全国越剧汇演之上海越剧院《双珠凤》，方亚芬徐标新主演',Imguri:''},

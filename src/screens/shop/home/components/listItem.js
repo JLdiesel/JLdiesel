@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import { pxToDp } from "../../../../utils/styleKits";
 
 
 
-class ListItem extends Component {
+class ListItem extends PureComponent {
     state = {
         isSub: "true",
     }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import { NavigationContext } from '@react-navigation/native';
 import { FAB } from 'react-native-elements';
 import Top from '../../../component/common/top';
 
-class Index extends Component {
+class Index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

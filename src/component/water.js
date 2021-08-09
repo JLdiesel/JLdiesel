@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
 	StyleSheet,
 	Text,
@@ -152,7 +152,7 @@ const data3 = [
 
 const appendData = [data1, data2, data3];
 
-export default class example extends Component {
+export default class example extends PureComponent {
 	constructor() {
 		super();
 

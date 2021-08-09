@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import Top from '@components/common/top';
 import { CheckBox, Button } from 'react-native-elements'
 import { pxToDp } from '@utils/styleKits';
 
-class Index extends Component {
+class Index extends PureComponent {
     state={
         checked:false
     }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { pxToDp } from '../utils/styleKits';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -7,7 +7,7 @@ import SvgUri from "react-native-svg-uri";
 import { qq, weixin, weibo } from "../res/fonts/iconSvg"
 import Svg from 'react-native-svg';
 
-class Login extends Component {
+class Login extends PureComponent {
   state = {
     //手机号码
     phoneNumber: "",

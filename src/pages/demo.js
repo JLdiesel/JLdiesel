@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, Image, StyleSheet} from 'react-native';
 import { pxToDp } from '../utils/styleKits';
 
-class Index extends Component {
+class Index extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

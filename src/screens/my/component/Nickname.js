@@ -1,13 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import Otherbanner from './Otherbanner';
 import { pxToDp } from '../../../utils/styleKits';
 import Top from '@components/common/top';
 import { NavigationContext } from '@react-navigation/native';
 import { Input } from 'react-native-elements';
-export default class Nickname extends Component {
+export default class Nickname extends PureComponent {
   static contextType = NavigationContext;
   constructor(props) {
     super(props);

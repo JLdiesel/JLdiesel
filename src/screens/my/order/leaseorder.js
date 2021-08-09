@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
   View,
   Text,

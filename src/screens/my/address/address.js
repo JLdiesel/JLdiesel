@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   View,
   Text,
@@ -14,7 +14,7 @@ import Top from "../../../component/common/top";
 import { NavigationContext } from "@react-navigation/native";
 import { pxToDp } from "../../../utils/styleKits";
 
-class SwiperListItem extends Component {
+class SwiperListItem extends PureComponent {
   state = {
     checkedId: 1,
     isClick: true,

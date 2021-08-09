@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, TouchableOpacity,StyleSheet,Image } from 'react-native';
 import { pxToDp } from '../../../../utils/styleKits';
 import Top from '../../../../component/common/top'
-class Index extends Component {
+class Index extends PureComponent {
     render() {
         const { goToPage, tabs, activeTab } = this.props;
         return (
