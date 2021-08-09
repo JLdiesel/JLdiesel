@@ -239,7 +239,7 @@ class Index extends Component {
                 <Text>剧本</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={() => this.context.navigate('Course')}>
               <View style={{ alignItems: 'center' }}>
                 <Ionicons name="md-logo-octocat" size={28} color="#468CD3" />
                 <Text>教程</Text>

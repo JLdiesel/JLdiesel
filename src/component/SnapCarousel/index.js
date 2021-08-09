@@ -75,7 +75,7 @@ const MyCarousel = props => {
                 hasParallaxImages={true}
                 // vertical={true}
                 activeSlideOffset={0}
-                //loop={true}
+                loop={true}
                 //autoplay={true}
                 //autoplayDelay={500}
                 //autoplayInterval={3000}
