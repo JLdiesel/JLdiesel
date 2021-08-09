@@ -132,10 +132,10 @@ class shopdetails extends PureComponent {
       })
       .then(() => {
         EasyLoading.dismiss();
-        console.log(123);
       });
   }
-  //
+  //this.context.navigate('Myorder')
+  createOrider = () => {};
   render() {
     const { count, tabs, activeTab, activeSizeTab } = this.state;
     return (
@@ -199,7 +199,7 @@ class shopdetails extends PureComponent {
           {/* 商品详情 */}
           <View style={{ marginTop: pxToDp(20) }}>
             {this.state.products.map((item, index) => (
-              <View>
+              <View key={item.id}>
                 <Image
                   style={{
                     width: pxToDp(350),
@@ -444,7 +444,7 @@ class shopdetails extends PureComponent {
           >
             <TouchableOpacity
               style={{ width: '100%', height: '100%' }}
-              onPress={() => this.context.navigate('Myorder')}
+              onPress={this.createOrider}
             >
               <Text
                 style={{
@@ -465,23 +465,8 @@ class shopdetails extends PureComponent {
             justifyContent: 'space-evenly'
           }}
         >
-          {/* <TouchableOpacity
-            onPress={() => this.Scrollable.open()}
-            style={{
-              borderRadius: pxToDp(20),
-              justifyContent: "center",
-              alignItems: "center",
-              width: pxToDp(160),
-              height: pxToDp(40),
-              backgroundColor: "#D3D3D3",
-            }}
-          >
-            <Text>加入购物车</Text>
-          </TouchableOpacity> */}
-          {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('orders')} style={{ borderRadius: pxToDp(20), justifyContent: "center", alignItems: "center", width: pxToDp(160), backgroundColor: "orange" }}> */}
           <TouchableOpacity
             onPress={() => this.Scrollable.open()}
-            // onPress={() => this.context.navigate("Myorder")}
             style={{
               position: 'absolute',
               bottom: 0,

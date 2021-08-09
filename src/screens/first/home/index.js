@@ -5,23 +5,18 @@ import {
   Image,
   StyleSheet,
   ScrollView,
-  TouchableOpacity,
-  SafeAreaView
+  TouchableOpacity
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
-import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { sliderWidth, itemWidth } from './scorll/styles/SliderEntry.style';
-import SliderEntry from './scorll/components/SliderEntry';
-import styles, { colors } from './scorll/styles/index.style';
-import { ENTRIES1, ENTRIES2 } from './scorll/static/entries';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Top from '@components/common/top';
-import ImageFade from '../../../component/ImageFade/index';
+import ImageFade from '@components/ImageFade/index';
 import ActressView from '@components/common/actressview';
-import GenerView from '@components/common/generview';
 import { NavigationContext } from '@react-navigation/native';
-import { getUserInfoAction } from './store/actions';
+import { getUserInfoAction, getUserOriderListAction } from './store/actions';
 import { connect } from 'react-redux';
+import Legend from '@components/first/legend';
+import Hy from '@components/first/hy';
 const SLIDER_1_FIRST_ITEM = 1;
 
 class Index extends Component {
@@ -33,35 +28,12 @@ class Index extends Component {
   }
   componentDidMount() {
     this.props.getUserInfoAction();
+    this.props.getUserOriderListAction();
   }
 
   static contextType = NavigationContext;
 
-  _renderItem({ item, index }) {
-    return <SliderEntry data={item} even={(index + 1) % 2 === 0} />;
-  }
-  _renderLightItem({ item, index }) {
-    return <SliderEntry data={item} even={false} />;
-  }
-  layoutExample(number, title, type) {
-    const isTinder = type === 'tinder';
-    return (
-      <View style={{ marginBottom: pxToDp(-10), marginTop: pxToDp(-10) }}>
-        <Carousel
-          data={isTinder ? ENTRIES2 : ENTRIES1}
-          renderItem={isTinder ? this._renderLightItem : this._renderItem}
-          sliderWidth={sliderWidth}
-          itemWidth={itemWidth}
-          containerCustomStyle={styles.slider}
-          contentContainerCustomStyle={styles.sliderContentContainer}
-          layout={type}
-          loop={true}
-        />
-      </View>
-    );
-  }
   render() {
-    const example3 = this.layoutExample('', '', 'stack');
     return (
       <View>
         <Top title="百越台" icon2="search" />
@@ -189,19 +161,8 @@ class Index extends Component {
                 </View>
               </TouchableOpacity>
             </View>
+            <Hy />
           </View>
-          <SafeAreaView style={styles.safeArea}>
-            <View style={styles.container}>
-              {this.gradient}
-              <ScrollView
-                style={styles.scrollview}
-                scrollEventThrottle={200}
-                directionalLockEnabled={true}
-              >
-                {example3}
-              </ScrollView>
-            </View>
-          </SafeAreaView>
 
           {/*名角风采 */}
           <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
@@ -296,7 +257,7 @@ class Index extends Component {
                 流派传奇
               </Text>
               <TouchableOpacity
-                onPress={() => this.context.navigate('PageOne')}
+                onPress={() => this.context.navigate('PageOne', 2)}
               >
                 <View style={{ flexDirection: 'row' }}>
                   <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>
@@ -307,28 +268,13 @@ class Index extends Component {
               </TouchableOpacity>
             </View>
           </View>
-          <TouchableOpacity onPress={() => this.context.navigate('School')}>
-            <GenerView
-              picture={require('../../../res/genre/1.jpg')}
-              name="袁派"
-              special="质朴平易，委婉细腻，深沉含蓄，韵味醇厚"
-            />
-          </TouchableOpacity>
-          <GenerView
-            picture={require('../../../res/genre/2.jpg')}
-            name="范派"
-            special="曲调华彩而有气派，唱腔深情缠绵"
-          />
-          <GenerView
-            picture={require('../../../res/genre/3.jpg')}
-            name="尹派"
-            special="委婉缠绵，洒脱深沉，纯朴隽永，清新舒展"
-          />
+          <Legend />
         </ScrollView>
       </View>
     );
   }
 }
 export default connect((state) => ({}), {
-  getUserInfoAction
+  getUserInfoAction,
+  getUserOriderListAction
 })(Index);
