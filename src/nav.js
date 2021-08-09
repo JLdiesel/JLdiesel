@@ -44,6 +44,10 @@ function Nav() {
         {/*周边商城页 */}
         <Stack.Screen name="Timeline" component={Screens.Timeline} />
         {/* 时间轴 */}
+        <Stack.Screen name="ticket" component={Screens.ticket} />
+        {/* 票务系统 */}
+        <Stack.Screen name="ticketdetail" component={Screens.ticketdetail} />
+        {/* 票务系统详情页 */}
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
         <Stack.Screen name="Set" component={Screens.Set} />

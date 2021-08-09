@@ -19,6 +19,8 @@ export { default as Yijian } from './my/seetings/yijian';//意见页
 export { default as Yinsi } from './my/seetings/yinsi';//隐私页
 export { default as Act } from './play/act';//双人剧本页
 export { default as Timeline } from './Timeline/index';//时间轴页
+export { default as ticket } from './shop/home/ticket/index';//票务系统
+export { default as ticketdetail } from './shop/home/ticket/ticketdetail';//票务系统详情
 export { default as Apply } from './talk/home/live/apply';//申请直播页
 export { default as Create } from './talk/home/live/create';//剧本创作页
 export { default as PageOne } from './first/home/pages/pageone';//流派传奇页
