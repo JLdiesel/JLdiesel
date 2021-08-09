@@ -8,7 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
-import { NavigationContext } from '@react-navigation/native';
+
 import SvgUri from 'react-native-svg-uri';
 const point =
   '<svg t="1627566102075" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7382" width="200" height="200"><path d="M512 0c57.6 0 108.8 44.8 108.8 108.8S569.6 211.2 512 211.2s-108.8-44.8-108.8-102.4S454.4 0 512 0z m0 812.8c57.6 0 108.8 44.8 108.8 108.8S569.6 1024 512 1024s-108.8-44.8-108.8-108.8S454.4 812.8 512 812.8z m0-409.6c57.6 0 108.8 44.8 108.8 108.8S569.6 620.8 512 620.8 403.2 569.6 403.2 512 454.4 403.2 512 403.2z" fill="#8C8C8C" p-id="7383"></path></svg>';
@@ -24,7 +24,13 @@ class Index extends PureComponent {
         {this.props.collect.map((item, collectid) => (
           <View
             key={collectid}
-            style={{ elevation: 3, borderWidth: 0, flex: 1 }}
+            style={{
+              elevation: 3,
+              borderWidth: 0,
+              flex: 1,
+              width: '95%',
+              alignSelf: 'center'
+            }}
           >
             <View style={{ flexDirection: 'row', marginTop: pxToDp(10) }}>
               <Image

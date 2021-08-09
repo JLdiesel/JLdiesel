@@ -139,6 +139,10 @@ function Nav() {
         <Stack.Screen name="Opperson" component={Screens.Opperson} />
         {/**流派唱段视频 */}
         <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
+         {/**个人中心动态详情 */}
+        <Stack.Screen name="Indongtai" component={Screens.Indongtai} />
+        {/**论坛帖子详情 */}
+        <Stack.Screen name="Inluntan" component={Screens.Inluntan} />
         {/*Vr */}
         <Stack.Screen name="VR" component={Screens.VR} />
         {/**教程页面 */}

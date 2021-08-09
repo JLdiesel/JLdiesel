@@ -12,6 +12,18 @@ import {
 import SvgUri from 'react-native-svg-uri';
 import { report, like, full } from './svgUri';
 
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  Input,
+  TouchableOpacity
+} from 'react-native';
+import SvgUri from 'react-native-svg-uri';
+import { report, like, full } from './svgUri';
+
 const styles = StyleSheet.create({
   listItem: {
     backgroundColor: '#fff',
