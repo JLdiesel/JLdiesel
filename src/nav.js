@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName={'Tabbar'}>
+      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -94,8 +94,12 @@ function Nav() {
         {/** 订单信息页*/}
         <Stack.Screen name="Myorder" component={Screens.Myorder} />
         {/**地址 */}
+        <Stack.Screen name="leaseorder" component={Screens.leaseorder} />
+        {/* 租赁订单信息 */}
         <Stack.Screen name="address" component={Screens.address} />
         {/**增加新地址 */}
+        <Stack.Screen name="Lease" component={Screens.Lease} />
+        {/* 戏服租赁页 */}
         <Stack.Screen name="newAddress" component={Screens.newAddress} />
         {/**全部订单 */}
         <Stack.Screen name="Orderone" component={Screens.Orderone} />
@@ -119,6 +123,8 @@ function Nav() {
         <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
         {/**订单确认页面*/}
         <Stack.Screen name="orderdetails" component={Screens.orderdetails} />
+        {/**租赁订单确认*/}
+        <Stack.Screen name="leasedetails" component={Screens.leasedetails} />
         {/**关注列表 */}
         <Stack.Screen name="Follow" component={Screens.Follow} />
         {/**点赞 */}
@@ -135,6 +141,8 @@ function Nav() {
         <Stack.Screen name="Opperson" component={Screens.Opperson} />
         {/**流派唱段视频 */}
         <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
+        {/*Vr */}
+        <Stack.Screen name="VR" component={Screens.VR} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}

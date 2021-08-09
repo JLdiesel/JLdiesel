@@ -131,6 +131,7 @@ export class AlwaysOpen extends PureComponent {
       ],
     };
   }
+  static contextType = NavigationContext;
   modalizeRef = createRef(null);
   renderContent = () => (
     <View
@@ -183,7 +184,7 @@ export class AlwaysOpen extends PureComponent {
             </View>
           </TouchableOpacity>
           {/* 时间线 */}
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => this.context.navigate("PageTwo")}>
             <View style={{ justifyContent: "center", height: pxToDp(60) }}>
               <View style={{ alignItems: "center" }}>
                 <SvgUri svgXmlData={timeline} width="30" height="30" />
