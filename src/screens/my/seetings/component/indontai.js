@@ -31,8 +31,8 @@ class Index extends PureComponent {
       return (
   <ScrollView style={{backgroundColor:'#fff'}}>
         <Top icon1='arrow-back' title="设置" />
-      <View style={{width:'100%',height:100,marginTop:20,flexDirection:'row'}}>
-          <Image source={{uri:this.state.louzhu.lzimg}} style={{height:60,width:60,borderRadius:60,margin:pxToDp(15)}}/>
+      <View style={{width:'100%',height:pxToDp(100),marginTop:pxToDp(20),flexDirection:'row'}}>
+          <Image source={{uri:this.state.louzhu.lzimg}} style={{height:pxToDp(60),width:pxToDp(60),borderRadius:pxToDp(60),margin:pxToDp(15)}}/>
           <View style={{marginTop:pxToDp(20),paddingLeft:pxToDp(5)}}>
           <Text style={{fontSize:pxToDp(18),fontWeight:'bold'}}>{this.state.louzhu.lzname}</Text>
           </View>
@@ -40,12 +40,12 @@ class Index extends PureComponent {
         <View style={{margin:pxToDp(15)}}>
             <Text style={{fontSize:pxToDp(18)}}>{this.state.louzhu.dt}</Text>
         </View>
-         <ScrollView style={{height:150,marginTop:10}} horizontal={true}>
+         <ScrollView style={{height:pxToDp(150),marginTop:pxToDp(10),width:'95%',marginLeft:pxToDp(10)}} horizontal={true}>
 
              { this.state.louzhu.dtimg.map((item,index)=>(
-                 <View key={index} style={{marginBottom:10}}>
+                 <View key={index} style={{marginBottom:10,}}>
                   <Image 
-                  style={{width:150,height:150,borderRadius:15,marginRight:10}}
+                  style={{width:pxToDp(150),height:pxToDp(150),borderRadius:pxToDp(15),marginRight:pxToDp(10)}}
                   source={{uri:item}}/>
                 </View>
                ))  }
