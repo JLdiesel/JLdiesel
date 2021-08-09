@@ -15,20 +15,25 @@ class Index extends Component {
     render() {
       
         return (
-          <ScrollView>
+          <ScrollView >
+            <View style={{width:'95%',marginLeft:10,marginTop:20,marginBottom:pxToDp(20)}}>
         {this.props.dongtai.map((item,dtid)=>(  
-        <View key={dtid} style={{elevation:5,borderWidth:0}}>
-            
+  
+        <View key={dtid} style={{elevation:1,borderWidth:0}}>
+          <View style={{marginLeft:30,marginTop:20,flexDirection:'row',alignItems:'flex-end'}}>
+          <Text style={{fontSize:pxToDp(25),fontWeight:'bold'}}>{item.date.substr(3,3)}</Text>
+            <Text style={{fontSize:17,paddingLeft:5}}>{item.date.substr(0,3)}</Text>
+            </View>
             <View style={{flexDirection:'row',margin:pxToDp(10),}}>
               
-              <Image source={{uri:item.dtimg}}style={{width:40,height:40,borderRadius:40,margin:20}}/>
+              <Image source={{uri:item.dtimg}}style={{width:pxToDp(60),height:pxToDp(60),borderRadius:pxToDp(40),marginLeft:pxToDp(20)}}/>
                 <View>
-              <Text style={{fontSize:pxToDp(15),fontWeight:'bold',marginTop:pxToDp(20)}}>{item.name}</Text>
-              <Text>{item.date}</Text> 
+              <Text style={{fontSize:pxToDp(25),fontWeight:'bold',marginTop:pxToDp(30),paddingLeft:pxToDp(20)}}>{item.name}</Text>
+               
               </View>
            </View>
               <View style={{width:'90%',marginBottom:pxToDp(30),alignSelf:'center'}}>
-                <Text>{item.dt}</Text>
+                <Text style={{fontSize:pxToDp(18),marginBottom:pxToDp(10),paddingLeft:pxToDp(8),marginTop:pxToDp(10)}}>{item.dt}</Text>
                 <ScrollView style={{flex:1,height:150,marginTop:10}} horizontal={true}>
                   {item.dtimg2.map((item)=>(
                   <Image 
@@ -52,6 +57,7 @@ class Index extends Component {
               </View>
           </View>
          ))}
+         </View>
           </ScrollView>
         );
     }

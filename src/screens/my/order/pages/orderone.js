@@ -1,93 +1,40 @@
 import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { pxToDp } from "../../../../utils/styleKits";
+import Orderitem from "./orderItem";
 
-class Index extends Component {
-    render() {
-        return (
-            <View style={{alignItems:'center',justifyContent:'center',backgroundColor:'#E2F4FE',flex:1}}>
-                <ScrollView>
-                    <View style={{ height: pxToDp(230), marginLeft: pxToDp(20), marginRight: pxToDp(20), borderBottomWidth: pxToDp(1), borderBottomColor: 'grey' }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: pxToDp(20) }}>
-                            <Text style={{ fontSize: pxToDp(17) }}>百越庭售卖店</Text>
-                            <Text style={{ fontSize: pxToDp(13) }}>交易成功</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', marginTop: pxToDp(10) }}>
-                            <Image style={{ height: pxToDp(110), width: pxToDp(110), borderRadius: pxToDp(10) }} source={require('../../../../res/18.jpg')} />
-                            <Text style={{ fontSize: pxToDp(15), marginLeft: pxToDp(10) }}>戏服儿童小生衣</Text>
-                            <Text style={{ marginLeft: pxToDp(65), fontSize: pxToDp(15) }}>￥128</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end',right:pxToDp(85) }}>
-                            <Text style={{ fontSize: pxToDp(15) }}>总价￥128 </Text>
-                            <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}> 实付款￥128</Text>
-                        </View>
-                        <View style={{ justifyContent: 'flex-end', flexDirection: 'row', marginTop: pxToDp(10) }}>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center', marginRight: pxToDp(10) }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>删除订单</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center', marginRight: pxToDp(10) }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>追加评价</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center' }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>查看物流</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={{ height: pxToDp(230), marginLeft: pxToDp(20), marginRight: pxToDp(20), borderBottomWidth: pxToDp(1), borderBottomColor: 'grey' }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: pxToDp(20) }}>
-                            <Text style={{ fontSize: pxToDp(17) }}>百越庭售卖店</Text>
-                            <Text style={{ fontSize: pxToDp(13) }}>交易成功</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', marginTop: pxToDp(10) }}>
-                            <Image style={{ height: pxToDp(110), width: pxToDp(110), borderRadius: pxToDp(10) }} source={require('../../../../res/19.jpg')} />
-                            <Text style={{ fontSize: pxToDp(15), marginLeft: pxToDp(10) }}>越剧周边 扇子</Text>
-                            <Text style={{ marginLeft: pxToDp(65), fontSize: pxToDp(15) }}>￥45</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end',right:pxToDp(85) }}>
-                            <Text style={{ fontSize: pxToDp(15) }}>总价￥45 </Text>
-                            <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}> 实付款￥45</Text>
-                        </View>
-                        <View style={{ justifyContent: 'flex-end', flexDirection: 'row', marginTop: pxToDp(10) }}>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center', marginRight: pxToDp(10) }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>删除订单</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center', marginRight: pxToDp(10) }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>追加评价</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center' }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>查看物流</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={{ height: pxToDp(230), marginLeft: pxToDp(20), marginRight: pxToDp(20), borderBottomWidth: pxToDp(1), borderBottomColor: 'grey' }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: pxToDp(20) }}>
-                            <Text style={{ fontSize: pxToDp(17) }}>百越庭售卖店</Text>
-                            <Text style={{ fontSize: pxToDp(13) }}>交易成功</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', marginTop: pxToDp(10) }}>
-                            <Image style={{ height: pxToDp(110), width: pxToDp(110), borderRadius: pxToDp(10) }} source={require('../../../../res/11.jpg')} />
-                            <Text style={{ fontSize: pxToDp(15), marginLeft: pxToDp(10) }}>《梁祝》演出门票-杭州大剧院</Text>
-                            <Text style={{ marginLeft: pxToDp(65), fontSize: pxToDp(15) }}>￥399</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' ,right:pxToDp(85)}}>
-                            <Text style={{ fontSize: pxToDp(15) }}>总价￥399 </Text>
-                            <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}> 实付款￥399</Text>
-                        </View>
-                        <View style={{ justifyContent: 'flex-end', flexDirection: 'row', marginTop: pxToDp(10) }}>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center', marginRight: pxToDp(10) }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>删除订单</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center', marginRight: pxToDp(10) }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>追加评价</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{ borderColor: 'grey', borderWidth: pxToDp(1), height: pxToDp(23), width: pxToDp(70), borderRadius: pxToDp(10), alignItems: 'center', justifyContent: 'center' }}>
-                                <Text style={{ fontSize: pxToDp(15) }}>查看物流</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </ScrollView>
-            </View>
-        );
+class Index extends Component{
+
+    state={
+        pagetwo:[{id:1,shopname:'百越庭售卖店',jiaoyi:'交易成功',goodimg:'',goodname:'戏服儿童小生衣',price:128,realprice:128,},
+        {id:1,shopname:'百越庭售卖店',jiaoyi:'交易成功',goodimg:'',goodname:'戏服儿童小生衣',price:128,realprice:128,},],
+        btn:['删除订单','追加评论']
+    
     }
+isGoodNull=()=>{
+    if(this.state.pagetwo.length==0)
+     return(
+            <View style={{alignItems:'center',justifyContent:'center',backgroundColor:'#E2F4FE',flex:1}}>
+                <Text style={{fontSize:pxToDp(15)}}>您还没有相关的订单</Text>
+                <Text style={{fontSize:pxToDp(15),color:'grey'}}>可以去看看有哪些想买的</Text>
+            </View>)
+    else{
+        return (
+            <ScrollView style={{backgroundColor:'#E2F4FE',flex:1,height:'100%',}}>
+           <Orderitem 
+             page={this.state.pagetwo}
+             btn={this.state.btn}
+           />
+            </ScrollView>)
+}}
+
+    render(){
+        return(<View style={{flex:1}}>
+            {this.isGoodNull()}
+            </View>
+        )
+       
+        }
 }
 export default Index;
+
