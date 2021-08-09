@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Text,
   View,
@@ -27,7 +27,7 @@ import { getUserInfoAction } from '../../first/home/store/actions';
 import { changeAvatar } from './store/actions';
 import changeImgSize from '@utils/changeImgSize';
 const typeArr = ['男', '女'];
-class Ziliao extends Component {
+class Ziliao extends PureComponent {
   static contextType = NavigationContext;
   constructor(props) {
     super(props);

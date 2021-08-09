@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import TabNavigator from 'react-native-tab-navigator';
 import {
   play,
@@ -20,7 +20,7 @@ import Shop from './screens/shop/home';
 import My from './screens/my/home';
 import { pxToDp } from './utils/styleKits';
 
-class Index extends Component {
+class Index extends PureComponent {
   state = {
     selectedTab: 'first',
     pages: [

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -13,14 +13,14 @@ import GenerView from '@components/common/generview';
 import { NavigationContext } from '@react-navigation/native';
 import { getListByStatus } from '@service/home';
 
-class Index extends Component {
+class Index extends PureComponent {
   static contextType = NavigationContext;
   state = {
     GenerList: [
       {
         id: 1,
-        title: '袁派',
-        ezcontent: '质朴平易，委婉细腻，深沉含蓄，韵味醇厚',
+        title: '',
+        ezcontent: '',
         picurl: ''
       }
     ]

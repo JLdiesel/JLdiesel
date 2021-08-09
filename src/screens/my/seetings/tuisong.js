@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import { Switch } from 'react-native-elements';
 import { pxToDp } from '../../../utils/styleKits';
 import Top from '../../../component/common/top'
 
 
-class Index extends Component {
+class Index extends PureComponent {
     render() {
         return (
-            <View  style={{backgroundColor:'#e2f4fe',flex:1}}>
+            <View style={{ backgroundColor: '#e2f4fe', flex: 1 }}>
                 <Top icon1='arrow-back' title="消息通知与推送" />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: pxToDp(15) }}>
                     <View>

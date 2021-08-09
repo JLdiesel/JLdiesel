@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import { NavigationContext } from '@react-navigation/native';
 import Top from '@components/common/top';
 import Maylike from '../components/maylike';
 import { getShopListByStatus } from '@service/shop';
-class Index extends Component {
+class Index extends PureComponent {
   state = {
     shop: []
   };

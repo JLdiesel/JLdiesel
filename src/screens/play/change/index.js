@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, Image, TouchableOpacity, Dimensions ,StyleSheet} from 'react-native';
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits'
@@ -19,7 +19,7 @@ const DATA = [
 
 
 
-class Index extends Component {
+class Index extends PureComponent {
     state={index:0,localUri:''}
     _renderItem({ item }) {
     return (

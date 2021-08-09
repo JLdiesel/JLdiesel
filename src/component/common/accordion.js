@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Collapsible from "react-native-collapsible";
 import {
   Text,
@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { pxToDp } from "../../utils/styleKits";
-export default class Acordion extends Component {
+export default class Acordion extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

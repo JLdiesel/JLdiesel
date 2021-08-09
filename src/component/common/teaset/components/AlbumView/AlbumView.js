@@ -2,20 +2,21 @@
 
 'use strict';
 
-import React, {Component} from "react";
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, Image, Animated, ViewPropTypes} from 'react-native';
+import { StyleSheet, View, Image, Animated, ViewPropTypes } from 'react-native';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 
 import Theme from 'teaset/themes/Theme';
 import AlbumSheet from './AlbumSheet';
 import CarouselControl from '../Carousel/CarouselControl';
 
-export default class AlbumView extends Component {
-
+export default class AlbumView extends PureComponent {
   static propTypes = {
     ...ViewPropTypes,
-    images: PropTypes.arrayOf(PropTypes.oneOfType([Image.propTypes.source, PropTypes.element])).isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.oneOfType([Image.propTypes.source, PropTypes.element])
+    ).isRequired,
     thumbs: PropTypes.arrayOf(Image.propTypes.source),
     defaultIndex: PropTypes.number,
     index: PropTypes.number,
@@ -28,7 +29,7 @@ export default class AlbumView extends Component {
     onLongPress: PropTypes.func, //(index, event)
     onWillLoadImage: PropTypes.func, //(index)
     onLoadImageSuccess: PropTypes.func, //(index, width, height)
-    onLoadImageFailure: PropTypes.func, //(index, error)
+    onLoadImageFailure: PropTypes.func //(index, error)
   };
 
   static defaultProps = {
@@ -36,7 +37,7 @@ export default class AlbumView extends Component {
     defaultIndex: 0,
     maxScale: 3,
     space: 20,
-    control: false,
+    control: false
   };
 
   static Sheet = AlbumSheet;
@@ -45,15 +46,19 @@ export default class AlbumView extends Component {
   constructor(props) {
     super(props);
     this.animateActions = [];
-    this.layout = {x: 0, y: 0, width: 0, height: 0};
-    let index = props.index || props.index === 0 ? props.index : props.defaultIndex;
+    this.layout = { x: 0, y: 0, width: 0, height: 0 };
+    let index =
+      props.index || props.index === 0 ? props.index : props.defaultIndex;
     this.state = {
-      index: index,
+      index: index
     };
   }
 
   componentDidUpdate(prevProps) {
-    if ((this.props.index || this.props.index === 0) && prevProps.index != this.props.index) {
+    if (
+      (this.props.index || this.props.index === 0) &&
+      prevProps.index != this.props.index
+    ) {
       this.changeIndex(this.props.index);
     }
   }
@@ -63,31 +68,38 @@ export default class AlbumView extends Component {
   }
 
   changeIndex(newIndex) {
-    let {index} = this.state;
+    let { index } = this.state;
     if (newIndex == index) return;
 
     this.props.onWillChange && this.props.onWillChange(index, newIndex);
-    this.setState({index: newIndex});
+    this.setState({ index: newIndex });
 
     let sheet = this.refs['sheet' + index];
     let nextSheet = this.refs['sheet' + newIndex];
     let toPosition = newIndex > index ? 'left' : 'right';
 
     this.animateActions = [];
-    sheet && sheet.scrollTo(toPosition, true, (variable, toValue) => {
-      this.animateActions.push({variable, toValue})
-    });
-    nextSheet && nextSheet.scrollTo('center', true, (variable, toValue) => {
-      this.animateActions.push({variable, toValue})
-    });
+    sheet &&
+      sheet.scrollTo(toPosition, true, (variable, toValue) => {
+        this.animateActions.push({ variable, toValue });
+      });
+    nextSheet &&
+      nextSheet.scrollTo('center', true, (variable, toValue) => {
+        this.animateActions.push({ variable, toValue });
+      });
     if (this.animateActions.length === 0) return;
 
-    Animated.parallel(this.animateActions.map((item, index) =>
-      Animated.spring(item.variable, {toValue: item.toValue, friction: 9, useNativeDriver: false})
-    )).start(e => {
+    Animated.parallel(
+      this.animateActions.map((item, index) =>
+        Animated.spring(item.variable, {
+          toValue: item.toValue,
+          friction: 9,
+          useNativeDriver: false
+        })
+      )
+    ).start((e) => {
       this.props.onChange && this.props.onChange(newIndex, index);
     });
-
   }
 
   checkStopScroll() {
@@ -99,22 +111,26 @@ export default class AlbumView extends Component {
   }
 
   checkScroll(translateX) {
-    let {images} = this.props;
-    let {index} = this.state;
+    let { images } = this.props;
+    let { index } = this.state;
 
-    let {x, y, width, height} = this.refs['sheet' + index].contentLayout;
-    let ltx = translateX, rtx = translateX;
+    let { x, y, width, height } = this.refs['sheet' + index].contentLayout;
+    let ltx = translateX,
+      rtx = translateX;
     if (width > this.layout.width) {
       ltx = x;
       rtx = x + (width - this.layout.width);
     }
     let triggerWidth = this.layout.width / 3;
 
-    if ((ltx < triggerWidth && rtx > -triggerWidth)
-      || (ltx >= triggerWidth && index === 0)
-      || (rtx <= -triggerWidth && index === images.length - 1)) {
+    if (
+      (ltx < triggerWidth && rtx > -triggerWidth) ||
+      (ltx >= triggerWidth && index === 0) ||
+      (rtx <= -triggerWidth && index === images.length - 1)
+    ) {
       index > 0 && this.refs['sheet' + (index - 1)].scrollX(0, true);
-      index < (images.length - 1) && this.refs['sheet' + (index + 1)].scrollX(0, true);
+      index < images.length - 1 &&
+        this.refs['sheet' + (index + 1)].scrollX(0, true);
       return true;
     }
 
@@ -135,17 +151,19 @@ export default class AlbumView extends Component {
       return;
     }
 
-    let {images} = this.props;
-    let {index} = this.state;
-    let {x, y, width, height} = this.refs['sheet' + index].contentLayout;
-    let ltx = translateX, rtx = translateX;
+    let { images } = this.props;
+    let { index } = this.state;
+    let { x, y, width, height } = this.refs['sheet' + index].contentLayout;
+    let ltx = translateX,
+      rtx = translateX;
     if (width > this.layout.width) {
       ltx = x;
       rtx = x + (width - this.layout.width);
     }
 
     index > 0 && this.refs['sheet' + (index - 1)].scrollX(ltx, false);
-    index < (images.length - 1) && this.refs['sheet' + (index + 1)].scrollX(rtx, false);
+    index < images.length - 1 &&
+      this.refs['sheet' + (index + 1)].scrollX(rtx, false);
   }
 
   onWillInertialMove(translateX, translateY, newX, newY) {
@@ -157,7 +175,17 @@ export default class AlbumView extends Component {
   }
 
   renderImage(index) {
-    let {images, thumbs, maxScale, space, onPress, onLongPress, onWillLoadImage, onLoadImageSuccess, onLoadImageFailure} = this.props;
+    let {
+      images,
+      thumbs,
+      maxScale,
+      space,
+      onPress,
+      onLongPress,
+      onWillLoadImage,
+      onLoadImageSuccess,
+      onLoadImageFailure
+    } = this.props;
 
     let position = 'center';
     if (index < this.state.index) position = 'left';
@@ -165,44 +193,94 @@ export default class AlbumView extends Component {
 
     return (
       <AlbumSheet
-        style={{position: 'absolute', left: 0, right: 0, top: 0, bottom: 0}}
+        style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0 }}
         pointerEvents={index === this.state.index ? 'auto' : 'none'}
         minScale={1}
         maxScale={maxScale}
         magnetic={true}
         tension={false}
         image={images[index]}
-        thumb={thumbs instanceof Array && thumbs.length > index ? thumbs[index] : null}
+        thumb={
+          thumbs instanceof Array && thumbs.length > index
+            ? thumbs[index]
+            : null
+        }
         defaultPosition={position}
         space={space}
         load={index >= this.state.index - 1 && index <= this.state.index + 1}
         onWillTransform={() => this.checkStopScroll()}
-        onTransforming={(translateX, translateY, scale) => this.onTransforming(translateX, translateY, scale)}
-        onWillInertialMove={(translateX, translateY, newX, newY) => this.onWillInertialMove(translateX, translateY, newX, newY)}
-        onWillMagnetic={(translateX, translateY, scale, newX, newY, newScale) => this.onWillMagnetic(translateX, translateY, scale, newX, newY, newScale)}
-        onPress={e => onPress && onPress(index, e)}
-        onLongPress={e => onLongPress && onLongPress(index, e)}
+        onTransforming={(translateX, translateY, scale) =>
+          this.onTransforming(translateX, translateY, scale)
+        }
+        onWillInertialMove={(translateX, translateY, newX, newY) =>
+          this.onWillInertialMove(translateX, translateY, newX, newY)
+        }
+        onWillMagnetic={(translateX, translateY, scale, newX, newY, newScale) =>
+          this.onWillMagnetic(
+            translateX,
+            translateY,
+            scale,
+            newX,
+            newY,
+            newScale
+          )
+        }
+        onPress={(e) => onPress && onPress(index, e)}
+        onLongPress={(e) => onLongPress && onLongPress(index, e)}
         onWillLoadImage={() => onWillLoadImage && onWillLoadImage(index)}
-        onLoadImageSuccess={(width, height) => onLoadImageSuccess && onLoadImageSuccess(index, width, height)}
-        onLoadImageFailure={error => onLoadImageFailure && onLoadImageFailure(index, error)}
+        onLoadImageSuccess={(width, height) =>
+          onLoadImageSuccess && onLoadImageSuccess(index, width, height)
+        }
+        onLoadImageFailure={(error) =>
+          onLoadImageFailure && onLoadImageFailure(index, error)
+        }
         ref={'sheet' + index}
         key={'sheet' + index}
-        />
+      />
     );
   }
 
   render() {
-    let {images, thumbs, defaultIndex, index, maxScale, space, control, children, onLayout, onWillChange, onChange, onPress, onLongPress, onWillLoadImage, onLoadImageSuccess, onLoadImageFailure, ...others} = this.props;
+    let {
+      images,
+      thumbs,
+      defaultIndex,
+      index,
+      maxScale,
+      space,
+      control,
+      children,
+      onLayout,
+      onWillChange,
+      onChange,
+      onPress,
+      onLongPress,
+      onWillLoadImage,
+      onLoadImageSuccess,
+      onLoadImageFailure,
+      ...others
+    } = this.props;
 
     if (React.isValidElement(control)) {
-      control = React.cloneElement(control, {index: this.state.index, total: images.length, carousel: this});
+      control = React.cloneElement(control, {
+        index: this.state.index,
+        total: images.length,
+        carousel: this
+      });
     } else if (control) {
-      control = <this.constructor.Control style={{paddingBottom: Theme.screenInset.bottom}} index={this.state.index} total={images.length} carousel={this} />
+      control = (
+        <this.constructor.Control
+          style={{ paddingBottom: Theme.screenInset.bottom }}
+          index={this.state.index}
+          total={images.length}
+          carousel={this}
+        />
+      );
     }
 
     return (
       <View
-        onLayout={e => {
+        onLayout={(e) => {
           this.layout = e.nativeEvent.layout;
           onLayout && onLayout(e);
         }}
@@ -213,5 +291,4 @@ export default class AlbumView extends Component {
       </View>
     );
   }
-
 }

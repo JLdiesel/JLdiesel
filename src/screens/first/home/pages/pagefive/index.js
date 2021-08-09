@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Icon1 from 'react-native-vector-icons/MaterialIcons';
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
 import { getMomentById } from '@service/home';
-class index extends Component {
+class index extends PureComponent {
   state = {
     title: '',
     content: ``,

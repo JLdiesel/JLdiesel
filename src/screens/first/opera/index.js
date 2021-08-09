@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -9,11 +9,11 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from '@react-navigation/native';
-import { pxToDp } from '../../../utils/styleKits';
-import Top from '../../../component/common/top';
+import { pxToDp } from '@utils/styleKits';
+import Top from '@components/common/top';
 // import { Optuijian } from '../..';
 
-class Index extends Component {
+class Index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {};

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -14,7 +14,7 @@ import Swiper from 'react-native-swiper';
 import { NavigationContext } from '@react-navigation/native';
 import Maylike from './components/maylike';
 import { getShopList } from '@service/shop';
-class Index extends Component {
+class Index extends PureComponent {
   state = {
     arr: []
   };

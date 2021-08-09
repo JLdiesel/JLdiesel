@@ -2,14 +2,19 @@
 
 'use strict';
 
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, Text, TouchableOpacity, ViewPropTypes} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ViewPropTypes
+} from 'react-native';
 
 import Theme from 'teaset/themes/Theme';
 
-export default class Stepper extends Component {
-
+export default class Stepper extends PureComponent {
   static propTypes = {
     ...ViewPropTypes,
     defaultValue: PropTypes.number,
@@ -24,7 +29,7 @@ export default class Stepper extends Component {
     showSeparator: PropTypes.bool,
     disabled: PropTypes.bool,
     editable: PropTypes.bool,
-    onChange: PropTypes.func, //(value)
+    onChange: PropTypes.func //(value)
   };
 
   static defaultProps = {
@@ -35,78 +40,85 @@ export default class Stepper extends Component {
     addButton: '＋',
     showSeparator: true,
     disabled: false,
-    editable: true,
+    editable: true
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      value: props.value ? props.value : (props.defaultValue ? props.defaultValue : 0),
-      height: null,
+      value: props.value
+        ? props.value
+        : props.defaultValue
+        ? props.defaultValue
+        : 0,
+      height: null
     };
   }
 
   get value() {
-    return (this.props.value === undefined ? this.state.value : this.props.value);
+    return this.props.value === undefined ? this.state.value : this.props.value;
   }
 
   onLayout(e) {
     if (this.state.height === null) {
       this.setState({
-        height: e.nativeEvent.layout.height,
+        height: e.nativeEvent.layout.height
       });
     }
     this.props.onLayout && this.props.onLayout(e);
   }
 
   onSubButtonPress() {
-    let {step, min, onChange} = this.props;
+    let { step, min, onChange } = this.props;
     let value = this.value;
     value -= step;
     if (value < min) value = min;
-    this.setState({value});
+    this.setState({ value });
     onChange && onChange(value);
   }
 
   onAddButtonPress() {
-    let {step, max, onChange} = this.props;
+    let { step, max, onChange } = this.props;
     let value = this.value;
     value += step;
     if (value > max) value = max;
-    this.setState({value});
+    this.setState({ value });
     onChange && onChange(value);
   }
 
   buildStyle() {
-    let {style} = this.props;
-    style = [{
-      backgroundColor: Theme.stepperColor,
-      borderColor: Theme.stepperBorderColor,
-      borderWidth: Theme.stepperBorderWidth,
-      borderRadius: Theme.stepperBorderRadius,
-      flexDirection: 'row',
-      alignItems: 'center',
-      overflow: 'hidden',
-    }].concat(style);
+    let { style } = this.props;
+    style = [
+      {
+        backgroundColor: Theme.stepperColor,
+        borderColor: Theme.stepperBorderColor,
+        borderWidth: Theme.stepperBorderWidth,
+        borderRadius: Theme.stepperBorderRadius,
+        flexDirection: 'row',
+        alignItems: 'center',
+        overflow: 'hidden'
+      }
+    ].concat(style);
     return style;
   }
 
   renderSubButton() {
-    let {subButton, disabled, editable, min} = this.props;
+    let { subButton, disabled, editable, min } = this.props;
 
     let subDisabled = !editable || this.value <= min;
-    let subOpacity = !disabled && subDisabled ? Theme.stepperDisabledOpacity : 1;
+    let subOpacity =
+      !disabled && subDisabled ? Theme.stepperDisabledOpacity : 1;
 
     if (!React.isValidElement(subButton)) {
       let btnStyle = {
         width: Theme.stepperButtonWidth,
         height: Theme.stepperButtonHeight,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
       };
       let btnTextStyle = {
         color: Theme.stepperBtnTextColor,
-        fontSize: Theme.stepperBtnFontSize,
+        fontSize: Theme.stepperBtnFontSize
       };
       subButton = (
         <View style={btnStyle}>
@@ -116,29 +128,31 @@ export default class Stepper extends Component {
     }
 
     return (
-      <TouchableOpacity disabled={subDisabled} onPress={() => this.onSubButtonPress()}>
-        <View style={{opacity: subOpacity}}>
-          {subButton}
-        </View>
+      <TouchableOpacity
+        disabled={subDisabled}
+        onPress={() => this.onSubButtonPress()}
+      >
+        <View style={{ opacity: subOpacity }}>{subButton}</View>
       </TouchableOpacity>
     );
   }
 
   renderAddButton() {
-    let {addButton, disabled, editable, max} = this.props;
+    let { addButton, disabled, editable, max } = this.props;
 
     let addDisabled = !editable || this.value >= max;
-    let addOpacity = !disabled && addDisabled ? Theme.stepperDisabledOpacity : 1;
+    let addOpacity =
+      !disabled && addDisabled ? Theme.stepperDisabledOpacity : 1;
 
     let btnStyle = {
       width: Theme.stepperButtonWidth,
       height: Theme.stepperButtonHeight,
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     };
     let btnTextStyle = {
       color: Theme.stepperBtnTextColor,
-      fontSize: Theme.stepperBtnFontSize,
+      fontSize: Theme.stepperBtnFontSize
     };
     if (!React.isValidElement(addButton)) {
       addButton = (
@@ -149,24 +163,27 @@ export default class Stepper extends Component {
     }
 
     return (
-      <TouchableOpacity disabled={addDisabled} onPress={() => this.onAddButtonPress()}>
-        <View style={{opacity: addOpacity}}>
-          {addButton}
-        </View>
+      <TouchableOpacity
+        disabled={addDisabled}
+        onPress={() => this.onAddButtonPress()}
+      >
+        <View style={{ opacity: addOpacity }}>{addButton}</View>
       </TouchableOpacity>
     );
   }
 
   renderValue() {
-    let {valueStyle, valueFormat} = this.props;
+    let { valueStyle, valueFormat } = this.props;
 
-    valueStyle = [{
-      color: Theme.stepperTextColor,
-      fontSize: Theme.stepperFontSize,
-      textAlign: 'center',
-      minWidth: Theme.stepperValueMinWidth,
-      paddingHorizontal: Theme.stepperValuePaddingHorizontal,
-    }].concat(valueStyle);
+    valueStyle = [
+      {
+        color: Theme.stepperTextColor,
+        fontSize: Theme.stepperFontSize,
+        textAlign: 'center',
+        minWidth: Theme.stepperValueMinWidth,
+        paddingHorizontal: Theme.stepperValuePaddingHorizontal
+      }
+    ].concat(valueStyle);
 
     return (
       <Text style={valueStyle} numberOfLines={1}>
@@ -176,14 +193,42 @@ export default class Stepper extends Component {
   }
 
   render() {
-    let {style, children, pointerEvents, opacity, defaultValue, value, step, max, min, valueStyle, valueFormat, subButton, addButton, showSeparator, disabled, editable, onLayout, onChange, ...others} = this.props; //disable View.onChange
+    let {
+      style,
+      children,
+      pointerEvents,
+      opacity,
+      defaultValue,
+      value,
+      step,
+      max,
+      min,
+      valueStyle,
+      valueFormat,
+      subButton,
+      addButton,
+      showSeparator,
+      disabled,
+      editable,
+      onLayout,
+      onChange,
+      ...others
+    } = this.props; //disable View.onChange
 
     style = this.buildStyle();
 
     let separator;
     if (showSeparator) {
       let fs = StyleSheet.flatten(style);
-      separator = <View style={{backgroundColor: fs.borderColor, width: fs.borderWidth, height: this.state.height}} />;
+      separator = (
+        <View
+          style={{
+            backgroundColor: fs.borderColor,
+            width: fs.borderWidth,
+            height: this.state.height
+          }}
+        />
+      );
     }
 
     return (
@@ -191,7 +236,7 @@ export default class Stepper extends Component {
         style={style}
         pointerEvents={disabled ? 'none' : pointerEvents}
         opacity={disabled ? Theme.stepperDisabledOpacity : opacity}
-        onLayout={e => this.onLayout(e)}
+        onLayout={(e) => this.onLayout(e)}
         {...others}
       >
         {this.renderSubButton()}
@@ -202,5 +247,4 @@ export default class Stepper extends Component {
       </View>
     );
   }
-
 }

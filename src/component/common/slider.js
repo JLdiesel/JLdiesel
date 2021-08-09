@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text } from "react-native";
 import Slider from '@react-native-community/slider';
 
-class Index extends Component {
+class Index extends PureComponent {
     constructor() {
         super();
 

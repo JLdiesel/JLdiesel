@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { pxToDp } from '../../../../../utils/styleKits';
 import ActressView from '../../../../../component/common/actressview';
 import Top from '../../../../../component/common/top';
 import { NavigationContext } from '@react-navigation/native';
-class Index extends Component {
+class Index extends PureComponent {
   static contextType = NavigationContext;
   state = {
     actor: [

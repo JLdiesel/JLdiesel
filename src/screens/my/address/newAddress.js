@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Switch } from 'react-native';
 import Top from '../../../component/common/top';
 import { Input } from 'react-native-elements';
@@ -9,7 +9,7 @@ import CityJson from './citys.json';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { NavigationContext } from '@react-navigation/native';
 import { pxToDp } from '../../../utils/styleKits';
-export default class newAddress extends Component {
+export default class newAddress extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

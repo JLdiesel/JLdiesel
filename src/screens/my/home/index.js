@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -14,8 +14,8 @@ import Ionicons from 'react-native-vector-icons/FontAwesome';
 import List from '@components/common/list';
 import { NavigationContext } from '@react-navigation/native';
 import { connect } from 'react-redux';
-import changeImgSize from '@utils/changeImgSize';
-class Index extends Component {
+
+class Index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { avatar: '' };

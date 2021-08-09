@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -17,7 +17,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import StepIndicator from 'react-native-step-indicator';
 
-class Index extends Component {
+class Index extends PureComponent {
   onSharePress() {
     this.setState({ showSharePop: !this.state.showSharePop });
   }
@@ -265,7 +265,7 @@ class Index extends Component {
                 <Text>剧本</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity  onPress={() => this.context.navigate('Course')}>
+            <TouchableOpacity onPress={() => this.context.navigate('Course')}>
               <View style={{ alignItems: 'center' }}>
                 <Ionicons name="md-logo-octocat" size={28} color="#468CD3" />
                 <Text>教程</Text>

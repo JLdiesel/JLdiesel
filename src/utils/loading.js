@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -9,7 +9,7 @@ import {
 
 import styles from './styles';
 
-export default class Loading extends Component {
+export default class Loading extends PureComponent {
   // 构造
   constructor(props) {
     super(props);

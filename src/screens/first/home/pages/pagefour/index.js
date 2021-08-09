@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Top from '@components/common/top';
 import { NavigationContext } from '@react-navigation/native';
 
-class Index extends Component {
+class Index extends PureComponent {
   static contextType = NavigationContext;
   render() {
     console.log(this.props.route);

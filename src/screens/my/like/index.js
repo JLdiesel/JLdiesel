@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text,Image} from "react-native";
 import Top from '../../../component/common/top';
 import { pxToDp } from "../../../utils/styleKits";
 
 
-class Index extends Component {
+class Index extends PureComponent {
     render() {
         return (
             <View style={{ backgroundColor: '#E2F4FE',flex:1}}>

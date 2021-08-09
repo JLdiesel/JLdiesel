@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -19,7 +19,7 @@ import Legend from '@components/first/legend';
 import Hy from '@components/first/hy';
 const SLIDER_1_FIRST_ITEM = 1;
 
-class Index extends Component {
+class Index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -17,7 +17,6 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Swiper from '../../../../component/common/Swiper';
 import { getShopInfo } from '@service/shop';
-import { PureComponent } from 'react';
 import { EasyLoading, Loading } from '@utils/ezLoading';
 const WINDOW_WIDTH = Dimensions.get('window').width;
 

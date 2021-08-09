@@ -1,8 +1,8 @@
-import React,{ Component } from "react";
+import React,{ PureComponent } from "react";
 import { View,Text,StyleSheet,TextInput } from "react-native";
 import { pxToDp } from "../../utils/styleKits";
 
-class CommonInput extends Component{
+class CommonInput extends PureComponent{
     render(){
         return(
             <View style={styles.commonInput}>

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, TouchableOpacity,StyleSheet,Image } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { pxToDp } from "../../../utils/styleKits";
 import Top from '../../../component/common/top';
 import { NavigationContext } from "@react-navigation/native";
 
-class Index extends Component {
+class Index extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

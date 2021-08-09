@@ -24,7 +24,7 @@ export class EasyLoading {
   }
 }
 
-export class Loading extends React.Component {
+export class Loading extends React.PureComponent {
   static propTypes = {
     color: PropTypes.string,
     textStyle: PropTypes.any,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -18,7 +18,7 @@ import { Carousel } from '../../../component/common/teaset';
 import SnapCarousel from '../../../component/SnapCarousel/index';
 import { Video } from 'expo-av';
 
-class Index extends Component {
+class Index extends PureComponent {
   render() {
     return (
       <View style={{ backgroundColor: '#ecf6fc', flex: 1 }}>

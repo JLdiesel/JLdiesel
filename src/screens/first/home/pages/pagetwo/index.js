@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 import Top from '../../../../../component/common/top';
 
-export default class Example extends Component {
+export default class Example extends PureComponent {
   constructor() {
     super();
     this.onEventPress = this.onEventPress.bind(this);

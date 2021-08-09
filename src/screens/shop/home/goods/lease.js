@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -53,7 +53,7 @@ const renderCarousel = () => (
   </Carousel>
 );
 
-class shopdetails extends Component {
+class shopdetails extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

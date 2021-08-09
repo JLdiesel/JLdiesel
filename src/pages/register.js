@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, {PureComponent} from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import CommonInput from "../component/common/commonInput";
 import { pxToDp } from "../utils/styleKits";
 import { eye } from "../res/fonts/iconSvg"
 import SvgUri from "react-native-svg-uri";
 
-class Register extends Component {
+class Register extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {

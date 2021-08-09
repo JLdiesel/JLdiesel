@@ -2,14 +2,13 @@
 
 'use strict';
 
-import React, {Component} from "react";
-import {View} from 'react-native';
+import React, { Component } from 'react';
+import { View } from 'react-native';
 
 import Overlay from '../Overlay/Overlay';
 import PullPickerView from './PullPickerView';
 
 export default class PullPicker extends Overlay {
-
   static PullPickerView = PullPickerView;
 
   // items: array of string
@@ -21,9 +20,7 @@ export default class PullPicker extends Overlay {
         selectedIndex={selectedIndex}
         onSelected={onSelected}
         {...options}
-        />
+      />
     );
   }
-
 }
-

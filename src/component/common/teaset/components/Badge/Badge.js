@@ -2,30 +2,29 @@
 
 'use strict';
 
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import {View, Text, ViewPropTypes} from 'react-native';
+import { View, Text, ViewPropTypes } from 'react-native';
 
 import Theme from 'teaset/themes/Theme';
 
-export default class Badge extends Component {
-
+export default class Badge extends PureComponent {
   static propTypes = {
     ...ViewPropTypes,
     type: PropTypes.oneOf(['capsule', 'square', 'dot']),
     count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     countStyle: Text.propTypes.style,
-    maxCount: PropTypes.number,
+    maxCount: PropTypes.number
   };
 
   static defaultProps = {
     ...View.defaultProps,
     type: 'capsule',
-    maxCount: 99,
+    maxCount: 99
   };
 
   buildStyle() {
-    let {style, type, count} = this.props;
+    let { style, type, count } = this.props;
 
     let width, height, minWidth, borderRadius, borderWidth, padding;
     switch (type) {
@@ -45,41 +44,45 @@ export default class Badge extends Component {
         break;
       case 'dot':
         width = Theme.badgeDotSize;
-        height = Theme.badgeDotSize;        
+        height = Theme.badgeDotSize;
         borderRadius = Theme.badgeDotSize / 2;
         borderWidth = 0;
         padding = 0;
         break;
     }
 
-    style = [{
-      backgroundColor: Theme.badgeColor,
-      width: width,
-      height: height,
-      minWidth: minWidth,
-      borderRadius: borderRadius,
-      borderColor: Theme.badgeBorderColor,
-      borderWidth: borderWidth,
-      paddingLeft: padding,
-      paddingRight: padding,
-      overflow: 'hidden',
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexDirection: 'row',
-    }].concat(style);
+    style = [
+      {
+        backgroundColor: Theme.badgeColor,
+        width: width,
+        height: height,
+        minWidth: minWidth,
+        borderRadius: borderRadius,
+        borderColor: Theme.badgeBorderColor,
+        borderWidth: borderWidth,
+        paddingLeft: padding,
+        paddingRight: padding,
+        overflow: 'hidden',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row'
+      }
+    ].concat(style);
 
     return style;
   }
 
   renderInner() {
-    let {type, count, countStyle, maxCount, children} = this.props;
+    let { type, count, countStyle, maxCount, children } = this.props;
 
     if (type === 'dot') return null;
     else if (count || count === 0) {
-      countStyle = [{
-        color: Theme.badgeTextColor,
-        fontSize: Theme.badgeFontSize,
-      }].concat(countStyle);
+      countStyle = [
+        {
+          color: Theme.badgeTextColor,
+          fontSize: Theme.badgeFontSize
+        }
+      ].concat(countStyle);
       return (
         <Text style={countStyle} allowFontScaling={false} numberOfLines={1}>
           {count > maxCount ? maxCount + '+' : count}
@@ -91,12 +94,12 @@ export default class Badge extends Component {
   }
 
   render() {
-    let {style, children, type, count, countStyle, maxCount, ...others} = this.props;
+    let { style, children, type, count, countStyle, maxCount, ...others } =
+      this.props;
     return (
       <View style={this.buildStyle()} {...others}>
         {this.renderInner()}
       </View>
     );
   }
-
 }
