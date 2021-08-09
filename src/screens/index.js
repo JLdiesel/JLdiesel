@@ -63,6 +63,9 @@ export { default as Optuijian } from './first/opera/optuijian';//唱段推荐
 export { default as Opperson } from './first/opera/opperson';//名角的唱段页面
 export { default as Opgroup } from './first/opera/opgroup';//流派的唱段页面
 export { default as VR } from './play/vr';//越剧小镇VR
+export { default as Course } from './play/course';//教程页面
+
+
 
 
 

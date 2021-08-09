@@ -36,7 +36,7 @@ class index extends Component {
                         </Text>
 
                         <Text style={{ fontSize: pxToDp(15), margin: pxToDp(4) }}>
-                            &emsp;&emsp; 越剧的唱腔以婉约轻灵为主，那是西窗竹影烟波画船，是流水落花燕语呢喃，是寒塘鹤影冷月诗魂。越剧的服饰婉丽秀气，软烟罗香云纱碎花云绸豆绿水缎，盈盈一握小蛮腰。原先多为女串生角，眉眼姿丽的女子，将小生演得那般风流俊朗。越剧，只能浸在婉转花香润在朦胧烟雨里。细碎的唱词，温静的底蕴，缓缓吟轻轻唱.
+                            &emsp;&emsp; 越剧的唱腔以婉约轻灵为主，那是西窗竹影烟波画船，是流水落花燕语呢喃，是寒塘鹤影冷月诗魂。越剧的服饰婉丽秀气，软烟罗香云纱碎花云绸豆绿水缎，盈盈一握小蛮腰。原先多为女串生角，眉眼姿丽的女子，将小生演得那般风流俊朗。越剧，只能浸在婉转花香润在朦胧烟雨里。细碎的唱词，温静的底蕴，缓缓吟轻轻唱。
                         </Text>
                         <View style={{ width: '96%', height: pxToDp(200), marginLeft: pxToDp(8), marginTop: pxToDp(4), marginBottom: pxToDp(4) }}>
                             <Image style={{ width: '100%', height: pxToDp(200), borderRadius: pxToDp(10) }} source={{ uri: 'https://img0.baidu.com/it/u=2218639897,3986178039&fm=26&fmt=auto&gp=0.jpg' }}></Image>
