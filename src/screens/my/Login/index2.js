@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { View, Text, Image, ImageBackground, TouchableOpacity, Animated, StyleSheet, LayoutAnimation, UIManager,ToastAndroid } from 'react-native'
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -8,7 +8,7 @@ import { ACCOUNT_LOGIN, ACCOUNT_REGISTER } from './pathMap'
 import { NavigationContext } from "@react-navigation/native";
 import {changeToken} from '../store/actions'
 import { pxToDp } from "@utils/styleKits";
- class Login extends Component {
+ class Login extends PureComponent {
 static contextType = NavigationContext;
 
   state = {

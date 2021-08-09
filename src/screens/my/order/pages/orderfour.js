@@ -1,8 +1,8 @@
-import React,{ Component } from "react";
+import React,{ PureComponent } from "react";
 import { View,Text } from "react-native";
 import { pxToDp } from "../../../../utils/styleKits";
 
-class Index extends Component{
+class Index extends PureComponent{
     render(){
         return(
             <View style={{alignItems:'center',justifyContent:'center',backgroundColor:'#E2F4FE',flex:1}}>

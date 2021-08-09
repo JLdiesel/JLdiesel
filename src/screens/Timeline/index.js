@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   Text,
   View,
@@ -14,7 +14,7 @@ import { pxToDp } from "../../utils/styleKits";
 import Feather from "react-native-vector-icons/Feather";
 import { AlwaysOpen } from "../../component/common/hidemenu";
 
-export default class index extends Component {
+export default class index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

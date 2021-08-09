@@ -9,10 +9,10 @@
  *   cardStyle: {}        // 每个图片的样式
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Animated, Easing } from 'react-native';
 
-class index extends Component {
+class index extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {

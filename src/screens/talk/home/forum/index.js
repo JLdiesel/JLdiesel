@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import { pxToDp } from '../../../../utils/styleKits';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-class Index extends Component {
+class Index extends PureComponent {
   state = {
     imformation: [
       {

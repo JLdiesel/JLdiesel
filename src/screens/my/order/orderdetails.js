@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ import Icon from "react-native-vector-icons/SimpleLineIcons";
 import Icon1 from "react-native-vector-icons/MaterialIcons";
 import { NavigationContext } from "@react-navigation/native";
 
-class orderdetails extends Component {
+class orderdetails extends PureComponent {
   static defaultProps = {
     style: {},
     textStyle: {},

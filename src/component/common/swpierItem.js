@@ -1,12 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import { SwipeListView, SwipeRow } from "react-native-swipe-list-view";
 import SvgUri from "react-native-svg-uri";
 import { Card } from "react-native-shadow-cards";
 import { choose, deleteIcon, edit } from "../../component/common/iconSvg";
-export default class SwpierItem extends Component {
+export default class SwpierItem extends PureComponent {
   state = {
     // isClick: false,
     checkedItem: 1,

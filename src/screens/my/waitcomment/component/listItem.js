@@ -1,7 +1,7 @@
-import React,{Component} from 'react'
+import React,{PureComponent} from 'react'
 import { View,Text,Image, TouchableOpacity } from 'react-native'
 import { pxToDp } from '../../../../utils/styleKits'
-class index extends Component{
+class index extends PureComponent{
 
 
    

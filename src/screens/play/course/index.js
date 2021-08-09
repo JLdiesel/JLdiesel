@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from '@react-navigation/native';
@@ -11,7 +11,7 @@ import SnapCarousel from '../../../component/SnapCarousel/index';
 import { Video } from 'expo-av';
 
 
-class Index extends Component {
+class Index extends PureComponent {
     render() {
         return (
             <View style={{ backgroundColor: '#ecf6fc', flex: 1 }}>

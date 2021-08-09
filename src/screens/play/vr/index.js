@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
     StyleSheet,
     View,
@@ -12,7 +12,7 @@ const { width, height } = Dimensions.get('window');
 
 const url = "https://www.kuleiman.com/120910/index.html?m=1";
 
-export default class App extends Component {
+export default class App extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -21,7 +21,7 @@ export default class App extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Top icon1="arrow-back"  />
+                <Top icon1="arrow-back" />
                 <WebView
                     style={{ width: width, height: height - 20, backgroundColor: 'gray' }}
                     source={{ uri: url }}

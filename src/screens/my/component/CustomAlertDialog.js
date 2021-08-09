@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {
   Dimensions,
   Modal,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 const {width} = Dimensions.get('window');
-export default class CustomAlertDialog extends Component {
+export default class CustomAlertDialog extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Text,
   View,
@@ -23,7 +23,7 @@ import { connect } from 'react-redux';
 import requset from '../../../service';
 import * as URL from './constent';
 const typeArr = ['男', '女'];
-class Ziliao extends Component {
+class Ziliao extends PureComponent {
   static contextType = NavigationContext;
   constructor(props) {
     super(props);

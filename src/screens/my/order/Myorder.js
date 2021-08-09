@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ import RBSheet from "react-native-raw-bottom-sheet";
 import { NavigationContext } from "@react-navigation/native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-class orders extends Component {
+class orders extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

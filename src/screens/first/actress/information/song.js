@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, Image,ScrollView } from "react-native";
 import { pxToDp } from "../../../../utils/styleKits";
 
-class Index extends Component {
+class Index extends PureComponent {
     state={
         song:[{title:'婆婆说话你可听到',people:'方亚芬',imgrui:''},{title:'婆婆说话你可听到',people:'方亚芬',imgrui:''},{title:'婆婆说话你可听到',people:'方亚芬',imgrui:''},]
     }

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text,Image,ScrollView } from "react-native";
 import { pxToDp } from "../../../../utils/styleKits";
 
-class Index extends Component {
-    state={
+class Index extends PureComponent{
+    state={ 
         img:[{imguri:''},{imguri:''},{imguri:''},{imguri:''},]
     }
     render() {

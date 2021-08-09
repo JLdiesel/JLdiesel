@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 
-export default class AssetExample extends Component {
+export default class AssetExample extends PureComponent {
   render() {
     return (
       <View style={styles.container}>

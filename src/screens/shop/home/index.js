@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import { pxToDp } from '@utils/styleKits';
 import Swiper from 'react-native-swiper';
 import { NavigationContext } from '@react-navigation/native';
 import Maylike from './components/maylike';
-class Index extends Component {
+class Index extends PureComponent {
   state = {
     ocard: [
       {

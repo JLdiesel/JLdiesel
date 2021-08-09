@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, Image, ScrollView, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 import { pxToDp } from "../../../utils/styleKits";
 import Top from '../../../component/common/top';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 
-class Index extends Component {
+class Index extends PureComponent {
     state = {
         schoolstate: {
             image: 'https://tse1-mm.cn.bing.net/th/id/R-C.1693d122b9478d7792a51f549aadb2c9?rik=q5ATrivKbTnqzg&riu=http%3a%2f%2fd.ifengimg.com%2fq100%2fimg1.ugc.ifeng.com%2fnewugc%2f20190421%2f16%2fwemedia%2f51bf42238f5692a72322a20d11f6f10d01091eae_size425_w640_h360.png&ehk=YsxOvziJPS9igx1T%2b9GKznbYEGxsre4EhhwxE1A269s%3d&risl=&pid=ImgRaw&r=0',
