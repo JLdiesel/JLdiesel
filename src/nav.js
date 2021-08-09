@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Setting">
+      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -137,6 +137,8 @@ function Nav() {
         <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
          {/**个人中心动态详情 */}
         <Stack.Screen name="Indongtai" component={Screens.Indongtai} />
+        {/**论坛帖子详情 */}
+        <Stack.Screen name="Inluntan" component={Screens.Inluntan} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}

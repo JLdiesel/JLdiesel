@@ -51,7 +51,7 @@ class Index extends Component {
           contentContainerCustomStyle={styles.sliderContentContainer}
           layout={type}
           loop={true}
-        />
+        /> 
       </View>
     );
   }

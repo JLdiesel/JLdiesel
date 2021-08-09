@@ -63,6 +63,7 @@ export { default as Optuijian } from './first/opera/optuijian';//唱段推荐
 export { default as Opperson } from './first/opera/opperson';//名角的唱段页面
 export { default as Opgroup } from './first/opera/opgroup';//流派的唱段页面
 export { default as Indongtai} from './my/seetings/component/indontai';
+export { default as Inluntan} from './talk/home/forum/inluntan';
 
 
 

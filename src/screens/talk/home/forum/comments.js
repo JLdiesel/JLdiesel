@@ -46,11 +46,11 @@ state={
                     
                     {item.reply.map((item,rpid)=>(
                     <View key={rpid}>
-                     <View style={{flexDirection:'row',marginLeft:pxToDp(40)}}>
+                     <View style={{flexDirection:'row',marginLeft:pxToDp(35)}}>
                     <Image source={{uri:item.rpimg}} style={{width:pxToDp(40),height:pxToDp(40),margin:pxToDp(15),borderRadius:pxToDp(40)}}/>
                     <Text style={{marginTop:pxToDp(20)}}>{item.rpname}</Text>
                     </View >
-                    <View style={{marginLeft:(105)}}>
+                    <View style={{marginLeft:(100)}}>
                         <View style={{flexDirection:'row'}}>
                     <Text style={{marginBottom:pxToDp(10),bottom:pxToDp(20),fontSize:pxToDp(16)}}>回复{item.rpto}:</Text>
                     <Text style={{marginBottom:pxToDp(10),bottom:pxToDp(20),fontSize:pxToDp(16),width:'90%'}}>{item.rptext}</Text>
