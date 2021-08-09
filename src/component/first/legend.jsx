@@ -16,7 +16,7 @@ export default class Legend extends PureComponent {
     return (
       <View>
         {this.state.arr.map((item, index) =>
-        (<TouchableOpacity onPress={() => this.context.navigate('School', item.id)}>
+        (<TouchableOpacity onPress={() => this.context.navigate('School', item.id)} key={item.id}>
           <GenerView
             imguri={item.picurl}
             name={item.title}

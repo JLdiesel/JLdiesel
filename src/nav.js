@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from './tabbar';
 import * as Screens from './screens';
 import Water from './component/water';
-import Video from '../screens/videoplayer';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +15,6 @@ function Nav() {
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
         <Stack.Screen name="water" component={Water} />
-        <Stack.Screen name="Video" component={Video} />
         {/*我的 */}
         <Stack.Screen name="My" component={Screens.Mine} />
         {/*游玩 */}
@@ -143,6 +141,8 @@ function Nav() {
         <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
         {/*Vr */}
         <Stack.Screen name="VR" component={Screens.VR} />
+        {/**教程页面 */}
+        <Stack.Screen name="Course" component={Screens.Course} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
