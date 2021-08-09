@@ -1,7 +1,7 @@
-import React,{ Component } from 'react';
+import React,{ PureComponent } from 'react';
 import { Button,Image, View, Text ,StatusBar,TextInput,StyleSheet, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-export default class SignBtn extends Component{
+export default class SignBtn extends PureComponent{
   static defaultProps={
     style:{},
     textstyle:{},

@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{PureComponent} from 'react';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import CustormerBar from './component/CustormerBar';
 import Dongtai  from './component/dontai'

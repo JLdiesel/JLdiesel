@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback, TouchableOpacity, Dimensions, Image, textarea, Button, TextInput, } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { pxToDp } from '@utils/styleKits';
 import { MarqueeHorizontal, MarqueeVertical } from 'react-native-marquee-ab';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 import Icon1 from 'react-native-vector-icons/MaterialIcons';
-class index extends Component {
+class index extends PureComponent {
     render() {
         return (
             <ScrollView>

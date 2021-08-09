@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -20,7 +20,7 @@ import { NavigationContext } from '@react-navigation/native';
 import { pxToDp } from '@utils/styleKits';
 import requset from '../../../service';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-class Login extends Component {
+class Login extends PureComponent {
   static contextType = NavigationContext;
 
   state = {

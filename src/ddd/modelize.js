@@ -2,9 +2,9 @@ import React, { createRef, useRef } from 'react';
 import { Modalize } from 'react-native-modalize';
 import Screen from './index'
 import { View,TouchableOpacity,Text,StyleSheet,Dimensions} from 'react-native';
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import MapView from 'react-native-maps';
-export default class timeline extends Component  {
+export default class timeline extends PureComponent  {
    render(){
      const modalizeRef=createRef()
     return (

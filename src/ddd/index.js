@@ -1,4 +1,4 @@
-import React, { Component,createRef } from 'react';
+import React, { PureComponent,createRef } from 'react';
 import {
     Platform,
     StyleSheet,
@@ -21,7 +21,7 @@ const screenWidth=Dimensions.get('window').width
 const imgzz='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft15130%2F245%2F2284505791%2F297895%2Ffa8ada4a%2F5a93939dNaa84c4c1.jpg&refer=http%3A%2F%2Fimg14.360buyimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1630212303&t=e5e7a1cf401964bdfeca7410e630d1d0' 
 
 
-class exswiper extends Component {
+class exswiper extends PureComponent {
   
         state = {
             currentPage: {id:1,year:'1921年',name:'徐玉兰1',local:'富阳区1',title:'abab',local:'1富阳',year2:'1921年~2017年',introduce:'1阿巴阿巴阿巴阿巴阿巴',img:[imgzz,imgzz,imgzz],nearby:[{location:'122',event:'111',time:'111'}],titleimg:[imgzz,imgzz,imgzz]},    

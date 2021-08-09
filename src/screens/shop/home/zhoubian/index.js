@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   View,
   Text,
@@ -11,7 +11,7 @@ import { pxToDp } from "@utils/styleKits";
 import { NavigationContext } from "@react-navigation/native";
 import Top from "@components/common/top";
 import Maylike from '../components/maylike'
-class Index extends Component {
+class Index extends PureComponent {
  
 
    state = {

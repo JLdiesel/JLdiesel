@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 import { StyleSheet, Text, View, Image, TouchableHighlight,Input, TouchableOpacity,} from "react-native";
 import SvgUri from 'react-native-svg-uri'
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     }
   });
   
-  class ListItem extends Component {
+  class ListItem extends PureComponent {
     state={
       isSub:"true",
     }

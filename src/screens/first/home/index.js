@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -23,7 +23,7 @@ import { NavigationContext } from '@react-navigation/native';
 
 const SLIDER_1_FIRST_ITEM = 1;
 
-class Index extends Component {
+class Index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

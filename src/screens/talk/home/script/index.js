@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ import { FAB } from 'react-native-elements';
 import  JBitem from '../components/jbitem'
 
 
-class Index extends Component {
+class Index extends PureComponent {
   
         
         state = {

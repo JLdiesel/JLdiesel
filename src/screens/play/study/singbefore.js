@@ -1,11 +1,11 @@
-import React, { Component, createRef } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
 import { Video } from 'expo-av'
 
-class Index extends Component {
+class Index extends PureComponent {
 
     state = {
         status: {},

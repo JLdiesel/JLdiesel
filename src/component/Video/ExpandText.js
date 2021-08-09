@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
  import {Text, StyleSheet, ScrollView, View} from 'react-native';
  
  import ExpandableText from 'rn-expandable-text';
  
 
- export default class App extends Component{
+ export default class App extends PureComponent{
    render() {
      return (
        <View

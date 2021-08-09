@@ -1,7 +1,7 @@
-import React,{Component} from 'react'
+import React,{ PureComponent } from 'react'
 import { View,Text,Image, TouchableOpacity,FlatList  } from 'react-native'
 import OrderItem from './component/listItem'
-class index extends Component{
+class index extends  PureComponent{
 
 state={
     shop:[

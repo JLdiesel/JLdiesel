@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View,ImageBackground ,TouchableOpacity,Text} from 'react-native';
 import VideoPlayScreen from '../VideoPlayScreen.js';
 import { pxToDp } from '@utils/styleKits.js';
 import { Button } from 'react-native-elements';
-class index extends Component {
+class index extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

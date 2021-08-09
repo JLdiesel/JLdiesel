@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image,ScrollView } from "react-native";
 import { pxToDp } from "../../../utils/styleKits";
 import Top from '../../../component/common/top'
 
-class Index extends Component {
+class Index extends PureComponent {
     render() {
         return (
             <ScrollView style={{backgroundColor:"#e2f4fe"}}>

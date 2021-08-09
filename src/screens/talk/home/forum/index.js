@@ -1,4 +1,4 @@
- import React, { Component } from 'react';
+ import React, { PureComponent } from 'react';
     import {
       View,
       Text,
@@ -14,7 +14,7 @@
     import Icon from 'react-native-vector-icons/AntDesign';
     import Tiebar from './luntan'
     import {NavigationContext} from '@react-navigation/native';
-    class Index extends Component {
+    class Index extends PureComponent {
       state = {   
       field:['活动精选','附近茶馆','旅游路线','热门话题'],
         showSharePop: false ,//分享弹窗，默认不显示,

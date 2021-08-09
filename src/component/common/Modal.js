@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Modal from 'react-native-modal';
 import { ScrollView, View, Text, Image, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import FlipCard from 'react-native-flip-card';
 
-export default class ModalT extends Component {
+export default class ModalT extends PureComponent {
 
     constructor(props) {
         super(props)

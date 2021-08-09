@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {View,Text,StyleSheet,TouchableWithoutFeedback,TouchableOpacity,Dimensions,Image,textarea, Button ,FlatList, TextInput, ScrollView} from 'react-native';
 //导入Video组件
 // 导入 Silder组件
@@ -61,7 +61,7 @@ const mockBooks = [
 
 ]
 
-export default class App extends React.Component{
+export default class App extends React.PureComponent{
     constructor(props){
         super(props);
   

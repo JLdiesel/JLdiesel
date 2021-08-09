@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   View,
   Text,
@@ -11,7 +11,7 @@ import Top from "@components/common/top";
 import { pxToDp } from "@utils/styleKits";
 import Swiper from "react-native-swiper";
 import { NavigationContext } from "@react-navigation/native";
-class Index extends Component {
+class Index extends PureComponent {
   
   static contextType = NavigationContext;
   render() {

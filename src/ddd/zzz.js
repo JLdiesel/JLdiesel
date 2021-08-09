@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
     Platform,
     StyleSheet,
@@ -20,7 +20,7 @@ const images = [{ uri: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fim
 { uri: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcbu01.alicdn.com%2Fimg%2Fibank%2F2018%2F549%2F381%2F9152183945_1560607903.400x400.jpg&refer=http%3A%2F%2Fcbu01.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1630212256&t=851b3be093f1822e6e741ad5e0feeee0' },
 { uri: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft15130%2F245%2F2284505791%2F297895%2Ffa8ada4a%2F5a93939dNaa84c4c1.jpg&refer=http%3A%2F%2Fimg14.360buyimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1630212303&t=e5e7a1cf401964bdfeca7410e630d1d0' }]
 
-class exswiper extends Component {
+class exswiper extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {

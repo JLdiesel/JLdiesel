@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView,TouchableOpacity } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
@@ -11,7 +11,7 @@ const point='<svg t="1627566102075" class="icon" viewBox="0 0 1024 1024" version
 const playnumber='<svg t="1627565895776" class="icon" viewBox="0 0 1194 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5884" width="200" height="200"><path d="M981.324356 0.01024H213.339396a211.281196 211.281196 0 0 0-213.329156 213.329155v597.321636a211.281196 211.281196 0 0 0 213.329156 213.329156h767.98496a211.281196 211.281196 0 0 0 213.329156-213.329156V213.339395a211.451859 211.451859 0 0 0-213.329156-213.329155z m127.997493 810.650791a125.650873 125.650873 0 0 1-127.997493 127.997494H213.339396a125.736204 125.736204 0 0 1-127.997494-127.997494V213.339395a125.736204 125.736204 0 0 1 127.997494-127.997493h767.98496a125.736204 125.736204 0 0 1 127.997493 127.997493v597.321636z m0 0" fill="#333333" p-id="5885"></path><path d="M829.775324 472.918312l-345.593232-151.335703a42.665831 42.665831 0 0 0-60.585481 38.953904v302.62874a42.665831 42.665831 0 0 0 60.585481 38.953904l345.891893-151.335703a42.239173 42.239173 0 0 0-0.298661-77.865142z m0 0" fill="#333333" p-id="5886"></path></svg>'
 
 
-class Index extends Component {
+class Index extends PureComponent {
 state={
   isvisible:false, 
 

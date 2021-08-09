@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import {
   View,
   Text,
@@ -16,7 +16,7 @@ import RBSheet from "react-native-raw-bottom-sheet";
 import { NavigationContext } from "@react-navigation/native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-class orders extends Component {
+class orders extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -65,6 +65,7 @@ class orders extends Component {
       <View style={{ backgroundColor: "#e2f4fe",flex:1 }}>
         <Top icon1="arrow-back" title="确认订单" />
         <ScrollView style={{ height: pxToDp(675) }}>
+          {/* 订单状态 */}
           <View
             style={{
               borderRadius: pxToDp(10),
@@ -77,7 +78,7 @@ class orders extends Component {
           >
             <Text style={{ fontSize: pxToDp(16) }}>订单状态: 待确认</Text>
           </View>
-
+          {/* 收获地址 */}
           <TouchableOpacity
             onPress={() => this.context.navigate("address")}
             style={{
@@ -114,7 +115,7 @@ class orders extends Component {
               </Text>
             </View>
           </TouchableOpacity>
-
+          {/* 商品信息 */}
           <TouchableOpacity
             style={{
               height: pxToDp(140),
@@ -172,6 +173,7 @@ class orders extends Component {
               </View>
             </View>
           </TouchableOpacity>
+          {/* 商品价格 */}
           <View
             style={{
               backgroundColor: "white",
@@ -181,7 +183,6 @@ class orders extends Component {
           >
             <View
               style={{
-                alignItems: "flex-end",
                 marginRight: pxToDp(10),
                 justifyContent: "space-between",
                 flexDirection: "row",
@@ -215,6 +216,7 @@ class orders extends Component {
               </Text>
             </View>
           </View>
+          {/* 支付方式 */}
           <View>
             <TouchableOpacity
               onPress={() => this.Scrollable.open()}

@@ -7,6 +7,7 @@ export { default as GoodsList } from './shop/home/goods/good';//商品详情页
 export { default as Login } from './my/Login';//商品详情页
 export { default as Study } from './play/study/study';//练唱
 export { default as Details } from './play/study/details';//商品详情页
+export { default as leasedetails } from './my/order/leasedetails'; //租赁页
 export { default as Sing } from './play/study/sing';//商品详情页
 export { default as Singbefore } from './play/study/singbefore';//商品详情页
 export { default as Zhoubian } from './shop/home/zhoubian';//周边页
@@ -32,8 +33,10 @@ export { default as Change } from './play/change';//AI换衣页
 export { default as Nickname } from './my/component/Nickname';//修改昵称
 export { default as Singnature } from './my/component/Signature';//修改个签
 export { default as Myorder } from './my/order/Myorder';//正在支付订单
+export { default as leaseorder } from './my/order/leaseorder';//租赁订单
 export { default as orderdetails } from './my/order/orderdetails';//订单确认
 export { default as newAddress } from './my/address/newAddress';//新增收货地址
+export { default as Lease } from './shop/home/goods/lease';//新增收货地址
 export { default as Order} from './my/order/index';//订单
 export { default as Pay} from './my/pay';//待支付
 export { default as Postsale} from './my/postsale';//待支付
@@ -64,6 +67,10 @@ export { default as Opperson } from './first/opera/opperson';//名角的唱段�
 export { default as Opgroup } from './first/opera/opgroup';//流派的唱段页面
 export { default as Indongtai} from './my/seetings/component/indontai';
 export { default as Inluntan} from './talk/home/forum/inluntan';
+export { default as VR } from './play/vr';//越剧小镇VR
+export { default as Course } from './play/course';//教程页面
+
+
 
 
 

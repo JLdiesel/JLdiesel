@@ -1,11 +1,11 @@
 /* eslint-disable semi */
 /* eslint-disable prettier/prettier */
 ('use strict');
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {NavigationContext} from '@react-navigation/native';
-export default class HeaderHaveBackNoshare extends Component {
+export default class HeaderHaveBackNoshare extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {};

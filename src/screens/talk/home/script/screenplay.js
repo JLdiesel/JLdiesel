@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList } from "react-native";
 import { pxToDp } from "@utils/styleKits";
 import Icon from 'react-native-vector-icons/AntDesign';
 import Top from "@components/common/top"
 import { NavigationContext } from "@react-navigation/native";
 
-class Index extends Component {
+class Index extends PureComponent {
     state = {
         like: true,
         alike: true,

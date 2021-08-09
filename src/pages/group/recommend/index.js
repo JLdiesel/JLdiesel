@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Animated, Easing, StyleSheet, View, Text, Button, TouchableHighlight, Image } from "react-native";
 import {BoxShadow } from 'react-native-shadow';
 import { pxToDp } from "../../../utils/styleKits";
 
-export default class IndexScreen extends React.Component {
+export default class IndexScreen extends React.PureComponent {
 
     constructor(props) {
         super(props);

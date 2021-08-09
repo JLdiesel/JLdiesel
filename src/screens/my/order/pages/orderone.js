@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { pxToDp } from "../../../../utils/styleKits";
 import Orderitem from "./orderItem";
 
-class Index extends Component{
+class Index extends PureComponent{
 
     state={
         pagetwo:[{id:1,shopname:'百越庭售卖店',jiaoyi:'交易成功',goodimg:'',goodname:'戏服儿童小生衣',price:128,realprice:128,},

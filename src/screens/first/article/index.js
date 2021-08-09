@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView, TextInput } from "react-native";
 import Top from '@components/common/top'
 import { pxToDp } from "@utils/styleKits";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-class Index extends Component {
+class Index extends PureComponent {
     render() {
         return (
             <View style={{backgroundColor:'#E2F4FE'}}>

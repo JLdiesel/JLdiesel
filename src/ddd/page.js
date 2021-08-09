@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
     Platform,
     StyleSheet,
@@ -16,7 +16,7 @@ import {
 import EZSwiper from 'react-native-ezswiper';
 import { pxToDp } from './styleKits';
 
-export default class page extends Component{
+export default class page extends PureComponent{
     render(){
         
         return(

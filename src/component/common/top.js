@@ -4,7 +4,7 @@ icon1 2 是给顶部设置的返回和分享按钮 需要在引用的页面按�
 */
 }
 ('use strict');
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Text,
   View,
@@ -16,7 +16,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContext } from '@react-navigation/native';
 import { pxToDp, screenWidth } from '../../utils/styleKits';
 import { LinearGradient } from 'expo-linear-gradient';
-export default class HeaderHaveBack extends Component {
+export default class HeaderHaveBack extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {};

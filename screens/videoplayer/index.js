@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import VideoHead from './VideoHead.js';
@@ -8,7 +8,7 @@ import VideoCom from './VideoCom';
 import { View } from 'react-native';
 import VideoPlayScreen from '../videoplayer/VideoPlayScreen.js';
 import { pxToDp } from '@utils/styleKits.js';
-export default class Index extends Component {
+export default class Index extends PureComponent {
 
 
    state = {

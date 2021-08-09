@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from './tabbar';
 import * as Screens from './screens';
 import Water from './component/water';
-import Video from '../screens/videoplayer';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +15,6 @@ function Nav() {
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
         <Stack.Screen name="water" component={Water} />
-        <Stack.Screen name="Video" component={Video} />
         {/*我的 */}
         <Stack.Screen name="My" component={Screens.Mine} />
         {/*游玩 */}
@@ -94,8 +92,12 @@ function Nav() {
         {/** 订单信息页*/}
         <Stack.Screen name="Myorder" component={Screens.Myorder} />
         {/**地址 */}
+        <Stack.Screen name="leaseorder" component={Screens.leaseorder} />
+        {/* 租赁订单信息 */}
         <Stack.Screen name="address" component={Screens.address} />
         {/**增加新地址 */}
+        <Stack.Screen name="Lease" component={Screens.Lease} />
+        {/* 戏服租赁页 */}
         <Stack.Screen name="newAddress" component={Screens.newAddress} />
         {/**全部订单 */}
         <Stack.Screen name="Orderone" component={Screens.Orderone} />
@@ -119,6 +121,8 @@ function Nav() {
         <Stack.Screen name="Scriptlibrary" component={Screens.Scriptlibrary} />
         {/**订单确认页面*/}
         <Stack.Screen name="orderdetails" component={Screens.orderdetails} />
+        {/**租赁订单确认*/}
+        <Stack.Screen name="leasedetails" component={Screens.leasedetails} />
         {/**关注列表 */}
         <Stack.Screen name="Follow" component={Screens.Follow} />
         {/**点赞 */}
@@ -139,6 +143,10 @@ function Nav() {
         <Stack.Screen name="Indongtai" component={Screens.Indongtai} />
         {/**论坛帖子详情 */}
         <Stack.Screen name="Inluntan" component={Screens.Inluntan} />
+        {/*Vr */}
+        <Stack.Screen name="VR" component={Screens.VR} />
+        {/**教程页面 */}
+        <Stack.Screen name="Course" component={Screens.Course} />
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
