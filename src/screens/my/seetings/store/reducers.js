@@ -7,7 +7,7 @@ const initState = Map({
 export default (state = initState, { type, payload }) => {
   switch (type) {
     case CHANGE_AVATAR:
-      return initState.set('avatar', payload);
+      return state.set('avatar', payload);
 
     default:
       return state;

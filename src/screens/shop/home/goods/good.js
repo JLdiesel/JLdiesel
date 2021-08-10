@@ -8,14 +8,14 @@ import {
   ScrollView,
   Dimensions
 } from 'react-native';
-import Top from '../../../../component/common/top';
-import { pxToDp } from '../../../../utils/styleKits';
+import Top from '@components/common/top';
+import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from '@react-navigation/native';
 import Lightbox from 'react-native-lightbox';
 import Carousel from 'react-native-looped-carousel';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import Swiper from '../../../../component/common/Swiper';
+import Swiper from '@components/common/Swiper';
 import { getShopInfo } from '@service/shop';
 import { EasyLoading, Loading } from '@utils/ezLoading';
 const WINDOW_WIDTH = Dimensions.get('window').width;
@@ -133,8 +133,15 @@ class shopdetails extends PureComponent {
         EasyLoading.dismiss();
       });
   }
-  //this.context.navigate('Myorder')
-  createOrider = () => {};
+  //this.context.navigate('Myorder')acitveId
+  goCreateOrider = () => {
+    this.Scrollable.close();
+    this.context.navigate('Myorder', {
+      shopId: this.state.shop.id,
+      shopCarId: this.state.acitveId,
+      count: this.state.count
+    });
+  };
   render() {
     const { count, tabs, activeTab, activeSizeTab } = this.state;
     return (
@@ -217,7 +224,7 @@ class shopdetails extends PureComponent {
           ref={(ref) => {
             this.Scrollable = ref;
           }}
-          height={600}
+          height={pxToDp(600)}
           closeOnDragDowncustomStyles={{
             container: { borderTopLeftRadius: 10, borderTopRightRadius: 10 }
           }}
@@ -443,7 +450,7 @@ class shopdetails extends PureComponent {
           >
             <TouchableOpacity
               style={{ width: '100%', height: '100%' }}
-              onPress={this.createOrider}
+              onPress={this.goCreateOrider}
             >
               <Text
                 style={{

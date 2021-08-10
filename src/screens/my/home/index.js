@@ -34,11 +34,11 @@ class Index extends PureComponent {
   }
   static contextType = NavigationContext;
   render() {
-    console.log('render');
+    console.log(this.props.userInfo);
     return (
       <View>
         <Top title="戏痴" />
-        <ScrollView refreshControl={<RefreshControl />}>
+        <ScrollView>
           <UserInner />
           <View
             style={{
@@ -140,6 +140,9 @@ class Index extends PureComponent {
     );
   }
 }
-export default connect((state) => ({}), {
-  getUserOriderListAction
-})(Index);
+export default connect(
+  (state) => ({ userInfo: state.getIn(['homeReducer', 'userInfo']) }),
+  {
+    getUserOriderListAction
+  }
+)(Index);

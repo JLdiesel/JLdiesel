@@ -10,7 +10,7 @@ class UserInner extends PureComponent {
 
   render() {
 
-    console.log('render2');
+    console.log(this.props.userInfo);
     const { fansCount, followCount, nickName, avatar } = this.props.userInfo;
     return (
       <View

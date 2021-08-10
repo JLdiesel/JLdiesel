@@ -1,109 +1,35 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
-  ScrollView,
-} from "react-native";
-import SwpierItem from "../../../component/common/swpierItem";
-import { SwipeListView } from "react-native-swipe-list-view";
-import Top from "../../../component/common/top";
-import { NavigationContext } from "@react-navigation/native";
-import { pxToDp } from "../../../utils/styleKits";
-
+  ScrollView
+} from 'react-native';
+import SwpierItem from '../../../component/common/swpierItem';
+import Top from '../../../component/common/top';
+import { NavigationContext } from '@react-navigation/native';
+import { pxToDp } from '../../../utils/styleKits';
+import { connect } from 'react-redux';
+import requset from '@service/index';
 class SwiperListItem extends PureComponent {
   state = {
     checkedId: 1,
     isClick: true,
-    listData: [
-      {
-        id: 1,
-        name: "乔布斯",
-        phonenumber: "15257129931",
-        province: "浙江省",
-        city: "宁波市",
-        address: "镇海区",
-      },
-      {
-        id: 2,
-        name: "马云",
-        phonenumber: "18657422253",
-        province: "浙江省",
-        city: "杭州市",
-        address: "萧山区",
-      },
-      {
-        id: 3,
-        name: "巴菲特",
-        phonenumber: "13258467745",
-        province: "zhengjiang",
-        city: "温州市",
-        address: "不晓得温州有啥区了",
-      },
-      {
-        id: 4,
-        name: "马化腾",
-        phonenumber: "19854711164",
-        province: "浙江省",
-        city: "台州市",
-        address: "仙居县",
-      },
-      {
-        id: 5,
-        name: "dongwei999",
-        phonenumber: "999",
-        province: "zhengjiang",
-        city: "温州市",
-        address: "zzzz",
-      },
-      {
-        id: 6,
-        name: "dongwei999",
-        phonenumber: "999",
-        province: "zhengjiang",
-        city: "温州市",
-        address: "zzzz",
-      },
-      {
-        id: 7,
-        name: "dongwei888",
-        phonenumber: "888",
-        province: "zhengjiang",
-        city: "杭州市",
-        address: "zzzzzzzzzzzzzzzzzzzzz",
-      },
-      {
-        id: 8,
-        name: "dongwei888",
-        phonenumber: "888",
-        province: "zhengjiang",
-        city: "杭州市",
-        address: "zzzzzzzzzzzzzzzzzzzzz",
-      },
-    ],
+    listData: []
   };
 
-  // _renderItem = ({ item }) => {
-  //   return (
-  //     <SwpierItem
-
-  //       itemID={item.id}
-  //       key={item.id}
-  //       name={item.name}
-  //       phonenumber={item.phonenumber}
-
-  //       province={item.province}
-  //       city={item.city}
-  //       address={item.address}
-  //     />
-  //   );
-  // }; renderItem={this._renderItem}
-  changeBtn = (id) => {
-    this.setState({ checkedId: id });
+  changeBtn = (id, item) => {
+    requset.patch({ url: `/user/address/${id}` }).then((res) => {
+      this.setState({ checkedId: id });
+      this.props.route.params.changeDefaultAddress(item);
+    });
   };
+  componentDidMount() {
+    this.setState({ checkedId: this.props.route.params.id });
+  }
   static contextType = NavigationContext;
   render() {
     return (
@@ -112,16 +38,15 @@ class SwiperListItem extends PureComponent {
 
         <ScrollView>
           <View style={{ paddingBottom: pxToDp(105) }}>
-            {this.state.listData.map((item, index) => (
+            {this.props.address.map((item) => (
               <SwpierItem
-                onPress={() => this.changeBtn(item.id)}
-                isChecked={this.state.checkedId === item.id ? true : false}
-                key={item.id}
+                onPress={() => this.changeBtn(item.id, item)}
+                isChecked={this.state.checkedId === item.id}
                 name={item.name}
-                phonenumber={item.phonenumber}
-                province={item.province}
-                city={item.city}
+                phonenumber={item.phoneNum}
                 address={item.address}
+                key={item.id}
+                item={item}
               />
             ))}
           </View>
@@ -129,25 +54,25 @@ class SwiperListItem extends PureComponent {
 
         <View
           style={{
-            position: "absolute",
+            position: 'absolute',
             bottom: 0,
-            backgroundColor: "#EE3F4D",
-            width: "100%",
+            backgroundColor: '#EE3F4D',
+            width: '100%',
             height: pxToDp(50),
             borderBottomLeftRadius: pxToDp(8),
-            borderTopRightRadius: pxToDp(8),
+            borderTopRightRadius: pxToDp(8)
           }}
         >
           <TouchableOpacity
-            style={{ width: "100%", height: "100%" }}
-            onPress={() => this.context.navigate("newAddress")}
+            style={{ width: '100%', height: '100%' }}
+            onPress={() => this.context.navigate('newAddress')}
           >
             <Text
               style={{
-                alignSelf: "center",
+                alignSelf: 'center',
                 top: pxToDp(15),
                 fontSize: pxToDp(18),
-                color: "#fcfcfc",
+                color: '#fcfcfc'
               }}
             >
               新增收货地址
@@ -161,43 +86,45 @@ class SwiperListItem extends PureComponent {
 const styles = StyleSheet.create({
   outView: {
     flex: 1,
-    width: "100%",
-    backgroundColor: "#e2f4fe",
+    width: '100%',
+    backgroundColor: '#e2f4fe'
   },
   rowBack: {
-    alignItems: "center",
-    backgroundColor: "#DDD",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    flex: 1,
+    alignItems: 'center',
+    backgroundColor: '#DDD',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flex: 1
   },
   rowFront: {
-    alignItems: "center",
-    backgroundColor: "#CCC",
-    borderBottomColor: "black",
+    alignItems: 'center',
+    backgroundColor: '#CCC',
+    borderBottomColor: 'black',
     borderBottomWidth: 1,
-    justifyContent: "center",
-    height: pxToDp(50),
+    justifyContent: 'center',
+    height: pxToDp(50)
   },
   leftView: {
     width: pxToDp(75),
-    alignItems: "center",
-    backgroundColor: "green",
+    alignItems: 'center',
+    backgroundColor: 'green',
     height: pxToDp(50),
-    justifyContent: "center",
+    justifyContent: 'center'
   },
   backRightBtn: {
-    alignItems: "center",
-    justifyContent: "center",
-    position: "absolute",
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
     width: pxToDp(90),
-    height: "100%",
+    height: '100%'
   },
   backRightBtnLeft: {
-    backgroundColor: "skyblue",
+    backgroundColor: 'skyblue',
     left: pxToDp(275),
-    width: pxToDp(60),
-  },
+    width: pxToDp(60)
+  }
 });
 
-export default SwiperListItem;
+export default connect((state) => ({
+  address: state.getIn(['addressReducer', 'address'])
+}))(SwiperListItem);

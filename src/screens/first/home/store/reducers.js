@@ -7,7 +7,7 @@ const initialState = Map({
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case CHANGE_USER_INFO:
-      return initialState.set('userInfo', payload);
+      return state.set('userInfo', payload);
     default:
       return state;
   }

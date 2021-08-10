@@ -6,20 +6,45 @@ import Top from '../../../component/common/top';
 import { Input } from 'react-native-elements';
 import Picker from 'react-native-picker';
 import CityJson from './citys.json';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import { NavigationContext } from '@react-navigation/native';
 import { pxToDp } from '../../../utils/styleKits';
-export default class newAddress extends PureComponent {
+import requset from '@service/index';
+import { connect } from 'react-redux';
+import { updateAddress } from './store/actions';
+
+class NewAddress extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       person: '',
       phone: '',
-      Zipcode: '',
       Buttonvalue: false,
-      city: ''
+      address: ''
     };
   }
+  saveAddress = () => {
+    requset
+      .post({
+        url: '/user/address',
+        data: {
+          name: this.state.person,
+          address: this.state.address,
+          phoneNum: this.state.phone
+        }
+      })
+      .then((res) => {
+        this.props.updateAddress([
+          {
+            id: res.insertId,
+            name: this.state.person,
+            address: this.state.address,
+            phoneNum: this.state.phone,
+            isdefault: 0
+          }
+        ]);
+      })
+      .then(() => this.context.navigate('Myorder'));
+  };
   static contextType = NavigationContext;
   //选择地区
   showCityPicker = () => {
@@ -69,9 +94,9 @@ export default class newAddress extends PureComponent {
             />
           </View>
         </View>
-        <View style={s.center}>
+        {/* <View style={s.center}>
           <View style={{ height: pxToDp(pxToDp(45)) }}>
-            {/*  <TouchableOpacity onPress={this.showCityPicker}>
+              <TouchableOpacity onPress={this.showCityPicker}>
               <Input
                 inputStyle={{ color: "black" }}
                 leftIcon={
@@ -90,34 +115,18 @@ export default class newAddress extends PureComponent {
                   </Text>
                 }
               />
-            </TouchableOpacity> */}
+            </TouchableOpacity> 
           </View>
-          <View>
-            <Input
-              style={{
-                height: pxToDp(100),
-                fontSize: pxToDp(17),
-
-                textAlign: 'left',
-                textAlignVertical: 'top',
-                borderColor: '#666',
-                margin: pxToDp(10)
-              }}
-              placeholder="街道门牌信息"
-              multiline={true}
-              underlineColorAndroid="transparent"
-            />
-          </View>
-        </View>
+        </View> */}
         <View style={{ height: pxToDp(45) }}>
           <Input
-            placeholder="邮政编码"
-            onChangeText={(Zipcode) => this.setState({ Zipcode })}
+            placeholder="请输入地址"
+            onChangeText={(address) => this.setState({ address })}
             style={{
               height: pxToDp(45),
               paddingLeft: pxToDp(7)
             }}
-            leftIcon={<Text style={{ fontSize: pxToDp(18) }}>邮政编码</Text>}
+            leftIcon={<Text style={{ fontSize: pxToDp(18) }}>地址信息</Text>}
           />
         </View>
         <View
@@ -157,7 +166,7 @@ export default class newAddress extends PureComponent {
         >
           <TouchableOpacity
             style={{ width: '100%', height: '100%' }}
-            onPress={() => this.context.navigate('address')}
+            onPress={this.saveAddress}
           >
             <Text
               style={{
@@ -188,3 +197,4 @@ const s = StyleSheet.create({
     marginLeft: pxToDp(10)
   }
 });
+export default connect(() => ({}), { updateAddress })(NewAddress);

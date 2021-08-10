@@ -273,6 +273,9 @@ class Index extends PureComponent {
     );
   }
 }
-export default connect((state) => ({}), {
-  getUserInfoAction
-})(Index);
+export default connect(
+  (state) => ({ userInfo: state.getIn(['homeReducer', 'userInfo']) }),
+  {
+    getUserInfoAction
+  }
+)(Index);

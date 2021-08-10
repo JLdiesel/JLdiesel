@@ -5,7 +5,6 @@ import Orderitem from './orderItem';
 
 class Index extends PureComponent {
   render() {
-    console.log(this.props.orider);
     return (
       <View style={{ flex: 1 }}>
         {this.props.orider.length ? (

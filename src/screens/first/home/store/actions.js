@@ -22,6 +22,5 @@ export const getUserOriderListAction = () => (dispatch, getstate) => {
     } else {
       dispatch(changeOrder([]));
     }
-    console.log(getstate());
   });
 };

@@ -5,7 +5,7 @@ const initialState = Map({ orider: [] });
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case UPDATE_ORDER:
-      return initialState.update('orider', (x) => {
+      return state.update('orider', (x) => {
         return [...x, ...payload];
       });
     default:

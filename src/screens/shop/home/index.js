@@ -14,13 +14,18 @@ import Swiper from 'react-native-swiper';
 import { NavigationContext } from '@react-navigation/native';
 import Maylike from './components/maylike';
 import { getShopList } from '@service/shop';
+import { connect } from 'react-redux';
+import { getAddressListAction } from '../../my/address/store/actions';
+
 class Index extends PureComponent {
   state = {
     arr: []
   };
+  UNSAFE_componentWillMount() {
+    this.props.getAddressListAction();
+  }
   componentDidMount() {
     getShopList(0, 5).then((res) => {
-      console.log(res);
       this.setState({ arr: res });
     });
   }
@@ -227,4 +232,4 @@ const styles = StyleSheet.create({
     borderRadius: pxToDp(10)
   }
 });
-export default Index;
+export default connect(() => ({}), { getAddressListAction })(Index);
