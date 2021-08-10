@@ -78,7 +78,7 @@ class exswiper extends PureComponent {
                         this.state.currentPage.titleimg.map((item,id)=>(
                             <Image 
                             key={id}
-                            style={{height:200,marginBottom:10}}
+                            style={{height:pxToDp(200),marginBottom:pxToDp(10)}}
                             source={{uri:item}}/>
                             
                         ))
@@ -98,7 +98,7 @@ class exswiper extends PureComponent {
                       
                             <EZSwiper style={[styles.swiper, { width:"100%"}]}
                                 dataSource={this.state.pagedata}
-                                width={360}
+                                width={pxToDp(360)}
                                 height={pxToDp(100)}
                                 renderRow={this.renderRow.bind(this)}
                                 ratio={1}

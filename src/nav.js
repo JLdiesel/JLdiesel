@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
+      <Stack.Navigator headerMode="none" initialRouteName="Timemap">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -147,6 +147,8 @@ function Nav() {
         <Stack.Screen name="VR" component={Screens.VR} />
         {/**教程页面 */}
         <Stack.Screen name="Course" component={Screens.Course} />
+        <Stack.Screen name="Timemap" component={Screens.Timemap} />
+
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}

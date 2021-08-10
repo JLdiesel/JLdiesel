@@ -68,7 +68,8 @@ export { default as Opgroup } from './first/opera/opgroup';//流派的唱段页�
 export { default as Indongtai} from './my/seetings/component/indontai';
 export { default as Inluntan} from './talk/home/forum/inluntan';
 export { default as VR } from './play/vr';//越剧小镇VR
-export { default as Course } from './play/course';//教程页面
+export { default as Course } from './play/course';
+export { default as Timemap} from '../ddd/index';//教程页面
 
 
 

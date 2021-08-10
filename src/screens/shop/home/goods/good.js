@@ -313,7 +313,7 @@ class shopdetails extends PureComponent {
           ref={(ref) => {
             this.Scrollable = ref;
           }}
-          height={650}
+          height={pxToDp(650)}
           closeOnDragDowncustomStyles={{
             container: { borderTopLeftRadius: 10, borderTopRightRadius: 10 }
           }}
