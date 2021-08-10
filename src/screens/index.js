@@ -39,7 +39,7 @@ export { default as leaseorder } from './my/order/leaseorder'; //租赁订单
 export { default as orderdetails } from './my/order/orderdetails'; //订单确认
 export { default as newAddress } from './my/address/newAddress'; //新增收货地址
 export { default as Lease } from './shop/home/goods/lease'; //新增收货地址
-export { default as Order } from './my/order'; //订单
+export { default as Order } from './my/order/index'; //订单
 export { default as Pay } from './my/pay'; //待支付
 export { default as Postsale } from './my/postsale'; //待支付
 export { default as Waitcomment } from './my/waitcomment'; //待评价
@@ -67,5 +67,5 @@ export { default as Opgroup } from './first/opera/opgroup'; //流派的唱段页
 export { default as Indongtai } from './my/seetings/component/indontai';
 export { default as Inluntan } from './talk/home/forum/inluntan';
 export { default as VR } from './play/vr'; //越剧小镇VR
-export { default as Course } from './play/course'; //教程页面
-export { default as TimeMap } from '../ddd'; //教程页面
+export { default as Course } from './play/course';
+export { default as Timemap } from '../ddd/index'; //教程页面

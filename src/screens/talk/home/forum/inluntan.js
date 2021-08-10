@@ -46,7 +46,7 @@ class Index extends PureComponent {
              { this.state.louzhu.dtimg.map((item,index)=>(
                  <View key={index} style={{marginBottom:pxToDp(10)}}>
                   <Image 
-                  style={{width:pxToDp(150),height:pxToDp(150),borderRadius:pxToDp(15),marginLeft:pxToDp(10)}}
+                  style={{width:pxToDp(155),height:pxToDp(150),borderRadius:pxToDp(15),marginLeft:pxToDp(10)}}
                   source={{uri:item}}/>
                 </View>
                ))  }

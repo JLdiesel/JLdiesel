@@ -14,30 +14,39 @@
     import Icon from 'react-native-vector-icons/AntDesign';
     import Tiebar from './luntan'
     import {NavigationContext} from '@react-navigation/native';
+
     class Index extends PureComponent {
       state = {   
       field:['活动精选','附近茶馆','旅游路线','热门话题'],
         showSharePop: false ,//分享弹窗，默认不显示,
         dongtai:[{dtid:1,dtimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-        name:'wulawulaaaa',date:'03月20日',dt:'乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉',dz:123,
+        name:'wulawulaaaa',date:'2020年03月20日',dt:'乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉',dz:123,
         dtimg2:['https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'
-        ]}],
+        ]},
+        {dtid:1,dtimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+        name:'wulawulaaaa',date:'2020年03月20日',dt:'乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉',dz:123,
+        dtimg2:['https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'
+        ]},{dtid:1,dtimg:'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+        name:'wulawulaaaa',date:'2020年03月20日',dt:'乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉乌拉',dz:123,
+        dtimg2:['https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg','https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'
+        ]}
+      
+      
+      ],
+      
          
-         
-      };
-    
-      onSharePress() {
-        const { showSharePop } = this.state;
-        
       }
       static contextType = NavigationContext;
       render() {
-        
-        const { imformation } = this.state;
+
         return (
           <ScrollView>
             <View>
-    
+         
+              </View>
+            <View>
+
+            
                 <ScrollView
                   horizontal={true}
                   showsHorizontalScrollIndicator={false}
@@ -79,9 +88,9 @@
                       <View style={{marginLeft:pxToDp(10)}}>
                       <Text style={{fontSize:pxToDp(25),fontWeight:'bold'}}>小NGA奥</Text>
                       </View>
-                      <TouchableOpacity onPress={()=>this.context.navigate('Inluntan') }>
+                     
                       <Tiebar dongtai={this.state.dongtai}/>
-                      </TouchableOpacity>
+                    
               </View>
           </ScrollView>
         )

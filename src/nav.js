@@ -41,7 +41,7 @@ function Nav() {
         <Stack.Screen name="Zulin" component={Screens.Zulin} />
         {/*周边商城页 */}
         <Stack.Screen name="Timeline" component={Screens.Timeline} />
-        <Stack.Screen name="TimeMap" component={Screens.TimeMap} />
+
         {/* 时间轴 */}
         <Stack.Screen name="ticket" component={Screens.ticket} />
         {/* 票务系统 */}
@@ -146,9 +146,7 @@ function Nav() {
         <Stack.Screen name="VR" component={Screens.VR} />
         {/**教程页面 */}
         <Stack.Screen name="Course" component={Screens.Course} />
-        {/*DEMO */}
-        {/*DEMO */}
-        {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
+        <Stack.Screen name="Timemap" component={Screens.Timemap} />
       </Stack.Navigator>
     </NavigationContainer>
   );

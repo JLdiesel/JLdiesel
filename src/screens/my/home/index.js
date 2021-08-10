@@ -16,6 +16,7 @@ import { NavigationContext } from '@react-navigation/native';
 import { connect } from 'react-redux';
 import { getUserOriderListAction } from '../../first/home/store/actions';
 import UserInner from '../../../component/home/userInner';
+
 class Index extends PureComponent {
   state = { avatar: '' };
 
