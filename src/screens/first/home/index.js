@@ -13,7 +13,7 @@ import Top from '@components/common/top';
 import ImageFade from '@components/ImageFade/index';
 import ActressView from '@components/common/actressview';
 import { NavigationContext } from '@react-navigation/native';
-import { getUserInfoAction, getUserOriderListAction } from './store/actions';
+import { getUserInfoAction } from './store/actions';
 import { connect } from 'react-redux';
 import Legend from '@components/first/legend';
 import Hy from '@components/first/hy';
@@ -28,7 +28,6 @@ class Index extends PureComponent {
   }
   componentDidMount() {
     this.props.getUserInfoAction();
-    this.props.getUserOriderListAction();
   }
 
   static contextType = NavigationContext;
@@ -275,6 +274,5 @@ class Index extends PureComponent {
   }
 }
 export default connect((state) => ({}), {
-  getUserInfoAction,
-  getUserOriderListAction
+  getUserInfoAction
 })(Index);

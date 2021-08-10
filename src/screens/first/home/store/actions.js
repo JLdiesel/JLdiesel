@@ -1,9 +1,9 @@
-import { CHANGE_USER_INFO, CHANGE_ORDER } from './content';
+import { CHANGE_USER_INFO, UPDATE_ORDER } from './content';
 import { getUserInfo, getUserOriderList } from '@service/home';
 
 export const changeOrder = (payload) => ({
   payload,
-  type: CHANGE_ORDER
+  type: UPDATE_ORDER
 });
 
 export const changeUserInfo = (payload) => ({
@@ -15,12 +15,13 @@ export const getUserInfoAction = () => (dispatch) => {
     dispatch(changeUserInfo(res));
   });
 };
-export const getUserOriderListAction = () => (dispatch) => {
+export const getUserOriderListAction = () => (dispatch, getstate) => {
   getUserOriderList().then((res) => {
     if (res.oriderList) {
-      dispatch(changeOrder(res));
+      dispatch(changeOrder(res.oriderList));
     } else {
       dispatch(changeOrder([]));
     }
+    console.log(getstate());
   });
 };

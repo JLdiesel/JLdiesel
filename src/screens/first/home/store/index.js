@@ -1,3 +1,3 @@
-import reducer from './reducers';
-
-export default reducer;
+import homeReducer from './reducers';
+import oriderReducer from './oriderReducer';
+export { homeReducer, oriderReducer };

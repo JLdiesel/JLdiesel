@@ -1,3 +1,3 @@
-import homeReducer from '../home/store';
+import { homeReducer, oriderReducer } from '../home/store';
 
-export { homeReducer };
+export { homeReducer, oriderReducer };

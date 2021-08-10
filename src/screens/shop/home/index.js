@@ -90,13 +90,15 @@ class Index extends PureComponent {
               />
               <Text style={styles.text}>今日特惠</Text>
             </View>
-            <View style={styles.box}>
-              <Image
-                style={styles.image2}
-                source={require('../../../res/13.jpg')}
-              />
-              <Text style={styles.text}>线下门票</Text>
-            </View>
+            <TouchableOpacity onPress={() => this.context.navigate('ticket')}>
+              <View style={styles.box}>
+                <Image
+                  style={styles.image2}
+                  source={require('../../../res/13.jpg')}
+                />
+                <Text style={styles.text}>线下门票</Text>
+              </View>
+            </TouchableOpacity>
             <View style={styles.box}>
               <Image
                 style={styles.image2}

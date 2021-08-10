@@ -19,6 +19,8 @@ export { default as Yijian } from './my/seetings/yijian'; //意见页
 export { default as Yinsi } from './my/seetings/yinsi'; //隐私页
 export { default as Act } from './play/act'; //双人剧本页
 export { default as Timeline } from './Timeline/index'; //时间轴页
+export { default as ticket } from './shop/home/ticket/index'; //票务系统
+export { default as ticketdetail } from './shop/home/ticket/ticketdetail'; //票务系统详情
 export { default as Apply } from './talk/home/live/apply'; //申请直播页
 export { default as Create } from './talk/home/live/create'; //剧本创作页
 export { default as PageOne } from './first/home/pages/pageone'; //流派传奇页
@@ -37,7 +39,7 @@ export { default as leaseorder } from './my/order/leaseorder'; //租赁订单
 export { default as orderdetails } from './my/order/orderdetails'; //订单确认
 export { default as newAddress } from './my/address/newAddress'; //新增收货地址
 export { default as Lease } from './shop/home/goods/lease'; //新增收货地址
-export { default as Order } from './my/order/index'; //订单
+export { default as Order } from './my/order'; //订单
 export { default as Pay } from './my/pay'; //待支付
 export { default as Postsale } from './my/postsale'; //待支付
 export { default as Waitcomment } from './my/waitcomment'; //待评价
@@ -49,9 +51,6 @@ export { default as School } from './first/school'; //流派页
 export { default as History } from './my/history'; //浏览历史
 export { default as Jifenshop } from './my/jifenshop/jifenshop'; //积分商城
 export { default as Orderone } from './my/order/pages/orderone'; //订单全部页
-export { default as Ordertwo } from './my/order/pages/ordertwo'; //待支付订单
-export { default as Orderthree } from './my/order/pages/orderthree'; //待收货订单
-export { default as Orderfour } from './my/order/pages/orderfour'; //待评价订单
 export { default as Refund } from './my/order/pages/refund'; //退款订单页面
 export { default as Setting } from './my/seetings/setting'; //设置页面
 export { default as Ziliao } from './my/seetings/ziliao'; //资料页面
@@ -69,3 +68,4 @@ export { default as Indongtai } from './my/seetings/component/indontai';
 export { default as Inluntan } from './talk/home/forum/inluntan';
 export { default as VR } from './play/vr'; //越剧小镇VR
 export { default as Course } from './play/course'; //教程页面
+export { default as TimeMap } from '../ddd'; //教程页面

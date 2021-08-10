@@ -1,52 +1,52 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
   ImageBackground,
   Image,
   TouchableOpacity,
-  StyleSheet,
-} from "react-native";
-import { pxToDp } from "../../../utils/styleKits";
-import LinearGradient from "expo-linear-gradient";
-import Icon from "react-native-vector-icons/SimpleLineIcons";
-import Icon1 from "react-native-vector-icons/MaterialIcons";
-import { NavigationContext } from "@react-navigation/native";
+  StyleSheet
+} from 'react-native';
+import { pxToDp } from '../../../utils/styleKits';
+import LinearGradient from 'expo-linear-gradient';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Icon1 from 'react-native-vector-icons/MaterialIcons';
+import { NavigationContext } from '@react-navigation/native';
 
 class orderdetails extends PureComponent {
   static defaultProps = {
     style: {},
     textStyle: {},
-    cisabled: false,
+    cisabled: false
   };
   static contextType = NavigationContext;
 
   render() {
     return (
-      <View style={{ backgroundColor: "#e2f4fe", flex: 1 }}>
+      <View style={{ backgroundColor: '#e2f4fe', flex: 1 }}>
         <ImageBackground
           style={{
-            backgroundColor: "#ecf6fc",
+            backgroundColor: '#ecf6fc',
             width: pxToDp(375),
-            height: pxToDp(150),
+            height: pxToDp(150)
           }}
         >
           <View
             style={{
-              alignItems: "flex-end",
-              flexDirection: "row",
-              justifyContent: "space-between",
+              alignItems: 'flex-end',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
               marginLeft: pxToDp(20),
               marginRight: pxToDp(10),
-              marginTop: pxToDp(15),
+              marginTop: pxToDp(15)
             }}
           >
-            <Text style={{ fontSize: pxToDp(16), fontWeight: "bold" }}>
+            <Text style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>
               卖家已发货
             </Text>
             {/* <Text>支付剩余23时27分</Text> */}
-            <TouchableOpacity onPress={() => this.context.navigate("Tabbar")}>
-              <Icon1 name="home" size={24} color={"#bbb"} />
+            <TouchableOpacity onPress={() => this.context.navigate('Tabbar')}>
+              <Icon1 name="home" size={24} color={'#bbb'} />
             </TouchableOpacity>
           </View>
           <View style={{ marginLeft: pxToDp(20), marginTop: pxToDp(3) }}>
@@ -54,34 +54,34 @@ class orderdetails extends PureComponent {
           </View>
           <TouchableOpacity
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginLeft: pxToDp(20),
-              marginTop: pxToDp(18),
+              marginTop: pxToDp(18)
             }}
           >
             <ImageBackground
               style={{
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: 'center',
+                alignItems: 'center',
                 width: pxToDp(30),
                 height: pxToDp(30),
                 borderRadius: pxToDp(60),
-                backgroundColor: "white",
+                backgroundColor: 'white'
               }}
             >
               <Image
                 style={{ width: pxToDp(20), height: pxToDp(20) }}
-                source={require("../../../res/快递.png")}
+                source={require('../../../res/快递.png')}
               />
             </ImageBackground>
             <View style={{ marginLeft: pxToDp(8) }}>
               <Text
                 style={{
-                  fontWeight: "bold",
-                  marginRight: pxToDp(20),
+                  fontWeight: 'bold',
+                  marginRight: pxToDp(20)
                 }}
                 numberOfLines={1}
-                ellipsizeMode={"tail"}
+                ellipsizeMode={'tail'}
               >
                 由【广东深圳福田转运中心】发往【上海宝山啊啊啊啊啊啊啊啊啊啊啊啊
               </Text>
@@ -90,12 +90,12 @@ class orderdetails extends PureComponent {
               </Text>
             </View>
             <Image
-              source={require("../../../res/箭头白.png")}
+              source={require('../../../res/箭头白.png')}
               style={{
                 width: pxToDp(22),
                 height: pxToDp(22),
                 marginTop: pxToDp(4),
-                left: pxToDp(5),
+                left: pxToDp(5)
               }}
             />
           </TouchableOpacity>
@@ -104,28 +104,28 @@ class orderdetails extends PureComponent {
           style={{
             marginLeft: pxToDp(10),
             marginRight: pxToDp(10),
-            justifyContent: "center",
-            backgroundColor: "white",
+            justifyContent: 'center',
+            backgroundColor: 'white',
             height: pxToDp(90),
             bottom: pxToDp(20),
-            borderRadius: pxToDp(10),
+            borderRadius: pxToDp(10)
           }}
         >
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginLeft: pxToDp(20),
-              marginBottom: pxToDp(2),
+              marginBottom: pxToDp(2)
             }}
           >
-            <Text style={{ fontSize: pxToDp(16), fontWeight: "bold" }}>
+            <Text style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>
               真是厉害
             </Text>
             <Text
               style={{
                 marginLeft: pxToDp(20),
                 fontSize: pxToDp(15),
-                fontWeight: "bold",
+                fontWeight: 'bold'
               }}
             >
               156****5137
@@ -139,19 +139,19 @@ class orderdetails extends PureComponent {
           <TouchableOpacity
             style={{
               height: pxToDp(140),
-              flexDirection: "row",
-              backgroundColor: "white",
+              flexDirection: 'row',
+              backgroundColor: 'white',
               marginLeft: pxToDp(10),
               marginRight: pxToDp(10),
               bottom: pxToDp(10),
-              borderRadius: pxToDp(10),
+              borderRadius: pxToDp(10)
             }}
           >
-            <View style={{ justifyContent: "center", marginLeft: pxToDp(15) }}>
+            <View style={{ justifyContent: 'center', marginLeft: pxToDp(15) }}>
               <Image
                 style={{ width: pxToDp(110), height: pxToDp(110) }}
                 source={{
-                  uri: "https://img20.360buyimg.com/imgzone/jfs/t1/173507/4/18790/68769/60e68718E0f0ea850/91903dd60a5c5707.jpg",
+                  uri: 'https://img20.360buyimg.com/imgzone/jfs/t1/173507/4/18790/68769/60e68718E0f0ea850/91903dd60a5c5707.jpg'
                 }}
               />
             </View>
@@ -159,11 +159,11 @@ class orderdetails extends PureComponent {
               style={{
                 marginLeft: pxToDp(8),
                 marginTop: pxToDp(18),
-                justifyContent: "space-between",
+                justifyContent: 'space-between'
               }}
             >
               <View style={{}}>
-                <Text style={{ fontSize: pxToDp(15), fontWeight: "bold" }}>
+                <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}>
                   花旦戏服戏剧越剧服装
                 </Text>
               </View>
@@ -171,8 +171,8 @@ class orderdetails extends PureComponent {
                 style={{
                   marginBottom: pxToDp(30),
                   width: pxToDp(220),
-                  flexDirection: "row",
-                  justifyContent: "space-between",
+                  flexDirection: 'row',
+                  justifyContent: 'space-between'
                 }}
               >
                 <View style={{ width: pxToDp(150) }}>
@@ -190,8 +190,8 @@ class orderdetails extends PureComponent {
                 <Text
                   style={{
                     fontSize: pxToDp(18),
-                    color: "red",
-                    fontWeight: "bold",
+                    color: 'red',
+                    fontWeight: 'bold'
                   }}
                 >
                   166.90
@@ -203,29 +203,29 @@ class orderdetails extends PureComponent {
         <View
           style={{
             height: pxToDp(180),
-            backgroundColor: "white",
+            backgroundColor: 'white',
             marginLeft: pxToDp(10),
             marginRight: pxToDp(10),
-            borderRadius: pxToDp(10),
+            borderRadius: pxToDp(10)
           }}
         >
           <View style={{ marginLeft: pxToDp(15), marginTop: pxToDp(15) }}>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: 'row' }}>
               <Text>订单编号:</Text>
               <Text style={{ marginLeft: pxToDp(5) }}>109878783472</Text>
               <TouchableOpacity style={{ marginLeft: pxToDp(140) }}>
-                <Text style={{ color: "red" }}>复制</Text>
+                <Text style={{ color: 'red' }}>复制</Text>
               </TouchableOpacity>
             </View>
-            <View style={{ flexDirection: "row", marginTop: pxToDp(14) }}>
+            <View style={{ flexDirection: 'row', marginTop: pxToDp(14) }}>
               <Text>下单时间:</Text>
               <Text style={{ marginLeft: pxToDp(5) }}>2019-06-25 13:10:42</Text>
             </View>
-            <View style={{ flexDirection: "row", marginTop: pxToDp(14) }}>
+            <View style={{ flexDirection: 'row', marginTop: pxToDp(14) }}>
               <Text>归还时间:</Text>
               <Text style={{ marginLeft: pxToDp(5) }}>2019-07-12 13:10:42</Text>
             </View>
-            <View style={{ flexDirection: "row", marginTop: pxToDp(14) }}>
+            <View style={{ flexDirection: 'row', marginTop: pxToDp(14) }}>
               <Text>支付方式:</Text>
               <Text style={{ marginLeft: pxToDp(5) }}>微信支付</Text>
             </View>
@@ -234,23 +234,23 @@ class orderdetails extends PureComponent {
             style={{
               width: pxToDp(355),
               height: pxToDp(1),
-              backgroundColor: "#e6e6e6",
-              marginTop: pxToDp(15),
+              backgroundColor: '#e6e6e6',
+              marginTop: pxToDp(15)
             }}
           />
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginTop: pxToDp(10),
-              justifyContent: "space-between",
+              justifyContent: 'space-between',
               marginLeft: pxToDp(45),
-              marginRight: pxToDp(45),
+              marginRight: pxToDp(45)
             }}
           >
-            <TouchableOpacity style={{ flexDirection: "row" }}>
+            <TouchableOpacity style={{ flexDirection: 'row' }}>
               <Image
                 style={{ width: pxToDp(25), height: pxToDp(20) }}
-                source={require("../../../res/客服.png")}
+                source={require('../../../res/客服.png')}
               />
               <Text>我的客服</Text>
             </TouchableOpacity>
@@ -258,14 +258,14 @@ class orderdetails extends PureComponent {
               style={{
                 height: pxToDp(45),
                 width: pxToDp(1),
-                backgroundColor: "#e6e6e6",
-                bottom: pxToDp(10),
+                backgroundColor: '#e6e6e6',
+                bottom: pxToDp(10)
               }}
             />
-            <TouchableOpacity style={{ flexDirection: "row" }}>
+            <TouchableOpacity style={{ flexDirection: 'row' }}>
               <Image
                 style={{ width: pxToDp(25), height: pxToDp(20) }}
-                source={require("../../../res/电话.png")}
+                source={require('../../../res/电话.png')}
               />
               <Text>拨打电话</Text>
             </TouchableOpacity>
@@ -273,18 +273,18 @@ class orderdetails extends PureComponent {
         </View>
         <View
           style={{
-            backgroundColor: "white",
+            backgroundColor: 'white',
             height: pxToDp(120),
-            marginTop: pxToDp(10),
+            marginTop: pxToDp(10)
           }}
         >
           <View
             style={{
               marginTop: pxToDp(10),
-              flexDirection: "row",
+              flexDirection: 'row',
               marginLeft: pxToDp(15),
-              alignItems: "flex-end",
-              justifyContent: "space-between",
+              alignItems: 'flex-end',
+              justifyContent: 'space-between'
             }}
           >
             <Text style={{ fontSize: pxToDp(14) }}>商品金额</Text>
@@ -292,8 +292,8 @@ class orderdetails extends PureComponent {
               style={{
                 fontSize: pxToDp(14),
                 marginRight: pxToDp(10),
-                fontWeight: "bold",
-                color: "red",
+                fontWeight: 'bold',
+                color: 'red'
               }}
             >
               ￥166.90
@@ -301,11 +301,11 @@ class orderdetails extends PureComponent {
           </View>
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginLeft: pxToDp(15),
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              marginTop: pxToDp(5),
+              alignItems: 'flex-end',
+              justifyContent: 'space-between',
+              marginTop: pxToDp(5)
             }}
           >
             <Text style={{ fontSize: pxToDp(14) }}>运费</Text>
@@ -313,8 +313,8 @@ class orderdetails extends PureComponent {
               style={{
                 fontSize: pxToDp(14),
                 marginRight: pxToDp(10),
-                fontWeight: "bold",
-                color: "red",
+                fontWeight: 'bold',
+                color: 'red'
               }}
             >
               包邮
@@ -322,21 +322,21 @@ class orderdetails extends PureComponent {
           </View>
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginTop: pxToDp(10),
-              justifyContent: "flex-end",
-              alignItems: "center",
+              justifyContent: 'flex-end',
+              alignItems: 'center'
             }}
           >
             <TouchableOpacity
               style={{
                 left: pxToDp(10),
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: 'center',
+                alignItems: 'center',
                 borderRadius: pxToDp(25),
                 marginRight: pxToDp(20),
                 width: pxToDp(80),
-                height: pxToDp(30),
+                height: pxToDp(30)
               }}
             >
               <Text>查看物流</Text>
@@ -350,7 +350,7 @@ class orderdetails extends PureComponent {
                 width: pxToDp(130),
                 height: pxToDp(40),
                 ...this.props.style,
-                overflow: "hidden",
+                overflow: 'hidden'
               }}
             >
               <View
@@ -359,11 +359,11 @@ class orderdetails extends PureComponent {
                   paddingLeft: pxToDp(15),
                   paddingRight: pxToDp(15),
                   borderRadius: pxToDp(5),
-                  width: "100%",
-                  height: "100%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "#ecf6fc",
+                  width: '100%',
+                  height: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: '#ecf6fc'
                 }}
               >
                 <Text>确认收货</Text>
@@ -382,17 +382,17 @@ const styles = StyleSheet.create({
     paddingLeft: pxToDp(15),
     paddingRight: pxToDp(15),
     borderRadius: pxToDp(5),
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   buttonText: {
     fontSize: pxToDp(15),
-    fontFamily: "Gill Sans",
-    textAlign: "center",
-    color: "#ffffff",
-    backgroundColor: "transparent",
-  },
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    color: '#ffffff',
+    backgroundColor: 'transparent'
+  }
 });
 export default orderdetails;
