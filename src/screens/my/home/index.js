@@ -34,7 +34,6 @@ class Index extends PureComponent {
   }
   static contextType = NavigationContext;
   render() {
-    console.log(this.props.userInfo);
     return (
       <View>
         <Top title="戏痴" />
