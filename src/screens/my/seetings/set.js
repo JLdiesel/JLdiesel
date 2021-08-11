@@ -4,6 +4,7 @@ import List from '../../../component/common/list';
 import Top from '../../../component/common/top';
 import { NavigationContext } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { pxToDp } from '../../../ddd/styleKits';
 class Index extends PureComponent {
   constructor(props) {
     super(props);
@@ -36,8 +37,8 @@ class Index extends PureComponent {
               justifyContent: 'center',
               alignItems: 'center',
               width: '100%',
-              height: 50,
-              borderRadius: 10,
+              height: pxToDp(50),
+              borderRadius: pxToDp(10),
               borderWidth: 1,
               backgroundColor: 'rgba(255,255,255,0.8)',
               borderColor: 'black'

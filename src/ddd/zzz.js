@@ -46,7 +46,7 @@ class exswiper extends PureComponent {
     render() {
         return (
             <View>
- 
+
 
                 <View style={{ width: '100%', alignItems: 'center' }} >
                     <View>
@@ -68,10 +68,10 @@ class exswiper extends PureComponent {
                     </View>
                     {/* <Image source={require('./blue.jpg')} style={styles.image}/> */}
 
-                    <TouchableOpacity style={{ height: "40%", backgroundColor: "#383A3F", width: "85%", position: 'absolute', borderRadius: 3, bottom: 20, elevation: 10, padding: 15, flexDirection: 'row' }}
+                    <TouchableOpacity style={{ height: "40%", backgroundColor: "#383A3F", width: "85%", position: 'absolute', borderRadius: 3, bottom: pxToDp(20), elevation: pxToDp(10), padding: pxToDp(15), flexDirection: 'row' }}
                         onPress={() => this.props.navigation.navigate("shopDetail")}>
                         <Image source={this.state.imgUrl} style={styles.image} />
-                        <View style={{ padding: 10 }}  >
+                        <View style={{ padding: pxToDp(10) }}  >
                             <Text style={styles.big}>title</Text>
                             <Text style={styles.mid}>neinong</Text>
                         </View>

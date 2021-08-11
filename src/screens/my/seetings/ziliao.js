@@ -103,9 +103,8 @@ class Ziliao extends PureComponent {
   };
   render() {
     const dateNow = new Date();
-    const currentDate = `${dateNow.getFullYear()}-${
-      dateNow.getMonth() + 1
-    }-${dateNow.getDate()}`;
+    const currentDate = `${dateNow.getFullYear()}-${dateNow.getMonth() + 1
+      }-${dateNow.getDate()}`;
     const { birthday } = this.state;
     return (
       <View style={{ flex: 1, backgroundColor: '#e2f4fe' }}>

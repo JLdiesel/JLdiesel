@@ -18,10 +18,10 @@ class Index extends PureComponent {
             <ScrollView style={{}}>
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
                     {this.state.book.map(item => (
-                        <View key={item.bookname} style={{ width: pxToDp(110), marginTop: pxToDp(10), marginLeft: pxToDp(10), backgroundColor: '#ccc', borderRadius: pxToDp(10), overflow: 'hidden' }}>
-                            <Image source={{ uri: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg' }} style={{ width: '100%', height: pxToDp(150) }} />
-                            <Text style={{ alignSelf: 'center', marginLeft: pxToDp(10) }}>{item.bookname}</Text>
-                            <Text style={{ alignSelf: 'center', marginLeft: pxToDp(10) }}>{item.date}</Text>
+                        <View key={item.bookname} style={{ width: pxToDp(110), marginTop: pxToDp(10), marginLeft: pxToDp(10), backgroundColor: 'white', borderRadius: pxToDp(10), overflow: 'hidden' }}>
+                            <Image source={{ uri: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg' }} style={{ width: '100%', height: pxToDp(130) }} />
+                            <Text style={{ alignSelf: 'center', fontSize:pxToDp(17)}}>{item.bookname}</Text>
+                            <Text style={{ alignSelf: 'center',fontSize:pxToDp(12), color:'gray' }}>{item.date}</Text>
                         </View>
                     ))}
                 </View>

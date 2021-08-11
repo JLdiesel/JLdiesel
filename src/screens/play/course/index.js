@@ -137,7 +137,7 @@ class Index extends PureComponent {
                             <Carousel control style={{ height: pxToDp(110) }}>
                                 <View style={{ width: "100%", height: pxToDp(100), borderRadius: pxToDp(20), backgroundColor: 'rgba(255,255,255,0.5)', justifyContent: 'space-around', alignItems: 'center' }} >
                                     <View style={{ flexDirection: 'row', }}>
-                                        <Image style={{ width: '38%', height: pxToDp(92), borderRadius: pxToDp(10) }} source={{uri:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fweb.sobeycloud.com%2Fksdst%2Fupload%2FImage%2Fmrtp%2Fa0596dd21f294618b100b491f36bc16a.jpg%3F1540781616319&refer=http%3A%2F%2Fweb.sobeycloud.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631089037&t=cb3d24dc288a31bba3d4470d346f6f38'}}></Image>
+                                        <Image style={{ width: '38%', height: pxToDp(92), borderRadius: pxToDp(10) }} source={{ uri: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fweb.sobeycloud.com%2Fksdst%2Fupload%2FImage%2Fmrtp%2Fa0596dd21f294618b100b491f36bc16a.jpg%3F1540781616319&refer=http%3A%2F%2Fweb.sobeycloud.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631089037&t=cb3d24dc288a31bba3d4470d346f6f38' }}></Image>
                                         <View style={{ width: '58%', height: pxToDp(92), padding: pxToDp(8) }}>
                                             <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>浙江小百花越剧团</Text>
                                             <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5) }}>新版《梁山伯与祝英台》，一段流传了一千七百多年的爱情故事再度登上了舞台</Text>
@@ -150,7 +150,7 @@ class Index extends PureComponent {
                                 </View>
                                 <View style={{ width: "100%", height: pxToDp(100), borderRadius: pxToDp(20), backgroundColor: 'rgba(255,255,255,0.5)', justifyContent: 'space-around', alignItems: 'center' }} >
                                     <View style={{ flexDirection: 'row', }}>
-                                        <Image style={{ width: '38%', height: pxToDp(92), borderRadius: pxToDp(10) }} source={{uri:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.cyf98.cn%2Fupload%2Fimg%2FpYqLhIBIkNew3hfPpivZNpvyLpIHt-Vbq3t9GHIBEUdUUZvza39sNQXKes-XrzmsdbPVSBiXmcFgU1xuzFZ1U9V74nrGvfozWdtWFRwzrS3uttVBz4k2nW4.jpg&refer=http%3A%2F%2Fwww.cyf98.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631089220&t=7673d4718d8f83d49ba433be1f704414'}}></Image>
+                                        <Image style={{ width: '38%', height: pxToDp(92), borderRadius: pxToDp(10) }} source={{ uri: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.cyf98.cn%2Fupload%2Fimg%2FpYqLhIBIkNew3hfPpivZNpvyLpIHt-Vbq3t9GHIBEUdUUZvza39sNQXKes-XrzmsdbPVSBiXmcFgU1xuzFZ1U9V74nrGvfozWdtWFRwzrS3uttVBz4k2nW4.jpg&refer=http%3A%2F%2Fwww.cyf98.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631089220&t=7673d4718d8f83d49ba433be1f704414' }}></Image>
                                         <View style={{ width: '58%', height: pxToDp(92), padding: pxToDp(8) }}>
                                             <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>天上掉下个林妹妹</Text>
                                             <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5), }}>有哪些适合新手的越剧唱段</Text>
@@ -163,7 +163,7 @@ class Index extends PureComponent {
                                 </View>
                                 <View style={{ width: "100%", height: pxToDp(100), borderRadius: pxToDp(20), backgroundColor: 'rgba(255,255,255,0.5)', justifyContent: 'space-around', alignItems: 'center' }} >
                                     <View style={{ flexDirection: 'row', }}>
-                                        <Image style={{ width: '38%', height: pxToDp(92), borderRadius: pxToDp(10) }} source={{uri:'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fupfile.cuepa.cn%2Fnewspics%2F2016%2F02%2Fs_184c49bcb3de665e32b015a291c0725d11750.jpg&refer=http%3A%2F%2Fupfile.cuepa.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631089466&t=0622beb059cad15f78be53db35a89e9f'}}></Image>
+                                        <Image style={{ width: '38%', height: pxToDp(92), borderRadius: pxToDp(10) }} source={{ uri: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fupfile.cuepa.cn%2Fnewspics%2F2016%2F02%2Fs_184c49bcb3de665e32b015a291c0725d11750.jpg&refer=http%3A%2F%2Fupfile.cuepa.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1631089466&t=0622beb059cad15f78be53db35a89e9f' }}></Image>
                                         <View style={{ width: '58%', height: pxToDp(92), padding: pxToDp(8) }}>
                                             <Text numberOfLines={1} style={{ fontSize: pxToDp(16), fontWeight: 'bold' }}>姚水娟</Text>
                                             <Text numberOfLines={1} style={{ marginTop: pxToDp(5), marginBottom: pxToDp(5), }}>了解越剧皇后的一生</Text>

@@ -12,7 +12,7 @@ export { default as Sing } from './play/study/sing';//商品详情页
 export { default as Singbefore } from './play/study/singbefore';//商品详情页
 export { default as Zhoubian } from './shop/home/zhoubian';//周边页
 export { default as Zulin } from './shop/home/zulin';//服装租赁页
-export { default as Set} from './my/seetings/set';//设置
+export { default as Set } from './my/seetings/set';//设置
 export { default as Tuisong } from './my/seetings/tuisong';//推送页
 export { default as Women } from './my/seetings/women';//关于我们页
 export { default as Yijian } from './my/seetings/yijian';//意见页
@@ -26,7 +26,7 @@ export { default as PageTwo } from './first/home/pages/pagetwo';//俯瞰百年�
 export { default as PageThree } from './first/home/pages/pagethree';//名角风采页
 export { default as PageFour } from './first/home/pages/pagefour';//精选唱段页
 export { default as Pagefive } from './first/home/pages/pagefive';//俯瞰百年文章
-export { default as Screenpaly} from './talk/home/script/screenplay'//剧本阅读
+export { default as Screenpaly } from './talk/home/script/screenplay'//剧本阅读
 export { default as Change } from './play/change';//AI换衣页
 
 //export { default as Myroute } from './first/myroute';//服装租赁页
@@ -37,10 +37,10 @@ export { default as leaseorder } from './my/order/leaseorder';//租赁订单
 export { default as orderdetails } from './my/order/orderdetails';//订单确认
 export { default as newAddress } from './my/address/newAddress';//新增收货地址
 export { default as Lease } from './shop/home/goods/lease';//新增收货地址
-export { default as Order} from './my/order/index';//订单
-export { default as Pay} from './my/pay';//待支付
-export { default as Postsale} from './my/postsale';//待支付
-export { default as Waitcomment} from './my/waitcomment';//待评价
+export { default as Order } from './my/order/index';//订单
+export { default as Pay } from './my/pay';//待支付
+export { default as Postsale } from './my/postsale';//待支付
+export { default as Waitcomment } from './my/waitcomment';//待评价
 export { default as address } from './my/address/address';//地址
 export { default as Article } from './first/article';//文章
 export { default as Drama } from './play/act/drama';//剧本
@@ -60,16 +60,17 @@ export { default as Collection } from './my/collection';//收藏
 export { default as Fan } from './my/fan';//粉丝
 export { default as Follow } from './my/follow';//关注
 export { default as Like } from './my/like';//点赞
-export { default as Forum} from './talk/home/forum/index';//论坛页面
+export { default as Forum } from './talk/home/forum/index';//论坛页面
 export { default as Opera } from './first/opera/index';//唱段的首页
 export { default as Optuijian } from './first/opera/optuijian';//唱段推荐
 export { default as Opperson } from './first/opera/opperson';//名角的唱段页面
 export { default as Opgroup } from './first/opera/opgroup';//流派的唱段页面
-export { default as Indongtai} from './my/seetings/component/indontai';
-export { default as Inluntan} from './talk/home/forum/inluntan';
+export { default as Indongtai } from './my/seetings/component/indontai';
+export { default as Inluntan } from './talk/home/forum/inluntan';
 export { default as VR } from './play/vr';//越剧小镇VR
 export { default as Course } from './play/course';
-export { default as Timemap} from '../ddd/index';//教程页面
+export { default as Timemap } from '../ddd/index';//教程页面
+export { default as Othershome} from '../screens/my/home/othershome';//他人主页
 
 
 

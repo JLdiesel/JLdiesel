@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Timemap">
+      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -139,7 +139,7 @@ function Nav() {
         <Stack.Screen name="Opperson" component={Screens.Opperson} />
         {/**流派唱段视频 */}
         <Stack.Screen name="Opgroup" component={Screens.Opgroup} />
-         {/**个人中心动态详情 */}
+        {/**个人中心动态详情 */}
         <Stack.Screen name="Indongtai" component={Screens.Indongtai} />
         {/**论坛帖子详情 */}
         <Stack.Screen name="Inluntan" component={Screens.Inluntan} />
@@ -148,6 +148,7 @@ function Nav() {
         {/**教程页面 */}
         <Stack.Screen name="Course" component={Screens.Course} />
         <Stack.Screen name="Timemap" component={Screens.Timemap} />
+        <Stack.Screen name="Othershome" component={Screens.Othershome} />
 
         {/*DEMO */}
         {/*DEMO */}
