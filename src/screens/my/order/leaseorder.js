@@ -7,14 +7,14 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  StyleSheet,
-} from "react-native";
-import Top from "../../../component/common/top";
-import { pxToDp } from "../../../utils/styleKits";
-import LinearGradient from "expo-linear-gradient";
-import RBSheet from "react-native-raw-bottom-sheet";
-import { NavigationContext } from "@react-navigation/native";
-import AntDesign from "react-native-vector-icons/AntDesign";
+  StyleSheet
+} from 'react-native';
+import Top from '../../../component/common/top';
+import { pxToDp } from '../../../utils/styleKits';
+import LinearGradient from 'expo-linear-gradient';
+import RBSheet from 'react-native-raw-bottom-sheet';
+import { NavigationContext } from '@react-navigation/native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 class orders extends PureComponent {
   constructor(props) {
@@ -23,37 +23,37 @@ class orders extends PureComponent {
       paidway: [
         {
           id: 1,
-          image: require("../../../res/微信支付.png"),
-          text: "微信支付",
+          image: require('../../../res/微信支付.png'),
+          text: '微信支付'
         },
         {
           id: 2,
-          image: require("../../../res/支付宝.png"),
-          text: "支付宝支付",
+          image: require('../../../res/支付宝.png'),
+          text: '支付宝支付'
         },
         {
           id: 3,
-          image: require("../../../res/银行卡支付.png"),
-          text: "银行卡支付",
-        },
+          image: require('../../../res/银行卡支付.png'),
+          text: '银行卡支付'
+        }
       ],
       activeTab: 1,
-      way: "",
+      way: ''
     };
   }
   static defaultProps = {
     style: {},
     textStyle: {},
-    cisabled: false,
+    cisabled: false
   };
   changeTab = (index) => {
     this.setState({ activeTab: index });
     if (index == 0) {
-      this.setState({ way: "微信支付" });
+      this.setState({ way: '微信支付' });
     } else if (index == 1) {
-      this.setState({ way: "支付宝支付" });
+      this.setState({ way: '支付宝支付' });
     } else {
-      this.setState({ way: "银行卡支付" });
+      this.setState({ way: '银行卡支付' });
     }
   };
 
