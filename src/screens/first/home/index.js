@@ -6,7 +6,8 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
+  ImageBackground
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -199,75 +200,175 @@ class Index extends PureComponent {
           </SafeAreaView>
 
           {/*名角风采 */}
-          <View style={{ margin: pxToDp(10), marginTop: pxToDp(0) }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between'
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: pxToDp(18),
-                  color: '#468CD3',
-                  fontWeight: 'bold'
-                }}
-              >
-                名角风采
-              </Text>
-              <TouchableOpacity
-                onPress={() => this.context.navigate('PageThree')}
-              >
-                <View style={{ flexDirection: 'row' }}>
-                  <Text style={{ fontSize: pxToDp(15), color: 'grey' }}>
-                    查看更多
-                  </Text>
-                  <Ionicons name="chevron-forward" size={20} color="grey" />
+          <View style={{
+            marginTop: pxToDp(20),
+            borderRadius: pxToDp(10),
+            height: pxToDp(310),
+            backgroundColor: 'rgba(255,255,255,0.5)',
+            marginRight: pxToDp(10),
+            marginLeft: pxToDp(10)
+          }}>
+            <ImageBackground style={{
+              width: '100%',
+              height: pxToDp(250)
+            }} imageStyle={{ borderTopLeftRadius: pxToDp(10), borderTopRightRadius: pxToDp(10) }} source={{ uri: 'https://img0.baidu.com/it/u=2584689132,3841583287&fm=26&fmt=auto&gp=0.jpg' }}>
+              <View style={{ margin: pxToDp(10) }}>
+                <View style={{ marginTop: pxToDp(25) }}>
+                  <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>梨园弟子</Text>
+                  <Text style={{ fontSize: pxToDp(16), marginTop: pxToDp(5) }}>上下求索传承经典</Text>
                 </View>
-              </TouchableOpacity>
-            </View>
+                <ScrollView horizontal={true} style={{ marginTop: pxToDp(45) }}>
+                  <View style={{
+                    width: pxToDp(100),
+                    height: pxToDp(160),
+                    borderRadius: pxToDp(10),
+                    marginRight: pxToDp(20)
+                  }}>
+                    <Image style={{
+                      width: pxToDp(100),
+                      height: pxToDp(140),
+                      borderTopLeftRadius: pxToDp(10),
+                      borderTopRightRadius: pxToDp(10)
+                    }} source={{ uri: 'https://pic1.zhimg.com/v2-932f9bb899443925a471296b7e7aa89d_r.jpg' }} />
+                    <View style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flex: 1,
+                      backgroundColor: 'white'
+                    }}>
+                      <Text style={{ fontSize: pxToDp(15) }}>何赛飞</Text>
+                    </View>
+                  </View>
+                  <View style={{
+                    width: pxToDp(100),
+                    height: pxToDp(160),
+                    borderRadius: pxToDp(10),
+                    marginRight: pxToDp(20)
+                  }}>
+                    <Image style={{
+                      width: pxToDp(100),
+                      height: pxToDp(140),
+                      borderTopLeftRadius: pxToDp(10),
+                      borderTopRightRadius: pxToDp(10)
+                    }} source={{ uri: 'https://img2.baidu.com/it/u=1837369383,3244486584&fm=26&fmt=auto&gp=0.jpg' }} />
+                    <View style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flex: 1,
+                      backgroundColor: 'white'
+                    }}>
+                      <Text style={{ fontSize: pxToDp(15) }}>王文娟</Text>
+                    </View>
+                  </View>
+                  <View style={{
+                    width: pxToDp(100),
+                    height: pxToDp(160),
+                    borderRadius: pxToDp(10),
+                    marginRight: pxToDp(20)
+                  }}>
+                    <Image style={{
+                      width: pxToDp(100),
+                      height: pxToDp(140),
+                      borderTopLeftRadius: pxToDp(10),
+                      borderTopRightRadius: pxToDp(10)
+                    }} source={{ uri: 'https://img0.baidu.com/it/u=2918427680,1568245037&fm=26&fmt=auto&gp=0.jpg' }} />
+                    <View style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flex: 1,
+                      backgroundColor: 'white'
+                    }}>
+                      <Text style={{ fontSize: pxToDp(15) }}>方亚芬</Text>
+                    </View>
+                  </View>
+                  <View style={{
+                    width: pxToDp(100),
+                    height: pxToDp(160),
+                    borderRadius: pxToDp(10),
+                    marginRight: pxToDp(20)
+                  }}>
+                    <Image style={{
+                      width: pxToDp(100),
+                      height: pxToDp(140),
+                      borderTopLeftRadius: pxToDp(10),
+                      borderTopRightRadius: pxToDp(10)
+                    }} source={{ uri: 'http://i1.go2yd.com/image.php?url=0WB85K1RSk' }} />
+                    <View style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flex: 1,
+                      backgroundColor: 'white'
+                    }}>
+                      <Text style={{ fontSize: pxToDp(15) }}>王志萍</Text>
+                    </View>
+                  </View>
+                  <View  style={{
+                    width: pxToDp(100),
+                    height: pxToDp(160),
+                    borderRadius: pxToDp(10),
+                    marginRight: pxToDp(20)
+                  }}>
+                    <Image style={{
+                      width: pxToDp(100),
+                      height: pxToDp(140),
+                      borderTopLeftRadius: pxToDp(10),
+                      borderTopRightRadius: pxToDp(10)
+                    }} source={{ uri: 'http://i1.go2yd.com/image.php?url=0WB85KhP83' }} />
+                    <View style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flex: 1,
+                      backgroundColor: 'white'
+                    }}>
+                      <Text style={{ fontSize: pxToDp(15) }}>何英</Text>
+                    </View>
+                  </View>
+                  <View style={{
+                    width: pxToDp(100),
+                    height: pxToDp(160),
+                    borderRadius: pxToDp(10),
+                    marginRight: pxToDp(20)
+                  }}>
+                    <Image style={{
+                      width: pxToDp(100),
+                      height: pxToDp(140),
+                      borderTopLeftRadius: pxToDp(10),
+                      borderTopRightRadius: pxToDp(10)
+                    }} source={{ uri: 'https://img0.baidu.com/it/u=815941838,517847605&fm=15&fmt=auto&gp=0.jpg' }} />
+                    <View style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flex: 1,
+                      backgroundColor: 'white'
+                    }}>
+                      <Text style={{ fontSize: pxToDp(15) }}>蔡浙飞</Text>
+                    </View>
+                  </View>
+                  <View style={{
+                    width: pxToDp(100),
+                    height: pxToDp(160),
+                    borderRadius: pxToDp(10),
+                    marginRight: pxToDp(20)
+                  }}>
+                    <Image style={{
+                      width: pxToDp(100),
+                      height: pxToDp(140),
+                      borderTopLeftRadius: pxToDp(10),
+                      borderTopRightRadius: pxToDp(10)
+                    }} source={{ uri: 'https://img1.baidu.com/it/u=469853929,4052640454&fm=26&fmt=auto&gp=0.jpg' }} />
+                    <View style={{
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      flex: 1,
+                      backgroundColor: 'white'
+                    }}>
+                      <Text style={{ fontSize: pxToDp(15) }}>茅威涛</Text>
+                    </View>
+                  </View>
+                </ScrollView>
+              </View>
+            </ImageBackground>
           </View>
-          <ScrollView horizontal={true}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-around'
-              }}
-            >
-              <TouchableOpacity
-                onPress={() => this.context.navigate('Actress')}
-              >
-                <ActressView
-                  picture={require('../../../res/performer/1.jpg')}
-                  name="方亚芬"
-                />
-              </TouchableOpacity>
-              <ActressView
-                picture={require('../../../res/performer/2.jpg')}
-                name="王文娟"
-              />
-              <ActressView
-                picture={require('../../../res/performer/3.jpg')}
-                name="王君安"
-              />
-              <ActressView
-                picture={require('../../../res/performer/4.jpg')}
-                name="茅威涛"
-              />
-              <ActressView
-                picture={require('../../../res/performer/7.jpg')}
-                name="蔡浙飞"
-              />
-              <ActressView
-                picture={require('../../../res/performer/9.jpg')}
-                name="何赛飞"
-              />
-              <ActressView
-                picture={require('../../../res/performer/10.jpg')}
-                name="陈丽君"
-              />
-            </View>
-          </ScrollView>
           {/*流派故事 */}
           <View
             style={{

@@ -143,9 +143,12 @@ function Nav() {
         <Stack.Screen name="VR" component={Screens.VR} />
         {/**教程页面 */}
         <Stack.Screen name="Course" component={Screens.Course} />
+        {/**越剧基本功页面 */}
+        <Stack.Screen name="Basic" component={Screens.Basic} />
+        {/**越剧大师教学页面 */}
+        <Stack.Screen name="Master" component={Screens.Master} />
         {/*DEMO */}
-        {/*DEMO */}
-        {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
+        {/*<Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
