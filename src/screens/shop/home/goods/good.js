@@ -6,7 +6,8 @@ import {
   Image,
   StyleSheet,
   ScrollView,
-  Dimensions
+  Dimensions,
+  ToastAndroid
 } from 'react-native';
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
@@ -59,10 +60,11 @@ class shopdetails extends PureComponent {
 
     shop: {},
     Select: false,
-    activeTab: 0,
+    activeTab: -1,
     guanbi: false,
     shopimg: [],
-    acitveId: 0
+    activeItem: null,
+    shopbanner: []
   };
 
   renderCarousel = () => (
@@ -110,9 +112,8 @@ class shopdetails extends PureComponent {
     }
   };
 
-  changeTab = (index, id) => {
-    console.log(id);
-    this.setState({ activeTab: index, acitveId: id });
+  changeTab = (index, item) => {
+    this.setState({ activeTab: index, activeItem: item });
   };
   static contextType = NavigationContext;
   changeSizeTab = (index) => {
@@ -121,9 +122,10 @@ class shopdetails extends PureComponent {
   componentDidMount() {
     const id = this.props.route.params;
     EasyLoading.show('loading');
-    return getShopInfo(id)
+    getShopInfo(id)
       .then((res) => {
         this.setState({
+          shopbanner: [...res.bannerImages],
           shop: { ...res.shopInner },
           shopimg: [...res.shopinnerimages],
           products: [...res.shopcarimages]
@@ -135,14 +137,20 @@ class shopdetails extends PureComponent {
   }
   //this.context.navigate('Myorder')acitveId
   goCreateOrider = () => {
-    this.Scrollable.close();
-    this.context.navigate('Myorder', {
-      shopId: this.state.shop.id,
-      shopCarId: this.state.acitveId,
-      count: this.state.count
-    });
+    if (this.state.activeItem) {
+      this.Scrollable.close();
+      this.context.navigate('Myorder', {
+        ...this.state.activeItem,
+        shopId: this.state.shop.id,
+        count: this.state.count,
+        title: this.state.shop.title
+      });
+    } else {
+      ToastAndroid.show('请选择商品', ToastAndroid.SHORT);
+    }
   };
   render() {
+    console.log(this.state.shopbanner);
     const { count, tabs, activeTab, activeSizeTab } = this.state;
     return (
       <View style={{ flex: 1, backgroundColor: '#ecf6fc' }}>
@@ -157,7 +165,7 @@ class shopdetails extends PureComponent {
           {/* 商品图片 */}
 
           <View style={{ alignItems: 'center', marginTop: pxToDp(20) }}>
-            <Swiper />
+            <Swiper shopbanner={this.state.shopbanner} />
           </View>
 
           {/* 品名 价格 */}
@@ -351,7 +359,7 @@ class shopdetails extends PureComponent {
                 <TouchableOpacity
                   key={item.id}
                   onPress={() => {
-                    this.changeTab(index, item.id);
+                    this.changeTab(index, item);
                   }}
                   style={{
                     alignItems: 'center',

@@ -85,8 +85,8 @@ class Index extends PureComponent {
               {item.status === 0
                 ? '去支付'
                 : item.status === 1
-                ? '去收货'
-                : '去评价'}
+                ? '确认收货'
+                : '评价'}
             </Text>
           </TouchableOpacity>
         </View>

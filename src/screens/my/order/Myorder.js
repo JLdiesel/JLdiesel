@@ -7,7 +7,8 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  StyleSheet
+  StyleSheet,
+  ToastAndroid
 } from 'react-native';
 import Top from '../../../component/common/top';
 import { pxToDp } from '@utils/styleKits';
@@ -15,6 +16,7 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import { NavigationContext } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Address from '../../../component/my/address';
+import { addOrider } from '../../../service/shop';
 
 class orders extends PureComponent {
   constructor(props) {
@@ -37,9 +39,9 @@ class orders extends PureComponent {
           text: '银行卡支付'
         }
       ],
-      activeTab: 1,
+      activeTab: -1,
       way: '',
-      addressId: 1
+      addressId: -1
     };
   }
   static defaultProps = {
@@ -53,18 +55,36 @@ class orders extends PureComponent {
       this.setState({ way: '微信支付' });
     } else if (index == 1) {
       this.setState({ way: '支付宝支付' });
-    } else {
+    } else if (index === 2) {
       this.setState({ way: '银行卡支付' });
     }
+    this.Scrollable.close();
   };
   changeAddressId = (addressId) => {
     this.setState({ addressId });
   };
+  addOrder = () => {
+    if (this.state.addressId !== -1 && this.state.activeTab !== -1) {
+      const { count, shopId, id } = this.props.route.params;
+      const data = {
+        shopId,
+        shopCarId: id,
+        count,
+        howPay: this.state.activeTab,
+        addressId: this.state.addressId
+      };
+      addOrider(data).then((res) => this.context.navigate('Pay'));
+      ToastAndroid.show('请选择支付方式', ToastAndroid.SHORT);
+    } else {
+      ToastAndroid.show('请选择支付方式', ToastAndroid.SHORT);
+    }
+  };
+  componentDidMount() {}
   static contextType = NavigationContext;
 
   render() {
     console.log(this.props.route.params);
-    const { count, tabs, activeTab, way } = this.state;
+    const { count, title, color, img, price } = this.props.route.params;
     return (
       <View style={{ backgroundColor: '#e2f4fe', flex: 1 }}>
         <Top icon1="arrow-back" title="确认订单" />
@@ -98,7 +118,7 @@ class orders extends PureComponent {
               <Image
                 style={{ width: pxToDp(110), height: pxToDp(110) }}
                 source={{
-                  uri: 'https://img20.360buyimg.com/imgzone/jfs/t1/173507/4/18790/68769/60e68718E0f0ea850/91903dd60a5c5707.jpg'
+                  uri: img
                 }}
               />
             </View>
@@ -111,7 +131,7 @@ class orders extends PureComponent {
             >
               <View style={{}}>
                 <Text style={{ fontSize: pxToDp(15), fontWeight: 'bold' }}>
-                  花旦戏服戏剧越剧服装
+                  {title}
                 </Text>
               </View>
               <View
@@ -123,10 +143,10 @@ class orders extends PureComponent {
                 }}
               >
                 <View style={{ width: pxToDp(150) }}>
-                  <Text style={{ fontSize: pxToDp(12) }}>蓝色 全套</Text>
+                  <Text style={{ fontSize: pxToDp(12) }}>{color}</Text>
                 </View>
                 <View>
-                  <Text style={{ fontSize: pxToDp(12) }}>X1</Text>
+                  <Text style={{ fontSize: pxToDp(12) }}>X{count}</Text>
                 </View>
               </View>
               <View style={{ marginBottom: pxToDp(15) }}>
@@ -137,7 +157,7 @@ class orders extends PureComponent {
                     fontWeight: 'bold'
                   }}
                 >
-                  166.90
+                  {price}
                 </Text>
               </View>
             </View>
@@ -160,7 +180,7 @@ class orders extends PureComponent {
               }}
             >
               <Text style={{ opacity: 0.6 }}>商品价格</Text>
-              <Text style={{ opacity: 0.6 }}>￥166.90</Text>
+              <Text style={{ opacity: 0.6 }}>￥{price}</Text>
             </View>
             <View
               style={{
@@ -181,7 +201,7 @@ class orders extends PureComponent {
                   fontWeight: 'bold'
                 }}
               >
-                ￥166.90
+                ￥{price}
               </Text>
             </View>
           </View>
@@ -239,15 +259,13 @@ class orders extends PureComponent {
                 color: 'red'
               }}
             >
-              ￥166.90
+              ￥{price * count}
             </Text>
           </View>
 
           <TouchableOpacity
             cisabled={this.props.disabled}
-            onPress={() => {
-              this.context.navigate('orderdetails');
-            }}
+            onPress={this.addOrder}
             style={{
               borderRadius: pxToDp(25),
               marginRight: pxToDp(20),

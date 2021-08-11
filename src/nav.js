@@ -144,6 +144,7 @@ function Nav() {
         <Stack.Screen name="Inluntan" component={Screens.Inluntan} />
         {/*Vr */}
         <Stack.Screen name="VR" component={Screens.VR} />
+        <Stack.Screen name="Pay" component={Screens.Pay} />
         {/**教程页面 */}
         <Stack.Screen name="Course" component={Screens.Course} />
         <Stack.Screen name="Timemap" component={Screens.Timemap} />
