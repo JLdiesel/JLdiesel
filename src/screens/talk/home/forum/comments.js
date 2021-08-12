@@ -10,7 +10,6 @@ import {
 import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from '@react-navigation/native';
 import SvgUri from 'react-native-svg-uri';
-import Top from '@components/common/top';
 import {
   dianzan,
   pinglun,
@@ -27,78 +26,87 @@ class Index extends PureComponent {
     isvisible: false
   };
   render() {
+    const { comments } = this.props;
+    const newComments = [];
+    comments.forEach((element) => {
+      if (!newComments.some((item) => item.id === element.id)) {
+        newComments.push(element);
+      }
+    });
     return (
       <View>
-        {this.props.comments.map((item) => (
-          <View key={item.id}>
-            <View style={{ flexDirection: 'row' }}>
-              <Image
-                source={{ uri: item.user.avatarUrl }}
-                style={{
-                  width: pxToDp(50),
-                  height: pxToDp(50),
-                  margin: pxToDp(15),
-                  borderRadius: pxToDp(40)
-                }}
-              />
-              <Text style={{ marginTop: pxToDp(20) }}>✌🐷✌</Text>
-              <TouchableOpacity
-                style={{ position: 'absolute', right: 20, top: 20 }}
-                onPress={() => {
-                  this.setState({ isvisible: true });
-                }}
-              >
-                <SvgUri svgXmlData={sandian} width="20" height="20" />
-              </TouchableOpacity>
-            </View>
-            <View style={{ marginLeft: 80 }}>
-              <Text
-                style={{
-                  marginBottom: pxToDp(10),
-                  bottom: pxToDp(20),
-                  fontSize: pxToDp(16),
-                  width: '90%'
-                }}
-              >
-                {item.content}
-              </Text>
-              <Text
-                style={{
-                  marginBottom: pxToDp(10),
-                  color: 'gray',
-                  fontSize: pxToDp(13),
-                  marginTop: pxToDp(-15)
-                }}
-              >
-                {item.createTime}
-              </Text>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  position: 'absolute',
-                  right: 20,
-                  bottom: 10
-                }}
-              >
-                <TouchableOpacity>
-                  <SvgUri
-                    svgXmlData={dianzan}
-                    width="20"
-                    height="20"
-                    style={{ marginRight: 20 }}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <SvgUri svgXmlData={pinglun} width="20" height="20" />
+        {newComments.length ? (
+          newComments.map((item) => (
+            <View key={item.id}>
+              <View style={{ flexDirection: 'row' }}>
+                <Image
+                  source={{ uri: item.user.avatarUrl }}
+                  style={{
+                    width: pxToDp(50),
+                    height: pxToDp(50),
+                    margin: pxToDp(15),
+                    borderRadius: pxToDp(40)
+                  }}
+                />
+                <Text style={{ marginTop: pxToDp(20) }}>
+                  {item.user.nickName}
+                </Text>
+                <TouchableOpacity
+                  style={{ position: 'absolute', right: 20, top: 20 }}
+                  onPress={() => {
+                    this.setState({ isvisible: true });
+                  }}
+                >
+                  <SvgUri svgXmlData={sandian} width="20" height="20" />
                 </TouchableOpacity>
               </View>
-            </View>
-
-            {item.reply.map((item, rpid) => (
-              <View key={rpid}>
+              <View style={{ marginLeft: 80 }}>
+                <Text
+                  style={{
+                    marginBottom: pxToDp(10),
+                    bottom: pxToDp(20),
+                    fontSize: pxToDp(16),
+                    width: '90%'
+                  }}
+                >
+                  {item.content}
+                </Text>
+                <Text
+                  style={{
+                    marginBottom: pxToDp(10),
+                    color: 'gray',
+                    fontSize: pxToDp(13),
+                    marginTop: pxToDp(-15)
+                  }}
+                >
+                  {item.createTime}
+                </Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    position: 'absolute',
+                    right: 20,
+                    bottom: 10
+                  }}
+                >
+                  <TouchableOpacity>
+                    <SvgUri
+                      svgXmlData={dianzan}
+                      width="20"
+                      height="20"
+                      style={{ marginRight: 20 }}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <SvgUri svgXmlData={pinglun} width="20" height="20" />
+                  </TouchableOpacity>
+                </View>
+              </View>
+              {/* {item.reply.map((reply) => ( */}
+              <View>
                 <View style={{ flexDirection: 'row', marginLeft: pxToDp(35) }}>
                   <Image
-                    source={{ uri: item.rpimg }}
+                    source={{ uri: item.reply.avatar }}
                     style={{
                       width: pxToDp(40),
                       height: pxToDp(40),
@@ -106,7 +114,9 @@ class Index extends PureComponent {
                       borderRadius: pxToDp(40)
                     }}
                   />
-                  <Text style={{ marginTop: pxToDp(20) }}>{item.rpname}</Text>
+                  <Text style={{ marginTop: pxToDp(20) }}>
+                    {item.reply.nickName}
+                  </Text>
                 </View>
                 <View style={{ marginLeft: 100 }}>
                   <View style={{ flexDirection: 'row' }}>
@@ -117,7 +127,7 @@ class Index extends PureComponent {
                         fontSize: pxToDp(16)
                       }}
                     >
-                      回复{item.rpto}:
+                      回复{item.user.nickName}:
                     </Text>
                     <Text
                       style={{
@@ -127,7 +137,7 @@ class Index extends PureComponent {
                         width: '90%'
                       }}
                     >
-                      {item.rptext}
+                      {item.reply.content}
                     </Text>
                   </View>
                   <Text
@@ -138,7 +148,7 @@ class Index extends PureComponent {
                       marginTop: pxToDp(-15)
                     }}
                   >
-                    {item.rpdate}
+                    {item.reply.createAt}
                   </Text>
                   <View
                     style={{
@@ -159,9 +169,13 @@ class Index extends PureComponent {
                   </View>
                 </View>
               </View>
-            ))}
+            </View>
+          ))
+        ) : (
+          <View>
+            <Text>暂无评论</Text>
           </View>
-        ))}
+        )}
       </View>
     );
   }

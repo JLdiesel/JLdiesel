@@ -59,15 +59,23 @@ class Index extends PureComponent {
     ]
   };
   componentDidMount() {
-    getMomentInnerById(this.props.route.params).then((res) => {
-      this.setState({ inner: { ...res } });
-    });
+    getMomentInnerById(this.props.route.params)
+      .then((res) => {
+        console.log(res);
+        this.setState({ inner: { ...res } });
+      })
+      .catch((err) => console.log(err));
   }
   static contextType = NavigationContext;
   render() {
-    console.log(this.state.inner);
-    const { comments, content, createTime, images, title, user } =
-      this.state.inner;
+    const {
+      comments,
+      content = 123,
+      createTime,
+      images,
+      title = 666,
+      user
+    } = this.state.inner;
     return (
       <ScrollView style={{ backgroundColor: '#fff' }}>
         <Top icon1="arrow-back" title={title} on />
@@ -80,7 +88,7 @@ class Index extends PureComponent {
           }}
         >
           <Image
-            source={{ uri: user.avatarUrl }}
+            source={{ uri: user?.avatarUrl }}
             style={{
               height: pxToDp(60),
               width: pxToDp(60),
@@ -90,7 +98,7 @@ class Index extends PureComponent {
           />
           <View style={{ marginTop: pxToDp(20), paddingLeft: pxToDp(5) }}>
             <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
-              {this.state.user.nickName}
+              {user?.nickName}
             </Text>
           </View>
         </View>
@@ -107,7 +115,7 @@ class Index extends PureComponent {
           showsHorizontalScrollIndicator={false}
           horizontal={true}
         >
-          {images.map((item, index) => (
+          {images?.map((item, index) => (
             <View key={index} style={{ marginBottom: pxToDp(10) }}>
               <Image
                 style={{
@@ -121,10 +129,12 @@ class Index extends PureComponent {
             </View>
           ))}
         </ScrollView>
-        {/* <Text style={{paddingLeft:pxToDp(15),color:'gray'}}>{this.state.louzhu.date}</Text> */}
+
+        <Text style={{ paddingLeft: pxToDp(15), color: 'gray' }}>
+          {this.state.louzhu.date}
+        </Text>
         <View style={{ backgroundColor: '#fff', marginTop: pxToDp(30) }}>
           <Text style={{ fontSize: pxToDp(18), margin: pxToDp(15) }}>全部</Text>
-
           <Comments comments={comments ? comments : []} />
         </View>
       </ScrollView>
