@@ -34,7 +34,7 @@ const MyCarousel = props => {
     const carouselRef = useRef(null);
 
     const goForward = () => {
-        carouselRef.current.snapToNext();
+carouselRef.current.snapToNext();
     };
 
     useEffect(() => {

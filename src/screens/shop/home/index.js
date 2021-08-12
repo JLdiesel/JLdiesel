@@ -7,44 +7,28 @@ import {
   StyleSheet,
   ScrollView
 } from 'react-native';
+
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
 import Swiper from 'react-native-swiper';
 import { NavigationContext } from '@react-navigation/native';
 import Maylike from './components/maylike';
+import { getShopList } from '@service/shop';
+import { connect } from 'react-redux';
+import { getAddressListAction } from '../../my/address/store/actions';
+
 class Index extends PureComponent {
   state = {
-    ocard: [
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服租赁1',
-        price: '￥58.0',
-        number: '8人购买'
-      },
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服租赁2',
-        price: '￥58.0',
-        number: '8人购买'
-      },
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服租赁3',
-        price: '￥58.0',
-        number: '8人购买'
-      },
-      {
-        picture:
-          'https://tse1-mm.cn.bing.net/th/id/R-C.ca4828003ac2f6ed7f8389ece8724e4f?rik=gg63zFCjkPGseA&riu=http%3a%2f%2fi0.hdslb.com%2fbfs%2farchive%2fca3b1eb680b8d5f300316e4201bddaaeeb0ce9ed.jpg&ehk=gRg2wLevOeMLqtyFFXB7lkiH0DFL7b5llgv6yLjdDZ0%3d&risl=&pid=ImgRaw&r=0',
-        name: '《西厢记》戏服赁4',
-        price: '￥58.0',
-        number: '8人购买'
-      }
-    ]
+    arr: []
   };
+  UNSAFE_componentWillMount() {
+    this.props.getAddressListAction();
+  }
+  componentDidMount() {
+    getShopList(0, 5).then((res) => {
+      this.setState({ arr: res });
+    });
+  }
   static contextType = NavigationContext;
   render() {
     return (
@@ -130,14 +114,16 @@ class Index extends PureComponent {
           </View>
           {/*戏服租赁 */}
           <View style={{ margin: pxToDp(10) }}>
-            <TouchableOpacity onPress={() => this.context.navigate('Zulin')}>
+            <TouchableOpacity onPress={() => this.context.navigate('Zulin', 0)}>
               <Image
                 style={styles.image3}
                 source={require('../../../res/30.jpg')}
               />
             </TouchableOpacity>
             {/*越剧周边 */}
-            <TouchableOpacity onPress={() => this.context.navigate('Zhoubian')}>
+            <TouchableOpacity
+              onPress={() => this.context.navigate('Zhoubian', 1)}
+            >
               <Image
                 style={styles.image4}
                 source={require('../../../res/29.jpg')}
@@ -152,13 +138,14 @@ class Index extends PureComponent {
               flexDirection: 'row'
             }}
           >
-            {this.state.ocard.map((item, id) => (
+            {this.state.arr.map((item) => (
               <Maylike
-                key={id}
-                URL={item.picture}
-                name={item.name}
-                number={item.number}
+                key={item.id}
+                imguri={item.imguri}
+                name={item.title}
+                number={item.sellnum}
                 price={item.price}
+                id={item.id}
               />
             ))}
           </View>
@@ -245,4 +232,4 @@ const styles = StyleSheet.create({
     borderRadius: pxToDp(10)
   }
 });
-export default Index;
+export default connect(() => ({}), { getAddressListAction })(Index);

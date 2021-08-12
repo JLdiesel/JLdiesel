@@ -8,44 +8,51 @@ import {
   ScrollView,
   TouchableHighlight,
   Modal
-} from "react-native";
-import { NavigationContext } from "@react-navigation/native";
-import Top from "@components/common/top";
-import { pxToDp } from "@utils/styleKits";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { TextInput } from "react-native-gesture-handler";
-import RBSheet from "react-native-raw-bottom-sheet";
+} from 'react-native';
+import { NavigationContext } from '@react-navigation/native';
+import Top from '@components/common/top';
+import { pxToDp } from '@utils/styleKits';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { TextInput } from 'react-native-gesture-handler';
+import RBSheet from 'react-native-raw-bottom-sheet';
 import StepIndicator from 'react-native-step-indicator';
-
 
 class Index extends PureComponent {
   onSharePress() {
-    this.setState({ showSharePop: !this.state.showSharePop })
+    this.setState({ showSharePop: !this.state.showSharePop });
   }
   constructor(props) {
     super(props);
     this.state = {
-      showSharePop: false,//分享弹窗，默认不显示
+      showSharePop: false, //分享弹窗，默认不显示
       modalVisible: false,
       modalVisibles: false,
       color: '#468cd3',
       currentPosition: 0,
       isclick: false,
       jifen: ['+5', '+10', '+15', '+20', '+25', '+30', '+35']
-    }
+    };
   }
   static contextType = NavigationContext;
 
   setModalVisible = (visible) => {
     this.setState({ modalVisible: visible });
-  }
+  };
   setModalVisibles = (visible) => {
     this.setState({ modalVisibles: visible });
-  }
+  };
   render() {
     const { modalVisible } = this.state;
     const { modalVisibles } = this.state;
-    const labels = ["第一天", "第二天", "第三天", "第四天", "第五天", "第六天", "第七天"];
+    const labels = [
+      '第一天',
+      '第二天',
+      '第三天',
+      '第四天',
+      '第五天',
+      '第六天',
+      '第七天'
+    ];
     const customStyles = {
       stepIndicatorSize: 35,
       currentStepIndicatorSize: 40,
@@ -68,7 +75,7 @@ class Index extends PureComponent {
       labelColor: '#999999',
       labelSize: 13,
       currentStepLabelColor: '#468cd3'
-    }
+    };
     return (
       <View>
         <Top title="越吟" />
@@ -78,7 +85,7 @@ class Index extends PureComponent {
             transparent={true}
             visible={modalVisibles}
             onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
+              Alert.alert('Modal has been closed.');
               this.setModalVisible(!modalVisibles);
             }}
           >
@@ -102,23 +109,31 @@ class Index extends PureComponent {
             transparent={true}
             visible={modalVisible}
             onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
+              Alert.alert('Modal has been closed.');
               this.setModalVisible(!modalVisible);
             }}
           >
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
                 <View style={{ marginLeft: pxToDp(330) }}>
-                  <TouchableOpacity onPress={() => {
-                    this.setModalVisible(!modalVisible);
-                  }}>
-                    <Ionicons name="md-close-circle-outline" size={30} color="grey" />
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setModalVisible(!modalVisible);
+                    }}
+                  >
+                    <Ionicons
+                      name="md-close-circle-outline"
+                      size={30}
+                      color="grey"
+                    />
                   </TouchableOpacity>
                 </View>
                 <Text style={styles.modalText1}>-每日签到-</Text>
                 <View style={{ flexDirection: 'row', width: pxToDp(334) }}>
                   {this.state.jifen.map((item, index) => (
-                    <Text style={{ marginRight: pxToDp(31), color: 'grey' }}>{item}</Text>
+                    <Text style={{ marginRight: pxToDp(31), color: 'grey' }}>
+                      {item}
+                    </Text>
                   ))}
                 </View>
                 <View style={{ width: pxToDp(370) }}>
@@ -131,19 +146,28 @@ class Index extends PureComponent {
                 </View>
                 <TouchableOpacity
                   disabled={this.state.isclick}
-                  style={{ ...styles.openButton, backgroundColor: this.state.color }}
+                  style={{
+                    ...styles.openButton,
+                    backgroundColor: this.state.color
+                  }}
                   onPress={() => {
-                    this.setState({ currentPosition: this.state.currentPosition + 1 })
-                    this.setState({ color: 'grey' })
-                    this.setState({ isclick: true })
+                    this.setState({
+                      currentPosition: this.state.currentPosition + 1
+                    });
+                    this.setState({ color: 'grey' });
+                    this.setState({ isclick: true });
                     this.setModalVisibles(true);
                   }}
                 >
-                  <Text style={styles.textStyle}>{this.state.isclick ? "已签到" : "签到"}</Text>
+                  <Text style={styles.textStyle}>
+                    {this.state.isclick ? '已签到' : '签到'}
+                  </Text>
                 </TouchableOpacity>
                 <View style={{ marginBottom: pxToDp(20) }}>
                   <Text style={styles.modalText2}>-签到说明-</Text>
-                  <Text style={styles.modalText3}>每日签到一次，连续签到奖励更多</Text>
+                  <Text style={styles.modalText3}>
+                    每日签到一次，连续签到奖励更多
+                  </Text>
                 </View>
               </View>
             </View>
@@ -223,10 +247,12 @@ class Index extends PureComponent {
               marginRight: pxToDp(30)
             }}
           >
-            <TouchableOpacity onPress={() => {
-              this.setModalVisible(true);
-            }}>
-              <View style={{ alignItems: "center" }}>
+            <TouchableOpacity
+              onPress={() => {
+                this.setModalVisible(true);
+              }}
+            >
+              <View style={{ alignItems: 'center' }}>
                 <Ionicons name="today-sharp" size={28} color="#468CD3" />
                 <Text>签到</Text>
               </View>
@@ -239,7 +265,7 @@ class Index extends PureComponent {
                 <Text>剧本</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity  onPress={() => this.context.navigate('Course')}>
+            <TouchableOpacity onPress={() => this.context.navigate('Course')}>
               <View style={{ alignItems: 'center' }}>
                 <Ionicons name="md-logo-octocat" size={28} color="#468CD3" />
                 <Text>教程</Text>
@@ -287,28 +313,37 @@ class Index extends PureComponent {
                 fontSize: pxToDp(18),
                 margin: pxToDp(10),
                 marginLeft: pxToDp(0),
-                color: "#468CD3",
-                fontWeight: "bold",
+                color: '#468CD3',
+                fontWeight: 'bold'
               }}
             >
               双人剧本
             </Text>
             <View style={styles.buttonContainer}>
               <TouchableOpacity onPress={() => this.Scrollable1.open()}>
-                <Image style={styles.image1} source={require('../../../res/23.jpg')} />
+                <Image
+                  style={styles.image1}
+                  source={require('../../../res/23.jpg')}
+                />
               </TouchableOpacity>
               <View>
                 <TouchableOpacity onPress={() => this.Scrollable2.open()}>
-                  <Image style={styles.image2} source={require('../../../res/24.jpg')} />
+                  <Image
+                    style={styles.image2}
+                    source={require('../../../res/24.jpg')}
+                  />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.Scrollable3.open()}>
-                  <Image style={styles.image2} source={require('../../../res/25.jpg')} />
+                  <Image
+                    style={styles.image2}
+                    source={require('../../../res/25.jpg')}
+                  />
                 </TouchableOpacity>
               </View>
             </View>
 
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.Scrollable1 = ref;
               }}
               height={300}
@@ -321,7 +356,10 @@ class Index extends PureComponent {
                 }
               }}
             >
-              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
                 <View style={styles.gridContainer}>
                   <TouchableOpacity>
                     <View style={styles.textbox}>
@@ -338,7 +376,7 @@ class Index extends PureComponent {
             </RBSheet>
 
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.Scrollable2 = ref;
               }}
               height={300}
@@ -351,7 +389,10 @@ class Index extends PureComponent {
                 }
               }}
             >
-              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
                 <View style={styles.gridContainer}>
                   <TouchableOpacity>
                     <View style={styles.textbox}>
@@ -373,7 +414,7 @@ class Index extends PureComponent {
             </RBSheet>
 
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.Scrollable3 = ref;
               }}
               height={300}
@@ -386,11 +427,18 @@ class Index extends PureComponent {
                 }
               }}
             >
-              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
                 <View style={styles.gridContainer}>
                   <TouchableOpacity>
                     <View>
-                      <TextInput style={styles.textinputbox} placeholder='输入房间号' textAlign='center'></TextInput>
+                      <TextInput
+                        style={styles.textinputbox}
+                        placeholder="输入房间号"
+                        textAlign="center"
+                      ></TextInput>
                     </View>
                   </TouchableOpacity>
                   <TouchableOpacity>
@@ -496,7 +544,10 @@ class Index extends PureComponent {
             </View>
           </View>
 
-          <TouchableOpacity onPress={() => this.context.navigate("VR")}>
+          <TouchableOpacity
+            style={{ marginBottom: 200 }}
+            onPress={() => this.context.navigate('VR')}
+          >
             <Text>VR</Text>
           </TouchableOpacity>
         </ScrollView>
@@ -552,10 +603,10 @@ const styles = StyleSheet.create({
     borderWidth: pxToDp(1)
   },
   modalView: {
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 12,
-    alignItems: "center",
-    shadowColor: "#000",
+    alignItems: 'center',
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2
@@ -565,7 +616,7 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   openButton: {
-    backgroundColor: "#F194FF",
+    backgroundColor: '#F194FF',
     borderRadius: 5,
     marginTop: pxToDp(35),
     elevation: 12,
@@ -575,23 +626,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center'
   },
   modalText1: {
     marginBottom: pxToDp(15),
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: pxToDp(15)
   },
   modalText2: {
     marginTop: pxToDp(35),
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: pxToDp(15)
   },
   modalText3: {
     marginTop: 5,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: pxToDp(13)
   },
   box: {
@@ -604,8 +655,8 @@ const styles = StyleSheet.create({
   },
   centeredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 22
   },
   modalText4: {

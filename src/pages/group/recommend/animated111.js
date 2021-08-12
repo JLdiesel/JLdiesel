@@ -1,4 +1,4 @@
-/*import React, { Component } from 'react';
+/*import React, { PureComponent } from 'react';
 import {
     StyleSheet,
     Text,
@@ -8,7 +8,7 @@ import {
     Animated,
     Image
 } from 'react-native';
-export default class Mixture extends Component {
+export default class Mixture extends PureComponent {
 
   constructor(props) {
       super(props)

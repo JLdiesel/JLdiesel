@@ -12,8 +12,6 @@ import {
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 
-// import React, { Component } from 'react';
-
 class index extends PureComponent {
   // const [isModalVisible, setModalVisible] = useState(false);
   constructor(props) {
