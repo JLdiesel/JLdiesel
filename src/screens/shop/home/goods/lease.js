@@ -17,6 +17,7 @@ import Carousel from 'react-native-looped-carousel';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Swiper from '../../../../component/common/Swiper';
+import { TextInput } from 'react-native-gesture-handler';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
@@ -440,7 +441,11 @@ class shopdetails extends PureComponent {
               </View>
               {/* 租赁信息 */}
               <View
-                style={{ borderTopWidth: pxToDp(1.1), borderColor: '#f1f1f1' }}
+                style={{
+                  marginTop: pxToDp(10),
+                  borderTopWidth: pxToDp(1.1),
+                  borderColor: '#f1f1f1'
+                }}
               >
                 <Text
                   style={{
@@ -469,22 +474,28 @@ class shopdetails extends PureComponent {
                 </View>
                 <View
                   style={{
-                    flex: 1
+                    flex: 1,
+                    marginTop: pxToDp(10),
+                    marginLeft: pxToDp(10),
+                    alignItems: 'center',
+                    flexDirection: 'row'
                   }}
                 >
-                  <Input
+                  <View>
+                    <Text style={{ fontSize: pxToDp(18) }}>租赁天数:</Text>
+                  </View>
+                  <TextInput
                     placeholder="租赁天数不得低于3天"
                     //   onChangeText={() => this.setState({  })}
                     keyboardType="number-pad"
                     onChangeText={(leaseday) => this.getLeaseday(leaseday)}
                     value={this.state.leaseday}
+                    underlineColorAndroid="transparent"
                     style={{
                       flex: 1,
-                      marginLeft: pxToDp(8)
+                      marginLeft: pxToDp(8),
+                      fontSize: pxToDp(18)
                     }}
-                    leftIcon={
-                      <Text style={{ fontSize: pxToDp(18) }}>租赁天数</Text>
-                    }
                   />
                 </View>
                 <View
@@ -592,20 +603,6 @@ class shopdetails extends PureComponent {
             justifyContent: 'space-evenly'
           }}
         >
-          {/* <TouchableOpacity
-            onPress={() => this.Scrollable.open()}
-            style={{
-              borderRadius: pxToDp(20),
-              justifyContent: "center",
-              alignItems: "center",
-              width: pxToDp(160),
-              height: pxToDp(40),
-              backgroundColor: "#D3D3D3",
-            }}
-          >
-            <Text>加入购物车</Text>
-          </TouchableOpacity> */}
-          {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('orders')} style={{ borderRadius: pxToDp(20), justifyContent: "center", alignItems: "center", width: pxToDp(160), backgroundColor: "orange" }}> */}
           <TouchableOpacity
             onPress={() => this.Scrollable.open()}
             // onPress={() => this.context.navigate("Myorder")}

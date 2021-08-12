@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from './tabbar';
 import * as Screens from './screens';
+import welcome from './welcome/index';
 import Water from './component/water';
 
 const Stack = createStackNavigator();
@@ -10,7 +11,8 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
+      <Stack.Navigator headerMode="none" initialRouteName="welcome">
+        <Stack.Screen name="welcome" component={welcome} />
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页 */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -46,6 +48,8 @@ function Nav() {
         {/* 票务系统 */}
         <Stack.Screen name="ticketdetail" component={Screens.ticketdetail} />
         {/* 票务系统详情页 */}
+        <Stack.Screen name="pointshop" component={Screens.pointshop} />
+        {/* 积分商城 */}
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
         <Stack.Screen name="Set" component={Screens.Set} />
