@@ -16,24 +16,42 @@ class Index extends PureComponent {
         comments: [
             {
                 commentid: 1, plimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-                pl: '别狗叫', plname: '啊啊啊', pldate: '2021-08-03', commetdate: '2021-08-03',
+                pl: '别狗叫1', plname: '啊啊啊', pldate: '2021-08-03', commetdate: '2021-08-03',
                 reply: [{
-                    rpid: 1, rpname: '✌🐷✌', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-                    rptext: '别狗叫', rpdate: '1999-07-15', rpto: '✌🐷✌'
-                }],
+                    rpid: 1, rpname: 'sb1', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                    rptext: '3', rpdate: '1999-07-15', rpto: 'sb3'
+                }, {
+                    rpid: 2, rpname: 'sb2', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                    rptext: '2', rpdate: '1999-07-15', rpto: 'sb2'
+                },
+                {
+                    rpid: 3, rpname: 'sb3', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                    rptext: '1', rpdate: '1999-07-15', rpto: 'sb1'
+                }
+                ],
             },
             {
-                commentid: 1, plimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-                pl: '别狗叫', plname: '啊啊啊', pldate: '2021-08-03', commetdate: '2021-08-03',
+                commentid:2, plimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                pl: '别狗叫2', plname: '啊啊啊', pldate: '2021-08-03', commetdate: '2021-08-03',
                 reply: [{
-                    rpid: 1, rpname: '✌🐷✌', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-                    rptext: '别狗叫', rpdate: '1999-07-15', rpto: '✌🐷✌'
-                }],
+                    rpid: 1, rpname: 'snb', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                    rptext: '1', rpdate: '1999-07-15', rpto: '啊啊啊'
+                },
+                {
+                    rpid: 1, rpname: 'snb', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                    rptext: '1', rpdate: '1999-07-15', rpto: '啊啊啊'
+                },
+                {
+                    rpid: 1, rpname: 'snb', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                    rptext: '1', rpdate: '1999-07-15', rpto: '啊啊啊'
+                },
+                {
+                    rpid: 1, rpname: 'snb', rpimg: 'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
+                    rptext: '1', rpdate: '1999-07-15', rpto: '啊啊啊'
+                }
+                ],
             },
-
-
         ]
-
     }
     render() {
         return (
@@ -50,7 +68,6 @@ class Index extends PureComponent {
                 </View>
                 <ScrollView style={{ height: pxToDp(150), marginTop: pxToDp(10), marginLeft: pxToDp(10), width: '95%' }}
                     showsHorizontalScrollIndicator={false} horizontal={true}>
-
                     {this.state.louzhu.dtimg.map((item, index) => (
                         <View key={index} style={{ marginBottom: pxToDp(10) }}>
                             <Image
@@ -64,7 +81,10 @@ class Index extends PureComponent {
                     <Text style={{ fontSize: pxToDp(18), margin: pxToDp(15), }}>全部</Text>
 
                     <Comments
-                        comments={this.state.comments} />
+                        comments={this.state.comments}
+                        reply={this.state.comments.reply} />
+
+
 
                 </View>
             </ScrollView >

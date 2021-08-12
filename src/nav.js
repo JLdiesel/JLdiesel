@@ -149,7 +149,6 @@ function Nav() {
         <Stack.Screen name="Course" component={Screens.Course} />
         <Stack.Screen name="Timemap" component={Screens.Timemap} />
         <Stack.Screen name="Othershome" component={Screens.Othershome} />
-
         {/*DEMO */}
         {/*DEMO */}
         {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
