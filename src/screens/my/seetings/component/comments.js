@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from "@react-navigation/native";
 import SvgUri from 'react-native-svg-uri';

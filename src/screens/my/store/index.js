@@ -1,3 +1,4 @@
 import LoginReducer from '../Login/store/reducers';
-
-export { LoginReducer };
+import SettingReducer from '../seetings/store';
+import addressReducer from '../address/store';
+export { LoginReducer, SettingReducer, addressReducer };

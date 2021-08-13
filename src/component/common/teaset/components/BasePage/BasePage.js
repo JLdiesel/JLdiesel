@@ -2,47 +2,50 @@
 
 'use strict';
 
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import ReactNative, {Platform, View, ViewPropTypes} from 'react-native';
+import ReactNative, { Platform, View, ViewPropTypes } from 'react-native';
 
 import Theme from 'teaset/themes/Theme';
 import TeaNavigator from '../TeaNavigator/TeaNavigator';
 import KeyboardSpace from '../KeyboardSpace/KeyboardSpace';
 
-export default class BasePage extends Component {
-
+export default class BasePage extends PureComponent {
   static propTypes = {
     ...ViewPropTypes,
     scene: PropTypes.object, //转场效果
     autoKeyboardInsets: PropTypes.bool, //自动插入键盘占用空间
-    keyboardTopInsets: PropTypes.number, //插入键盘占用空间顶部偏移，用于底部有固定占用空间(如TabNavigator)的页面
+    keyboardTopInsets: PropTypes.number //插入键盘占用空间顶部偏移，用于底部有固定占用空间(如TabNavigator)的页面
   };
 
   static defaultProps = {
     ...View.defaultProps,
     scene: TeaNavigator.SceneConfigs.Replace,
     autoKeyboardInsets: Platform.OS === 'ios',
-    keyboardTopInsets: 0,
+    keyboardTopInsets: 0
   };
 
   static contextTypes = {
-    navigator: PropTypes.func,
+    navigator: PropTypes.func
   };
 
   constructor(props) {
     super(props);
     this.didMount = false; //代替被废弃的isMounted
     this.isFocused = false; //this.state.isFocused move to this.isFocused
-    this.state = {
-    };
+    this.state = {};
   }
 
   componentDidMount() {
     this.didMount = true;
     if (!this.backListener && Platform.OS === 'android') {
-      let BackHandler = ReactNative.BackHandler ? ReactNative.BackHandler : ReactNative.BackAndroid;
-      this.backListener = BackHandler.addEventListener('hardwareBackPress', () => this.onHardwareBackPress());
+      let BackHandler = ReactNative.BackHandler
+        ? ReactNative.BackHandler
+        : ReactNative.BackAndroid;
+      this.backListener = BackHandler.addEventListener(
+        'hardwareBackPress',
+        () => this.onHardwareBackPress()
+      );
     }
   }
 
@@ -56,7 +59,9 @@ export default class BasePage extends Component {
 
   get navigator() {
     if (!this.context.navigator) {
-      console.error('The root component is NOT TeaNavigator, then you can not use BasePage.navigator.');
+      console.error(
+        'The root component is NOT TeaNavigator, then you can not use BasePage.navigator.'
+      );
       return null;
     }
     return this.context.navigator();
@@ -68,8 +73,7 @@ export default class BasePage extends Component {
   }
 
   //Call before the scene transition by Navigator.onWillFocus
-  onWillFocus() {
-  }
+  onWillFocus() {}
 
   //Android hardware back key handler, default is pop to prev page
   onHardwareBackPress() {
@@ -84,11 +88,13 @@ export default class BasePage extends Component {
   }
 
   buildStyle() {
-    let {style} = this.props;
-    style = [{
-      flex: 1,
-      backgroundColor: Theme.pageColor,
-    }].concat(style);
+    let { style } = this.props;
+    style = [
+      {
+        flex: 1,
+        backgroundColor: Theme.pageColor
+      }
+    ].concat(style);
     return style;
   }
 
@@ -97,11 +103,20 @@ export default class BasePage extends Component {
   }
 
   render() {
-    let {style, children, scene, autoKeyboardInsets, keyboardTopInsets, ...others} = this.props;
+    let {
+      style,
+      children,
+      scene,
+      autoKeyboardInsets,
+      keyboardTopInsets,
+      ...others
+    } = this.props;
     return (
       <View style={this.buildStyle()} {...others}>
         {this.renderPage()}
-        {autoKeyboardInsets ? <KeyboardSpace topInsets={keyboardTopInsets} /> : null}
+        {autoKeyboardInsets ? (
+          <KeyboardSpace topInsets={keyboardTopInsets} />
+        ) : null}
       </View>
     );
   }

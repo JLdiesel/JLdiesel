@@ -1,10 +1,27 @@
 import React, { PureComponent } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity
+} from 'react-native';
 import { pxToDp } from '@utils/styleKits';
-import { NavigationContext } from "@react-navigation/native";
-
+import { NavigationContext } from '@react-navigation/native';
 
 class Index extends PureComponent {
+  state = {
+    book: [
+      { bookname: '111', name: '12111', date: '2019-05-02' },
+      { bookname: '11', name: '12111', date: '2019-05-02' },
+      { bookname: '1111', name: '12111', date: '2019-05-02' },
+      ,
+      { bookname: '1', name: '12111', date: '2019-05-02' },
+      { bookname: '111111', name: '12111', date: '2019-05-02' },
+      { bookname: '11111', name: '12111', date: '2019-05-02' }
+    ]
+  };
 
     state = {
         book: [{ bookname: '111', name: '12111', date: '2019-05-02' }, { bookname: '11', name: '12111', date: '2019-05-02' }, { bookname: '1111', name: '12111', date: '2019-05-02' }, , { bookname: '1', name: '12111', date: '2019-05-02' }

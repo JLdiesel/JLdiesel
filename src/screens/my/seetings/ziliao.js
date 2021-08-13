@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   Modal,
-  ToastAndroid
+  ToastAndroid,
+  DeviceEventEmitter
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { NavigationContext } from '@react-navigation/native';
@@ -22,6 +23,9 @@ import Top from '@components/common/top';
 import { connect } from 'react-redux';
 import requset from '../../../service';
 import * as URL from './constent';
+import { getUserInfoAction } from '../../first/home/store/actions';
+import { changeAvatar } from './store/actions';
+import changeImgSize from '@utils/changeImgSize';
 const typeArr = ['男', '女'];
 class Ziliao extends PureComponent {
   static contextType = NavigationContext;
@@ -32,18 +36,38 @@ class Ziliao extends PureComponent {
       showTypePop: false,
       modalVisible: false,
       birthday: '',
-      avatar_url: '',
+      avatar: '',
       nickName: '',
       ownSay: ''
     };
   }
   componentDidMount() {
-    console.log(this.props.route);
+    this.subscript = DeviceEventEmitter.addListener(
+      'ownSay',
+      this.refeshOwnSay
+    );
+    this.subscript2 = DeviceEventEmitter.addListener(
+      'nickName',
+      this.refeshnickName
+    );
 
-    // const { ownSay, nickName, sex, birthday } = res;
-    // this.setState({ ownSay, nickName, sex, birthday });
+    const { ownSay, nickName, sex, birthday, avatar } = this.props.route.params;
+    this.setState({ ownSay, nickName, sex, birthday, avatar });
   }
-
+  componentWillUnmount() {
+    this.subscript.remove();
+    this.subscript2.remove();
+  }
+  refeshOwnSay = (ownSay) => {
+    this.setState({
+      ownSay
+    });
+  };
+  refeshnickName = (nickName) => {
+    this.setState({
+      nickName
+    });
+  };
   _openTypeDialog() {
     this.setState({ showTypePop: !this.state.showTypePop });
   }
@@ -59,7 +83,6 @@ class Ziliao extends PureComponent {
     }
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
-    console.log(pickerResult);
     const fd = new FormData();
     let file = {
       uri: pickerResult.uri,
@@ -69,7 +92,7 @@ class Ziliao extends PureComponent {
     fd.append('file', file);
     requset
       .post({
-        url: '/uploads/avatar',
+        url: URL.UPDATE_AVATER,
         data: fd,
         headers: {
           Accept: 'Application/json',
@@ -77,14 +100,15 @@ class Ziliao extends PureComponent {
         }
       })
       .then((res) => {
+        this.props.changeAvatar(pickerResult.uri);
         ToastAndroid.show(res, ToastAndroid.SHORT);
       })
       .catch((err) => {
         console.log(err);
       });
     this.setState({
-      avatar_url: pickerResult.uri,
-      modalVisible: !this.state.modalVisible
+      avatar: pickerResult.uri,
+      modalVisible: false
     });
   };
   saveUserInfo = () => {
@@ -92,13 +116,22 @@ class Ziliao extends PureComponent {
     const sex = this.state.sex;
     const ownSay = this.state.ownSay;
     const birthday = this.state.birthday;
+
     requset
-      .post({
-        url: '/user/updateUserInfo',
-        data: { nickName, sex, birthday, ownSay }
+      .patch({
+        url: URL.GHANGE_USER_INFO,
+        data: { nickName, sex, birthday, ownSay },
+        headers: {
+          'content-type': 'application/json'
+        }
       })
       .then((res) => {
         ToastAndroid.show('保存信息成功', ToastAndroid.SHORT);
+        this.props.getUserInfoAction();
+      })
+      .then((ress) => {
+        DeviceEventEmitter.emit('valueChange');
+        this.context.navigate('Setting');
       });
   };
   render() {
@@ -127,7 +160,9 @@ class Ziliao extends PureComponent {
                   backgroundColor: '#e2f4fe'
                 }}
                 source={{
-                  uri: this.state.avatar_url ? this.state.avatar_url : ''
+                  uri: this.props.avatar
+                    ? this.props.avatar
+                    : changeImgSize(this.state.avatar, 'small')
                 }}
               />
             </TouchableOpacity>
@@ -174,9 +209,7 @@ class Ziliao extends PureComponent {
                     marginBottom: pxToDp(20)
                   }}
                 >
-                  {this.props.route.params?.nickname
-                    ? this.props.route.params?.nickname
-                    : this.state.nickName}
+                  {this.state.nickName}
                 </Text>
               </View>
             </View>
@@ -241,7 +274,7 @@ class Ziliao extends PureComponent {
                     marginBottom: pxToDp(20)
                   }}
                 >
-                  {this.props.route.params?.signature}
+                  {this.state.ownSay}
                 </Text>
               </View>
             </View>
@@ -266,7 +299,7 @@ class Ziliao extends PureComponent {
               style={{ width: 300 }}
               androidMode="spinner"
               placeholder="设置生日"
-              date={birthday}
+              date={birthday.split(' ').shift()}
               minDate="1900-01-01"
               maxDate={currentDate}
               confirmBtnText="确定"
@@ -285,6 +318,7 @@ class Ziliao extends PureComponent {
                 }
               }}
               onDateChange={(birthday) => {
+                console.log(birthday);
                 this.setState({ birthday });
               }}
             />
@@ -314,7 +348,6 @@ const s = StyleSheet.create({
   basic: {
     height: pxToDp(70),
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
     borderBottomWidth: 1,
     borderBottomColor: '#e2f4fe'
@@ -356,6 +389,10 @@ const s = StyleSheet.create({
     borderColor: '#000'
   }
 });
-export default connect((state) => ({
-  token: state.getIn(['LoginReducer', 'token'])
-}))(Ziliao);
+export default connect(
+  (state) => ({
+    token: state.getIn(['LoginReducer', 'token']),
+    avatar: state.getIn(['SettingReducer', 'avatar'])
+  }),
+  { getUserInfoAction, changeAvatar }
+)(Ziliao);

@@ -2,13 +2,13 @@
 
 'use strict';
 
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import PropTypes from 'prop-types';
 import {StyleSheet, View, Text, Animated, ViewPropTypes} from 'react-native';
 
 import Theme from 'teaset/themes/Theme';
 
-export default class WheelItem extends Component {
+export default class WheelItem extends PureComponent {
 
   static propTypes = {
     ...ViewPropTypes,

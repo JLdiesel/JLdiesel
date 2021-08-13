@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Tabbar from './tabbar';
@@ -12,7 +12,7 @@ function Nav() {
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
         <Stack.Screen name="Tabbar" component={Tabbar} />
-        {/*首页 */}
+        {/*首页TimeMap */}
         <Stack.Screen name="Home" component={Screens.Home} />
         <Stack.Screen name="water" component={Water} />
         {/*我的 */}
@@ -41,7 +41,12 @@ function Nav() {
         <Stack.Screen name="Zulin" component={Screens.Zulin} />
         {/*周边商城页 */}
         <Stack.Screen name="Timeline" component={Screens.Timeline} />
+
         {/* 时间轴 */}
+        <Stack.Screen name="ticket" component={Screens.ticket} />
+        {/* 票务系统 */}
+        <Stack.Screen name="ticketdetail" component={Screens.ticketdetail} />
+        {/* 票务系统详情页 */}
         <Stack.Screen name="Zhoubian" component={Screens.Zhoubian} />
         {/*设置 */}
         <Stack.Screen name="Set" component={Screens.Set} />
@@ -101,12 +106,6 @@ function Nav() {
         <Stack.Screen name="newAddress" component={Screens.newAddress} />
         {/**全部订单 */}
         <Stack.Screen name="Orderone" component={Screens.Orderone} />
-        {/**待支付订单 */}
-        <Stack.Screen name="Ordertwo" component={Screens.Ordertwo} />
-        {/**待收货订单 */}
-        <Stack.Screen name="Orderthree" component={Screens.Orderthree} />
-        {/**待评价订单 */}
-        <Stack.Screen name="Orderfour" component={Screens.Orderfour} />
         {/**退款订单页面 */}
         <Stack.Screen name="Refund" component={Screens.Refund} />
         {/**设置首页面 */}
@@ -145,13 +144,18 @@ function Nav() {
         <Stack.Screen name="Inluntan" component={Screens.Inluntan} />
         {/*Vr */}
         <Stack.Screen name="VR" component={Screens.VR} />
+        <Stack.Screen name="Pay" component={Screens.Pay} />
         {/**教程页面 */}
         <Stack.Screen name="Course" component={Screens.Course} />
         <Stack.Screen name="Timemap" component={Screens.Timemap} />
         <Stack.Screen name="Othershome" component={Screens.Othershome} />
         {/*DEMO */}
+        {/**越剧基本功页面 */}
+        <Stack.Screen name="Basic" component={Screens.Basic} />
+        {/**越剧大师教学页面 */}
+        <Stack.Screen name="Master" component={Screens.Master} />
         {/*DEMO */}
-        {/* <Stack.Screen name="Demo" component={Screens.Demo} /> */}
+        {/*<Stack.Screen name="Demo" component={Screens.Demo} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

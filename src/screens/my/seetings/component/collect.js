@@ -1,5 +1,11 @@
 import React, { PureComponent } from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity
+} from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import { Chip } from 'react-native-elements';
 import SvgUri from 'react-native-svg-uri';
