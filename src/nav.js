@@ -148,6 +148,8 @@ function Nav() {
         {/**教程页面 */}
         <Stack.Screen name="Course" component={Screens.Course} />
         <Stack.Screen name="Timemap" component={Screens.Timemap} />
+        <Stack.Screen name="Othershome" component={Screens.Othershome} />
+        {/*DEMO */}
         {/**越剧基本功页面 */}
         <Stack.Screen name="Basic" component={Screens.Basic} />
         {/**越剧大师教学页面 */}

@@ -14,4 +14,4 @@ export const screenHeight = Dimensions.get("window").height;
  * 将px转为dp
  * @param {Nmuber} elePx 元素的宽度或者高度 单位 px 
  */
-export const pxToDp=(elePx)=>screenWidth * elePx / 375;
+export const pxToDp = (elePx) => screenWidth * elePx / 375;

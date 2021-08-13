@@ -80,3 +80,4 @@ export { default as VR } from './play/vr'; //越剧小镇VR
 export { default as Course } from './play/course'; //教程页面
 export { default as Basic } from './play/course/bankuai/basic'; //越剧基本功板块
 export { default as Master } from './play/course/bankuai/master'; //越剧大师教学板块
+export { default as Othershome } from './my/home/othershome';

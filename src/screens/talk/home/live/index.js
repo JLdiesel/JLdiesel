@@ -5,11 +5,13 @@ import { NavigationContext } from "@react-navigation/native";
 import { FAB } from 'react-native-elements'
 import LottieView from 'lottie-react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { SpeedDial } from 'react-native-elements';
 
 class Index extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
+      isopen:false
 
     }
   }
@@ -71,7 +73,24 @@ class Index extends PureComponent {
             </ImageBackground>
           </View>
         </ScrollView >
-        <FAB size="large" placement="right" color="#B0C4DE" onPress={() => this.context.navigate("Apply")} />
+        <SpeedDial
+  isOpen={this.state.isopen}
+  icon={{ name: 'edit', color: '#fff' }}
+  openIcon={{ name: 'close', color: '#fff' }}
+  onOpen={() => this.setState({isopen:true})}
+  onClose={() =>this.setState({isopen:false})}
+>
+  <SpeedDial.Action
+    icon={{ name: 'add', color: '#fff' }}
+    title="Add"
+    onPress={() => console.log('Add Something')}
+  />
+  <SpeedDial.Action
+    icon={{ name: 'delete', color: '#fff' }}
+    title="Delete"
+    onPress={() => console.log('Delete Something')}
+  />
+</SpeedDial>
       </View>
     );
   }

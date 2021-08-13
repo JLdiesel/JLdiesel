@@ -37,184 +37,54 @@ class Index extends PureComponent {
       }
     ],
     isShow: false
-  };
+
+  }
 
   static contextType = NavigationContext;
 
   render() {
+
     return (
-      <ScrollView>
-        <View
-          style={{
-            width: '95%',
-            marginLeft: pxToDp(10),
-            marginTop: pxToDp(20),
-            marginBottom: pxToDp(20),
-            backgroundColor: '#fff'
-          }}
-        >
+      <ScrollView >
+
+        <View style={{ width: '95%', marginLeft: pxToDp(10), marginTop: pxToDp(20), marginBottom: pxToDp(20), backgroundColor: '#fff',borderRadius:pxToDp(10),elevation:3 }}>
           {this.props.dongtai.map((item, dtid) => (
-            <View key={dtid}>
+            <View key={dtid} >
               <BottomSheet
                 isVisible={this.state.isShow}
-                containerStyle={{ backgroundColor: 'rgba(0.5, 0.25, 0, 0.2)' }}
-              >
+                containerStyle={{ backgroundColor: 'rgba(0.5, 0.25, 0, 0.2)' }}>
                 {this.state.list.map((l, i) => (
-                  <ListItem
-                    key={i}
-                    containerStyle={l.containerStyle}
-                    onPress={l.onPress}
-                  >
+                  <ListItem key={i} containerStyle={l.containerStyle} onPress={l.onPress}>
                     <ListItem.Content>
-                      <ListItem.Title style={l.titleStyle}>
-                        {l.title}
-                      </ListItem.Title>
+                      <ListItem.Title style={l.titleStyle}>{l.title}</ListItem.Title>
                     </ListItem.Content>
-                  </ListItem>
-                ))}
+                  </ListItem>))}
               </BottomSheet>
-              <TouchableOpacity
-                style={{ position: 'absolute', top: 10, right: 20 }}
-                onPress={() => this.setState({ isShow: true })}
-              >
-                <SvgUri svgXmlData={sandian} width="20" height="20" />
+              <TouchableOpacity style={{ position: 'absolute', top: 10, right: 20 }}
+                onPress={() => this.setState({ isShow: true })} >
+                <SvgUri svgXmlData={sandian} width='20' height='20' />
               </TouchableOpacity>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'flex-end',
-                  marginBottom: pxToDp(10),
-                  marginLeft: pxToDp(10)
-                }}
-              >
-                <Text style={{ fontSize: pxToDp(25), fontWeight: 'bold' }}>
-                  {item.date.substr(3, 3)}
-                </Text>
-                <Text style={{ fontSize: 17, paddingLeft: 5 }}>
-                  {item.date.substr(0, 3)}
-                </Text>
+              <View style={{ flexDirection: 'row', alignItems: 'flex-end', marginBottom: pxToDp(10), marginLeft: pxToDp(10) ,borderRadius:pxToDp(10) }}>
+                <Text style={{ fontSize: pxToDp(25), fontWeight: 'bold' }}>{item.date.substr(3, 3)}</Text>
+                <Text style={{ fontSize: 17, paddingLeft: 5 }}>{item.date.substr(0, 3)}</Text>
               </View>
-              <View
-                style={{
-                  elevation: 1,
-                  borderWidth: 0,
-                  backgroundColor: '#fcfcfc'
-                }}
-              >
-                <View
-                  style={{
-                    marginLeft: pxToDp(30),
-                    flexDirection: 'row',
-                    alignItems: 'flex-end'
-                  }}
-                ></View>
-                <View
-                  style={{ flexDirection: 'row', margin: pxToDp(10) }}
-                ></View>
-                <View
-                  style={{
-                    width: '90%',
-                    marginBottom: pxToDp(30),
-                    alignSelf: 'center'
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: pxToDp(18),
-                      marginBottom: pxToDp(10),
-                      paddingLeft: pxToDp(8),
-                      marginTop: pxToDp(10)
-                    }}
-                  >
-                    {item.dt}
-                  </Text>
-                  <ScrollView
-                    style={{
-                      flex: 1,
-                      height: pxToDp(150),
-                      marginTop: pxToDp(10)
-                    }}
-                    horizontal={true}
-                  >
+              <View style={{ elevation: 2, borderWidth: 0, backgroundColor: 'white',borderBottomLeftRadius:pxToDp(10),borderBottomRightRadius:pxToDp(10) }}>
+                <View style={{ marginLeft: pxToDp(30), flexDirection: 'row', alignItems: 'flex-end' }}>
+
+                </View>
+                <View style={{ flexDirection: 'row', margin: pxToDp(10), }}>
+                </View>
+                <View style={{ width: '90%', marginBottom: pxToDp(30), alignSelf: 'center' }}>
+                  <Text style={{ fontSize: pxToDp(18), marginBottom: pxToDp(10), paddingLeft: pxToDp(8), marginTop: pxToDp(10) }}>{item.dt}</Text>
+                  <ScrollView style={{ flex: 1, height: pxToDp(150), marginTop: pxToDp(10) }} horizontal={true}>
                     {item.dtimg2.map((item) => (
                       <Image
-                        style={{
-                          width: 150,
-                          height: '100%',
-                          borderRadius: 10,
-                          marginRight: 10
-                        }}
-                        source={{ uri: item }}
-                      />
+                        style={{ width: 150, height: '100%', borderRadius: 10, marginRight: 10 }}
+                        source={{ uri: item }} />
                     ))}
                   </ScrollView>
+
                 </View>
-              </View>
-              <View
-                style={{
-                  width: '90%',
-                  marginBottom: pxToDp(30),
-                  alignSelf: 'center'
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: pxToDp(18),
-                    marginBottom: pxToDp(10),
-                    paddingLeft: pxToDp(8),
-                    marginTop: pxToDp(10)
-                  }}
-                >
-                  {item.dt}
-                </Text>
-                <ScrollView
-                  style={{
-                    flex: 1,
-                    height: pxToDp(150),
-                    marginTop: pxToDp(10)
-                  }}
-                  horizontal={true}
-                >
-                  {item.dtimg2.map((item) => (
-                    <Image
-                      style={{
-                        width: 150,
-                        height: '100%',
-                        borderRadius: 10,
-                        marginRight: 10
-                      }}
-                      source={{ uri: item }}
-                    />
-                  ))}
-                </ScrollView>
-              </View>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-around',
-                  marginBottom: pxToDp(10)
-                }}
-              >
-                <TouchableOpacity style={{ flexDirection: 'row' }}>
-                  <SvgUri svgXmlData={dianzan} width="20" height="20" />
-                  <Text
-                    style={{
-                      position: 'absolute',
-                      bottom: pxToDp(5),
-                      left: pxToDp(30)
-                    }}
-                  >
-                    {item.dz}
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => this.context.navigate('Indongtai')}
-                >
-                  <SvgUri svgXmlData={pinglun} width="20" height="20" />
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <SvgUri svgXmlData={zhuanfa} width="25" height="25" />
-                </TouchableOpacity>
               </View>
             </View>
           ))}
