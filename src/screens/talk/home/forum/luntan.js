@@ -106,13 +106,13 @@ showArticle=(obj)=>{
           <View style={{ width: '95%', marginLeft: pxToDp(10), marginTop: pxToDp(20), marginBottom: pxToDp(20) }}>
             {this.props.dongtai.map((item, dtid) => (
 
-              <View key={dtid} style={{ elevation: 2, borderWidth: 0, marginBottom: pxToDp(20), backgroundColor: 'white', borderRadius: pxToDp(20) }}>
+              <View key={item.id} style={{ elevation: 2, borderWidth: 0, marginBottom: pxToDp(20), backgroundColor: 'white', borderRadius: pxToDp(20) }}>
 
                 <BottomSheet
                   isVisible={this.state.isShow}
                   containerStyle={{ backgroundColor: 'rgba(0.5, 0.25, 0, 0.2)' }}>
                   {this.state.list.map((l, i) => (
-                    <ListItem key={i} containerStyle={l.containerStyle} onPress={l.onPress}>
+                    <ListItem key={i.id} containerStyle={l.containerStyle} onPress={l.onPress}>
                       <ListItem.Content>
                         <ListItem.Title style={l.titleStyle}>{l.title}</ListItem.Title>
                       </ListItem.Content>
@@ -125,7 +125,7 @@ showArticle=(obj)=>{
                 <View style={{ flexDirection: 'row', margin: pxToDp(10), }}>
 
                   <Image source={{ uri: item.user.avatar }} style={{ width: pxToDp(60), height: pxToDp(60), borderRadius: pxToDp(40), marginLeft: pxToDp(20), marginTop: pxToDp(10) }} />
-                  <TouchableOpacity onPress={() => this.context.navigate('Inluntan')}>
+                  <TouchableOpacity onPress={() => this.context.navigate('Inluntan',item.id)}>
                     <View style={{ marginTop: pxToDp(10) }}>
                       <Text style={{ fontSize: pxToDp(25), fontWeight: 'bold', paddingLeft: pxToDp(20) }}>{item.user.nickName}</Text>
                       <Text style={{ fontSize: pxToDp(15), paddingLeft: pxToDp(20), marginTop: pxToDp(5) }}>{item.createTime}</Text>
@@ -134,7 +134,7 @@ showArticle=(obj)=>{
                   </TouchableOpacity>
                 </View>
                 <View style={{ width: '90%', marginBottom: pxToDp(30), alignSelf: 'center' }}>
-                  <TouchableOpacity onPress={() => this.context.navigate('Inluntan')}>
+                  <TouchableOpacity onPress={() => this.context.navigate('Inluntan',item.id)}>
                     <Text style={{ fontSize: pxToDp(18), marginBottom: pxToDp(10), paddingLeft: pxToDp(8), marginTop: pxToDp(10) }}>{item.content}</Text>
                   </TouchableOpacity>
                 
