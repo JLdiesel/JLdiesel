@@ -104,7 +104,7 @@ export default class ticketdetail extends PureComponent {
                   </Text>
                 </View>
                 <View>
-                  <Text style={{ color: 'red' }}>
+                  <Text style={{ color: '#B22222' }}>
                     ￥{this.props.route.params.price}
                   </Text>
                 </View>
@@ -231,12 +231,11 @@ export default class ticketdetail extends PureComponent {
           <View
             style={{
               marginLeft: pxToDp(8),
-              marginRight: pxToDp(8),
+              marginRight: pxToDp(11),
               marginTop: pxToDp(10),
               backgroundColor: '#eee',
               flexDirection: 'row',
               height: pxToDp(30),
-              borderRadius: pxToDp(8),
               alignItems: 'center'
             }}
           >
@@ -245,7 +244,6 @@ export default class ticketdetail extends PureComponent {
               style={{
                 marginRight: pxToDp(20),
                 flexDirection: 'row',
-
                 alignItems: 'center'
               }}
             >

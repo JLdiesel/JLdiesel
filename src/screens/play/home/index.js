@@ -13,6 +13,7 @@ import { NavigationContext } from '@react-navigation/native';
 import Top from '@components/common/top';
 import { pxToDp } from '@utils/styleKits';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
 import { TextInput } from 'react-native-gesture-handler';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import StepIndicator from 'react-native-step-indicator';
@@ -269,6 +270,12 @@ class Index extends PureComponent {
               <View style={{ alignItems: 'center' }}>
                 <Ionicons name="md-logo-octocat" size={28} color="#468CD3" />
                 <Text>教程</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.context.navigate('Timeline')}>
+              <View style={{ alignItems: 'center' }}>
+                <Entypo name="colours" size={28} color="#468CD3" />
+                <Text>时间轴</Text>
               </View>
             </TouchableOpacity>
           </View>

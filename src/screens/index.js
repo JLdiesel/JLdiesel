@@ -21,6 +21,7 @@ export { default as Act } from './play/act'; //双人剧本页
 export { default as Timeline } from './Timeline/index'; //时间轴页
 export { default as ticket } from './shop/home/ticket/index'; //票务系统
 export { default as ticketdetail } from './shop/home/ticket/ticketdetail'; //票务系统详情
+export { default as pointshop } from './shop/home/jifen/index'; //票务系统详情
 export { default as Apply } from './talk/home/live/apply'; //申请直播页
 export { default as Create } from './talk/home/live/create'; //剧本创作页
 export { default as PageOne } from './first/home/pages/pageone'; //流派传奇页
@@ -52,7 +53,7 @@ export { default as Timemap } from '../ddd/index'; //教程页面
 export { default as Myorder } from './my/order/Myorder'; //正在支付订单
 
 export { default as Lease } from './shop/home/goods/lease'; //新增收货地址
-
+export { default as paySuccess } from './my/pay/paySuccess'; //待支付
 export { default as Pay } from './my/pay'; //待支付
 
 export { default as address } from './my/address/address'; //地址

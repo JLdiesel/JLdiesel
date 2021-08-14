@@ -104,6 +104,7 @@ export default class index extends PureComponent {
           <Text style={{ fontSize: pxToDp(20), fontWeight: 'bold' }}>演出</Text>
         </View>
         <ScrollView
+          showsVerticalScrollIndicator={false}
           style={{ flex: 1, margin: pxToDp(20), marginTop: pxToDp(10) }}
         >
           {/* 演出盒子 */}
@@ -190,7 +191,7 @@ export default class index extends PureComponent {
                         </Text>
                       </View>
                       <View style={{ flexDirection: 'row' }}>
-                        <Text style={{ color: 'red' }}>￥{item.price}</Text>
+                        <Text style={{ color: '#B22222' }}>￥{item.price}</Text>
                         <Text>起</Text>
                       </View>
                     </View>
