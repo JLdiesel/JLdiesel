@@ -65,7 +65,7 @@ export { default as History } from './my/history'; //浏览历史
 export { default as Jifenshop } from './my/jifenshop/jifenshop'; //积分商城
 export { default as Orderone } from './my/order/pages/orderone'; //订单全部页
 export { default as Refund } from './my/order/pages/refund'; //退款订单页面
-export { default as Setting } from './my/seetings/setting'; //设置页面
+export { default as Myhome } from './my/home/myhome'; //设置页面
 export { default as Ziliao } from './my/seetings/ziliao'; //资料页面
 export { default as Scriptlibrary } from './play/scriptlibrary'; //剧本库
 export { default as Collection } from './my/collection'; //收藏
@@ -81,3 +81,4 @@ export { default as VR } from './play/vr'; //越剧小镇VR
 export { default as Course } from './play/course'; //教程页面
 export { default as Basic } from './play/course/bankuai/basic'; //越剧基本功板块
 export { default as Master } from './play/course/bankuai/master'; //越剧大师教学板块
+export { default as Othershome } from './my/home/othershome';

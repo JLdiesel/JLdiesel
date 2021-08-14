@@ -8,3 +8,7 @@ export const getMomentInnerById = (momentId) =>
   request.get({
     url: `/moment/detailbymomentid/${momentId}`
   });
+  export const getCommentInnerById = (commentId) =>
+  request.get({
+    url: `/comment/${commentId}`
+  });

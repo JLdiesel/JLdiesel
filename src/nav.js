@@ -11,8 +11,7 @@ const Stack = createStackNavigator();
 function Nav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Tabbar">
-        <Stack.Screen name="welcome" component={welcome} />
+      <Stack.Navigator headerMode="none" initialRouteName="Login">
         <Stack.Screen name="Tabbar" component={Tabbar} />
         {/*首页TimeMap */}
         <Stack.Screen name="Home" component={Screens.Home} />
@@ -113,7 +112,7 @@ function Nav() {
         {/**退款订单页面 */}
         <Stack.Screen name="Refund" component={Screens.Refund} />
         {/**设置首页面 */}
-        <Stack.Screen name="Setting" component={Screens.Setting} />
+        <Stack.Screen name="Myhome" component={Screens.Myhome} />
         {/**更改资料页面 */}
         <Stack.Screen name="Ziliao" component={Screens.Ziliao} />
         {/**昵称页面 */}
@@ -153,6 +152,8 @@ function Nav() {
         <Stack.Screen name="paySuccess" component={Screens.paySuccess} />
         <Stack.Screen name="Course" component={Screens.Course} />
         <Stack.Screen name="Timemap" component={Screens.Timemap} />
+        <Stack.Screen name="Othershome" component={Screens.Othershome} />
+        {/*DEMO */}
         {/**越剧基本功页面 */}
         <Stack.Screen name="Basic" component={Screens.Basic} />
         {/**越剧大师教学页面 */}

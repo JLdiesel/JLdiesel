@@ -1,17 +1,23 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import {
   View,
   Text,
   Image,
-  StyleSheet,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground,
+  TextInput,
+  Dimensions
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import { NavigationContext } from '@react-navigation/native';
 import Top from '@components/common/top';
 import Comments from './comments';
 import { getMomentInnerById } from '@service/moment';
+import { Audio } from 'expo-av';
+import { Video } from 'expo-av'
+import SvgUri from 'react-native-svg-uri';
+import { stopmusic, playmusic } from '../../../../component/common/iconSvg';
 const point =
   '<svg t="1627566102075" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7382" width="200" height="200"><path d="M512 0c57.6 0 108.8 44.8 108.8 108.8S569.6 211.2 512 211.2s-108.8-44.8-108.8-102.4S454.4 0 512 0z m0 812.8c57.6 0 108.8 44.8 108.8 108.8S569.6 1024 512 1024s-108.8-44.8-108.8-108.8S454.4 812.8 512 812.8z m0-409.6c57.6 0 108.8 44.8 108.8 108.8S569.6 620.8 512 620.8 403.2 569.6 403.2 512 454.4 403.2 512 403.2z" fill="#8C8C8C" p-id="7383"></path></svg>';
 const playnumber =
@@ -22,49 +28,63 @@ const pinglun =
 class Index extends PureComponent {
   state = {
     inner: {},
-    louzhu: {
-      lzimg:
-        'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-      lzname: '🐷杯',
-      dt: '是云在想你呀',
-      date: '2021-08-03',
-      dtimg: [
-        'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-        'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-        'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-        'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg'
-      ]
-    },
-    comments: [
-      {
-        commentid: 1,
-        plimg:
-          'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-        pl: '别狗叫',
-        plname: '啊啊啊',
-        pldate: '2021-08-03',
-        commetdate: '2021-08-03',
-        reply: [
-          {
-            rpid: 1,
-            rpname: '✌🐷✌',
-            rpimg:
-              'https://img2.baidu.com/it/u=2116882029,1761299726&fm=26&fmt=auto&gp=0.jpg',
-            rptext: '别狗叫',
-            rpdate: '1999-07-15',
-            rpto: '✌🐷✌'
-          }
-        ]
-      }
-    ]
+    status: {},
   };
+
   componentDidMount() {
     getMomentInnerById(this.props.route.params)
       .then((res) => {
-        console.log(res);
         this.setState({ inner: { ...res } });
       })
       .catch((err) => console.log(err));
+  }
+  showArticle = () => {
+    const { images } = this.state.inner
+    return (
+      <ScrollView
+        style={{
+          height: pxToDp(150),
+          marginTop: pxToDp(10),
+          marginLeft: pxToDp(10),
+          width: '95%'
+        }}
+        showsHorizontalScrollIndicator={false}
+        horizontal={true}
+      >
+        {images?.map((item, index) => (
+          <View key={index} style={{ marginBottom: pxToDp(10) }}>
+            <Image
+              style={{
+                width: pxToDp(155),
+                height: pxToDp(150),
+                borderRadius: pxToDp(15),
+                marginLeft: pxToDp(10)
+              }}
+              source={{ uri: item }}
+            />
+          </View>
+        ))}
+      </ScrollView>)
+  }
+  showMusic = () => {
+    const video = createRef()
+    const { picture, music } = this.state.inner
+    return (
+      <ImageBackground style={{ flex: 1, height: pxToDp(150), marginTop: pxToDp(10), }} source={{ uri: picture }}>
+        <Video
+          ref={video}
+          source={{ uri: music }}
+          resizeMode="contain"
+          onPlaybackStatusUpdate={status => this.setState({ status })}
+        />
+        <TouchableOpacity style={{ position: 'absolute', bottom: 10, right: 10, opacity: .5 }}
+          onPress={() =>
+            this.state.status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
+          }>
+          <SvgUri svgXmlData={this.state.status.isPlaying ? stopmusic : playmusic} width='30' height='30' />
+        </TouchableOpacity>
+      </ImageBackground >
+    )
   }
   static contextType = NavigationContext;
   render() {
@@ -72,72 +92,62 @@ class Index extends PureComponent {
       comments,
       content = 123,
       createTime,
-      images,
       title = 666,
-      user
+      user,
+      label
     } = this.state.inner;
     return (
-      <ScrollView style={{ backgroundColor: '#fff' }}>
-        <Top icon1="arrow-back" title={title} on />
-        <View
-          style={{
-            width: '100%',
-            height: pxToDp(100),
-            marginTop: pxToDp(20),
-            flexDirection: 'row'
-          }}
-        >
-          <Image
-            source={{ uri: user?.avatarUrl }}
+      <View style={{flex:1, }}>
+        <ScrollView style={{ backgroundColor: '#fff', marginBottom:pxToDp(40) }}>
+          <Top icon1="arrow-back" title={title} on />
+          <View
             style={{
-              height: pxToDp(60),
-              width: pxToDp(60),
-              borderRadius: pxToDp(60),
-              margin: pxToDp(15)
+              width: '100%',
+              height: pxToDp(100),
+              marginTop: pxToDp(20),
+              flexDirection: 'row'
             }}
-          />
-          <View style={{ marginTop: pxToDp(20), paddingLeft: pxToDp(5) }}>
-            <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
-              {user?.nickName}
-            </Text>
-          </View>
-        </View>
-        <View style={{ margin: pxToDp(15) }}>
-          <Text style={{ fontSize: pxToDp(18) }}>{content}</Text>
-        </View>
-        <ScrollView
-          style={{
-            height: pxToDp(150),
-            marginTop: pxToDp(10),
-            marginLeft: pxToDp(10),
-            width: '95%'
-          }}
-          showsHorizontalScrollIndicator={false}
-          horizontal={true}
-        >
-          {images?.map((item, index) => (
-            <View key={index} style={{ marginBottom: pxToDp(10) }}>
-              <Image
-                style={{
-                  width: pxToDp(155),
-                  height: pxToDp(150),
-                  borderRadius: pxToDp(15),
-                  marginLeft: pxToDp(10)
-                }}
-                source={{ uri: item }}
-              />
+          >
+            <Image
+              source={{ uri: user?.avatarUrl }}
+              style={{
+                height: pxToDp(60),
+                width: pxToDp(60),
+                borderRadius: pxToDp(60),
+                margin: pxToDp(15)
+              }}
+            />
+            <View style={{ marginTop: pxToDp(20), paddingLeft: pxToDp(5) }}>
+              <Text style={{ fontSize: pxToDp(18), fontWeight: 'bold' }}>
+                {user?.nickName}
+              </Text>
             </View>
-          ))}
-        </ScrollView>
+          </View>
+          <View style={{ margin: pxToDp(15) }}>
+            <Text style={{ fontSize: pxToDp(18) }}>{content}</Text>
+          </View>
+          {
+            label ? this.showMusic() : this.showArticle()
 
-        <Text style={{ paddingLeft: pxToDp(15), color: 'gray' }}>
-          {this.state.louzhu.date}
-        </Text>
-        <View style={{ backgroundColor: '#fff', marginTop: pxToDp(30) }}>
-          <Text style={{ fontSize: pxToDp(18), margin: pxToDp(15) }}>全部</Text>
-          <Comments comments={comments ? comments : []} />
+          }
+
+          <Text style={{ paddingLeft: pxToDp(15), color: 'gray' }}>
+            {createTime}
+          </Text>
+          <View style={{ backgroundColor: '#fff', marginTop: pxToDp(30) }}>
+            <Text style={{ fontSize: pxToDp(18), margin: pxToDp(15) }}>全部</Text>
+            <Comments comments={comments ? comments : []} />
+          </View>
+        </ScrollView>
+        <View style={{ backgroundColor: '#e2f4fe', height: 40, width: Dimensions.get('window').width, alignItems: 'center', flexDirection: 'row', position: 'absolute', bottom:0}}>
+          <TextInput
+            placeholder='发一条友善的评论'
+            style={{ height: '80%', backgroundColor: '#fcfcfc', width: '75%', marginLeft: pxToDp(20), borderRadius: pxToDp(20), }} />
+          <TouchableOpacity>
+            <Text style={{ marginLeft: pxToDp(20) }}>发布</Text>
+          </TouchableOpacity>
         </View>
-      </ScrollView>
+      </View>
     );
   }
 }

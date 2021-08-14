@@ -7464,6 +7464,11 @@ react-native-picker@^4.3.7:
   resolved "https://registry.yarnpkg.com/react-native-picker/-/react-native-picker-4.3.7.tgz#9842e8c62ff0d8b676e9514d9f9172413c0518a8"
   integrity sha1-mELoxi/w2LZ26VFNn5FyQTwFGKg=
 
+react-native-portalize@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.nlark.com/react-native-portalize/download/react-native-portalize-1.0.7.tgz#8b3c742a06f863654d526ea1075a8596625f8482"
+  integrity sha1-izx0Kgb4Y2VNUm6hB1qFlmJfhII=
+
 react-native-ratings@8.0.4:
   version "8.0.4"
   resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-8.0.4.tgz#efd5ebad8acc08bf98d34d39b18fb7a6813ef991"

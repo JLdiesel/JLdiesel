@@ -1,11 +1,11 @@
 import React, { PureComponent, createRef } from 'react';
 import {
-  Platform,
-  StyleSheet,
+
   Text,
   View,
   Dimensions,
-  Image
+  Image,
+  StyleSheet,
 } from 'react-native';
 import Page from './page';
 import { Modalize } from 'react-native-modalize';
@@ -279,47 +279,54 @@ export default class Exswiper extends PureComponent {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'transparent',
+    container: {
+        backgroundColor: 'transparent',
 
-    // top:300
-    height: 100
-  },
-  swiper: {
-    backgroundColor: '#f1f1f1'
-  },
-  cell: {
-    // backgroundColor: 'red',
-    width: '90%',
-    height: '90%',
-    borderWidth: 2,
-    borderColor: '#e08471',
-    borderRadius: 10,
-    padding: 10,
-    marginTop: 5,
-    marginLeft: 18
-  },
-  content__modal: {
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 6 },
-    shadowOpacity: 0.45,
-    shadowRadius: 16
-  },
-  image: {
-    width: '50%',
-    height: '100%'
-    // zIndex:3,
-  },
-  big: {
-    fontSize: 25,
-    fontWeight: '700',
-    color: 'white',
-    margin: 20,
-    marginBottom: 10
-  },
-  mid: {
-    fontSize: 15,
-    fontWeight: '400',
-    color: 'white'
-  }
-});
+        // top:300
+        height: 100,
+    },
+    swiper: {
+        backgroundColor: '#f1f1f1',
+
+    },
+    cell: {
+        // backgroundColor: 'red',
+        width: '90%',
+        height: '90%',
+        borderWidth: 2,
+        borderColor: '#e08471',
+        borderRadius: 10,
+        padding: 10,
+        marginTop: 5,
+        marginLeft: 18
+
+
+
+
+    },
+    content__modal: {
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.45,
+        shadowRadius: 16,
+    },
+    image: {
+        width: "50%",
+        height: "100%"
+        // zIndex:3,
+    },
+    big: {
+        fontSize: 25,
+        fontWeight: "700",
+        color: 'white',
+        margin: 20,
+        marginBottom: 10
+
+    },
+    mid: {
+        fontSize: 15,
+        fontWeight: '400',
+        color: 'white'
+
+    },
+  })
