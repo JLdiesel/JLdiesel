@@ -42,7 +42,7 @@ class Index extends PureComponent {
       <ScrollView >
 
         <View style={{ width: '95%', marginLeft: pxToDp(10), marginTop: pxToDp(20), marginBottom: pxToDp(20), backgroundColor: '#fff',borderRadius:pxToDp(10),elevation:3 }}>
-          {this.props.dongtai.map((item, dtid) => (
+          {this.props.userinfo.dongtai.map((item, dtid) => (
             <View key={dtid} >
               <BottomSheet
                 isVisible={this.state.isShow}

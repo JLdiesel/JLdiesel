@@ -20,8 +20,8 @@ class Index extends PureComponent {
     return (
       <ScrollView style={{ marginTop: pxToDp(20) }} >
 
-        {this.props.collect.map((item, collectid) => (
-          <View key={collectid} style={{ elevation: 1, borderWidth: 0, flex: 1, width: '95%', alignSelf: 'center', backgroundColor: 'white', borderRadius: pxToDp(10), marginTop: pxToDp(10) }}>
+        {this.props.userinfo.collect.map((item) => (
+          <View key={item.collectid} style={{ elevation: 1, borderWidth: 0, flex: 1, width: '95%', alignSelf: 'center', backgroundColor: 'white', borderRadius: pxToDp(10), marginTop: pxToDp(10) }}>
 
             <View style={{ flexDirection: 'row', marginTop: pxToDp(10), }}>
               <Image source={{ uri: item.collectimg }} style={{ width: pxToDp(110), height: pxToDp(80), borderRadius: 5, left: pxToDp(5) }} />

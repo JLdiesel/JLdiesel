@@ -9,7 +9,7 @@ import { sandian } from '../../../../component/common/iconSvg'
 import { Audio } from 'expo-av';
 import { Video } from 'expo-av'
 import { playmusic,dianzan,zhuanfa,pinglun,stopmusic} from '../../../../component/common/iconSvg';
-import { SpeedDial } from 'react-native-elements';
+
 class Index extends PureComponent {
   state = {
     list: [
