@@ -60,24 +60,21 @@ export default function App() {
   }
   const fetchData = () => {
     axios({
-      url: 'http://192.168.50.146:3000/user/register',
+      url: 'http://120.79.86.32:3000/user/register',
       data: {
         name,
         password
       },
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'content-type': 'application/json',
+        Accept: 'application/json',
+        'content-type': 'application/json'
       }
-
-    }).then(res => {
+    }).then((res) => {
       console.log(res);
-    })
+    });
 
-
-
-    /*    fetch('http://192.168.50.146:3000/user/register', {
+    /*    fetch('http://120.79.86.32:3000/user/register', {
          method: 'POST',
          body: JSON.stringify({
            "name": "18847", "password": "123123"
@@ -89,8 +86,7 @@ export default function App() {
          }
        }).then(res => res.json())
          .then(ress => console.log(ress)) */
-
-  }
+  };
 
 
   return (

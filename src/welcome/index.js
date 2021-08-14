@@ -19,19 +19,9 @@ const { width, height } = Dimensions.get('window'); //获取手机的宽和高
 
 export default class WelcomPage extends PureComponent {
   static contextType = NavigationContext;
-  //加载计时器
   state = {
     index: 0
   };
-  componentDidMount() {
-    this.timer = setTimeout(() => {
-      this.props.navigation.navigate('Tabbar'); //7秒后进入底部导航主页
-    }, 70000000);
-  }
-  //卸载计时器
-  componentWillUnmount() {
-    this.timer && clearTimeout(this.timer); //同时为真的才执行卸载
-  }
   check = () => {
     this.setState({ index: this.state.index + 1 });
   };
@@ -98,7 +88,7 @@ export default class WelcomPage extends PureComponent {
             style={styles.image}
             source={require('../res/welcome4.png')}
           >
-            <TouchableOpacity onPress={() => this.context.navigate('Tabbar')}>
+            <TouchableOpacity onPress={() => this.context.navigate('Login')}>
               <View
                 style={{
                   alignItems: 'center',
@@ -107,7 +97,7 @@ export default class WelcomPage extends PureComponent {
               >
                 <LottieView
                   style={{ width: pxToDp(80) }}
-                  source={require('../../lottie/start.json')}
+                  source={require('../../lottie/check.json')}
                   autoPlay
                   loop
                 />

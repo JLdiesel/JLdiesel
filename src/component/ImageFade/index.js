@@ -34,19 +34,22 @@ class index extends PureComponent {
                 toValue: this.endOpacity,
                 duration: this.duration,
                 delay: this.delay,
-                easing: this.easing // 缓动函数
+                easing: this.easing,// 缓动函数
+                useNativeDriver:true
             }),
             Animated.timing(this.zindex, {
                 toValue: 1,
                 duration: 0,
                 delay: 0,
-                easing: this.easing // 缓动函数
+                easing: this.easing ,// 缓动函数
+                useNativeDriver:true
             }),
             Animated.timing(this.state.opacity, {
                 toValue: this.startOpacity,
                 duration: this.duration,
                 delay: this.delay,
-                easing: this.easing // 缓动函数
+                easing: this.easing,// 缓动函数
+                useNativeDriver:true
             })
         ]);
         Animated.loop(animation, {

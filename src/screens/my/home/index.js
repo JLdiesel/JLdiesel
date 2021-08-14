@@ -5,7 +5,8 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  RefreshControl
+  RefreshControl,
+  DeviceEventEmitter
 } from 'react-native';
 import { pxToDp } from '@utils/styleKits';
 import Top from '@components/common/top';
@@ -13,146 +14,32 @@ import Ionicons from 'react-native-vector-icons/FontAwesome';
 import List from '@components/common/list';
 import { NavigationContext } from '@react-navigation/native';
 import { connect } from 'react-redux';
+import { getUserOriderListAction } from '../../first/home/store/actions';
+import UserInner from '../../../component/home/userInner';
 
 class Index extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  state = { avatar: '' };
+
+  componentDidMount() {
+    this.props.getUserOriderListAction();
+    this.subscript = DeviceEventEmitter.addListener(
+      'valueChange',
+      this.changeAvatar
+    );
+  }
+  changeAvatar = (avatar) => {
+    this.setState({ avatar });
+  };
+  componentWillUnmount() {
+    this.subscript.remove();
   }
   static contextType = NavigationContext;
   render() {
     return (
       <View>
         <Top title="戏痴" />
-        <ScrollView refreshControl={<RefreshControl />}>
-          <View
-            style={{
-              borderRadius: pxToDp(10),
-              backgroundColor: 'rgba(255,255,255,0.5)',
-              margin: pxToDp(10),
-              height: pxToDp(140)
-            }}
-          >
-            <View style={{ flexDirection: 'row' }}>
-              <TouchableOpacity
-                onPress={() => this.context.navigate('Setting')}
-              >
-                <Image
-                  style={{
-                    height: pxToDp(60),
-                    width: pxToDp(60),
-                    borderRadius: pxToDp(30),
-                    margin: pxToDp(10)
-                  }}
-                  source={require('../../../res/4.jpg')}
-                ></Image>
-              </TouchableOpacity>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  width: '70%'
-                }}
-              >
-                <View>
-                  <Text
-                    style={{
-                      margin: pxToDp(10),
-                      fontSize: pxToDp(20),
-                      fontWeight: 'bold'
-                    }}
-                  >
-                    百越庭
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <View
-              style={{ flexDirection: 'row', justifyContent: 'space-around' }}
-            >
-              <View>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.context.navigate('Like');
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: pxToDp(18),
-                      fontWeight: 'bold',
-                      alignSelf: 'center'
-                    }}
-                  >
-                    2
-                  </Text>
-                  <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>
-                    点赞
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              <View>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.context.navigate('Collection');
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: pxToDp(18),
-                      fontWeight: 'bold',
-                      alignSelf: 'center'
-                    }}
-                  >
-                    5
-                  </Text>
-                  <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>
-                    收藏
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              <View>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.context.navigate('Follow');
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: pxToDp(18),
-                      fontWeight: 'bold',
-                      alignSelf: 'center'
-                    }}
-                  >
-                    3
-                  </Text>
-                  <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>
-                    关注
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              <View>
-                <TouchableOpacity
-                  onPress={() => {
-                    this.context.navigate('Fan');
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontSize: pxToDp(18),
-                      fontWeight: 'bold',
-                      alignSelf: 'center'
-                    }}
-                  >
-                    3
-                  </Text>
-                  <Text style={{ fontSize: pxToDp(15), color: 'gray' }}>
-                    粉丝
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
+        <ScrollView>
+          <UserInner />
           <View
             style={{
               borderRadius: pxToDp(10),
@@ -253,6 +140,9 @@ class Index extends PureComponent {
     );
   }
 }
-export default connect((state) => ({
-  token: state.getIn(['LoginReducer', 'token'])
-}))(Index);
+export default connect(
+  (state) => ({ userInfo: state.getIn(['homeReducer', 'userInfo']) }),
+  {
+    getUserOriderListAction
+  }
+)(Index);

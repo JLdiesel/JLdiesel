@@ -1,8 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import React, { PureComponent } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import Otherbanner from './Otherbanner';
+import { DeviceEventEmitter, Text, TouchableOpacity, View } from 'react-native';
 import { pxToDp } from '../../../utils/styleKits';
 import Top from '@components/common/top';
 import { NavigationContext } from '@react-navigation/native';
@@ -12,17 +11,21 @@ export default class Nickname extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      nickname: ''
+      nickName: ''
     };
   }
+  goback = () => {
+    DeviceEventEmitter.emit('nickName', this.state.nickName);
+    this.context.navigate('Ziliao', { nickName: this.state.nickName });
+  };
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#e2f4fe' }}>
         <Top
           icon1="arrow-back"
           title="昵称"
-          rightTitle="确定"
-          rightCallback={() => this.context.navigate('Ziliao', this.state)}
+          rightTitle="保存"
+          rightCallback={this.goback}
         />
         <View
           style={{
@@ -34,16 +37,16 @@ export default class Nickname extends PureComponent {
             style={{ height: pxToDp(60), fontSize: pxToDp(20) }}
             placeholder="请填写您的昵称"
             placeholderTextColor="gray"
-            onChangeText={(nickname) => this.getNickName(nickname)}
-            value={this.state.nickname}
+            onChangeText={(nickName) => this.getNickName(nickName)}
+            value={this.state.nickName}
           ></Input>
         </View>
       </View>
     );
   }
-  getNickName(nickname) {
+  getNickName(nickName) {
     this.setState({
-      nickname
+      nickName
     });
   }
 }
